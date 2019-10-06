@@ -58,7 +58,6 @@ body{
 .item{
     display: block;
     text-align: center;
-    padding: 10px 0 5px 0;
     color: lightgray;
 }
 
@@ -127,6 +126,14 @@ body{
     background-color: indigo !important;
 }
 
+.bg-yellow{
+    background-color: yellow !important;
+}
+
+.bg-maroon{
+    background-color: maroon !important;
+}
+
 .text-white{
     color: white !important;
 }
@@ -167,7 +174,8 @@ body{
 
 .image-holder{
     height: 200px;
-    background: black;
+    background: url("../image/bg-1.jpg") no-repeat;
+    background-size: 100% 100%;
 }
 
 .description{
@@ -246,9 +254,24 @@ i.icon-red{
     color: red !important;
 }
 
+i.icon-grey{
+    color: grey !important;
+}
+
 a.card{
     display: block;
     height: 200px;
+}
+
+.bordered{
+    border-radius: 20px;
+}
+
+.limiter{
+    width: 500px;
+    padding: 30px;
+    margin: 100px auto;
+    border-radius: 10px;
 }
 
 

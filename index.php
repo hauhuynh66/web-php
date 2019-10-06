@@ -17,7 +17,7 @@
                 </div>
                 <div class="container item-holder pb-0 border-bottom-0">
                     <div class="sidebar-item">
-                        <a href="./index.html" class="normal-text pt-2">Dashboard</a>
+                        <a href="index.php" class="normal-text pt-2">Dashboard</a>
                     </div>
                     <div class="item"></div>
                 </div>
@@ -29,6 +29,11 @@
                 <div class="container item-holder">
                     <div class="sidebar-item">
                         <a href="./templates/web.html" class="normal-text pt-2">Web</a>
+                    </div>
+                </div>
+                <div class="container item-holder">
+                    <div class="sidebar-item">
+                        <a href="./templates/contribute.html" class="normal-text pt-2">Contribute</a>
                     </div>
                 </div>
                 <div class="container">
@@ -69,31 +74,50 @@
                     <h5>Dashboard</h5>
                     <hr>
                     <div class="row">
-                        <div class="col-xl-3 col-lg-3 col-mb-4 col-sm-6 pt-2">
-                            <div class="card shadow">
+                        <div class="col-xl-4 col-lg-4 col-mb-6 col-sm-6 pt-2">
+                            <div class="card shadow bordered">
                                 <div class="card-body">
-                                    <p class="text-dark">Templates</p>
+                                    <div class="row">
+                                        <div class="col-8">
+                                            <p class="text-dark">Templates</p>
+                                            <?php
+                                                echo "<p>ABC</p>"
+                                            ?>
+                                        </div>
+                                        <div class="col-auto my-auto">
+                                            <i class="fa fa-bars fa-2x icon-grey"></i>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-xl-3 col-lg-3 col-mb-4 col-sm-6 pt-2">
-                            <div class="card shadow">
+                        <div class="col-xl-4 col-lg-4 col-mb-6 col-sm-6 pt-2">
+                            <div class="card shadow bordered">
                                 <div class="card-body">
-                                    <p class="text-dark">Downloads</p>
+                                    <div class="row">
+                                        <div class="col-8">
+                                            <p class="text-dark">Downloads</p>
+                                            <p>ABC</p>
+                                        </div>
+                                        <div class="col-auto my-auto">
+                                            <i class="fa fa-download fa-2x icon-grey"></i>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-xl-3 col-lg-3 col-mb-4 col-sm-6 pt-2">
-                            <div class="card shadow">
+                        <div class="col-xl-4 col-lg-4 col-mb-6 col-sm-6 pt-2">
+                            <div class="card shadow bordered">
                                 <div class="card-body">
-                                    <p class="text-dark">Title 3</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-3 col-mb-4 col-sm-6 pt-2">
-                            <div class="card shadow">
-                                <div class="card-body">
-                                    <p class="text-dark">Title 4</p>
+                                    <div class="row">
+                                        <div class="col-8">
+                                            <p class="text-dark">Title 3</p>
+                                            <p>ABC</p>
+                                        </div>
+                                        <div class="col-auto my-auto">
+                                            <i class="fa fa-ice-cream fa-2x icon-grey"></i>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -113,10 +137,26 @@
                     </div>
                     <div class="row">
                         <div class="col-sm-12 col-mb-6 col-lg-6 col-xl-6">
-
+                            <div class="card shadow">
+                                <div class="card-header">
+                                    <h4>Stat</h4>
+                                </div>
+                                <div class="card-body">
+                                    <canvas id="chart1" height="200px"></canvas>
+                                </div>
+                                <div class="card-footer"></div>
+                            </div>
                         </div>
                         <div class="col-sm-12 col-mb-6 col-lg-6 col-xl-6">
-
+                            <div class="card shadow">
+                                <div class="card-header">
+                                    <h4>Stat</h4>
+                                </div>
+                                <div class="card-body">
+                                    <canvas id="chart2" height="200px"></canvas>
+                                </div>
+                                <div class="card-footer"></div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -137,6 +177,7 @@
 <script src="vendor/bootstrap/bootstrap.js"></script>
 <script src="vendor/chartjs/chart.js"></script>
 <script src="vendor/font-awesome/js/fontawesome.js"></script>
+<script src="js/main.js"></script>
 <script src="js/dashboard.js"></script>
 </body>
 </html>
