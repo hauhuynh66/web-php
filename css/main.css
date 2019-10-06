@@ -1,0 +1,255 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    height: 100%;
+    font-family: "Geometr212 BkCn BT" ,sans-serif;
+}
+
+.content{
+    display: flex;
+    background-color: floralwhite;
+    padding: 0;
+    flex-direction: column;
+}
+
+.sidebar{
+    padding: 0 15px 50px 15px;
+    min-height: 400px !important;
+}
+
+.sidebar-item{
+    display: block;
+    text-align: center;
+    border-bottom: 1px solid white;
+    color: lightgray;
+}
+
+.special-text:hover{
+    box-shadow: -5px 5px 5px 0 white;
+}
+
+.sidebar-brand{
+    display: block;
+    min-height: 80px;
+    text-align: center;
+    color: lightgray;
+}
+
+.brand-img{
+    font-size: 30px;
+    font-weight: bold;
+    font-style: italic;
+    font-family: "Trebuchet MS", sans-serif;
+}
+
+.brand-img::before{
+    font-family: "Font Awesome 5 Free", sans-serif;
+    content: "\f641";
+    padding-right: 10px;
+}
+
+.page-name{
+    font-size: large;
+    font-weight: bold;
+}
+
+.item{
+    display: block;
+    text-align: center;
+    padding: 10px 0 5px 0;
+    color: lightgray;
+}
+
+.item:hover,.sidebar-brand:hover,.sidebar-item:hover{
+    cursor: pointer;
+    color: white;
+}
+
+.item-holder{
+    text-align: center;
+    height: 50px;
+}
+
+.search-input{
+    min-width: 200px !important;
+}
+
+.w-haft{
+    display: inline-flex;
+    width: 50% !important;
+    padding-right: 20px;
+    flex-direction: row;
+}
+
+
+.footer{
+    min-height: 100px !important;
+    background-color: lavender;
+    text-align: center;
+    padding-top: 20px;
+}
+
+.main-content{
+    flex: 1 0 auto;
+    margin: 20px 10px 10px 10px;
+}
+
+.footer-text{
+    font-family: "Geometr212 BkCn BT", sans-serif;
+    color: gray;
+    font-style: italic;
+    text-decoration: underline;
+}
+
+.footer-link{
+    font-family: "Yu Gothic Medium", sans-serif;
+    color: blue;
+    font-size: 20px;
+    border-right: 1px solid greenyellow;
+    padding: 0 10px 0 10px;
+}
+
+.card-header,.card-footer{
+    padding: 10px 10px 10px 10px !important;
+}
+
+.bg-blue{
+    background-color: blue !important;
+}
+
+.bg-green{
+    background-color: forestgreen !important;
+}
+
+.bg-indigo{
+    background-color: indigo !important;
+}
+
+.text-white{
+    color: white !important;
+}
+
+.pager{
+    border: 2px solid deepskyblue;
+    min-height: 40px !important;
+    border-radius: 20px;
+    background: lightblue;
+    display: flex !important;
+}
+
+.pager-item,.pager-item-first,.pager-item-last{
+    flex-direction: row;
+    max-width: 20%;
+    width: 100%;
+    text-align: center;
+    padding-top: 5px;
+}
+
+.pager-item{
+    border-right: 2px solid white;
+}
+
+.pager-item-first{
+    border-radius: 20px 0 0 20px;
+    border-right: 2px solid white;
+}
+
+.pager-item-last{
+    border-radius: 0 20px 20px 0;
+}
+
+.pager-item:hover, .pager-item-first:hover,.pager-item-last:hover{
+    background: white;
+    cursor: pointer;
+}
+
+.image-holder{
+    height: 200px;
+    background: black;
+}
+
+.description{
+    height: 100px;
+    transition: 1s;
+}
+
+.description:hover{
+    height: 200px;
+    transition: 1s;
+}
+
+.btn-success:hover{
+    box-shadow: 0 5px 10px 0 forestgreen ;
+}
+
+
+.btn-info:hover{
+    box-shadow: 0 5px 10px 0 deepskyblue;
+}
+
+.btn-danger:hover{
+    box-shadow: 0 5px 10px 0 lightcoral;
+}
+
+.btn-menu{
+    font-family: "Font Awesome 5 Brands", sans-serif;
+    content: "\f0c9";
+}
+
+a.normal-text, a.item{
+    text-decoration: none !important;
+    color: white;
+}
+
+.normal-text{
+    font-size: 18px;
+}
+
+a.item{
+    font-size: 12px;
+}
+
+.vr{
+    width: 0;
+    margin: auto 10px;
+    border-right: 1px solid black;
+    height: 30px;
+}
+
+.round{
+    border-radius: 100%;
+}
+
+hr.white{
+    border-top: 1px solid white;
+}
+
+i.icon-black{
+    color: black !important;
+}
+
+i.icon-blue{
+    color: blue !important;
+}
+
+i.icon-orange{
+    color: orange !important;
+}
+
+i.icon-yellow{
+    color: yellow !important;
+}
+
+i.icon-red{
+    color: red !important;
+}
+
+a.card{
+    display: block;
+    height: 200px;
+}
+
+
+
