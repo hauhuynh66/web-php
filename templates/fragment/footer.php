@@ -1,4 +1,4 @@
-<footer>
+<footer class="text-center">
     <div class="row mt-2">
         <div class="col-xl-4 col-lg-6 col-mb-6 col-sm-12">
             <p class="text-primary">PowerPoint</p>

@@ -38,33 +38,9 @@
             </div>
         </div>
         <div class="col-sm-12 col-mb-9 col-lg-9 col-xl-9 content" id="content">
-            <div class="navbar navbar-expand navbar-dark shadow bg-white">
-                <div class="w-haft">
-                    <button class="btn" id="menu-collapse">
-                        <i class="fas fa-bars"></i>
-                    </button>
-                    <div class="vr"></div>
-                    <button class="btn btn-info round">
-                        <i class="fab fa-github icon-black"></i>
-                    </button>
-                    <div class="vr"></div>
-                    <button class="btn btn-danger round">
-                        <i class="fab fa-facebook icon-black"></i>
-                    </button>
-                    <div class="vr"></div>
-                    <button class="btn btn-success round">
-                        <i class="fab fa-twitter icon-black"></i>
-                    </button>
-                </div>
-                <div class="input-group w-haft">
-                    <input class="form-control" placeholder="Search">
-                    <div class="input-group-append">
-                        <button class="btn btn-info">
-                            <i class="fas fa-search"></i>
-                        </button>
-                    </div>
-                </div>
-            </div>
+            <?php
+                include("fragment/topbar.php");
+            ?>
             <div class="main-content pr-2">
                 <div class="row">
                     <div class="col-12">
@@ -116,16 +92,9 @@
                     </div>
                 </div>
             </div>
-            <footer class="row">
-                <div class="col-12">
-                    <div class="footer">
-                        <p class="footer-text">Footer</p>
-                        <a href="#" class="footer-link">Link 1</a>
-                        <a href="#" class="footer-link">Link 2</a>
-                        <a href="#" class="footer-link">Link 3</a>
-                    </div>
-                </div>
-            </footer>
+            <?php
+                include("fragment/footer.php");
+            ?>
         </div>
     </div>
 </div>

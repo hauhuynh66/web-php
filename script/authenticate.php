@@ -10,6 +10,6 @@
         $_SESSION['username'] = $result["username"];
         header('Location:../templates/index.php');
     }else{
-        echo "Bad Credentials";
+        header('Location:../templates/login.php?error=true');
     }
 

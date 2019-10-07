@@ -45,7 +45,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-sm-12 col-mb-9 col-lg-9 col-xl-9 content" id="content">
+        <div class="col-sm-12 col-mb-9 col-lg-9 col-xl-9 content">
             <?php
                 include("fragment/topbar.php");
             ?>

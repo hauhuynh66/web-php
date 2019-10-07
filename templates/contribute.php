@@ -13,7 +13,7 @@
 </head>
 <body>
 <div class="content shadow ml-2">
-    <div class="row text-center">
+    <div class="row">
         <div class="col-sm-12 col-mb-3 col-lg-3 col-xl-3 sidebar bg-maroon" id="sidebar">
             <div class="sidebar-brand">
                 <h4 class="brand-img pt-4" id="side-brand">Site Brand</h4>

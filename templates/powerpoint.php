@@ -13,7 +13,7 @@
 </head>
 <body>
 <div class="content shadow ml-2">
-    <div class="row text-center">
+    <div class="row">
         <div class="col-sm-12 col-mb-3 col-lg-3 col-xl-3 sidebar bg-danger" id="sidebar">
             <div class="sidebar-brand">
                 <h4 class="brand-img pt-4" id="side-brand">Site Brand</h4>
@@ -71,7 +71,7 @@
                             </div>
                             <div class="card-footer">
                                 <button class="btn btn-success">
-                                    <a class="item" href="powerpoint-preview.html"><i class="fas fa-eye pr-1"></i>Preview</a>
+                                    <a class="item" href="powerpoint-preview.php"><i class="fas fa-eye pr-1"></i>Preview</a>
                                 </button>
                                 <button class="btn btn-success float-right">
                                     <a class="item" href="#"><i class="fas fa-download pr-1"></i>Download</a>
@@ -91,7 +91,7 @@
                             </div>
                             <div class="card-footer">
                                 <button class="btn btn-success">
-                                    <a class="item" href="powerpoint-preview.html"><i class="fas fa-eye pr-1"></i>Preview</a>
+                                    <a class="item" href="powerpoint-preview.php"><i class="fas fa-eye pr-1"></i>Preview</a>
                                 </button>
                                 <button class="btn btn-success float-right">
                                     <a class="item" href="#"><i class="fas fa-download pr-1"></i>Download</a>
@@ -99,7 +99,7 @@
                             </div>
                         </div>
                         <button class="btn btn-info float-right my-3 mr-2">
-                            <a class="item" href="powerpoint-files.html"><i class="fas fa-bars pr-1"></i>More</a>
+                            <a class="item" href="powerpoint-files.php"><i class="fas fa-bars pr-1"></i>More</a>
                         </button>
                     </div>
                 </div>
@@ -119,7 +119,7 @@
                             </div>
                             <div class="card-footer">
                                 <button class="btn btn-success">
-                                    <a class="item" href="powerpoint-preview.html"><i class="fas fa-eye pr-1"></i>Preview</a>
+                                    <a class="item" href="powerpoint-preview.php"><i class="fas fa-eye pr-1"></i>Preview</a>
                                 </button>
                                 <button class="btn btn-success float-right">
                                     <a class="item" href="#"><i class="fas fa-download pr-1"></i>Download</a>
@@ -139,7 +139,7 @@
                             </div>
                             <div class="card-footer">
                                 <button class="btn btn-success">
-                                    <a class="item" href="powerpoint-preview.html"><i class="fas fa-eye pr-1"></i>Preview</a>
+                                    <a class="item" href="powerpoint-preview.php"><i class="fas fa-eye pr-1"></i>Preview</a>
                                 </button>
                                 <button class="btn btn-success float-right">
                                     <a class="item" href="#"><i class="fas fa-download pr-1"></i>Download</a>
@@ -147,7 +147,7 @@
                             </div>
                         </div>
                         <button class="btn btn-info float-right my-3 mr-2">
-                            <a class="item" href="powerpoint-preview.html"><i class="fas fa-bars pr-1"></i>More</a>
+                            <a class="item" href="powerpoint-preview.php"><i class="fas fa-bars pr-1"></i>More</a>
                         </button>
                     </div>
                 </div>
