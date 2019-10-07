@@ -35,3 +35,7 @@ $(window).resize(function () {
         toggle++;
     }
 });
+
+$("#logout-btn").on('click',function () {
+     window.location = "../script/logout.php";
+});

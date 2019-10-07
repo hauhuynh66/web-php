@@ -8,7 +8,7 @@
     $result = mysqli_query($conn,$sql)->fetch_assoc();
     if(password_verify($password,$result["password"])){
         $_SESSION['username'] = $result["username"];
-        header('Location:http://localhost/assignment/');
+        header('Location:../templates/index.php');
     }else{
         echo "Bad Credentials";
     }

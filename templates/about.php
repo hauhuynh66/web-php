@@ -1,3 +1,6 @@
+<?php
+    include("../script/session.php");
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,7 +13,7 @@
 </head>
 <body>
 <div class="content shadow ml-2">
-    <div class="row">
+    <div class="row text-center">
         <div class="col-sm-12 col-mb-3 col-lg-3 col-xl-3 sidebar bg-indigo">
             <div class="sidebar-brand">
                 <h4 class="brand-img pt-4">Site Brand</h4>
@@ -18,59 +21,35 @@
 
             <div class="container item-holder pb-0 border-bottom-0">
                 <div class="sidebar-item">
-                    <a href="../index.php" class="normal-text pt-2">Dashboard</a>
+                    <a href="index.php" class="normal-text pt-2">Dashboard</a>
                 </div>
                 <div class="item"></div>
             </div>
             <div class="container item-holder">
                 <div class="sidebar-item">
-                    <a href="../templates/powerpoint.html" class="normal-text pt-2">PowerPoint</a>
+                    <a href="powerpoint.php" class="normal-text pt-2">PowerPoint</a>
                 </div>
             </div>
             <div class="container item-holder">
                 <div class="sidebar-item">
-                    <a href="../templates/web.html" class="normal-text pt-2">Web</a>
+                    <a href="web.php" class="normal-text pt-2">Web</a>
                 </div>
             </div>
             <div class="container item-holder">
                 <div class="sidebar-item">
-                    <a href="../templates/contribute.html" class="normal-text pt-2">Contribute</a>
+                    <a href="contribute.php" class="normal-text pt-2">Contribute</a>
                 </div>
             </div>
             <div class="container">
                 <div class="sidebar-item">
-                    <a href="../templates/about.html" class="normal-text pt-2">About</a>
+                    <a href="about.php" class="normal-text pt-2">About</a>
                 </div>
             </div>
         </div>
         <div class="col-sm-12 col-mb-9 col-lg-9 col-xl-9 content">
-            <div class="navbar navbar-expand navbar-dark shadow bg-white">
-                <div class="w-haft">
-                    <button class="btn" id="menu-collapse">
-                        <i class="fas fa-bars"></i>
-                    </button>
-                    <div class="vr"></div>
-                    <button class="btn btn-info round">
-                        <i class="fab fa-github icon-black"></i>
-                    </button>
-                    <div class="vr"></div>
-                    <button class="btn btn-danger round">
-                        <i class="fab fa-facebook icon-black"></i>
-                    </button>
-                    <div class="vr"></div>
-                    <button class="btn btn-success round">
-                        <i class="fab fa-twitter icon-black"></i>
-                    </button>
-                </div>
-                <div class="input-group w-haft">
-                    <input class="form-control" placeholder="Search">
-                    <div class="input-group-append">
-                        <button class="btn btn-info">
-                            <i class="fas fa-search"></i>
-                        </button>
-                    </div>
-                </div>
-            </div>
+            <?php
+                include("fragment/topbar.php");
+            ?>
             <div class="main-content pr-2">
                 <h3>What is Lorem Ipsum?</h3>
                 <hr>
@@ -80,16 +59,9 @@
                 <hr>
                 <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>
             </div>
-            <footer class="row">
-                <div class="col-12">
-                    <div class="footer">
-                        <p class="footer-text">Footer</p>
-                        <a href="#" class="footer-link">Link 1</a>
-                        <a href="#" class="footer-link">Link 2</a>
-                        <a href="#" class="footer-link">Link 3</a>
-                    </div>
-                </div>
-            </footer>
+            <?php
+                include("fragment/footer.php");
+            ?>
         </div>
     </div>
 </div>
