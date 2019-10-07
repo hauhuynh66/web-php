@@ -8,8 +8,8 @@
         echo("0");
     }else{
         $n_downloads = 0;
-        $arr = $result->fetch_array();
-        for($i=0;$i<$n_rows;$i++){
-            $n_downloads += $arr[$i];
+        while($row=$result->fetch_assoc()){
+            $n_downloads += $row["downloads"];
         }
+        echo ($n_downloads);
     }

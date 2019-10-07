@@ -34,7 +34,7 @@
         <?php
             $t = time();
             echo(date("Y-m-d",$t));
-            echo(" - Free Templates<sup>TM<sup>");
+            echo(" - &copy; Free Templates<sup>TM<sup>");
         ?>
         </div>
     </div>

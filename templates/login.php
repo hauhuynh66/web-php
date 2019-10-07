@@ -12,11 +12,11 @@
         <div class="container text-center">
             <h4>Login</h4>
         </div>
-        <form class="form-group mt-5">
+        <form class="form-group mt-5" action="../script/authenticate.php" method="post">
             <label for="email">Email</label>
-            <input class="form-control" type="text" id="email">
+            <input class="form-control" type="text" name="email" id="email">
             <label for="password" class="mt-3">Password</label>
-            <input class="form-control" type="text" id="password">
+            <input class="form-control" type="password" name="password" id="password">
             <button class="btn btn-block btn-info mt-3" type="submit" id="login-btn">Sign In</button>
             <a href="register.php" class="d-block mt-3">Register Account</a>
         </form>

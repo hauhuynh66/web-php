@@ -12,7 +12,7 @@
     <div class="container text-center">
         <h4>Register</h4>
     </div>
-    <form class="form-group mt-5" action="../php-script/register.php" method="post">
+    <form class="form-group mt-5" action="../script/register.php" method="post">
         <div class="row">
             <div class="col-6">
                 <label for="first-name">First name</label>

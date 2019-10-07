@@ -1,3 +1,6 @@
+<?php
+    include("./script/session.php");
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -115,7 +118,7 @@
                                         <div class="col-8">
                                             <p class="text-dark">Users</p>
                                             <?php
-                                                include("script/user.php");
+                                                include("script/users.php");
                                             ?>
                                         </div>
                                         <div class="col-auto my-auto">
