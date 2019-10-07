@@ -26,16 +26,3 @@ var stat2 = new Chart(chart2,{
         }],
     }
 });
-
-$("document").ready(function () {
-    $.ajax({
-        type: "GET",
-        url: "../assignment/php-script/test.php",
-        success: function (data) {
-            console.log(data);
-        },
-        error: function (e) {
-            console.log(e);
-        }
-    })
-});

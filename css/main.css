@@ -83,10 +83,8 @@ body{
 }
 
 
-.footer{
-    min-height: 100px !important;
+footer{
     background-color: lavender;
-    text-align: center;
     padding-top: 20px;
 }
 
@@ -102,12 +100,12 @@ body{
     text-decoration: underline;
 }
 
-.footer-link{
+a.footer-link{
     font-family: "Yu Gothic Medium", sans-serif;
     color: blue;
-    font-size: 20px;
-    border-right: 1px solid greenyellow;
+    font-size: 15px;
     padding: 0 10px 0 10px;
+    display: block;
 }
 
 .card-header,.card-footer{

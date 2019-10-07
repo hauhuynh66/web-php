@@ -81,7 +81,7 @@
                                         <div class="col-8">
                                             <p class="text-dark">Templates</p>
                                             <?php
-                                                echo "<p>ABC</p>"
+                                                include("script/templates.php");
                                             ?>
                                         </div>
                                         <div class="col-auto my-auto">
@@ -97,7 +97,9 @@
                                     <div class="row">
                                         <div class="col-8">
                                             <p class="text-dark">Downloads</p>
-                                            <p>ABC</p>
+                                            <?php
+                                                include("script/downloads.php");
+                                            ?>
                                         </div>
                                         <div class="col-auto my-auto">
                                             <i class="fa fa-download fa-2x icon-grey"></i>
@@ -111,8 +113,10 @@
                                 <div class="card-body">
                                     <div class="row">
                                         <div class="col-8">
-                                            <p class="text-dark">Title 3</p>
-                                            <p>ABC</p>
+                                            <p class="text-dark">Users</p>
+                                            <?php
+                                                include("script/user.php");
+                                            ?>
                                         </div>
                                         <div class="col-auto my-auto">
                                             <i class="fa fa-ice-cream fa-2x icon-grey"></i>
@@ -160,16 +164,9 @@
                         </div>
                     </div>
                 </div>
-                <footer class="row">
-                    <div class="col-12">
-                        <div class="footer">
-                            <p class="footer-text">Footer</p>
-                            <a href="#" class="footer-link">Link 1</a>
-                            <a href="#" class="footer-link">Link 2</a>
-                            <a href="#" class="footer-link">Link 3</a>
-                        </div>
-                    </div>
-                </footer>
+                <?php
+                    include_once("templates/fragment/footer.php");
+                ?>
             </div>
         </div>
     </div>
