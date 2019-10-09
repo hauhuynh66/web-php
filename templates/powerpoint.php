@@ -1,5 +1,9 @@
 <?php
     include("../script/session.php");
+    include("../script/query.php");
+    $page = $_GET["page"];
+    $limit = $page*15;
+    $offset = ($page-1)*15;
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -24,111 +28,30 @@
                 include("fragment/topbar.php");
             ?>
             <div class="main-content pr-2">
-                <hr>
-                <h5>Categories</h5>
-                <hr>
-                <div class="row">
-                    <div class=""></div>
-                </div>
-                <hr>
-                <h5>Most Downloaded</h5>
-                <hr>
-                <div class="row">
-                    <div class="col-6">
-                        <div class="card shadow">
-                            <div class="card-body">
-                                <div class="image-holder">
-
-                                </div>
-                                <div class="description">
-
-                                </div>
-                            </div>
-                            <div class="card-footer">
-                                <button class="btn btn-success">
-                                    <a class="item" href="powerpoint-preview.php"><i class="fas fa-eye pr-1"></i>Preview</a>
-                                </button>
-                                <button class="btn btn-success float-right">
-                                    <a class="item" href="#"><i class="fas fa-download pr-1"></i>Download</a>
-                                </button>
-                            </div>
+                <div class="row pb-5">
+                    <div class="col-12">
+                        <div class="input-group">
+                            <input class="form-control" placeholder="Search">
+                            <button class="input-group-prepend btn btn-info"><i class="fa fa-search"></i></button>
                         </div>
                     </div>
-                    <div class="col-6">
-                        <div class="card shadow">
-                            <div class="card-body">
-                                <div class="image-holder">
-
-                                </div>
-                                <div class="description">
-
-                                </div>
-                            </div>
-                            <div class="card-footer">
-                                <button class="btn btn-success">
-                                    <a class="item" href="powerpoint-preview.php"><i class="fas fa-eye pr-1"></i>Preview</a>
-                                </button>
-                                <button class="btn btn-success float-right">
-                                    <a class="item" href="#"><i class="fas fa-download pr-1"></i>Download</a>
-                                </button>
-                            </div>
-                        </div>
-                        <button class="btn btn-info float-right my-3 mr-2">
-                            <a class="item" href="powerpoint-files.php"><i class="fas fa-bars pr-1"></i>More</a>
+                </div>
+                <?php
+                $result = getByTypeWithLimit($conn,"powerpoint",$limit,$offset);
+                echo("<div class='row'>");
+                while($row = $result->fetch_assoc()){
+                    $name = $row["title"];
+                    $description = $row["description"];
+                    display($name,$description);
+                }
+                echo("</div>");
+                ?>
+                <div class="row pt-3">
+                    <div class="col-11"></div>
+                    <div class="col-1">
+                        <button class="btn btn-info btn-block">
+                            <i class="fa fa-arrow-right"></i>
                         </button>
-                    </div>
-                </div>
-                <hr>
-                <h5>New Uploads</h5>
-                <hr>
-                <div class="row">
-                    <div class="col-6">
-                        <div class="card shadow">
-                            <div class="card-body">
-                                <div class="image-holder">
-
-                                </div>
-                                <div class="description">
-
-                                </div>
-                            </div>
-                            <div class="card-footer">
-                                <button class="btn btn-success">
-                                    <a class="item" href="powerpoint-preview.php"><i class="fas fa-eye pr-1"></i>Preview</a>
-                                </button>
-                                <button class="btn btn-success float-right">
-                                    <a class="item" href="#"><i class="fas fa-download pr-1"></i>Download</a>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-6">
-                        <div class="card shadow">
-                            <div class="card-body">
-                                <div class="image-holder">
-
-                                </div>
-                                <div class="description">
-
-                                </div>
-                            </div>
-                            <div class="card-footer">
-                                <button class="btn btn-success">
-                                    <a class="item" href="powerpoint-preview.php"><i class="fas fa-eye pr-1"></i>Preview</a>
-                                </button>
-                                <button class="btn btn-success float-right">
-                                    <a class="item" href="#"><i class="fas fa-download pr-1"></i>Download</a>
-                                </button>
-                            </div>
-                        </div>
-                        <button class="btn btn-info float-right my-3 mr-2">
-                            <a class="item" href="powerpoint-preview.php"><i class="fas fa-bars pr-1"></i>More</a>
-                        </button>
-                    </div>
-                </div>
-                <div class="row py-5">
-                    <div class="col-6"></div>
-                    <div class="col-6">
                     </div>
                 </div>
             </div>

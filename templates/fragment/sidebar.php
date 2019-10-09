@@ -9,12 +9,12 @@
 </div>
 <div class="container item-holder border-bottom-0">
     <div class="sidebar-item">
-        <a href="powerpoint.php" class="normal-text pt-2">PowerPoint</a>
+        <a href="powerpoint.php?page=1" class="normal-text pt-2">PowerPoint</a>
     </div>
 </div>
 <div class="container item-holder">
     <div class="sidebar-item">
-        <a href="web.php" class="normal-text pt-2">Web</a>
+        <a href="web.php?page=1" class="normal-text pt-2">Web</a>
     </div>
 </div>
 <div class="container item-holder">

@@ -177,12 +177,12 @@ a.footer-link{
 }
 
 .description{
-    height: 100px;
+    min-height: 100px;
     transition: 1s;
 }
 
 .description:hover{
-    height: 200px;
+    min-height: 200px;
     transition: 1s;
 }
 

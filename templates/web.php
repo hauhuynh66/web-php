@@ -1,5 +1,9 @@
 <?php
     include("../script/session.php");
+    include("../script/query.php");
+    $page = $_GET["page"];
+    $limit = $page*15;
+    $offset = ($page-1)*15;
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -24,7 +28,24 @@
                 include("fragment/topbar.php");
             ?>
             <div class="main-content pr-2">
-
+                <?php
+                $result = getByTypeWithLimit($conn,"web",$limit,$offset);
+                echo("<div class='row'>");
+                while($row = $result->fetch_assoc()){
+                    $name = $row["title"];
+                    $description = $row["description"];
+                    display($name,$description);
+                }
+                echo("</div>");
+                ?>
+                <div class="row pt-3">
+                    <div class="col-11"></div>
+                    <div class="col-1">
+                        <button class="btn btn-info btn-block">
+                            <i class="fa fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
             </div>
             <?php
                 include("fragment/footer.php");
