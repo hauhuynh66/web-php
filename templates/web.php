@@ -29,6 +29,9 @@
             ?>
             <div class="main-content pr-2">
                 <?php
+                    include("fragment/filter.php");
+                ?>
+                <?php
                 $result = getByTypeWithLimit($conn,"web",$limit,$offset);
                 echo("<div class='row'>");
                 while($row = $result->fetch_assoc()){
