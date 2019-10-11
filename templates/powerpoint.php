@@ -28,32 +28,27 @@
                 include("fragment/topbar.php");
             ?>
             <div class="main-content pr-2">
-                <div class="row pb-5">
-                    <div class="col-12">
-                        <div class="input-group">
-                            <input class="form-control" placeholder="Search">
-                            <button class="input-group-prepend btn btn-info"><i class="fa fa-search"></i></button>
-                        </div>
-                    </div>
-                </div>
                 <?php
-                $result = getByTypeWithLimit($conn,"powerpoint",$limit,$offset);
-                echo("<div class='row'>");
-                while($row = $result->fetch_assoc()){
-                    $name = $row["title"];
-                    $description = $row["description"];
-                    display($name,$description);
-                }
-                echo("</div>");
+                    include("fragment/filter.php");
+                    $result = getByTypeWithLimit($conn,"powerpoint",$limit,$offset);
+                    echo("<div class='row'>");
+                    while($row = $result->fetch_assoc()){
+                        $name = $row["title"];
+                        $description = $row["description"];
+                        display($name,$description);
+                    }
+                    echo("</div>");
+                    if(mysqli_num_rows($result)>15){
+                        echo "<div class='row pt-3'>
+                                    <div class='col-11'></div>
+                                    <div class='col-1'>
+                                        <button class='btn btn-info btn-block'>
+                                            <i class=\'fa fa-arrow-right'></i>
+                                        </button>
+                                    </div>
+                                </div>";
+                    }
                 ?>
-                <div class="row pt-3">
-                    <div class="col-11"></div>
-                    <div class="col-1">
-                        <button class="btn btn-info btn-block">
-                            <i class="fa fa-arrow-right"></i>
-                        </button>
-                    </div>
-                </div>
             </div>
             <?php
                 include("fragment/footer.php");

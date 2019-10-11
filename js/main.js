@@ -39,3 +39,7 @@ $(window).resize(function () {
 $("#logout-btn").on('click',function () {
      window.location = "../script/logout.php";
 });
+
+$("#profile-btn").on('click',function () {
+    window.location = "../templates/profile.php";
+})

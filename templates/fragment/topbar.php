@@ -4,7 +4,7 @@
             <i class="fas fa-bars"></i>
         </button>
         <div class="vr"></div>
-        <button class="btn btn-success round">
+        <button class="btn btn-success round" id="profile-btn">
             <i class="fa fa-user-alt icon-black"></i>
         </button>
         <div class="vr"></div>
