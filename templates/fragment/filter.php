@@ -1,4 +1,4 @@
-<div class="row pb-2">
+<div class="row pb-3">
     <div class="col-12">
         <div class="input-group">
             <input class="form-control" placeholder="Search">
@@ -11,11 +11,14 @@
 <div class="row">
     <div class="col-4 form-group form-inline">
         <input type="checkbox" class="form-control">
-        <label>Most Download</label>
+        <label class="ml-2">Most Download</label>
     </div>
     <div class="col-4 form-group form-inline">
         <input type="checkbox" class="form-control">
-        <label>New Upload</label>
+        <label class="ml-2">New Upload</label>
+    </div>
+    <div class="col-4 float-right">
+        <button type="button" class="btn btn-outline-info"><i class="fa fa-bars mr-2"></i>Filter</button>
     </div>
 </div>
 <?php

@@ -41,14 +41,19 @@
                 }
                 echo("</div>");
                 ?>
-                <div class="row pt-3">
-                    <div class="col-11"></div>
-                    <div class="col-1">
-                        <button class="btn btn-info btn-block">
-                            <i class="fa fa-arrow-right"></i>
-                        </button>
-                    </div>
-                </div>
+                <?php
+                    if(mysqli_num_rows($result)>15){
+                        echo "<div class=\"row pt-3\">
+                                <div class=\"col-11\"></div>
+                                <div class=\"col-1\">
+                                    <button class=\"btn btn-info btn-block\">
+                                        <i class=\"fa fa-arrow-right\"></i>
+                                    </button>
+                                </div>
+                            </div>";
+                    }
+                ?>
+
             </div>
             <?php
                 include("fragment/footer.php");

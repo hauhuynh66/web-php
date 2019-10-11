@@ -2,13 +2,11 @@
     <div class="row mt-2">
         <div class="col-xl-4 col-lg-6 col-mb-6 col-sm-12">
             <p class="text-primary">PowerPoint</p>
-            <a href="#" class="footer-link">Categories</a>
             <a href="#" class="footer-link">Most Downloads</a>
             <a href="#" class="footer-link">Recently Uploads</a>
         </div>
         <div class="col-xl-4 col-lg-6 col-mb-6 col-sm-12">
             <p class="text-primary">Web</p>
-            <a href="#" class="footer-link">Categories</a>
             <a href="#" class="footer-link">Most Downloads</a>
             <a href="#" class="footer-link">Recently Uploads</a>
         </div>
