@@ -2,14 +2,16 @@
     include("../script/session.php");
     include("../script/query.php");
     $page = $_GET["page"];
+    $mode = $_GET["filter"];
     $limit = $page*15;
     $offset = ($page-1)*15;
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Dashboard</title>
+    <title>Powerpoint</title>
     <link rel="shortcut icon" href="#" />
     <link href="../vendor/bootstrap/bootstrap.css" rel="stylesheet" type="text/css"/>
     <link href="../vendor/font-awesome/css/all.css" rel="stylesheet" type="text/css"/>

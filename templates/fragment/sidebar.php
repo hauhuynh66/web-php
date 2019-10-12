@@ -19,7 +19,7 @@
 </div>
 <div class="container item-holder">
     <div class="sidebar-item">
-        <a href="contribute.php" class="normal-text pt-2">Contribute</a>
+        <a href="upload.php" class="normal-text pt-2">Upload</a>
     </div>
 </div>
 <div class="container">

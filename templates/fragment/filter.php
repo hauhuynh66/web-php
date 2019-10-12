@@ -21,5 +21,4 @@
         <button type="button" class="btn btn-outline-info"><i class="fa fa-bars mr-2"></i>Filter</button>
     </div>
 </div>
-<?php
 

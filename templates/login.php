@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Login</title>
     <link href="../vendor/bootstrap/bootstrap.css" rel="stylesheet" type="text/css"/>
     <link href="../vendor/font-awesome/css/all.css" rel="stylesheet" type="text/css"/>
     <link href="../css/main.css" rel="stylesheet" type="text/css">
@@ -12,7 +12,17 @@
         <div class="container text-center">
             <h4>Login</h4>
         </div>
-        <form class="form-group mt-5" action="../script/authenticate.php" method="post">
+        <div class="text-center mt-3">
+            <?php
+                if(isset($_GET["registered"])){
+                    echo("<div class='alert alert-success'>Successfully Register</div>");
+                }
+                if(isset($_GET["error"])){
+                    echo("<div class='alert alert-danger'>Bad Credentials</div>");
+                }
+            ?>
+        </div>
+        <form class="form-group mt-3" action="../script/authenticate.php" method="post">
             <label for="email">Email</label>
             <input class="form-control" type="text" name="email" id="email">
             <label for="password" class="mt-3">Password</label>

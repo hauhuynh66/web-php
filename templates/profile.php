@@ -5,7 +5,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Dashboard</title>
+    <title>Profile</title>
     <link rel="shortcut icon" href="#" />
     <link href="../vendor/bootstrap/bootstrap.css" rel="stylesheet" type="text/css"/>
     <link href="../vendor/font-awesome/css/all.css" rel="stylesheet" type="text/css"/>
@@ -24,6 +24,15 @@
                 include("fragment/topbar.php");
             ?>
             <div class="main-content pr-2">
+                <div class="row">
+                    <div class="col-4">
+                        <div class="image-holder">
+                        </div>
+                    </div>
+                    <div class="col-8">
+
+                    </div>
+                </div>
             </div>
             <?php
                 include("fragment/footer.php");

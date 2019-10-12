@@ -6,7 +6,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Dashboard</title>
+    <title>Preview</title>
     <link rel="shortcut icon" href="#" />
     <link href="../vendor/bootstrap/bootstrap.css" rel="stylesheet" type="text/css"/>
     <link href="../vendor/font-awesome/css/all.css" rel="stylesheet" type="text/css"/>

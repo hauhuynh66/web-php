@@ -10,6 +10,7 @@
         $_SESSION['username'] = $result["username"];
         header('Location:../templates/index.php');
     }else{
+        var_dump($password);
         header('Location:../templates/login.php?error=true');
     }
 
