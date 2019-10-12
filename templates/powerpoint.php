@@ -1,6 +1,6 @@
 <?php
     include("../script/session.php");
-    include("../script/query.php");
+    include("../script/template-query.php");
     $page = $_GET["page"];
     $mode = $_GET["filter"];
     $limit = $page*15;
@@ -32,7 +32,7 @@
             <div class="main-content pr-2">
                 <?php
                     include("fragment/filter.php");
-                    $result = getByTypeWithLimit($conn,"powerpoint",$limit,$offset);
+                    $result = get_by_type_with_limit($conn,"powerpoint",$limit,$offset);
                     echo("<div class='row'>");
                     while($row = $result->fetch_assoc()){
                         $name = $row["title"];

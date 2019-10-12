@@ -10,17 +10,37 @@
         $sql = "select * from $table_name where type = '$type' order by upload_date desc limit 4";
         return mysqli_query($conn,$sql);
     }
-    function getAllByType($conn,$type){
+    function get_all_by_type($conn, $type){
         $table_name = "templates";
         $sql = "select * from $table_name where type = '$type'";
         return mysqli_query($conn,$sql);
     }
 
-    function getByTypeWithLimit($conn,$type,$limit,$offset){
+    function get_by_type_with_limit($conn, $type, $limit, $offset){
         $table_name = "templates";
         $sql = "select * from $table_name where type = '$type' limit $limit offset $offset";
         return mysqli_query($conn,$sql);
     }
+
+    function get_all_templates($conn){
+        $table_name = "templates";
+        $sql = "select * from $table_name";
+        return mysqli_query($conn,$sql);
+    }
+
+    function get_total_downloads($result){
+        $n_rows = mysqli_num_rows($result);
+        if($n_rows==0){
+            return 0;
+        }else{
+            $n_downloads = 0;
+            while($row=$result->fetch_assoc()){
+                $n_downloads += $row["downloads"];
+            }
+            return $n_downloads;
+        }
+    }
+
     function display($title,$description){
             echo("<div class='col-6'>
                         <div class='card shadow'>

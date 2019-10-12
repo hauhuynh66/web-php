@@ -1,6 +1,6 @@
 <?php
     include("../script/session.php");
-    include("../script/query.php");
+    include("../script/template-query.php");
     $page = $_GET["page"];
     $limit = $page*15;
     $offset = ($page-1)*15;
@@ -32,7 +32,7 @@
                     include("fragment/filter.php");
                 ?>
                 <?php
-                $result = getByTypeWithLimit($conn,"web",$limit,$offset);
+                $result = get_by_type_with_limit($conn,"web",$limit,$offset);
                 echo("<div class='row'>");
                 while($row = $result->fetch_assoc()){
                     $name = $row["title"];

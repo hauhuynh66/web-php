@@ -34,7 +34,8 @@
                                         <div class="col-8">
                                             <p class="text-dark">Templates</p>
                                             <?php
-                                                include("../script/templates.php");
+                                                include("../script/template-query.php");
+                                                echo(mysqli_num_rows(get_all_templates($conn)));
                                             ?>
                                         </div>
                                         <div class="col-auto my-auto">
@@ -51,7 +52,7 @@
                                         <div class="col-8">
                                             <p class="text-dark">Downloads</p>
                                             <?php
-                                                include("../script/downloads.php");
+                                                echo(get_total_downloads(get_all_templates($conn)));
                                             ?>
                                         </div>
                                         <div class="col-auto my-auto">
@@ -68,7 +69,8 @@
                                         <div class="col-8">
                                             <p class="text-dark">Users</p>
                                             <?php
-                                                include("../script/users.php");
+                                                include("../script/user-query.php");
+                                                echo(mysqli_num_rows(get_all_users($conn)));
                                             ?>
                                         </div>
                                         <div class="col-auto my-auto">

@@ -25,12 +25,11 @@
             ?>
             <div class="main-content pr-2">
                 <div class="row">
-                    <div class="col-4">
-                        <div class="image-holder">
-                        </div>
+                    <div class="col-4 text-center">
+                        <i class="fa fa-user fa-8x"></i>
                     </div>
                     <div class="col-8">
-
+                        <div class=""></div>
                     </div>
                 </div>
             </div>
