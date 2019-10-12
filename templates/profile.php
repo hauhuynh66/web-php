@@ -29,7 +29,6 @@
                         <i class="fa fa-user fa-8x"></i>
                     </div>
                     <div class="col-8">
-                        <div class=""></div>
                     </div>
                 </div>
             </div>

@@ -2,10 +2,11 @@
     include("../script/session.php");
     include("../script/template-query.php");
     $page = $_GET["page"];
-    $mode = $_GET["filter"];
     $limit = $page*15;
     $offset = ($page-1)*15;
-
+    if(isset($_GET["filter"])){
+        $mode = $_GET["filter"];
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
