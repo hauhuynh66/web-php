@@ -29,6 +29,81 @@
                         <i class="fa fa-user fa-8x"></i>
                     </div>
                     <div class="col-8">
+                        <?php
+                            include("../script/user-query.php");
+                            $result = get_user_by_username($conn,$_SESSION['username'])->fetch_assoc();
+                        ?>
+                        <div class="row">
+                            <div class="col-3">
+                                <label>First name :</label>
+                            </div>
+                            <div class="col-9">
+                                <?php
+                                    echo($result["firstname"]);
+                                ?>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-3">
+                                <label>Last name :</label>
+                            </div>
+                            <div class="col-9">
+                                <?php
+                                    echo($result["lastname"]);
+                                ?>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-3">
+                                <label>Username :</label>
+                            </div>
+                            <div class="col-9">
+                                <?php
+                                    echo($result["username"]);
+                                ?>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-3">
+                                <label>Email :</label>
+                            </div>
+                            <div class="col-9">
+                                <?php
+                                    echo($result["email"]);
+                                ?>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-3">
+                                <label>Github :</label>
+                            </div>
+                            <div class="col-9">
+                                <?php
+                                    echo($result["github"]);
+                                ?>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-3">
+                                <label>Facebook :</label>
+                            </div>
+                            <div class="col-9">
+                                <?php
+                                    echo($result["facebook"]);
+                                ?>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-3">
+                                <label>Twitter :</label>
+                            </div>
+                            <div class="col-9">
+                                <?php
+                                    echo($result["twitter"]);
+                                ?>
+                            </div>
+                        </div>
+                        <button class="btn btn-info mt-3" id="change-info-btn" data-toggle="modal" data-target="#change-info-modal">Change</button>
                     </div>
                 </div>
             </div>
@@ -39,9 +114,37 @@
 
     </div>
 </div>
+<!--Change info-->
+<div class="modal fade" tabindex="-1" role="dialog" id="change-info-modal">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Change info</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <input class="form-control" placeholder="First name" id="first-name">
+                    <input class="form-control mt-3" placeholder="Last name" id="last-name">
+                    <input class="form-control mt-3" placeholder="Username" id="username">
+                    <input class="form-control mt-3" placeholder="Email" id="email">
+                    <input class="form-control mt-3" placeholder="Password" id="password">
+                    <input class="form-control mt-3" placeholder="Github" id="github">
+                    <input class="form-control mt-3" placeholder="Facebook" id="twitter">
+                    <input class="form-control mt-3" placeholder="Twitter" id="twitter">
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary">Save changes</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
 <script src="../vendor/jquery/jquery-3.4.1.js"></script>
 <script src="../vendor/bootstrap/bootstrap.js"></script>
 <script src="../vendor/font-awesome/js/fontawesome.js"></script>
 <script src="../js/main.js"></script>
 </body>
-<?php

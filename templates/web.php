@@ -35,7 +35,7 @@
                     include("fragment/filter.php");
                 ?>
                 <?php
-                $result = get_by_type_with_limit($conn,"web",$limit,$offset);
+                $result = get_template_by_type_with_limit($conn,"web",$limit,$offset);
                 echo("<div class='row'>");
                 while($row = $result->fetch_assoc()){
                     $name = $row["title"];

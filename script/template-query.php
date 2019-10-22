@@ -1,22 +1,22 @@
 <?php
     include("db.php");
-    function query_by_download($conn,$type){
+    function get_template_by_download($conn, $type){
         $table_name = "templates";
         $sql = "select * from $table_name where type = '$type' order by downloads desc limit 4";
         return mysqli_query($conn,$sql);
     }
-    function query_by_date($conn,$type){
+    function get_template_by_upload_date($conn, $type){
         $table_name = "templates";
         $sql = "select * from $table_name where type = '$type' order by upload_date desc limit 4";
         return mysqli_query($conn,$sql);
     }
-    function get_all_by_type($conn, $type){
+    function get_all_template_by_type($conn, $type){
         $table_name = "templates";
         $sql = "select * from $table_name where type = '$type'";
         return mysqli_query($conn,$sql);
     }
 
-    function get_by_type_with_limit($conn, $type, $limit, $offset){
+    function get_template_by_type_with_limit($conn, $type, $limit, $offset){
         $table_name = "templates";
         $sql = "select * from $table_name where type = '$type' limit $limit offset $offset";
         return mysqli_query($conn,$sql);

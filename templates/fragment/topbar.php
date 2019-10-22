@@ -8,7 +8,7 @@
             <i class="fa fa-user-alt icon-black"></i>
         </button>
         <div class="vr"></div>
-        <button class="btn btn-danger round" id="logout-btn">
+        <button class="btn btn-danger round" data-toggle="modal" data-target="#logout-modal">
             <i class="fa fa-sign-out-alt icon-black"></i>
         </button>
     </div>
@@ -30,5 +30,22 @@
         <button class="btn btn-success round">
             <i class="fab fa-twitter icon-black"></i>
         </button>-->
+    </div>
+</div>
+<!--Logout Confirm-->
+<div class="modal fade" tabindex="-1" role="dialog" id="logout-modal">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Logout Confirm</h3>
+            </div>
+            <div class="modal-body">
+
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-success" id="logout-btn">Confirm</button>
+                <button class="btn btn-outline-info" data-dismiss="modal">Cancel</button>
+            </div>
+        </div>
     </div>
 </div>

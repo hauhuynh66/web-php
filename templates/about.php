@@ -14,12 +14,12 @@
 <body>
 <div class="content shadow ml-2">
     <div class="row">
-        <div class="col-sm-12 col-mb-3 col-lg-3 col-xl-3 sidebar bg-indigo">
+        <div class="col-sm-12 col-mb-3 col-lg-3 col-xl-3 sidebar bg-indigo" id="sidebar">
             <?php
                 include("fragment/sidebar.php");
             ?>
         </div>
-        <div class="col-sm-12 col-mb-9 col-lg-9 col-xl-9 content">
+        <div class="col-sm-12 col-mb-9 col-lg-9 col-xl-9 content" id="content">
             <?php
                 include("fragment/topbar.php");
             ?>

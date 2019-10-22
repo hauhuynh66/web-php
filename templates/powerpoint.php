@@ -33,7 +33,7 @@
             <div class="main-content pr-2">
                 <?php
                     include("fragment/filter.php");
-                    $result = get_by_type_with_limit($conn,"powerpoint",$limit,$offset);
+                    $result = get_template_by_type_with_limit($conn,"powerpoint",$limit,$offset);
                     echo("<div class='row'>");
                     while($row = $result->fetch_assoc()){
                         $name = $row["title"];

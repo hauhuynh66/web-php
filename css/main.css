@@ -276,3 +276,9 @@ a.card{
 
 }
 
+#change-info-btn::before{
+    margin-right: 10px;
+    content: '\f044';
+    font-family: "Font Awesome 5 Free", sans-serif;
+}
+

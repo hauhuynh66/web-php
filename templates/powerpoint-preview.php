@@ -60,7 +60,8 @@
                         <h5>Properties</h5>
                         <hr>
                         <?php
-                            echo("<p>Download: $downloads</p>
+                        /** @var TYPE_NAME $downloads */
+                        echo("<p>Download: $downloads</p>
                                     <div class='row'>
                                         <div class='col-6'>
                                             <button class='btn btn-block btn-info'>Download</button>
@@ -72,7 +73,8 @@
                         <h5>Description</h5>
                         <hr>
                         <?php
-                            echo("<p>$des</p>");
+                        /** @var TYPE_NAME $des */
+                        echo("<p>$des</p>");
                         ?>
                     </div>
                 </div>
