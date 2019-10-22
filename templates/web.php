@@ -61,6 +61,9 @@
         </div>
     </div>
 </div>
+<?php
+    include("fragment/modals.php");
+?>
 <script src="../vendor/jquery/jquery-3.4.1.js"></script>
 <script src="../vendor/bootstrap/bootstrap.js"></script>
 <script src="../vendor/font-awesome/js/fontawesome.js"></script>

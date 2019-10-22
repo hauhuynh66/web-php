@@ -51,6 +51,11 @@
                                     </div>
                                 </div>";
                     }
+                    if(mysqli_num_rows($result)==0){
+                        echo "<div class='row pt-5'>
+                            <div class='col-12 text-center'><h5>Nothing here</div>
+                        </div>";
+                    }
                 ?>
             </div>
             <?php

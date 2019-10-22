@@ -59,8 +59,8 @@
                             <button class='btn btn-success'>
                                 <a class='item' href='powerpoint-preview.php?name=$title'><i class='fas fa-eye pr-1'></i>Preview</a>
                             </button>
-                            <button class='btn btn-success float-right'>
-                                <a class='item' href='./download.php?name=$title'><i class='fas fa-download pr-1'></i>Download</a>
+                            <button class='btn btn-success float-right' data-toggle='modal' data-target='#download-modal' >
+                                <a class='item'><i class='fas fa-download pr-1'></i>Download</a>
                             </button>
                         </div>
                     </div>

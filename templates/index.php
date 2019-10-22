@@ -39,7 +39,7 @@
                                             ?>
                                         </div>
                                         <div class="col-auto my-auto">
-                                            <i class="fa fa-bars fa-2x icon-grey"></i>
+                                            <i class="fa fa-bars fa-2x icon-orange"></i>
                                         </div>
                                     </div>
                                 </div>
@@ -56,7 +56,7 @@
                                             ?>
                                         </div>
                                         <div class="col-auto my-auto">
-                                            <i class="fa fa-download fa-2x icon-grey"></i>
+                                            <i class="fa fa-download fa-2x icon-info"></i>
                                         </div>
                                     </div>
                                 </div>
@@ -74,7 +74,7 @@
                                             ?>
                                         </div>
                                         <div class="col-auto my-auto">
-                                            <i class="fa fa-ice-cream fa-2x icon-grey"></i>
+                                            <i class="fa fa-users fa-2x icon-black"></i>
                                         </div>
                                     </div>
                                 </div>

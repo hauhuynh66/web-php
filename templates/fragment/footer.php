@@ -2,8 +2,8 @@
     <div class="row mt-2">
         <div class="col-xl-4 col-lg-6 col-mb-6 col-sm-12">
             <p class="text-primary">PowerPoint</p>
-            <a href="../templates/powerpoint.php?filter=dls&page=1" class="footer-link">Most Downloads</a>
-            <a href="../templates/powerpoint.php?filter=new&page=1" class="footer-link">Recently Uploads</a>
+            <a href="../templates/powerpoint.php?page=1&filter=dls" class="footer-link">Most Downloads</a>
+            <a href="../templates/powerpoint.php?page=1&filter=new" class="footer-link">Recently Uploads</a>
         </div>
         <div class="col-xl-4 col-lg-6 col-mb-6 col-sm-12">
             <p class="text-primary">Web</p>

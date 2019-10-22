@@ -9,7 +9,7 @@
 <p>Order By</p>
 <hr>
 <form>
-<div class="row">
+<div class="row pb-3">
     <div class="col-4 form-inline">
         <?php
             if(isset($_GET["filter"])){
