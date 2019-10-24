@@ -60,11 +60,11 @@
                         <h5>Properties</h5>
                         <hr>
                         <?php
-                        /** @var TYPE_NAME $downloads */
-                        echo("<p>Download: $downloads</p>
+                            /** @var TYPE_NAME $downloads */
+                            echo("<p>Download: $downloads</p>
                                     <div class='row'>
                                         <div class='col-6'>
-                                            <button class='btn btn-block btn-info'>Download</button>
+                                            <button class='btn btn-block btn-info' data-toggle='modal' data-target='#download-modal'>Download</button>
                                         </div>
                                     </div>");
                         ?>
@@ -73,14 +73,15 @@
                         <h5>Description</h5>
                         <hr>
                         <?php
-                        /** @var TYPE_NAME $des */
-                        echo("<p>$des</p>");
+                            /** @var TYPE_NAME $des */
+                            echo("<p>$des</p>");
                         ?>
                     </div>
                 </div>
             </div>
             <?php
                 include("fragment/footer.php");
+                include("fragment/modals.php");
             ?>
         </div>
     </div>
