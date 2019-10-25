@@ -12,8 +12,17 @@
             <i class="fa fa-sign-out-alt icon-black"></i>
         </button>
     </div>
-    <div class="input-group w-haft">
-
+    <div class="input-group w-haft justify-content-end">
+        <div class="dropdown">
+            <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Language
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="#">English</a>
+                <a class="dropdown-item" href="#">Vietnamese</a>
+                <a class="dropdown-item" href="#">Russia</a>
+            </div>
+        </div>
     </div>
 </div>
 <!--Logout Confirm-->

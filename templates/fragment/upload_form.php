@@ -13,6 +13,14 @@
             </div>
             <div class="row mt-3">
                 <div class="col-2">
+                    <label for="file" class="pt-2">Images</label>
+                </div>
+                <div class="col-10">
+                    <input id="file" type="file" name="image[]" class="form-control" multiple="multiple" accept="image/jpeg">
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col-2">
                     <label class="pt-2">Name</label>
                 </div>
                 <div class="col-10">

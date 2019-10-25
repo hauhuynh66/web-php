@@ -12,7 +12,7 @@
         </div>
         <div class="col-xl-4 col-lg-6 col-mb-6 col-sm-12">
             <p class="text-primary">Contacts</p>
-            <div class="container">
+            <div class="container-fluid">
                 <a href="https://facebook.com">
                     <i class="fab fa-facebook fa-2x"></i>
                 </a>
@@ -22,6 +22,10 @@
                 <a href="https://github.com/hauhuynh66" class="ml-3">
                     <i class="fab fa-github fa-2x icon-black"></i>
                 </a>
+            </div>
+            <div class="container-fluid text-center mt-2">
+                <p class="text-dark mb-0">Phone : 01234567xxx</p>
+                <p class="text-dark">Address : BK University</p>
             </div>
             <div class="container">
             </div>

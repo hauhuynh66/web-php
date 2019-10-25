@@ -47,6 +47,7 @@ body{
     font-family: "Font Awesome 5 Free", sans-serif;
     content: "\f641";
     padding-right: 10px;
+    font-size: 40px;
 }
 
 .page-name{
@@ -109,7 +110,7 @@ a.footer-link{
 }
 
 .card-header,.card-footer{
-    padding: 10px 10px 10px 10px !important;
+    padding: 15px 10px 5px 10px !important;
 }
 
 .bg-blue{
@@ -177,9 +178,12 @@ a.footer-link{
 }
 
 .description{
-    min-height: 100px;
+    margin-top: 20px;
+    overflow-y: hidden;
     transition: 1s;
+    height: 200px;
 }
+
 .btn-success:hover{
     box-shadow: 0 5px 10px 0 forestgreen ;
 }
@@ -282,4 +286,47 @@ a.card{
     margin-right: 10px;
     content: '\f044';
     font-family: "Font Awesome 5 Free", sans-serif;
+}
+
+.dashboard-brand::before{
+    content: '\f328';
+    font-family: "Font Awesome 5 Free", sans-serif;
+    font-size: 30px;
+    margin-right: 10px;
+    font-weight: 900;
+}
+
+.powerpoint-brand::before{
+    content: '\f1c4';
+    font-family: "Font Awesome 5 Free", sans-serif;
+    font-size: 30px;
+    margin-right: 10px;
+    font-weight: 900;
+}
+
+.web-brand::before{
+    content: '\f26b';
+    font-family: "Font Awesome 5 Brands", sans-serif;
+    font-size: 30px;
+    margin-right: 10px;
+}
+
+.upload-brand::before{
+    content: '\f093';
+    font-family: "Font Awesome 5 Free", sans-serif;
+    font-size: 30px;
+    margin-right: 10px;
+    font-weight: 900;
+}
+
+.about-brand::before{
+    content: '\f05a';
+    font-family: "Font Awesome 5 Free", sans-serif;
+    font-size: 30px;
+    margin-right: 10px;
+    font-weight: 900;
+}
+
+.fixed-button{
+    width: 80px !important;
 }
