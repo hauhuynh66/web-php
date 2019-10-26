@@ -1,4 +1,4 @@
-<div class="navbar navbar-expand navbar-dark shadow bg-white">
+<div class="navbar navbar-expand navbar-dark shadow bg-white test">
     <div class="w-haft">
         <button class="btn" id="menu-collapse">
             <i class="fas fa-bars"></i>
@@ -33,7 +33,12 @@
                 <h3>Logout Confirm</h3>
             </div>
             <div class="modal-body">
-
+                <div class="container text-center">
+                    <i class="fas fa-info-circle fa-8x icon-red"></i>
+                </div>
+                <div class="container text-center">
+                    <h4 class="text-danger">Are you sure you want to logout this account?</h4>
+                </div>
             </div>
             <div class="modal-footer">
                 <button class="btn btn-success" id="logout-btn">Confirm</button>

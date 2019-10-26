@@ -1,4 +1,4 @@
-<p class="text-primary">Upload Template</p>
+<h4 class="text-primary">Upload Template</h4>
 <hr>
 <div class="row">
     <div class="col-xl-9 col-lg-9 col-mb-9 col-sm-12">

@@ -91,6 +91,7 @@
                     </div>
                 </div>
             </div>
+
             <?php
                 include("fragment/footer.php");
                 include("fragment/modals.php");

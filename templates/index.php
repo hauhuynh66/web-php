@@ -34,16 +34,28 @@
                                         </ol>
                                         <div class="carousel-inner">
                                             <div class="carousel-item active">
-                                                <img class="d-block w-100" src="../image/bg-1.jpg" alt="First slide">
+                                                <img class="d-block w-100" src="../image/cover/welcome.jpg" alt="First slide" height="600">
+                                                <div class="carousel-caption d-none d-md-block">
+                                                    <h4 class="text-info carousel-text">Welcome To Templates<sup>TM</sup></h4>
+                                                </div>
                                             </div>
                                             <div class="carousel-item">
-                                                <img class="d-block w-100" src="../image/bg-2.jpg" alt="Second slide">
+                                                <img class="d-block w-100" src="../image/cover/ppt.jpg" alt="Second slide" height="600">
+                                                <div class="carousel-caption d-none d-md-block">
+                                                    <h4 class="text-dark carousel-text">We Provide Powerpoint Templates</h4>
+                                                </div>
                                             </div>
                                             <div class="carousel-item">
-                                                <img class="d-block w-100" src="../image/bg-3.jpg" alt="Third slide">
+                                                <img class="d-block w-100" src="../image/cover/web.jpg" alt="Third slide" height="600">
+                                                <div class="carousel-caption d-none d-md-block">
+                                                    <h4 class="text-dark carousel-text">And Web Templates For Free</h4>
+                                                </div>
                                             </div>
                                             <div class="carousel-item">
-                                                <img class="d-block w-100" src="../image/bg-2.jpg" alt="Fourth slide">
+                                                <img class="d-block w-100" src="../image/bg-2.jpg" alt="Fourth slide" height="600">
+                                                <div class="carousel-caption d-none d-md-block">
+                                                    <h4 class="text-warning carousel-text">Sign Up Now To Download And Upload</h4>
+                                                </div>
                                             </div>
                                         </div>
                                         <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
@@ -65,14 +77,14 @@
                             <div class="card shadow bordered">
                                 <div class="card-body">
                                     <div class="row">
-                                        <div class="col-8">
+                                        <div class="col-9">
                                             <p class="text-dark">Templates</p>
                                             <?php
                                                 include("../script/template-query.php");
                                                 echo(mysqli_num_rows(get_all_templates($conn)));
                                             ?>
                                         </div>
-                                        <div class="col-auto my-auto">
+                                        <div class="col-3 justify-content-end pt-3">
                                             <i class="fa fa-bars fa-2x icon-orange"></i>
                                         </div>
                                     </div>
@@ -83,13 +95,13 @@
                             <div class="card shadow bordered">
                                 <div class="card-body">
                                     <div class="row">
-                                        <div class="col-8">
+                                        <div class="col-9">
                                             <p class="text-dark">Downloads</p>
                                             <?php
                                                 echo(get_total_downloads(get_all_templates($conn)));
                                             ?>
                                         </div>
-                                        <div class="col-auto my-auto">
+                                        <div class="col-3 justify-content-end pt-3">
                                             <i class="fa fa-download fa-2x icon-info"></i>
                                         </div>
                                     </div>
@@ -100,14 +112,14 @@
                             <div class="card shadow bordered">
                                 <div class="card-body">
                                     <div class="row">
-                                        <div class="col-8">
+                                        <div class="col-9">
                                             <p class="text-dark">Users</p>
                                             <?php
                                                 include("../script/user-query.php");
                                                 echo(mysqli_num_rows(get_all_users($conn)));
                                             ?>
                                         </div>
-                                        <div class="col-auto my-auto">
+                                        <div class="col-3 justify-content-end pt-3">
                                             <i class="fa fa-users fa-2x icon-black"></i>
                                         </div>
                                     </div>
@@ -124,8 +136,31 @@
                                 <i class="fab fa-js-square fa-3x pl-3 icon-yellow"></i>
                                 <i class="fas fa-file-powerpoint fa-3x pl-3 icon-red"></i>
                             </div>
-                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-                            <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>
+                            <div class="text-justify pr-3 pl-3">
+                                <h3>Design and Build Beautiful Websites!</h3>
+                                <hr>
+                                <p>Trying to choose a website builder template from the thousands of options available is like being taken to a buffet,
+                                    then being told you can only pick one item to eat. <br>
+                                    It’s hard to figure out which template is best for your specific goals. If you’re a creative,
+                                    you’ll want a template that beautifully emphasizes visual work. If you’re looking to sell online,
+                                    you’ll want a layout with an easy-to-navigate digital store. If you’re a local business,
+                                    you’ll want to create a user experience that encourages potential customers to visit in person…
+                                    the list goes on. <br>
+                                    Our team has tested and researched the best website builder templates extensively,
+                                    creating sites that cater to all of our different interests.  </p>
+                            </div>
+
+                            <div class=" text-justify pr-3 pl-3">
+                                <h3>Powerpoint Templates that Will Definitely Wow Your Audience! </h3>
+                                <hr>
+                                <p>PowerPoint templates can make your presentation a way better. Discover how exactly.
+                                    Get all the necessary information on the PowerPoint templates that you may want to know.
+                                    Are you looking for stunning powerpoint templates that will make your powerpoint presentation stand out?
+                                    Do you want to get the most out of your ppt presentation? Do you want to make the best possible
+                                    impression on your audience? Excellent! You've come to the right spot! <br>
+                                    In fact, nowadays power point presentations are widely used by students, marketers, analysts, project managers, etc.
+                                    They can serve you as a very effective tool of drawing and keeping the attention of your audience while conveying your ideas.</p>
+                            </div>
                         </div>
                     </div>
                     <hr>
@@ -133,7 +168,7 @@
                         <div class="col-sm-12 col-mb-6 col-lg-6 col-xl-6">
                             <div class="card shadow">
                                 <div class="card-header">
-                                    <h4>Stat</h4>
+                                    <h4>Stat 1</h4>
                                 </div>
                                 <div class="card-body">
                                     <canvas id="chart1" height="200px"></canvas>
@@ -144,7 +179,7 @@
                         <div class="col-sm-12 col-mb-6 col-lg-6 col-xl-6">
                             <div class="card shadow">
                                 <div class="card-header">
-                                    <h4>Stat</h4>
+                                    <h4>Stat 2</h4>
                                 </div>
                                 <div class="card-body">
                                     <canvas id="chart2" height="200px"></canvas>

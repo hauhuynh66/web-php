@@ -26,7 +26,16 @@
             <div class="main-content pr-2">
                 <div class="row">
                     <div class="col-4 text-center">
-                        <i class="fa fa-user fa-8x"></i>
+                        <div class="container">
+                            <div class="card shadow">
+                                <div class="card-header">
+                                    <h5 class="text-dark">Profile</h5>
+                                </div>
+                                <div class="card-body">
+                                    <i class="fa fa-user fa-8x"></i>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <div class="col-8">
                         <?php
@@ -107,6 +116,7 @@
                     </div>
                 </div>
             </div>
+
             <?php
                 include("fragment/footer.php");
             ?>

@@ -63,12 +63,11 @@
                         </div>
                     </div>
                 </div>
-                <div class="row pt-5">
+                <div class="row py-5 px-2">
                     <div class="col-xl-4 col-lg-4 col-mb-4 col-sm-12">
                         <h5>Properties</h5>
                         <hr>
                         <?php
-
                             $downloads = $result["downloads"];
                             $des = $result["description"];
                             $path = $result["path"];

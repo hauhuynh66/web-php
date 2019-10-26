@@ -36,9 +36,7 @@
                     $result = get_template_by_type_with_limit($conn,"powerpoint",$limit,$offset);
                     echo("<div class='row'>");
                     while($row = $result->fetch_assoc()){
-                        $name = $row["title"];
-                        $description = $row["description"];
-                        display($name,$description);
+                        display($row);
                     }
                     echo("</div>");
                     if(mysqli_num_rows($result)>15){
@@ -58,6 +56,7 @@
                     }
                 ?>
             </div>
+
             <?php
                 include("fragment/footer.php");
             ?>

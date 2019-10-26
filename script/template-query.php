@@ -41,16 +41,25 @@
         }
     }
 
-    function display($title,$description){
-            echo("<div class='col-6'>
+    function display($result){
+            $title = $result["title"];
+            $download = $result["downloads"];
+            $path = "..".$result["path"]."/image/preview.jpg";
+            $description = $result["description"];
+            echo("<div class='col-6 pt-4'>
                         <div class='card shadow'>
                             <div class='card-header'>
-                                <h5>$title</h5>
+                                <div class='row'>
+                                    <div class='col-6 w-haft'>
+                                        <h5>$title</h5>
+                                    </div>
+                                    <div class='col-6 w-haft justify-content-end'>
+                                        <small class='text-info'>Downloads: $download</small>
+                                    </div>
+                                </div>
                         </div>
                         <div class='card-body card-body-fixed'>
-                            <div class='image-holder'>
-                    
-                            </div>
+                            <img src=$path alt='?' class='image-holder'>
                             <div class='description'>
                                 <p>$description</p>
                             </div>
