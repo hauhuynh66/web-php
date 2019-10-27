@@ -38,7 +38,9 @@
                 <h3>Contacts</h3>
                 <hr>
                 <div class="card shadow">
-                    <div class="card-header"></div>
+                    <div class="card-header">
+                        <h5>Maps</h5>
+                    </div>
                     <div class="card-body">
                         <div id="map" style="width:100%;height:400px;"></div>
                     </div>

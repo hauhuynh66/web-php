@@ -5,6 +5,11 @@
         $sql = "select * from $table_name where type = '$type' order by downloads desc limit 4";
         return mysqli_query($conn,$sql);
     }
+    function get_template_by_name($conn, $name){
+        $table_name = "templates";
+        $sql = "select * from $table_name where title = '$name'";
+        return mysqli_query($conn,$sql);
+    }
     function get_template_by_upload_date($conn, $type){
         $table_name = "templates";
         $sql = "select * from $table_name where type = '$type' order by upload_date desc limit 4";
@@ -41,7 +46,42 @@
         }
     }
 
-    function display($result){
+    function display_ppt($result){
+        $title = $result["title"];
+        $download = $result["downloads"];
+        $path = "..".$result["path"]."/image/preview.jpg";
+        $description = $result["description"];
+        echo("<div class='col-6 pt-4'>
+                        <div class='card shadow'>
+                            <div class='card-header'>
+                                <div class='row'>
+                                    <div class='col-6 w-haft'>
+                                        <h5 id='tp-name'>$title</h5>
+                                    </div>
+                                    <div class='col-6 w-haft justify-content-end'>
+                                        <small class='text-info'>Downloads: $download</small>
+                                    </div>
+                                </div>
+                        </div>
+                        <div class='card-body card-body-fixed'>
+                            <img src=$path alt='?' class='image-holder'>
+                            <div class='description'>
+                                <p>$description</p>
+                            </div>
+                        </div>
+                        <div class='card-footer'>
+                            <button class='btn btn-success'>
+                                <a class='item' href='powerpoint-preview.php?name=$title'><i class='fas fa-eye pr-1'></i>Preview</a>
+                            </button>
+                            <button class='btn btn-success float-right' data-toggle='modal' data-target='#download-modal'>
+                                <a class='item'><i class='fas fa-download pr-1'></i>Download</a>
+                            </button>
+                        </div>
+                    </div>
+                </div>");
+    }
+
+    function display_web($result){
             $title = $result["title"];
             $download = $result["downloads"];
             $path = "..".$result["path"]."/image/preview.jpg";
@@ -51,7 +91,7 @@
                             <div class='card-header'>
                                 <div class='row'>
                                     <div class='col-6 w-haft'>
-                                        <h5>$title</h5>
+                                        <h5 id='tp-name'>$title</h5>
                                     </div>
                                     <div class='col-6 w-haft justify-content-end'>
                                         <small class='text-info'>Downloads: $download</small>
@@ -68,7 +108,7 @@
                             <button class='btn btn-success'>
                                 <a class='item' href='web-preview.php?name=$title'><i class='fas fa-eye pr-1'></i>Preview</a>
                             </button>
-                            <button class='btn btn-success float-right' data-toggle='modal' data-target='#download-modal' >
+                            <button class='btn btn-success float-right' data-toggle='modal' data-target='#download-modal' id='download-btn'>
                                 <a class='item'><i class='fas fa-download pr-1'></i>Download</a>
                             </button>
                         </div>

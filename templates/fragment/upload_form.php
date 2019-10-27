@@ -8,7 +8,7 @@
                     <label for="file" class="pt-2">File</label>
                 </div>
                 <div class="col-10">
-                    <input id="file" type="file" class="form-control">
+                    <input id="file" type="file" class="form-control" name="file" accept="application/zip">
                 </div>
             </div>
             <div class="row mt-3">
@@ -29,10 +29,13 @@
             </div>
             <div class="row mt-3">
                 <div class="col-2">
-                    <label class="pt-2">Category</label>
+                    <label class="pt-2">Type</label>
                 </div>
                 <div class="col-10">
-                    <input class="form-control" type="text" id="name">
+                    <select class="form-control" name="type" id="type">
+                        <option>Powerpoint</option>
+                        <option>Web</option>
+                    </select>
                 </div>
             </div>
             <button class="btn btn-info mt-4" type="submit"><i class="fa fa-upload mr-2"></i>Upload</button>

@@ -27,7 +27,7 @@
             <div class="main-content pr-2">
                 <?php
                     $name = $_GET["name"];
-                    $result = get_powerpoint_template($name);
+                    $result = get_powerpoint_template($conn,$name);
                 ?>
                 <div class="row">
                     <div class="col-12">
@@ -73,8 +73,8 @@
                             $des = $result["description"];
                             $path = $result["path"];
                             $uploader = $result["uploader"];
-                            echo("<p>Upload by: <a>$uploader</a></p>");
-                            echo("<p>Download: $downloads</p>
+                            echo("<p>Upload by : <a href='#'>$uploader</a></p>");
+                            echo("<p>Download : $downloads</p>
                                     <div class='row'>
                                         <div class='col-6'>
                                             <button class='btn btn-block btn-info' data-toggle='modal' data-target='#download-modal'>Download</button>
@@ -91,7 +91,6 @@
                     </div>
                 </div>
             </div>
-
             <?php
                 include("fragment/footer.php");
                 include("fragment/modals.php");

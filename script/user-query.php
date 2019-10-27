@@ -12,3 +12,9 @@
         return mysqli_query($conn,$sql);
     }
 
+    function get_user_role($conn,$username){
+        $table = "role";
+        $sql = "select * from $table where username='$username'";
+        return $result = mysqli_query($conn,$sql);
+    }
+

@@ -36,7 +36,7 @@
                     $result = get_template_by_type_with_limit($conn,"powerpoint",$limit,$offset);
                     echo("<div class='row'>");
                     while($row = $result->fetch_assoc()){
-                        display($row);
+                        display_ppt($row);
                     }
                     echo("</div>");
                     if(mysqli_num_rows($result)>15){

@@ -10,7 +10,7 @@
 <body class="bg-primary">
 <div class="limiter bg-light shadow">
     <div class="container text-center">
-        <h4>Register</h4>
+        <h1 class="text-font-1">Register</h1>
     </div>
     <div class="text-center mt-3">
         <?php

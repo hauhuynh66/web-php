@@ -20,7 +20,7 @@
                 <?php
                     include("fragment/topbar.php");
                 ?>
-                <div class="main-content pr-2">
+                <div class="main-content m-4">
                     <div class="row">
                         <div class="col-12">
                             <div class="card shadow">
@@ -128,7 +128,7 @@
                         </div>
                     </div>
                     <br>
-                    <div class="row pt-2">
+                    <div class="row">
                         <div class="container text-center">
                             <div class="container pb-2">
                                 <i class="fab fa-html5 fa-3x pl-3 icon-orange"></i>
@@ -136,7 +136,7 @@
                                 <i class="fab fa-js-square fa-3x pl-3 icon-yellow"></i>
                                 <i class="fas fa-file-powerpoint fa-3x pl-3 icon-red"></i>
                             </div>
-                            <div class="text-justify pr-3 pl-3">
+                            <div class="text-justify">
                                 <h3>Design and Build Beautiful Websites!</h3>
                                 <hr>
                                 <p>Trying to choose a website builder template from the thousands of options available is like being taken to a buffet,
@@ -149,8 +149,8 @@
                                     Our team has tested and researched the best website builder templates extensively,
                                     creating sites that cater to all of our different interests.  </p>
                             </div>
-
-                            <div class=" text-justify pr-3 pl-3">
+                            <hr>
+                            <div class="text-justify">
                                 <h3>Powerpoint Templates that Will Definitely Wow Your Audience! </h3>
                                 <hr>
                                 <p>PowerPoint templates can make your presentation a way better. Discover how exactly.
@@ -161,8 +161,10 @@
                                     In fact, nowadays power point presentations are widely used by students, marketers, analysts, project managers, etc.
                                     They can serve you as a very effective tool of drawing and keeping the attention of your audience while conveying your ideas.</p>
                             </div>
+                            <hr>
                         </div>
                     </div>
+                    <h4>Statistics</h4>
                     <hr>
                     <div class="row">
                         <div class="col-sm-12 col-mb-6 col-lg-6 col-xl-6">

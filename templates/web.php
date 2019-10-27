@@ -38,7 +38,7 @@
                 $result = get_template_by_type_with_limit($conn,"web",$limit,$offset);
                 echo("<div class='row'>");
                 while($row = $result->fetch_assoc()){
-                    display($row);
+                    display_web($row);
                 }
                 echo("</div>");
                 if(mysqli_num_rows($result)>15){
@@ -46,7 +46,7 @@
                                 <div class='col-11'></div>
                                 <div class='col-1'>
                                     <button class='btn btn-info btn-block'>
-                                        <i class=\'fa fa-arrow-right'></i>
+                                        <i class='fa fa-arrow-right'></i>
                                     </button>
                                 </div>
                             </div>";
@@ -54,17 +54,16 @@
                 ?>
             </div>
             <?php
+                include("fragment/modals.php");
                 include("fragment/footer.php");
             ?>
         </div>
     </div>
 </div>
-<?php
-    include("fragment/modals.php");
-?>
 <script src="../vendor/jquery/jquery-3.4.1.js"></script>
 <script src="../vendor/bootstrap/bootstrap.js"></script>
 <script src="../vendor/font-awesome/js/fontawesome.js"></script>
 <script src="../js/main.js"></script>
+<script src="../js/download.js"></script>
 </body>
 </html>

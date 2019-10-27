@@ -1,5 +1,6 @@
 <?php
     include("../script/session.php");
+    include("../script/user-query.php");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -29,7 +30,12 @@
                         <div class="container">
                             <div class="card shadow">
                                 <div class="card-header">
-                                    <h5 class="text-dark">Profile</h5>
+                                    <h5 class="text-dark">
+                                        <?php
+                                            $result = get_user_role($conn,$_SESSION["username"])->fetch_assoc();
+                                            echo($result["role"]);
+                                        ?>
+                                    </h5>
                                 </div>
                                 <div class="card-body">
                                     <i class="fa fa-user fa-8x"></i>
@@ -39,7 +45,6 @@
                     </div>
                     <div class="col-8">
                         <?php
-                            include("../script/user-query.php");
                             $result = get_user_by_username($conn,$_SESSION['username'])->fetch_assoc();
                         ?>
                         <div class="row">
@@ -78,7 +83,8 @@
                             </div>
                             <div class="col-9">
                                 <?php
-                                    echo($result["email"]);
+                                    $email = $result["email"];
+                                    echo("<a href='$email']>".$email."</a>");
                                 ?>
                             </div>
                         </div>
@@ -88,7 +94,8 @@
                             </div>
                             <div class="col-9">
                                 <?php
-                                    echo($result["github"]);
+                                    $git = $result["github"];
+                                    echo("<a href='$git']>".$git."</a>");
                                 ?>
                             </div>
                         </div>
@@ -98,7 +105,8 @@
                             </div>
                             <div class="col-9">
                                 <?php
-                                    echo($result["facebook"]);
+                                    $fb = $result["facebook"];
+                                    echo("<a href='$fb']>".$fb."</a>");
                                 ?>
                             </div>
                         </div>
@@ -108,7 +116,8 @@
                             </div>
                             <div class="col-9">
                                 <?php
-                                    echo($result["twitter"]);
+                                    $tw = $result["twitter"];
+                                    echo("<a href='$tw']>".$tw."</a>");
                                 ?>
                             </div>
                         </div>
