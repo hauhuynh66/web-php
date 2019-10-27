@@ -1,5 +1,5 @@
 <?php
-    //include("../script/session.php");
+    include("../script/session.php");
     include("../script/get_template.php");
     if(isset($_POST["post"])){
         header("Location:../templates/web-preview/".$_GET["name"]);

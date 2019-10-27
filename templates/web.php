@@ -1,5 +1,5 @@
 <?php
-    //include("../script/session.php");
+    include("../script/session.php");
     include("../script/template-query.php");
     $page = $_GET["page"];
     $limit = $page*15;

@@ -2,17 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="447a008c-2310-419f-b1c1-055fba425540" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/download.php" beforeDir="false" afterPath="$PROJECT_DIR$/download.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/script/authenticate.php" beforeDir="false" afterPath="$PROJECT_DIR$/script/authenticate.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/script/review.php" beforeDir="false" afterPath="$PROJECT_DIR$/script/review.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/script/session.php" beforeDir="false" afterPath="$PROJECT_DIR$/script/session.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/404.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/404.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/fragment/footer.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/fragment/footer.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/fragment/review.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/fragment/review.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/powerpoint-preview.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/powerpoint-preview.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/script/db.php" beforeDir="false" afterPath="$PROJECT_DIR$/script/db.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/about.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/about.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/powerpoint.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/powerpoint.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/profile.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/profile.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/upload.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/upload.php" afterDir="false" />
@@ -47,64 +38,15 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/powerpoint.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="1" column="6" selection-start-line="1" selection-start-column="6" selection-end-line="1" selection-end-column="6" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/web.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="1" column="6" selection-start-line="1" selection-start-column="6" selection-end-line="1" selection-end-column="6" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/web-preview.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="1" column="6" selection-start-line="1" selection-start-column="6" selection-end-line="1" selection-end-column="6" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/upload.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="1" column="6" selection-start-line="1" selection-start-column="6" selection-end-line="1" selection-end-column="6" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/profile.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="1" column="6" selection-start-line="1" selection-start-column="6" selection-end-line="1" selection-end-column="6" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/index.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3434">
-              <caret line="202" column="61" selection-start-line="202" selection-start-column="61" selection-end-line="202" selection-end-column="61" />
-            </state>
-          </provider>
+        <entry file="file://$PROJECT_DIR$/templates/about.php">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/templates/about.php">
+        <entry file="file://$PROJECT_DIR$/script/db.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="1" column="6" selection-start-line="1" selection-start-column="6" selection-end-line="1" selection-end-column="6" />
+            <state relative-caret-position="68">
+              <caret line="4" column="20" lean-forward="true" selection-start-line="4" selection-start-column="20" selection-end-line="4" selection-end-column="20" />
             </state>
           </provider>
         </entry>
@@ -166,7 +108,6 @@
         <option value="$PROJECT_DIR$/script/web.php" />
         <option value="$PROJECT_DIR$/script/new_upload.php" />
         <option value="$PROJECT_DIR$/script/most_download.php" />
-        <option value="$PROJECT_DIR$/script/db.php" />
         <option value="$PROJECT_DIR$/templates/contribute.php" />
         <option value="$PROJECT_DIR$/script/register.php" />
         <option value="$PROJECT_DIR$/script/query.php" />
@@ -201,12 +142,13 @@
         <option value="$PROJECT_DIR$/script/review.php" />
         <option value="$PROJECT_DIR$/templates/powerpoint-preview.php" />
         <option value="$PROJECT_DIR$/templates/fragment/footer.php" />
-        <option value="$PROJECT_DIR$/templates/powerpoint.php" />
         <option value="$PROJECT_DIR$/templates/web.php" />
         <option value="$PROJECT_DIR$/templates/web-preview.php" />
         <option value="$PROJECT_DIR$/templates/upload.php" />
         <option value="$PROJECT_DIR$/templates/profile.php" />
+        <option value="$PROJECT_DIR$/templates/powerpoint.php" />
         <option value="$PROJECT_DIR$/templates/about.php" />
+        <option value="$PROJECT_DIR$/script/db.php" />
       </list>
     </option>
   </component>
@@ -418,12 +360,12 @@
       <workItem from="1572087556389" duration="10623000" />
       <workItem from="1572115672309" duration="1234000" />
       <workItem from="1572146600695" duration="16201000" />
-      <workItem from="1572170125334" duration="2011000" />
+      <workItem from="1572170125334" duration="2890000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="210900000" />
+    <option name="totallyTimeSpent" value="211779000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
@@ -567,13 +509,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/script/role.php" />
-    <entry file="file://$PROJECT_DIR$/script/db.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="5" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/profile.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -581,20 +516,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
           <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/404.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="23" column="18" lean-forward="true" selection-start-line="23" selection-start-column="18" selection-end-line="23" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/login.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="38" lean-forward="true" selection-start-line="14" selection-start-column="38" selection-end-line="14" selection-end-column="38" />
         </state>
       </provider>
     </entry>
@@ -674,31 +595,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/powerpoint-preview.php">
+    <entry file="file://$PROJECT_DIR$/templates/404.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="258">
-          <caret line="138" column="47" selection-start-line="138" selection-start-column="47" selection-end-line="138" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/powerpoint.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="6" selection-start-line="1" selection-start-column="6" selection-end-line="1" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/web.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="6" selection-start-line="1" selection-start-column="6" selection-end-line="1" selection-end-column="6" />
+        <state relative-caret-position="272">
+          <caret line="23" column="18" lean-forward="true" selection-start-line="23" selection-start-column="18" selection-end-line="23" selection-end-column="18" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/web-preview.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
-          <caret line="1" column="6" selection-start-line="1" selection-start-column="6" selection-end-line="1" selection-end-column="6" />
+          <caret line="1" column="4" selection-start-line="1" selection-start-column="4" selection-end-line="1" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/web.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="4" lean-forward="true" selection-start-line="1" selection-start-column="4" selection-end-line="1" selection-end-column="4" />
         </state>
       </provider>
     </entry>
@@ -712,14 +626,35 @@
     <entry file="file://$PROJECT_DIR$/templates/upload.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
-          <caret line="1" column="6" selection-start-line="1" selection-start-column="6" selection-end-line="1" selection-end-column="6" />
+          <caret line="1" column="4" selection-start-line="1" selection-start-column="4" selection-end-line="1" selection-end-column="4" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/profile.php">
       <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="5" lean-forward="true" selection-start-column="5" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/powerpoint-preview.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2346">
+          <caret line="138" column="47" selection-start-line="138" selection-start-column="47" selection-end-line="138" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/powerpoint.php">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
-          <caret line="1" column="6" selection-start-line="1" selection-start-column="6" selection-end-line="1" selection-end-column="6" />
+          <caret line="1" column="4" selection-start-line="1" selection-start-column="4" selection-end-line="1" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/login.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="38" lean-forward="true" selection-start-line="14" selection-start-column="38" selection-end-line="14" selection-end-column="38" />
         </state>
       </provider>
     </entry>
@@ -731,9 +666,12 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/about.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/script/db.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="6" selection-start-line="1" selection-start-column="6" selection-end-line="1" selection-end-column="6" />
+        <state relative-caret-position="68">
+          <caret line="4" column="20" lean-forward="true" selection-start-line="4" selection-start-column="20" selection-end-line="4" selection-end-column="20" />
         </state>
       </provider>
     </entry>
