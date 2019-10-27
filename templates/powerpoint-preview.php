@@ -1,6 +1,16 @@
 <?php
     include("../script/session.php");
     include("../script/get_template.php");
+    if(isset($_POST["post"])){
+        $table = "review";
+        $template = $_POST["template"];
+        $username = $_SESSION["username"];
+        $star = 5;
+        $comment = $_POST["comment"];
+        $sql = "insert into $table(template,username,star,content) values ('$template','$username',$star,'$comment')";
+        mysqli_query($conn,$sql);
+        echo("OK");
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -24,7 +34,7 @@
             <?php
                 include("fragment/topbar.php");
             ?>
-            <div class="main-content pr-2">
+            <div class="main-content m-4">
                 <?php
                     $name = $_GET["name"];
                     $result = get_powerpoint_template($conn,$name);
@@ -60,11 +70,26 @@
                                     </a>
                                 </div>
                             </div>
+                            <div class="card-footer">
+                                <div class="row mb-2">
+                                    <div class="col-3 text-center">
+                                        <h5 class="pt-2">Share : </h5>
+                                    </div>
+                                    <div class="col-3 text-center">
+                                        <div class="btn btn-danger round"><i class="fab fa-facebook"></i></div>
+                                    </div>
+                                    <div class="col-3 text-center">
+                                        <div class="btn btn-warning round"><i class="fab fa-twitter"></i></div>
+                                    </div>
+                                    <div class="col-3 text-center">
+                                        <div class="btn btn-success round"><i class="fab fa-instagram"></i></div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-
                     </div>
                 </div>
-                <div class="row pt-5">
+                <div class="row my-5">
                     <div class="col-xl-4 col-lg-4 col-mb-4 col-sm-12">
                         <h5>Properties</h5>
                         <hr>
@@ -74,7 +99,7 @@
                             $path = $result["path"];
                             $uploader = $result["uploader"];
                             echo("<p>Upload by : <a href='#'>$uploader</a></p>");
-                            echo("<p>Download : $downloads</p>
+                            echo("<p>Downloads : $downloads</p>
                                     <div class='row'>
                                         <div class='col-6'>
                                             <button class='btn btn-block btn-info' data-toggle='modal' data-target='#download-modal'>Download</button>
@@ -90,6 +115,35 @@
                         ?>
                     </div>
                 </div>
+                <form method="post" action="../script/review.php">
+                    <div class="row">
+                        <div class="col-9">
+                            <textarea class="form-control" rows="5" name="comment" placeholder="Comment" id="comment"></textarea>
+                            <?php
+                            $name = $_GET["name"];
+                            echo("<input class='form-control' name='template' value='$name' hidden>");
+                            echo("<input class='form-control' name='type' value='Powerpoint' hidden>")
+                            ?>
+                        </div>
+                        <div class="col-3">
+                            <div class="stars">
+
+                            </div>
+                            <button class="btn btn-block btn-success" name="post" type="submit"><i class="fas fa-save mr-2 icon-blue"></i>Post</button>
+                        </div>
+                    </div>
+                    <hr>
+                    <?php
+                        include("../script/review.php");
+                        $result = get_all_review($conn,$_GET["name"]);
+                        echo("<h5 class='mb-4'>".mysqli_num_rows($result)." Comments</h5>")
+                        ?>
+                        <?php
+                        while ($row = $result->fetch_assoc()){
+                            display_review($row);
+                        }
+                    ?>
+                </form>
             </div>
             <?php
                 include("fragment/footer.php");

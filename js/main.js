@@ -41,11 +41,12 @@ function sidebarToggle(i) {
 }
 
 $(window).resize(function () {
-    if($(window).width()>992){
+    if($(window).width()>=992){
         $("#sidebar").show();
         sidebarToggle(0);
         toggle++;
     }else{
+        $("#sidebar").show();
         $("a.dashboard-brand").html(item1);
         $("a.powerpoint-brand").html(item2);
         $("a.web-brand").html(item3);

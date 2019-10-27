@@ -1,5 +1,5 @@
 <?php
-    include("../script/session.php");
+    //include("../script/session.php");
     include("../script/template-query.php");
     $page = $_GET["page"];
     $limit = $page*15;
@@ -30,7 +30,7 @@
             <?php
                 include("fragment/topbar.php");
             ?>
-            <div class="main-content pr-2">
+            <div class="main-content m-4">
                 <?php
                     include("fragment/filter.php");
                 ?>

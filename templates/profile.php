@@ -1,5 +1,5 @@
 <?php
-    include("../script/session.php");
+    //include("../script/session.php");
     include("../script/user-query.php");
 ?>
 <!DOCTYPE html>

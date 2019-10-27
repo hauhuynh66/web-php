@@ -377,3 +377,8 @@ a.card{
 .row{
     margin-right: 0;
 }
+
+.text-font-1{
+    font-family: "VNI-Trung Kien",sans-serif;
+    font-weight: bolder;
+}
