@@ -60,7 +60,6 @@ html{
 }
 
 .item{
-    display: block;
     text-align: center;
     color: lightgray;
 }
@@ -215,7 +214,7 @@ a.footer-link{
 
 a.normal-text, a.item{
     text-decoration: none !important;
-    color: white;
+    color: white !important;
 }
 
 .normal-text{

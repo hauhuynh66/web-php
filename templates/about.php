@@ -55,6 +55,6 @@
 <script src="../vendor/font-awesome/js/fontawesome.js"></script>
 <script src="../js/main.js"></script>
 <script src="../js/map.js"></script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBTTThFxm8WIbgbtkNNvx4nGwDXHdEPzw0&callback=initMap"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCODjgdh3eOnThpHBZzH_u44YPfonsYcIk&callback=initMap"></script>
 </body>
 </html>

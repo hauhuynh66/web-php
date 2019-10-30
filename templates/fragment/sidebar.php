@@ -5,7 +5,6 @@
     <div class="sidebar-item">
         <a href="index.php" class="dashboard-brand normal-text pt-2">Dashboard</a>
     </div>
-    <div class="item"></div>
 </div>
 <div class="item-holder border-bottom-0">
     <div class="sidebar-item">

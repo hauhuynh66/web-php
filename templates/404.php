@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Dashboard</title>
+    <title>Error</title>
     <link rel="shortcut icon" href="#" />
     <link href="../vendor/bootstrap/bootstrap.css" rel="stylesheet" type="text/css"/>
     <link href="../vendor/font-awesome/css/all.css" rel="stylesheet" type="text/css"/>
@@ -20,7 +20,11 @@
             <?php
                 include("fragment/topbar.php");
             ?>
-            <div class="main-content m-4">
+            <div class="main-content m-5">
+                <div class="container text-center">
+                    <i class="fas fa-sad-cry fa-8x icon-yellow"></i>
+                    <h3 class="mt-4">Page Not Found!</h3>
+                </div>
             </div>
         </div>
     </div>

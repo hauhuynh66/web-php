@@ -1,14 +1,12 @@
 <?php
     include("../script/session.php");
     include("../script/get_template.php");
-    if(isset($_POST["post"])){
-        header("Location:../templates/web-preview/".$_GET["name"]);
-        echo("OK");
-    }
+    include("../script/review.php");
     if(!isset($_GET["name"])){
         header("Location:../templates/404.php");
     }
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -38,6 +36,33 @@
                     if($result==null){
                         header("Location:../templates/404.php");
                     }
+                    $downloads = $result["downloads"];
+                    $des = $result["description"];
+                    $path = $result["path"];
+                    $uploader = $result["uploader"];
+                    $title = $result["title"];
+                    $upload_date = $result["upload_date"];
+                    $reviews = get_all_review($conn,$_GET["name"]);
+                    $n = mysqli_num_rows($reviews);
+                ?>
+                <?php
+                    echo("<div class='container text-left'>
+                        <h4 class='text-info' id='tp-name'>$title</h4>
+                        <div class='row mb-3'>
+                            <div class='col-3'>
+                                <small><i class='fas fa-clock mx-2'></i>$upload_date</small>
+                            </div>
+                            <div class='col-3'>
+                                <small><i class='fas fa-user mx-2'></i>$uploader</small>
+                            </div>
+                            <div class='col-3'>
+                                <small><i class='fas fa-comments mx-2'></i>$n</small>
+                            </div>
+                            <div class='col-3'>
+                                <small><i class='fas fa-download mx-2'></i>$downloads</small>
+                            </div>
+                        </div>
+                    </div>");
                 ?>
                 <div class="row">
                     <div class="col-12">
@@ -73,13 +98,13 @@
                             <div class="card-footer">
                                 <div class="row mb-2">
                                     <div class="col-3 text-center">
-                                        <h5 class="pt-2">Share : </h5>
+                                        <h6 class="pt-2">Share This : </h6>
                                     </div>
                                     <div class="col-3 text-center">
-                                        <div class="btn btn-danger round"><i class="fab fa-facebook"></i></div>
+                                        <div class="btn btn-info round"><i class="fab fa-facebook"></i></div>
                                     </div>
                                     <div class="col-3 text-center">
-                                        <div class="btn btn-warning round"><i class="fab fa-twitter"></i></div>
+                                        <div class="btn btn-warning round"><i class="fab fa-twitter icon-info"></i></div>
                                     </div>
                                     <div class="col-3 text-center">
                                         <div class="btn btn-success round"><i class="fab fa-instagram"></i></div>
@@ -94,15 +119,14 @@
                         <h5>Properties</h5>
                         <hr>
                         <?php
-                            $downloads = $result["downloads"];
-                            $des = $result["description"];
-                            $path = $result["path"];
-                            $uploader = $result["uploader"];
                             echo("<p>Upload by: <a href='#'>$uploader</a></p>");
+                            echo("<p>Upload date : ".$upload_date."</p>");
                             echo("<p>Downloads : $downloads</p>
                                         <div class='row'>
-                                            <div class='col-6'>
-                                                <button class='btn btn-block btn-info' data-toggle='modal' data-target='#download-modal'>Download</button>
+                                            <div class='col-12'>
+                                                <button class='btn btn-info btn-block' data-toggle='modal' data-target='#download-modal' id='download-btn'>
+                                                    <i class='fas fa-download mr-2'></i>Download
+                                                </button>
                                             </div>
                                         </div>");
                             ?>
@@ -134,12 +158,10 @@
                     </div>
                     <hr>
                     <?php
-                        include("../script/review.php");
-                        $result = get_all_review($conn,$_GET["name"]);
-                        echo("<h5 class='mb-4'>".mysqli_num_rows($result)." Comments</h5>");
+                        echo("<h5 class='mb-4'>".$n." Comments</h5>");
                     ?>
                     <?php
-                    while ($row = $result->fetch_assoc()){
+                    while ($row = $reviews->fetch_assoc()){
                         display_review($row);
                     }
                     ?>
@@ -156,5 +178,6 @@
 <script src="../vendor/bootstrap/bootstrap.js"></script>
 <script src="../vendor/font-awesome/js/fontawesome.js"></script>
 <script src="../js/main.js"></script>
+<script src="../js/download.js"></script>
 </body>
 </html>

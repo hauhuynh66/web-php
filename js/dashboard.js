@@ -1,8 +1,8 @@
 const chart1 = $("#chart1");
-var stat1 = new Chart(chart1,{
+const stat1 = new Chart(chart1, {
     type: "bar",
     data: {
-        labels: [1,2,3,4,5],
+        labels: [1, 2, 3, 4, 5],
         datasets: [{
             label: "Revenue",
             backgroundColor: "#4e73df",
@@ -13,7 +13,7 @@ var stat1 = new Chart(chart1,{
     }
 });
 const chart2 = $("#chart2");
-var stat2 = new Chart(chart2,{
+const stat2 = new Chart(chart2,{
     type: "line",
     data: {
         labels: [1,2,3,4,5],

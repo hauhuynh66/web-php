@@ -18,3 +18,13 @@
         return $result = mysqli_query($conn,$sql);
     }
 
+    function get_user_by_email($conn,$email){
+        $table = "users";
+        $sql = "select * from $table where email='$email'";
+        return mysqli_query($conn,$sql);
+    }
+
+    function get_user_by_username_and_email(){
+
+    }
+

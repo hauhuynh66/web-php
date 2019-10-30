@@ -22,16 +22,20 @@
             </div>
         </div>");
     }
+
+    function insert_review($conn,$template_name,$username,$star,$content){
+        $table = "review";
+        $sql = "insert into $table(template,username,star,content) values ('$template_name','$username',$star,'$content')";
+        return mysqli_query($conn,$sql);
+    }
+
     if(isset($_POST["post"])){
         session_start();
-        $table = "review";
-        $template = $_POST["template"];
+        $template_name = $_POST["template"];
         $username = $_SESSION["username"];
         $star = 4;
         $content = $_POST["comment"];
-        $sql = "insert into $table(template,username,star,content) values ('$template','$username',$star,'$content')";
-        $success = mysqli_query($conn,$sql);
-        var_dump($success);
+        $success = insert_review($conn,$template_name,$username,$star,$content);
         if($_POST["type"]=="Web"){
             header("Location:../templates/web-preview.php?name=".$_POST["template"]);
         }else{

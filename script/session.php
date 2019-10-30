@@ -1,8 +1,10 @@
 <?php
     session_start();
-    if($_SESSION['username']==null){
-        if($_COOKIE["username"]==null){
+    if(!isset($_SESSION['username'])){
+        if(!isset($_COOKIE['username'])){
             header('Location:./login.php');
             die();
+        }else{
+            $_SESSION['username'] = $_COOKIE['username'];
         }
     }

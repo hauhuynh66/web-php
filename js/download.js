@@ -6,4 +6,4 @@ $("#download-btn").on('click',function () {
 $("#download").on('click',function () {
     const template = $("#template-name").html();
     window.location = "../download.php?template_name="+template;
-})
+});

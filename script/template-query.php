@@ -70,12 +70,12 @@
                             </div>
                         </div>
                         <div class='card-footer'>
-                            <button class='btn btn-success'>
-                                <a class='item' href='powerpoint-preview.php?name=$title'><i class='fas fa-eye pr-1'></i>Preview</a>
-                            </button>
-                            <button class='btn btn-success float-right' data-toggle='modal' data-target='#download-modal'>
-                                <a class='item'><i class='fas fa-download pr-1'></i>Download</a>
-                            </button>
+                            <a class='btn btn-success item' href='powerpoint-preview.php?name=$title'>
+                                <i class='fas fa-eye pr-1'></i>Details
+                            </a>
+                            <a class='btn btn-success float-right item' data-toggle='modal' data-target='#download-modal'>
+                                <i class='fas fa-download pr-1'></i>Download
+                            </a>
                         </div>
                     </div>
                 </div>");
@@ -105,12 +105,12 @@
                             </div>
                         </div>
                         <div class='card-footer'>
-                            <button class='btn btn-success'>
-                                <a class='item' href='web-preview.php?name=$title'><i class='fas fa-eye pr-1'></i>Preview</a>
-                            </button>
-                            <button class='btn btn-success float-right' data-toggle='modal' data-target='#download-modal' id='download-btn'>
-                                <a class='item'><i class='fas fa-download pr-1'></i>Download</a>
-                            </button>
+                            <a class='btn btn-success item' href='web-preview.php?name=$title'>
+                                <i class='fas fa-eye pr-1'></i>Details
+                            </a>
+                            <a class='btn btn-success float-right item' data-toggle='modal' data-target='#download-modal' id='download-btn'>
+                                <i class='fas fa-download pr-1'></i>Download
+                            </a>
                         </div>
                     </div>
                 </div>");
