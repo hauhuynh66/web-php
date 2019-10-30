@@ -10,17 +10,23 @@
         $user = $review["username"];
         $comment = $review["content"];
         $star = $review["star"];
-        echo("<div class='row mt-2'>
-            <div class='col-3'>
+        $remain = 5 - $star;
+        echo("<div class='row mt-2'>");
+        echo("<div class='col-3'>
                 <span><i class='fa fa-user mr-2'></i><span>$user</span></span>
             </div>
-            <div class='col-6'>
-                <p>$comment</p>
+            <div class='col-6 text-center'>
+                <p>\" $comment \"</p>
             </div>
             <div class='col-3'>
-                <p>$star</p>
-            </div>
-        </div>");
+        ");
+        for($i=0;$i<$star;$i++){
+            echo("<span><i class='fas fa-star icon-yellow'></i></span>");
+        }
+        for($i=0;$i<$remain;$i++){
+            echo("<span><i class='fas fa-star'></i></span>");
+        }
+        echo("</div></div>");
     }
 
     function insert_review($conn,$template_name,$username,$star,$content){
@@ -33,7 +39,7 @@
         session_start();
         $template_name = $_POST["template"];
         $username = $_SESSION["username"];
-        $star = 4;
+        $star = $_POST["rating"];
         $content = $_POST["comment"];
         $success = insert_review($conn,$template_name,$username,$star,$content);
         if($_POST["type"]=="Web"){

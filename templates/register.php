@@ -55,11 +55,9 @@
                     echo("<div class='alert alert-danger'>".$validate."</div>");
                 }else{
                     $hash_password = password_hash($password,PASSWORD_DEFAULT);
-                    $select_sql = "select * from $table_name where username='$email' or email='$email' limit 1";
-                    $result = mysqli_query($conn,$select_sql);
+                    $result = get_user_by_username_and_email($conn,$username,$email);
                     if(mysqli_num_rows($result)==0){
-                        $sql = "insert into $table_name(firstname,lastname,username,email,password) values ('$f_name','$l_name','$username','$email','$hash_password')";
-                        $success = mysqli_query($conn,$sql);
+                        $success = insert_user($conn,$f_name,$l_name,$username,$email,$hash_password);
                         if($success){
                             header("Location:./login.php?registered");
                         }

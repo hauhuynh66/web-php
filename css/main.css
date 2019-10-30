@@ -48,8 +48,8 @@ html{
 }
 
 .brand-img::before{
-    font-family: "Font Awesome 5 Free", sans-serif;
-    content: "\f641";
+    font-family: "Font Awesome 5 Brands", sans-serif;
+    content: "\f77a";
     padding-right: 10px;
     font-size: 40px;
 }
@@ -248,10 +248,6 @@ i.icon-black{
     color: black !important;
 }
 
-i.icon-blue{
-    color: blue !important;
-}
-
 i.icon-orange{
     color: orange !important;
 }
@@ -381,3 +377,37 @@ a.card{
     font-family: "VNI-Trung Kien",sans-serif;
     font-weight: bolder;
 }
+
+.rating {
+    border: none;
+    float: left;
+}
+
+.rating > input { display: none; }
+
+.rating > label:before {
+    margin: 5px;
+    font-size: 1.25em;
+    font-family: 'Font Awesome 5 Free';
+    display: inline-block;
+    content: "\f005";
+}
+
+.rating > .half:before {
+    content: "\f089";
+    position: absolute;
+}
+
+.rating > label {
+    color: #ddd;
+    float: right;
+}
+
+.rating > input:checked ~ label,
+.rating:not(:checked) > label:hover,
+.rating:not(:checked) > label:hover ~ label { color: #FFD700;  }
+
+.rating > input:checked + label:hover,
+.rating > input:checked ~ label:hover,
+.rating > label:hover ~ input:checked ~ label,
+.rating > input:checked ~ label:hover ~ label { color: #FFED85;  }

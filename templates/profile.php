@@ -38,7 +38,7 @@
                                     </h5>
                                 </div>
                                 <div class="card-body">
-                                    <i class="fa fa-user fa-8x"></i>
+                                    <i class="fa fa-user-circle fa-8x"></i>
                                 </div>
                             </div>
                         </div>

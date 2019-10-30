@@ -8,12 +8,12 @@
 </div>
 <div class="item-holder border-bottom-0">
     <div class="sidebar-item">
-        <a href="powerpoint.php?page=1&filter=dls" class="powerpoint-brand normal-text pt-2">PowerPoint</a>
+        <a href="powerpoint.php?page=1" class="powerpoint-brand normal-text pt-2">PowerPoint</a>
     </div>
 </div>
 <div class="item-holder">
     <div class="sidebar-item">
-        <a href="web.php?page=1&filter=dls" class="web-brand normal-text pt-2">Web</a>
+        <a href="web.php?page=1" class="web-brand normal-text pt-2">Web</a>
     </div>
 </div>
 <div class="item-holder">

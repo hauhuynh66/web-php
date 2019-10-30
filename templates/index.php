@@ -130,16 +130,14 @@
                     <br>
                     <div class="row">
                         <div class="container text-center">
-                            <div class="container pb-2">
-                                <i class="fab fa-html5 fa-3x pl-3 icon-orange"></i>
-                                <i class="fab fa-css3-alt fa-3x pl-3 icon-blue"></i>
-                                <i class="fab fa-js-square fa-3x pl-3 icon-yellow"></i>
-                                <i class="fas fa-file-powerpoint fa-3x pl-3 icon-red"></i>
-                            </div>
-                            <div class="text-justify">
-                                <h3>Design and Build Beautiful Websites!</h3>
+
+                            <div class="container">
+                                <h3 class="text-left">Design and Build Beautiful Websites!</h3>
                                 <hr>
-                                <p>Trying to choose a website builder template from the thousands of options available is like being taken to a buffet,
+                                <i class="fab fa-html5 fa-2x pl-3 icon-orange"></i>
+                                <i class="fab fa-css3-alt fa-2x pl-3 icon-blue"></i>
+                                <i class="fab fa-js-square fa-2x pl-3 icon-yellow"></i>
+                                <p class="text-left">Trying to choose a website builder template from the thousands of options available is like being taken to a buffet,
                                     then being told you can only pick one item to eat. <br>
                                     It’s hard to figure out which template is best for your specific goals. If you’re a creative,
                                     you’ll want a template that beautifully emphasizes visual work. If you’re looking to sell online,
@@ -150,10 +148,11 @@
                                     creating sites that cater to all of our different interests.  </p>
                             </div>
                             <hr>
-                            <div class="text-justify">
-                                <h3>Powerpoint Templates that Will Definitely Wow Your Audience! </h3>
+                            <div class="container">
+                                <h3 class="text-left">Powerpoint Templates that Will Definitely Wow Your Audience! </h3>
                                 <hr>
-                                <p>PowerPoint templates can make your presentation a way better. Discover how exactly.
+                                <i class="fas fa-file-powerpoint fa-2x pl-3 icon-red"></i>
+                                <p class="text-left">PowerPoint templates can make your presentation a way better. Discover how exactly.
                                     Get all the necessary information on the PowerPoint templates that you may want to know.
                                     Are you looking for stunning powerpoint templates that will make your powerpoint presentation stand out?
                                     Do you want to get the most out of your ppt presentation? Do you want to make the best possible
@@ -175,7 +174,6 @@
                                 <div class="card-body">
                                     <canvas id="chart1" height="200px"></canvas>
                                 </div>
-                                <div class="card-footer"></div>
                             </div>
                         </div>
                         <div class="col-sm-12 col-mb-6 col-lg-6 col-xl-6">
@@ -186,7 +184,6 @@
                                 <div class="card-body">
                                     <canvas id="chart2" height="200px"></canvas>
                                 </div>
-                                <div class="card-footer"></div>
                             </div>
                         </div>
                     </div>

@@ -4,7 +4,9 @@
     $page = $_GET["page"];
     $limit = $page*15;
     $offset = ($page-1)*15;
-    if(isset($_GET["filter"])){
+    if(!isset($_GET["filter"])){
+        $mode = "dls";
+    }else{
         $mode = $_GET["filter"];
     }
 ?>
@@ -33,7 +35,7 @@
             <div class="main-content m-4">
                 <?php
                     include("fragment/filter.php");
-                    $result = get_template_by_type_with_limit($conn,"powerpoint",$limit,$offset);
+                    $result = get_template_by_type_with_limit($conn,"powerpoint",$limit,$offset,$mode);
                     echo("<div class='row'>");
                     while($row = $result->fetch_assoc()){
                         display_ppt($row);

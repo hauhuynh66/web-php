@@ -106,7 +106,7 @@
                                         <div class="btn btn-warning round"><i class="fab fa-twitter"></i></div>
                                     </div>
                                     <div class="col-3 text-center">
-                                        <div class="btn btn-success round"><i class="fab fa-instagram"></i></div>
+                                        <div class="btn btn-success round"><i class="fab fa-linkedin"></i></div>
                                     </div>
                                 </div>
                             </div>
@@ -149,8 +149,14 @@
                             ?>
                         </div>
                         <div class="col-3">
-                            <div class="stars">
-
+                            <div class="container text-center">
+                                <fieldset class="rating">
+                                    <input type="radio" id="star5" name="rating" value="5"/><label class = "full" for="star5"></label>
+                                    <input type="radio" id="star4" name="rating" value="4"/><label class = "full" for="star4"></label>
+                                    <input type="radio" id="star3" name="rating" value="3"/><label class = "full" for="star3"></label>
+                                    <input type="radio" id="star2" name="rating" value="2"/><label class = "full" for="star2"></label>
+                                    <input type="radio" id="star1" name="rating" value="1"/><label class = "full" for="star1"></label>
+                                </fieldset>
                             </div>
                             <button class="btn btn-block btn-success" name="post" type="submit"><i class="fas fa-save mr-2 icon-blue"></i>Post</button>
                         </div>

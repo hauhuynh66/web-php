@@ -4,7 +4,9 @@
     $page = $_GET["page"];
     $limit = $page*15;
     $offset = ($page-1)*15;
-    if(isset($_GET["filter"])){
+    if(!isset($_GET["filter"])){
+        $mode = "dls";
+    }else{
         $mode = $_GET["filter"];
     }
 ?>
@@ -31,29 +33,29 @@
                 include("fragment/topbar.php");
             ?>
             <div class="main-content m-4">
+
                 <?php
                     include("fragment/filter.php");
-                ?>
-                <?php
-                $result = get_template_by_type_with_limit($conn,"web",$limit,$offset);
-                echo("<div class='row'>");
-                while($row = $result->fetch_assoc()){
-                    display_web($row);
-                }
-                echo("</div>");
-                if(mysqli_num_rows($result)>15){
-                    echo "<div class='row pt-3'>
-                                <div class='col-11'></div>
-                                <div class='col-1'>
-                                    <button class='btn btn-info btn-block'>
-                                        <i class='fa fa-arrow-right'></i>
-                                    </button>
-                                </div>
-                            </div>";
-                }
+                    $result = get_template_by_type_with_limit($conn,"web",$limit,$offset, $mode);
+                    echo("<div class='row'>");
+                    while($row = $result->fetch_assoc()){
+                        display_web($row);
+                    }
+                    echo("</div>");
+                    if(mysqli_num_rows($result)>15){
+                        echo "<div class='row pt-3'>
+                                    <div class='col-11'></div>
+                                    <div class='col-1'>
+                                        <button class='btn btn-info btn-block'>
+                                            <i class='fa fa-arrow-right'></i>
+                                        </button>
+                                    </div>
+                                </div>";
+                    }
                 ?>
             </div>
             <?php
+                echo("<div class='container text-center'><p id='page'>$page</p></div>");
                 include("fragment/modals.php");
                 include("fragment/footer.php");
             ?>

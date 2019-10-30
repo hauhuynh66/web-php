@@ -6,37 +6,32 @@
         </div>
     </div>
 </div>
-<p>Order By</p>
 <hr>
-<form>
-<div class="row pb-3">
-    <div class="col-4 form-inline">
-        <?php
-            if(isset($_GET["filter"])){
-                if($_GET["filter"]=="dls"){
-                    echo("<input type=\"checkbox\" name='filter-type' class=\"form-control\" checked>");
-                }else{
-                    echo("<input type=\"checkbox\" name='filter-type' class=\"form-control\">");
-                }
-            }
-        ?>
-        <label class="ml-2">Most Download</label>
-    </div>
-    <div class="col-4 form-inline">
-        <?php
-        if(isset($_GET["filter"])){
-            if($_GET["filter"]=="new"){
-                echo("<input type=\"checkbox\" name='filter-type' class=\"form-control\" checked>");
-            }else{
-                echo("<input type=\"checkbox\" name='filter-type' class=\"form-control\">");
-            }
-        }
-        ?>
-        <label class="ml-2">New Upload</label>
-    </div>
-    <div class="col-4 float-right">
-        <button type="button" class="btn btn-outline-info"><i class="fa fa-bars mr-2"></i>Filter</button>
+<div class="card shadow">
+    <a href="#filter" class="d-block card-header py-2 normal-text" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="collapseCardExample">
+        <h4 class="font-weight-bold text-primary ml-2">Filter</h4>
+    </a>
+    <div class="collapse" id="filter" style="">
+        <div class="card-body">
+            <form>
+                <div class="row form-group">
+                    <div class="col-4 mt-2">
+                        <input type="radio" name='filter-type' id='dls-type'>
+                        <label class="ml-2" for="dls-type">Most Download</label>
+                    </div>
+                    <div class="col-4 mt-2">
+                        <input type="radio" name='filter-type' id='new-type'>
+                        <label class="ml-2" for="new-type">New Upload</label>
+                    </div>
+                    <div class="col-4 float-right">
+                        <button type="button" class="btn btn-outline-info" id="filter-btn"><i class="fa fa-bars mr-2"></i>Filter</button>
+                    </div>
+                </div>
+
+            </form>
+        </div>
     </div>
 </div>
-</form>
+<hr>
+
 

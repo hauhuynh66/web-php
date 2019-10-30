@@ -21,9 +21,13 @@
         return mysqli_query($conn,$sql);
     }
 
-    function get_template_by_type_with_limit($conn, $type, $limit, $offset){
+    function get_template_by_type_with_limit($conn, $type, $limit, $offset, $mode){
         $table_name = "templates";
-        $sql = "select * from $table_name where type = '$type' limit $limit offset $offset";
+        if($mode=="dls"){
+            $sql = "select * from $table_name where type = '$type' order by downloads desc limit $limit offset $offset";
+        }else{
+            $sql = "select * from $table_name where type = '$type' order by upload_date desc  limit $limit offset $offset";
+        }
         return mysqli_query($conn,$sql);
     }
 

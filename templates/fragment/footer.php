@@ -17,11 +17,14 @@
                 <a href="https://facebook.com">
                     <i class="fab fa-facebook fa-2x"></i>
                 </a>
+                <a href="https://google.com.vn" class="ml-3">
+                    <i class="fab fa-google fa-2x icon-red"></i>
+                </a>
                 <a href="https://twitter.com" class="ml-3">
                     <i class="fab fa-twitter fa-2x icon-info"></i>
                 </a>
                 <a href="https://instagram.com" class="ml-3">
-                    <i class="fab fa-instagram fa-2x icon-orange"></i>
+                    <i class="fab fa-linkedin fa-2x icon-info"></i>
                 </a>
                 <a href="https://github.com/hauhuynh66" class="ml-3">
                     <i class="fab fa-github fa-2x icon-black"></i>
