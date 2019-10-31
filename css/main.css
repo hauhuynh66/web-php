@@ -177,6 +177,7 @@ a.footer-link{
 .image-holder{
     height: 300px;
     max-width: 100%;
+    width: max-content;
     max-height: 100%;
     transition: 1s;
 }
@@ -191,7 +192,7 @@ a.footer-link{
     margin-top: 20px;
     overflow-y: hidden;
     transition: 1s;
-    height: 200px;
+    height: 150px;
 }
 
 .btn-success:hover{
@@ -282,16 +283,6 @@ a.card{
     padding: 30px;
     margin: 100px auto;
     border-radius: 10px;
-}
-
-.bordered-image{
-
-}
-
-#change-info-btn::before{
-    margin-right: 10px;
-    content: '\f044';
-    font-family: "Font Awesome 5 Free", sans-serif;
 }
 
 .dashboard-brand,.about-brand,.powerpoint-brand,.web-brand,.upload-brand{

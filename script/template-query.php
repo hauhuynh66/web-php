@@ -1,23 +1,18 @@
 <?php
-    include("db.php");
+    require_once("db.php");
+
+    function get_template_by_name($conn,$name){
+        $sql = "select * from templates where title = '$name'";
+        return mysqli_query($conn,$sql);
+    }
+
     function get_template_by_download($conn, $type){
-        $table_name = "templates";
-        $sql = "select * from $table_name where type = '$type' order by downloads desc limit 4";
+        $sql = "select * from templates where type = '$type' order by downloads desc limit 4";
         return mysqli_query($conn,$sql);
     }
-    function get_template_by_name($conn, $name){
-        $table_name = "templates";
-        $sql = "select * from $table_name where title = '$name'";
-        return mysqli_query($conn,$sql);
-    }
-    function get_template_by_upload_date($conn, $type){
-        $table_name = "templates";
-        $sql = "select * from $table_name where type = '$type' order by upload_date desc limit 4";
-        return mysqli_query($conn,$sql);
-    }
+
     function get_all_template_by_type($conn, $type){
-        $table_name = "templates";
-        $sql = "select * from $table_name where type = '$type'";
+        $sql = "select * from templates where type = '$type'";
         return mysqli_query($conn,$sql);
     }
 
@@ -101,7 +96,7 @@
                                         <small class='text-info'>Downloads: $download</small>
                                     </div>
                                 </div>
-                        </div>
+                        </div>  
                         <div class='card-body card-body-fixed'>
                             <img src=$path alt='?' class='image-holder'>
                             <div class='description'>

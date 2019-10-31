@@ -12,6 +12,12 @@
         if($result==null){
             header("Location:../templates/404.php");
         }
-        $path = $result->fetch_assoc()["path"]."/src.zip";
-        header("Location: /assignment"."$path");
+        $path = "{$_SERVER['DOCUMENT_ROOT']}/assignment".$result->fetch_assoc()["path"]."/src.zip";
+        header( 'Cache-Control: public' );
+        header( 'Content-Description: File Transfer' );
+        header( "Content-Disposition: attachment; filename=src.zip" );
+        header( 'Content-Type: application/zip' );
+        header( 'Content-Transfer-Encoding: binary' );
+        readfile($path);
+        exit();
     }

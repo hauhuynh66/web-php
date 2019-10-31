@@ -46,82 +46,111 @@
                     <div class="col-8">
                         <?php
                             $result = get_user_by_username($conn,$_SESSION['username'])->fetch_assoc();
+                            $firstname = $result["firstname"];
+                            $lastname = $result["lastname"];
+                            $username = $result["username"];
+                            $email = $result["email"];
+                            $github = $result["github"];
+                            $facebook = $result["facebook"];
+                            $twitter = $result["twitter"];
                         ?>
                         <div class="row">
-                            <div class="col-3">
+                            <div class="col-4">
                                 <label>First name :</label>
                             </div>
-                            <div class="col-9">
+                            <div class="col-8">
                                 <?php
-                                    echo($result["firstname"]);
+                                    echo($firstname);
                                 ?>
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-3">
+                            <div class="col-4">
                                 <label>Last name :</label>
                             </div>
-                            <div class="col-9">
+                            <div class="col-8">
                                 <?php
-                                    echo($result["lastname"]);
+                                    echo($lastname);
                                 ?>
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-3">
+                            <div class="col-4">
                                 <label>Username :</label>
                             </div>
-                            <div class="col-9">
+                            <div class="col-8">
                                 <?php
-                                    echo($result["username"]);
+                                    echo($username);
                                 ?>
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-3">
+                            <div class="col-4">
                                 <label>Email :</label>
                             </div>
-                            <div class="col-9">
+                            <div class="col-8">
                                 <?php
-                                    $email = $result["email"];
                                     echo("<a href='$email']>".$email."</a>");
                                 ?>
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-3">
+                            <div class="col-4">
                                 <label>Github :</label>
                             </div>
-                            <div class="col-9">
+                            <div class="col-8">
                                 <?php
-                                    $git = $result["github"];
-                                    echo("<a href='$git']>".$git."</a>");
+                                    echo("<a href='$github']>".$github."</a>");
                                 ?>
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-3">
+                            <div class="col-4">
                                 <label>Facebook :</label>
                             </div>
-                            <div class="col-9">
+                            <div class="col-8">
                                 <?php
-                                    $fb = $result["facebook"];
-                                    echo("<a href='$fb']>".$fb."</a>");
+                                    echo("<a href='$facebook']>".$facebook."</a>");
                                 ?>
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-3">
+                            <div class="col-4">
                                 <label>Twitter :</label>
                             </div>
-                            <div class="col-9">
+                            <div class="col-8">
                                 <?php
-                                    $tw = $result["twitter"];
-                                    echo("<a href='$tw']>".$tw."</a>");
+                                    echo("<a href='$twitter']>".$twitter."</a>");
                                 ?>
                             </div>
                         </div>
-                        <button class="btn btn-info mt-3" id="change-info-btn" data-toggle="modal" data-target="#change-info-modal">Change</button>
+                        <div class="row">
+                            <div class="col-4">
+                                <label>Templates Uploaded :</label>
+                            </div>
+                            <div class="col-8">
+                                <?php
+                                    $uploads = get_user_uploaded_templates($conn,$result["username"]);
+                                    if(!$uploads){
+                                        echo("<a>0</a>");
+                                    }else{
+                                        echo("<a>".mysqli_num_rows($uploads)."</a>");
+                                    }
+                                ?>
+                            </div>
+                        </div>
+                        <div class="row my-4">
+                            <div class="col-6">
+                                <button class="btn btn-info btn-block mt-3" id="change-info-btn" data-toggle="modal" data-target="#change-info-modal">
+                                    <i class="fa fa-user-secret mr-4"></i>Change Informations
+                                </button>
+                            </div>
+                            <div class="col-6">
+                                <button class="btn btn-info btn-block mt-3" id="change-password-btn" data-toggle="modal" data-target="#change-password-modal">
+                                    <i class="fa fa-key mr-4"></i>Change Password
+                                </button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -138,25 +167,53 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title">Change info</h5>
+                <h5 class="modal-title">Change Info</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
                 <form>
-                    <input class="form-control" placeholder="First name" id="first-name">
-                    <input class="form-control mt-3" placeholder="Last name" id="last-name">
-                    <input class="form-control mt-3" placeholder="Username" id="username">
-                    <input class="form-control mt-3" placeholder="Email" id="email">
-                    <input class="form-control mt-3" placeholder="Password" id="password">
-                    <input class="form-control mt-3" placeholder="Github" id="github">
-                    <input class="form-control mt-3" placeholder="Facebook" id="twitter">
-                    <input class="form-control mt-3" placeholder="Twitter" id="twitter">
+                    <?php
+                        echo("<input class='form-control' placeholder='First name' id='first-name' value='$firstname'>
+                        <input class='form-control mt-3' placeholder='Last name' id='last-name' value='$lastname'>
+                        <input class='form-control mt-3' placeholder='Username' id='username' value='$username'>
+                        <input class='form-control mt-3' placeholder='Email' id='email' value='$email'>
+                        <input class='form-control mt-3' placeholder='Github' id='github' value='$github'>
+                        <input class='form-control mt-3' placeholder='Facebook' id='twitter' value='$facebook'>
+                        <input class='form-control mt-3' placeholder='Twitter' id='twitter' value='$twitter'>");
+
+                    ?>
                 </form>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-primary">Save changes</button>
+                <button type="button" class="btn btn-primary">Confirm</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--Change Password-->
+<div class="modal fade" tabindex="-1" role="dialog" id="change-password-modal">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Change Password</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <?php
+                    echo("<input class='form-control' id='old-password' placeholder='Old Password'>
+                           <input class='form-control my-3' id='new-password' placeholder='New Password'>
+                           <input class='form-control my-3' id='pass-confirm' placeholder='Re-Password'>");
+                    ?>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary">Confirm</button>
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
             </div>
         </div>

@@ -1,3 +1,6 @@
+<?php
+    include_once("../script/locale.php");
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

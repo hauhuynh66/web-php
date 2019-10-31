@@ -20,7 +20,7 @@
             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                 <a class="dropdown-item" href="#">English</a>
                 <a class="dropdown-item" href="#">Vietnamese</a>
-                <a class="dropdown-item" href="#">Russia</a>
+                <a class="dropdown-item" href="#">French</a>
             </div>
         </div>
     </div>
