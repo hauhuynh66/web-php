@@ -1,3 +1,6 @@
+<?php
+    include_once("../script/locale.php");
+?>
 <div class="navbar navbar-expand navbar-dark shadow bg-white test">
     <div class="w-haft">
         <button class="btn" id="menu-collapse">
@@ -12,18 +15,24 @@
             <i class="fa fa-sign-out-alt icon-black"></i>
         </button>
     </div>
-    <div class="input-group w-haft justify-content-end">
-        <div class="dropdown">
-            <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Language
-            </button>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <a class="dropdown-item" href="#">English</a>
-                <a class="dropdown-item" href="#">Vietnamese</a>
-                <a class="dropdown-item" href="#">French</a>
+    <?php
+        $l = $lang->{"lang"};
+        $en = $lang->{"en"};
+        $vn = $lang->{"vn"};
+        $fr = $lang->{"fr"};
+        echo("<div class=\"input-group w-haft justify-content-end\">
+            <div class=\"dropdown\">
+                <button class=\"btn dropdown-toggle\" type=\"button\" id=\"dropdownMenuButton\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">
+                    $l
+                </button>
+                <div class=\"dropdown-menu\" aria-labelledby=\"dropdownMenuButton\">
+                    <a class=\"dropdown-item\" href=\"#\" id='lang-en'><img src=\"../vendor/flag/svg/england.svg\" class='small-flag mr-3 mb-1'>$en</a>
+                    <a class=\"dropdown-item\" href=\"#\" id='lang-vn'><img src=\"../vendor/flag/svg/vietnam.svg\" class='small-flag mr-3 mb-1'>$vn</a>
+                    <a class=\"dropdown-item\" href=\"#\" id='lang-fr'><img src=\"../vendor/flag/svg/france.svg\" class='small-flag mr-3 mb-1'>$fr</a>
+                </div>
             </div>
-        </div>
-    </div>
+        </div>");
+    ?>
 </div>
 <!--Logout Confirm-->
 <div class="modal fade" tabindex="-1" role="dialog" id="logout-modal">

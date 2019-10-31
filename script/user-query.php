@@ -14,7 +14,7 @@
 
     function get_user_role($conn,$username){
         $table = "role";
-        $user = get_user_by_username($username);
+        $user = get_user_by_username($conn,$username);
         if(mysqli_num_rows($user)==0){
             return 0;
         }else{

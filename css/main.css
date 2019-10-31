@@ -222,6 +222,10 @@ a.normal-text, a.item{
     font-size: 18px;
 }
 
+.large-text{
+    font-size: 30px;
+}
+
 a.item{
     font-size: 12px;
 }
@@ -285,47 +289,12 @@ a.card{
     border-radius: 10px;
 }
 
-.dashboard-brand,.about-brand,.powerpoint-brand,.web-brand,.upload-brand{
-    font-family: VNI-Whimsy ,sans-serif;
-}
-
-.dashboard-brand::before{
-    content: '\f328';
-    font-family: "Font Awesome 5 Free", sans-serif;
-    font-size: 30px;
+.sidebar-text{
+    font-family: "Times New Roman", sans-serif;
+    font-size: 25px;
     margin-right: 10px;
     font-weight: 900;
-}
-
-.powerpoint-brand::before{
-    content: '\f1c4';
-    font-family: "Font Awesome 5 Free", sans-serif;
-    font-size: 30px;
-    margin-right: 10px;
-    font-weight: 900;
-}
-
-.web-brand::before{
-    content: '\f26b';
-    font-family: "Font Awesome 5 Brands", sans-serif;
-    font-size: 30px;
-    margin-right: 10px;
-}
-
-.upload-brand::before{
-    content: '\f093';
-    font-family: "Font Awesome 5 Free", sans-serif;
-    font-size: 30px;
-    margin-right: 10px;
-    font-weight: 900;
-}
-
-.about-brand::before{
-    content: '\f05a';
-    font-family: "Font Awesome 5 Free", sans-serif;
-    font-size: 30px;
-    margin-right: 10px;
-    font-weight: 900;
+    font-style: italic;
 }
 
 .fixed-button{
@@ -362,6 +331,11 @@ a.card{
 
 .row{
     margin-right: 0;
+}
+
+.small-flag{
+    width: 20px;
+    height: 20px;
 }
 
 .text-font-1{

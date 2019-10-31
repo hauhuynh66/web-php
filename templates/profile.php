@@ -1,6 +1,11 @@
 <?php
     include("../script/session.php");
     include("../script/user-query.php");
+    include_once("../script/locale.php");
+    $fn = $lang->{"fn"};
+    $ln = $lang->{"ln"};
+    $us = $lang->{"us"};
+    $t_up = $lang->{"t_up"};
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -17,7 +22,7 @@
     <div class="row">
         <div class="col-sm-12 col-mb-3 col-lg-3 col-xl-3 sidebar bg-danger" id="sidebar">
             <?php
-            include("fragment/sidebar.php");
+                include("fragment/sidebar.php");
             ?>
         </div>
         <div class="col-sm-12 col-mb-9 col-lg-9 col-xl-9 content" id="content">
@@ -55,34 +60,31 @@
                             $twitter = $result["twitter"];
                         ?>
                         <div class="row">
-                            <div class="col-4">
-                                <label>First name :</label>
-                            </div>
-                            <div class="col-8">
-                                <?php
-                                    echo($firstname);
-                                ?>
-                            </div>
+                            <?php
+                                echo("<div class=\"col-4\">
+                                        <label>$fn :</label>
+                                    </div>
+                                    <div class=\"col-8\">");
+                                echo($firstname."</div>");
+                            ?>
                         </div>
                         <div class="row">
-                            <div class="col-4">
-                                <label>Last name :</label>
-                            </div>
-                            <div class="col-8">
-                                <?php
-                                    echo($lastname);
-                                ?>
-                            </div>
+                            <?php
+                            echo("<div class=\"col-4\">
+                                        <label>$ln :</label>
+                                    </div>
+                                    <div class=\"col-8\">");
+                            echo($lastname."</div>");
+                            ?>
                         </div>
                         <div class="row">
-                            <div class="col-4">
-                                <label>Username :</label>
-                            </div>
-                            <div class="col-8">
-                                <?php
-                                    echo($username);
-                                ?>
-                            </div>
+                            <?php
+                            echo("<div class=\"col-4\">
+                                        <label>$us :</label>
+                                    </div>
+                                    <div class=\"col-8\">");
+                            echo($username."</div>");
+                            ?>
                         </div>
                         <div class="row">
                             <div class="col-4">
@@ -125,19 +127,18 @@
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-4">
-                                <label>Templates Uploaded :</label>
-                            </div>
-                            <div class="col-8">
-                                <?php
-                                    $uploads = get_user_uploaded_templates($conn,$result["username"]);
-                                    if(!$uploads){
-                                        echo("<a>0</a>");
-                                    }else{
-                                        echo("<a>".mysqli_num_rows($uploads)."</a>");
-                                    }
-                                ?>
-                            </div>
+                            <?php
+                            echo("<div class=\"col-4\">
+                                            <label>$t_up :</label>
+                                        </div>
+                                    <div class=\"col-8\">");
+                            $uploads = get_user_uploaded_templates($conn,$result["username"]);
+                            if(!$uploads){
+                                echo("<a>0</a>");
+                            }else{
+                                echo("<a>".mysqli_num_rows($uploads)."</a></div>");
+                            }
+                            ?>
                         </div>
                         <div class="row my-4">
                             <div class="col-6">

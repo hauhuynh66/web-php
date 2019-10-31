@@ -2,20 +2,279 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="447a008c-2310-419f-b1c1-055fba425540" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/file/.htaccess" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/script/lang/en.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/script/lang/fr.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/script/lang/vn.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/script/locale.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/list.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/User.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/User.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/abkhazia.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/afghanistan.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/aland-islands.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/albania.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/algeria.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/american-samoa.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/andorra.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/angola.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/anguilla.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/antigua-and-barbuda.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/argentina.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/armenia.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/aruba.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/australia.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/austria.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/azerbaijan.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/azores-islands.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/bahamas.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/bahrain.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/balearic-islands.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/bangladesh.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/barbados.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/basque-country.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/belarus.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/belgium.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/belize.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/benin.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/bermuda.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/bhutan-1.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/bhutan.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/bolivia.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/bonaire.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/bosnia-and-herzegovina.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/botswana.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/brazil.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/british-columbia.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/british-indian-ocean-territory.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/british-virgin-islands.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/brunei.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/bulgaria.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/burkina-faso.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/burundi.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/cambodia.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/cameroon.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/canada.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/canary-islands.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/cape-verde.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/cayman-islands.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/central-african-republic.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/ceuta.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/chad.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/chile.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/china.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/christmas-island.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/cocos-island.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/colombia.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/comoros.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/cook-islands.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/corsica.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/costa-rica.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/croatia.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/cuba.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/curacao.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/cyprus.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/czech-republic.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/democratic-republic-of-congo.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/denmark.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/djibouti.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/dominica.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/dominican-republic.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/east-timor.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/ecuador.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/egypt.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/england.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/equatorial-guinea.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/eritrea.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/estonia.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/ethiopia.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/european-union.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/falkland-islands.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/faroe-islands.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/fiji.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/finland.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/france.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/french-polynesia.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/gabon.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/galapagos-islands.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/gambia.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/georgia.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/germany.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/ghana.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/gibraltar.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/greece.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/greenland.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/grenada.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/guam.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/guatemala.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/guernsey.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/guinea-bissau.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/guinea.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/guyana.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/haiti.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/hawaii.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/honduras.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/hong-kong.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/hungary.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/iceland.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/india.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/indonesia.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/iran.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/iraq.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/ireland.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/isle-of-man.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/israel.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/italy.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/ivory-coast.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/jamaica.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/japan.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/jersey.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/jordan.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/kazakhstan.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/kenya.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/kiribati.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/kosovo.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/kuwait.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/kyrgyzstan.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/laos.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/latvia.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/lebanon.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/lesotho.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/liberia.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/libya.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/liechtenstein.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/lithuania.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/luxembourg.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/macao.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/madagascar.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/madeira.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/malawi.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/malaysia.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/maldives.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/mali.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/malta.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/marshall-island.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/martinique.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/mauritania.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/mauritius.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/melilla.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/mexico.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/micronesia.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/moldova.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/monaco.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/mongolia.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/montenegro.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/montserrat.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/morocco.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/mozambique.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/myanmar.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/namibia.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/nato.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/nauru.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/nepal.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/netherlands.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/new-zealand.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/nicaragua.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/niger.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/nigeria.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/niue.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/norfolk-island.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/north-korea.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/northen-cyprus.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/northern-marianas-islands.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/norway.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/oman.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/orkney-islands.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/ossetia.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/pakistan.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/palau.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/palestine.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/panama.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/papua-new-guinea.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/paraguay.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/peru.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/philippines.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/pitcairn-islands.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/portugal.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/puerto-rico.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/qatar.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/rapa-nui.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/republic-of-macedonia.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/republic-of-poland.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/republic-of-the-congo.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/romania.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/russia.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/rwanda.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/saba-island.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/saint-kitts-and-nevis.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/salvador.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/samoa.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/san-marino.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/sao-tome-and-principe.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/sardinia.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/saudi-arabia.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/scotland.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/senegal.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/serbia.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/seychelles.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/sierra-leone.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/singapore.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/sint-eustatius.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/sint-maarten.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/slovakia.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/slovenia.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/solomon-islands.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/somalia.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/somaliland.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/south-africa.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/south-korea.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/south-sudan.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/spain.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/sri-lanka.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/st-barts.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/st-lucia.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/st-vincent-and-the-grenadines.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/sudan.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/suriname.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/swaziland.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/sweden.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/switzerland.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/syria.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/taiwan.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/tajikistan.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/tanzania.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/thailand.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/tibet.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/togo.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/tokelau.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/tonga.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/transnistria.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/trinidad-and-tobago.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/tunisia.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/turkey.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/turkmenistan.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/turks-and-caicos.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/tuvalu.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/uganda.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/ukraine.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/united-arab-emirates.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/united-kingdom.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/united-nations.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/united-states-of-america.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/uruguay.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/uzbekistn.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/vanuatu.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/vatican-city.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/venezuela.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/vietnam.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/virgin-islands.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/wales.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/western-sahara.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/yemen.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/zambia.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/flag/svg/zimbabwe.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/download.php" beforeDir="false" afterPath="$PROJECT_DIR$/download.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/script/template-query.php" beforeDir="false" afterPath="$PROJECT_DIR$/script/template-query.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/script/lang/en.json" beforeDir="false" afterPath="$PROJECT_DIR$/script/lang/en.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/script/lang/fr.json" beforeDir="false" afterPath="$PROJECT_DIR$/script/lang/fr.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/script/lang/vn.json" beforeDir="false" afterPath="$PROJECT_DIR$/script/lang/vn.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/script/locale.php" beforeDir="false" afterPath="$PROJECT_DIR$/script/locale.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/script/user-query.php" beforeDir="false" afterPath="$PROJECT_DIR$/script/user-query.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/about.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/about.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/fragment/modals.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/fragment/modals.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/fragment/sidebar.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/fragment/sidebar.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/fragment/topbar.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/fragment/topbar.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/profile.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/profile.php" afterDir="false" />
@@ -50,17 +309,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/profile.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="144" column="63" selection-start-line="144" selection-start-column="63" selection-end-line="144" selection-end-column="63" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/fragment/sidebar.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="22" column="6" lean-forward="true" selection-start-line="22" selection-start-column="6" selection-end-line="22" selection-end-column="6" />
+            <state relative-caret-position="-34">
+              <caret line="82" column="52" selection-start-line="82" selection-start-column="52" selection-end-line="82" selection-end-column="52" />
             </state>
           </provider>
         </entry>
@@ -68,35 +318,44 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/script/user-query.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="22" column="9" selection-start-line="22" selection-start-column="9" selection-end-line="22" selection-end-column="9" />
+            <state relative-caret-position="207">
+              <caret line="16" column="43" selection-start-line="16" selection-start-column="43" selection-end-line="16" selection-end-column="43" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/fragment/sidebar.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="153">
+              <caret line="45" column="6" lean-forward="true" selection-start-line="45" selection-start-column="6" selection-end-line="45" selection-end-column="6" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/script/lang/fr.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="170">
+              <caret line="10" column="5" selection-start-line="10" selection-start-column="5" selection-end-line="10" selection-end-column="5" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/script/locale.php">
+        <entry file="file://$PROJECT_DIR$/script/lang/en.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="5" lean-forward="true" selection-start-line="5" selection-start-column="5" selection-end-line="5" selection-end-column="5" />
+            <state relative-caret-position="204">
+              <caret line="12" column="1" lean-forward="true" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/index.php">
+        <entry file="file://$PROJECT_DIR$/script/lang/vn.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="1" column="22" selection-start-line="1" selection-start-column="22" selection-end-line="1" selection-end-column="22" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/script/template-query.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="32" column="5" lean-forward="true" selection-start-line="26" selection-start-column="5" selection-end-line="32" selection-end-column="5" />
+            <state relative-caret-position="170">
+              <caret line="10" column="22" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
             </state>
           </provider>
         </entry>
@@ -114,9 +373,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>item-hol</find>
-      <find>sidebar-t</find>
-      <find>item-</find>
       <find>bg</find>
       <find>sidebar</find>
       <find>download</find>
@@ -126,7 +382,6 @@
       <find>desc</find>
       <find>$password</find>
       <find>item-h</find>
-      <find>side</find>
       <find>transition</find>
       <find>name</find>
       <find>r</find>
@@ -140,10 +395,14 @@
       <find>a.ite</find>
       <find>icon</find>
       <find>fa-</find>
-      <find>brand</find>
       <find>brand-i</find>
       <find>Change</find>
       <find>image</find>
+      <find>smal</find>
+      <find>brand</find>
+      <find>font-size</find>
+      <find>nor</find>
+      <find>side</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -152,9 +411,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/script/most_download.php" />
-        <option value="$PROJECT_DIR$/templates/contribute.php" />
-        <option value="$PROJECT_DIR$/script/register.php" />
         <option value="$PROJECT_DIR$/script/query.php" />
         <option value="$PROJECT_DIR$/script/downloads.php" />
         <option value="$PROJECT_DIR$/script/get_web_template.php" />
@@ -165,7 +421,6 @@
         <option value="$PROJECT_DIR$/js/web.js" />
         <option value="$PROJECT_DIR$/templates/download.php" />
         <option value="$PROJECT_DIR$/script/role.php" />
-        <option value="$PROJECT_DIR$/js/main.js" />
         <option value="$PROJECT_DIR$/templates/fragment/review.php" />
         <option value="$PROJECT_DIR$/templates/upload.php" />
         <option value="$PROJECT_DIR$/script/db.php" />
@@ -183,26 +438,30 @@
         <option value="$PROJECT_DIR$/templates/fragment/filter.php" />
         <option value="$PROJECT_DIR$/templates/web.php" />
         <option value="$PROJECT_DIR$/js/download.js" />
-        <option value="$PROJECT_DIR$/templates/fragment/sidebar.php" />
         <option value="$PROJECT_DIR$/templates/powerpoint.php" />
         <option value="$PROJECT_DIR$/templates/powerpoint-preview.php" />
         <option value="$PROJECT_DIR$/templates/fragment/footer.php" />
         <option value="$PROJECT_DIR$/script/review.php" />
         <option value="$PROJECT_DIR$/templates/about.php" />
         <option value="$PROJECT_DIR$/js/profile.js" />
-        <option value="$PROJECT_DIR$/templates/fragment/topbar.php" />
-        <option value="$PROJECT_DIR$/templates/profile.php" />
-        <option value="$PROJECT_DIR$/script/user-query.php" />
-        <option value="$PROJECT_DIR$/css/main.css" />
         <option value="$PROJECT_DIR$/templates/web-preview.php" />
         <option value="$PROJECT_DIR$/file/.htaccess" />
         <option value="$PROJECT_DIR$/file/access.php" />
         <option value="$PROJECT_DIR$/download.php" />
         <option value="$PROJECT_DIR$/templates/fragment/modals.php" />
-        <option value="$PROJECT_DIR$/script/lang/en.json" />
-        <option value="$PROJECT_DIR$/templates/index.php" />
         <option value="$PROJECT_DIR$/script/template-query.php" />
         <option value="$PROJECT_DIR$/script/locale.php" />
+        <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/templates/fragment/topbar.php" />
+        <option value="$PROJECT_DIR$/js/main.js" />
+        <option value="$PROJECT_DIR$/templates/index.php" />
+        <option value="$PROJECT_DIR$/templates/fragment/sidebar.php" />
+        <option value="$PROJECT_DIR$/css/main.css" />
+        <option value="$PROJECT_DIR$/script/user-query.php" />
+        <option value="$PROJECT_DIR$/script/lang/fr.json" />
+        <option value="$PROJECT_DIR$/script/lang/vn.json" />
+        <option value="$PROJECT_DIR$/templates/profile.php" />
+        <option value="$PROJECT_DIR$/script/lang/en.json" />
       </list>
     </option>
   </component>
@@ -236,47 +495,7 @@
             <path>
               <item name="assignment" type="b2602c69:ProjectViewProjectNode" />
               <item name="assignment" type="462c0819:PsiDirectoryNode" />
-              <item name="file" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="assignment" type="b2602c69:ProjectViewProjectNode" />
-              <item name="assignment" type="462c0819:PsiDirectoryNode" />
-              <item name="file" type="462c0819:PsiDirectoryNode" />
-              <item name="powerpoint" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="assignment" type="b2602c69:ProjectViewProjectNode" />
-              <item name="assignment" type="462c0819:PsiDirectoryNode" />
-              <item name="file" type="462c0819:PsiDirectoryNode" />
-              <item name="powerpoint" type="462c0819:PsiDirectoryNode" />
-              <item name="template3" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="assignment" type="b2602c69:ProjectViewProjectNode" />
-              <item name="assignment" type="462c0819:PsiDirectoryNode" />
-              <item name="file" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="assignment" type="b2602c69:ProjectViewProjectNode" />
-              <item name="assignment" type="462c0819:PsiDirectoryNode" />
-              <item name="file" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
-              <item name="sb-admin" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="assignment" type="b2602c69:ProjectViewProjectNode" />
-              <item name="assignment" type="462c0819:PsiDirectoryNode" />
-              <item name="file" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
-              <item name="template1" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="assignment" type="b2602c69:ProjectViewProjectNode" />
-              <item name="assignment" type="462c0819:PsiDirectoryNode" />
-              <item name="file" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
-              <item name="template2" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="assignment" type="b2602c69:ProjectViewProjectNode" />
@@ -294,6 +513,23 @@
               <item name="assignment" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="assignment" type="b2602c69:ProjectViewProjectNode" />
+              <item name="assignment" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="fragment" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="assignment" type="b2602c69:ProjectViewProjectNode" />
+              <item name="assignment" type="462c0819:PsiDirectoryNode" />
+              <item name="vendor" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="assignment" type="b2602c69:ProjectViewProjectNode" />
+              <item name="assignment" type="462c0819:PsiDirectoryNode" />
+              <item name="vendor" type="462c0819:PsiDirectoryNode" />
+              <item name="flag" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -304,26 +540,26 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/file/web/sb-admin" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/vendor/flag" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="H:\Projects\PHP\assignment\vendor\flag" />
+      <recent name="H:\Projects\PHP\assignment\file\web\sb-admin" />
+      <recent name="H:\Projects\PHP\assignment\file\web\template1\src" />
+      <recent name="H:\Projects\PHP\assignment\file\powerpoint\template3" />
+      <recent name="H:\Projects\PHP\assignment\file\web\template2\image" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="H:\Projects\PHP\assignment\file\web\template1" />
       <recent name="H:\Projects\PHP\assignment\script" />
       <recent name="H:\Projects\PHP\assignment" />
       <recent name="H:\Projects\PHP\assignment\templates" />
       <recent name="H:\Projects\PHP\assignment\php-script" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="H:\Projects\PHP\assignment\file\web\sb-admin" />
-      <recent name="H:\Projects\PHP\assignment\file\web\template1\src" />
-      <recent name="H:\Projects\PHP\assignment\file\powerpoint\template3" />
-      <recent name="H:\Projects\PHP\assignment\file\web\template2\image" />
-      <recent name="H:\Projects\PHP\assignment\file\web\template1\image" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -381,12 +617,12 @@
       <workItem from="1572247733807" duration="6837000" />
       <workItem from="1572307241258" duration="3093000" />
       <workItem from="1572360378021" duration="13944000" />
-      <workItem from="1572417238076" duration="26203000" />
+      <workItem from="1572417238076" duration="35293000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="263130000" />
+    <option name="totallyTimeSpent" value="272220000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
@@ -438,14 +674,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/script/templates.php" />
-    <entry file="file://$PROJECT_DIR$/vendor/bootstrap/bootstrap.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="118473">
-          <caret line="6969" column="1" selection-start-line="6969" selection-start-column="1" selection-end-line="6969" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/script/get_template.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
@@ -463,13 +691,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/script/role.php" />
-    <entry file="file://$PROJECT_DIR$/js/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="816">
-          <caret line="53" column="39" selection-start-line="53" selection-start-column="39" selection-end-line="53" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/upload.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
@@ -622,45 +843,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/script/authenticate.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="31" lean-forward="true" selection-start-line="11" selection-start-column="31" selection-end-line="11" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/profile.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="144" column="63" selection-start-line="144" selection-start-column="63" selection-end-line="144" selection-end-column="63" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/powerpoint-preview.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="629">
           <caret line="169" column="49" lean-forward="true" selection-start-line="169" selection-start-column="49" selection-end-line="169" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/fragment/sidebar.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="22" column="6" lean-forward="true" selection-start-line="22" selection-start-column="6" selection-end-line="22" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/script/user-query.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" column="9" selection-start-line="22" selection-start-column="9" selection-end-line="22" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/main.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="185" column="20" lean-forward="true" selection-start-line="185" selection-start-column="20" selection-end-line="185" selection-end-column="20" />
         </state>
       </provider>
     </entry>
@@ -699,44 +885,107 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/fragment/topbar.php">
+    <entry file="file://$PROJECT_DIR$/script/template-query.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="22" column="48" selection-start-line="22" selection-start-column="48" selection-end-line="22" selection-end-column="48" />
+        <state relative-caret-position="119">
+          <caret line="16" column="5" lean-forward="true" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/script/lang/en.json">
+    <entry file="file://$PROJECT_DIR$/vendor/flag/svg/chad.svg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="17">
+            <caret line="1" column="4" lean-forward="true" selection-start-line="1" selection-start-column="4" selection-end-line="1" selection-end-column="4" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/script/locale.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="16" selection-start-line="2" selection-start-column="16" selection-end-line="2" selection-end-column="16" />
+        <state relative-caret-position="51">
+          <caret line="3" column="19" selection-start-line="3" selection-start-column="19" selection-end-line="3" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/script/authenticate.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="52" lean-forward="true" selection-start-line="10" selection-start-column="52" selection-end-line="10" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/fragment/topbar.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="30" column="141" selection-start-line="30" selection-start-column="141" selection-end-line="30" selection-end-column="141" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-68">
+          <caret line="35" column="66" selection-start-line="35" selection-start-column="66" selection-end-line="35" selection-end-column="66" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="22" selection-start-line="1" selection-start-column="22" selection-end-line="1" selection-end-column="22" />
+        <state relative-caret-position="204">
+          <caret line="138" column="36" lean-forward="true" selection-start-line="138" selection-start-column="36" selection-end-line="138" selection-end-column="36" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/script/template-query.php">
+    <entry file="file://$PROJECT_DIR$/css/main.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="32" column="5" lean-forward="true" selection-start-line="26" selection-start-column="5" selection-end-line="32" selection-end-column="5" />
+        <state relative-caret-position="97">
+          <caret line="289" column="1" lean-forward="true" selection-start-line="289" selection-start-column="1" selection-end-line="289" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/fragment/sidebar.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="45" column="6" lean-forward="true" selection-start-line="45" selection-start-column="6" selection-end-line="45" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/script/user-query.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="16" column="43" selection-start-line="16" selection-start-column="43" selection-end-line="16" selection-end-column="43" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/script/lang/fr.json">
-      <provider selected="true" editor-type-id="text-editor" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="5" selection-start-line="10" selection-start-column="5" selection-end-line="10" selection-end-column="5" />
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/script/lang/vn.json">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/script/locale.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="5" lean-forward="true" selection-start-line="5" selection-start-column="5" selection-end-line="5" selection-end-column="5" />
+        <state relative-caret-position="170">
+          <caret line="10" column="22" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/profile.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-34">
+          <caret line="82" column="52" selection-start-line="82" selection-start-column="52" selection-end-line="82" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/script/lang/en.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="1" lean-forward="true" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
         </state>
       </provider>
     </entry>

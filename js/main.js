@@ -19,11 +19,12 @@ function sidebarToggle(i) {
         }else{
             $("#sidebar").hide();
         }
-        $("a.dashboard-brand").html("");
+        /*$("a.dashboard-brand").html("");
         $("a.powerpoint-brand").html("");
         $("a.web-brand").html("");
         $("a.upload-brand").html("");
-        $("a.about-brand").html("");
+        $("a.about-brand").html("");*/
+        $(".sidebar-text").children("span").css("display", "none");
     }else{
         if($(window).width()>=992) {
             $("#sidebar").addClass("col-mb-3 col-lg-3 col-xl-3").removeClass("col-mb-2 col-lg-1 col-xl-1");
@@ -32,11 +33,7 @@ function sidebarToggle(i) {
         }else{
             $("#sidebar").show();
         }
-        $("a.dashboard-brand").html(item1);
-        $("a.powerpoint-brand").html(item2);
-        $("a.web-brand").html(item3);
-        $("a.upload-brand").html(item4);
-        $("a.about-brand").html(item5);
+        $(".sidebar-text").children("span").css("display", "inline");
     }
 }
 
@@ -61,16 +58,34 @@ $("#logout-btn").on('click',function () {
 
 $("#profile-btn").on('click',function () {
     window.location = "../templates/profile.php";
-})
+});
 
-mybutton = document.getElementById("myBtn");
+$("a[id^='lang']").on('click',function () {
+    var locale = $(this).attr('id').split("-")[1];
+    console.log(locale);
+    $.ajax({
+        type: "POST",
+        data: {
+            locale: locale
+        },
+        url: "../script/locale.php",
+        success: function (data) {
+            window.location.reload();
+            console.log(data);
+        },
+        error: function (e) {
+            console.log(e);
+        }
+    });
+});
+
 window.onscroll = function() {scrollFunction()};
 
 function scrollFunction() {
     if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-        mybutton.style.display = "block";
+        $("#myBtn").style.display = "block";
     } else {
-        mybutton.style.display = "none";
+        $("#myBtn").style.display = "none";
     }
 }
 

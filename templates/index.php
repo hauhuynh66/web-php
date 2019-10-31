@@ -138,7 +138,7 @@
                                 <h3 class="text-left">Design and Build Beautiful Websites!</h3>
                                 <hr>
                                 <i class="fab fa-html5 fa-2x pl-3 icon-orange"></i>
-                                <i class="fab fa-css3-alt fa-2x pl-3 icon-blue"></i>
+                                <i class="fab fa-css3-alt fa-2x pl-3 icon-info"></i>
                                 <i class="fab fa-js-square fa-2x pl-3 icon-yellow"></i>
                                 <p class="text-left">Trying to choose a website builder template from the thousands of options available is like being taken to a buffet,
                                     then being told you can only pick one item to eat. <br>

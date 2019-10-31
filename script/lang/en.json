@@ -1,4 +1,13 @@
 {
+  "lang": "Language",
+  "en": "English",
   "vn": "Vietnamese",
-  "fr": "French"
+  "fr": "French",
+  "sidebar.db": "Home",
+  "sidebar.up": "Upload",
+  "sidebar.ab": "About",
+  "fn": "First name",
+  "ln": "Last name",
+  "us": "username",
+  "t_up": "Templates uploaded"
 }
