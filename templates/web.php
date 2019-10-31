@@ -55,7 +55,7 @@
                 ?>
             </div>
             <?php
-                echo("<div class='container text-center'><p id='page'>$page</p></div>");
+                echo("<div class='container text-center'><p id='page' hidden>$page</p></div>");
                 include("fragment/modals.php");
                 include("fragment/footer.php");
             ?>

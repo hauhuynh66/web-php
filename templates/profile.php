@@ -4,8 +4,10 @@
     include_once("../script/locale.php");
     $fn = $lang->{"fn"};
     $ln = $lang->{"ln"};
-    $us = $lang->{"us"};
+    $un = $lang->{"un"};
     $t_up = $lang->{"t_up"};
+    $change_i = $lang->{"change_i"};
+    $change_p = $lang->{"change_p"};
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -80,7 +82,7 @@
                         <div class="row">
                             <?php
                             echo("<div class=\"col-4\">
-                                        <label>$us :</label>
+                                        <label>$un :</label>
                                     </div>
                                     <div class=\"col-8\">");
                             echo($username."</div>");
@@ -136,26 +138,31 @@
                             if(!$uploads){
                                 echo("<a>0</a>");
                             }else{
-                                echo("<a>".mysqli_num_rows($uploads)."</a></div>");
+                                echo("<a href='./list.php?uploader=$username'>".mysqli_num_rows($uploads)."</a></div>");
                             }
                             ?>
                         </div>
                         <div class="row my-4">
                             <div class="col-6">
                                 <button class="btn btn-info btn-block mt-3" id="change-info-btn" data-toggle="modal" data-target="#change-info-modal">
-                                    <i class="fa fa-user-secret mr-4"></i>Change Informations
+                                    <i class="fa fa-user-secret mr-4"></i>
+                                    <?php
+                                        echo($change_i);
+                                    ?>
                                 </button>
                             </div>
                             <div class="col-6">
                                 <button class="btn btn-info btn-block mt-3" id="change-password-btn" data-toggle="modal" data-target="#change-password-modal">
-                                    <i class="fa fa-key mr-4"></i>Change Password
+                                    <i class="fa fa-key mr-4"></i>
+                                    <?php
+                                        echo($change_p);
+                                    ?>
                                 </button>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-
             <?php
                 include("fragment/footer.php");
             ?>

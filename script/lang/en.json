@@ -8,6 +8,9 @@
   "sidebar.ab": "About",
   "fn": "First name",
   "ln": "Last name",
-  "us": "username",
-  "t_up": "Templates uploaded"
+  "un": "username",
+  "t_up": "Templates uploaded",
+  "t": "Templates",
+  "change_i": "Change Infomations",
+  "change_p": "Change Password"
 }

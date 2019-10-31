@@ -43,7 +43,7 @@
             </div>
             <div class="modal-body">
                 <div class="container text-center">
-                    <i class="fas fa-info-circle fa-8x icon-red"></i>
+                    <i class="fas fa-info-circle fa-8x icon-danger"></i>
                 </div>
                 <div class="container text-center">
                     <h4 class="text-danger">Are you sure you want to logout this account?</h4>

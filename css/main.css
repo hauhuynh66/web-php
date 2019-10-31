@@ -40,19 +40,6 @@ html{
     color: lightgray;
 }
 
-.brand-img{
-    font-size: 30px;
-    font-weight: bold;
-    font-style: italic;
-    font-family: ".VnHelvetIns", sans-serif;
-}
-
-.brand-img::before{
-    font-family: "Font Awesome 5 Brands", sans-serif;
-    content: "\f77a";
-    padding-right: 10px;
-    font-size: 40px;
-}
 
 .page-name{
     font-size: large;
@@ -82,10 +69,20 @@ html{
 .w-haft{
     display: inline-flex;
     width: 50% !important;
-    padding-right: 20px;
     flex-direction: row;
 }
 
+.w-third{
+    display: inline-flex;
+    width: 33% !important;
+    flex-direction: row;
+}
+
+.w-quarter{
+    display: inline-flex;
+    width: 25% !important;
+    flex-direction: row;
+}
 
 footer{
     background-color: lavender;
@@ -261,8 +258,8 @@ i.icon-yellow{
     color: yellow !important;
 }
 
-i.icon-red{
-    color: red !important;
+i.icon-danger{
+    color: #dc3545 !important;
 }
 
 i.icon-grey{
@@ -271,6 +268,10 @@ i.icon-grey{
 
 i.icon-info{
     color: #17a2b8 !important;
+}
+
+i.icon-success{
+    color: #28a745 !important;
 }
 
 a.card{

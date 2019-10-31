@@ -8,6 +8,8 @@
   "sidebar.ab": "À propos",
   "fn": "Prénom",
   "ln": "Nom de famille",
-  "us": "Nom d'utilisateur",
-  "t_up": "Modèles téléchargés"
+  "un": "Nom d'utilisateur",
+  "t_up": "Modèles téléchargés",
+  "change_i": "Changer les informations",
+  "change_p": "Changer le mot de passe"
 }

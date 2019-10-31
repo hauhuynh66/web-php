@@ -26,6 +26,12 @@
         return mysqli_query($conn,$sql);
     }
 
+    function get_all_templates_by_uploader($conn,$uploader){
+        $table_name = "templates";
+        $sql = "select * from $table_name where uploader='$uploader'";
+        return mysqli_query($conn,$sql);
+    }
+
     function get_all_templates($conn){
         $table_name = "templates";
         $sql = "select * from $table_name";
@@ -48,9 +54,9 @@
     function display_ppt($result){
         $title = $result["title"];
         $download = $result["downloads"];
-        $path = "..".$result["path"]."/image/preview.jpg";
+        $path = "../image/preview".$result["path"]."/img1.jpg";
         $description = $result["description"];
-        echo("<div class='col-6 pt-4'>
+        echo("<div class='col-xl-6 col-lg-6 col-mb-6 col-sm-12 col-pt-4'>
                         <div class='card shadow'>
                             <div class='card-header'>
                                 <div class='row'>
@@ -58,7 +64,7 @@
                                         <h5 id='tp-name'>$title</h5>
                                     </div>
                                     <div class='col-6 w-haft justify-content-end'>
-                                        <small class='text-info'>Downloads: $download</small>
+                                        <small class='text-info'><i class='fa fa-download mr-2'></i> $download</small>
                                     </div>
                                 </div>
                         </div>
@@ -68,11 +74,12 @@
                                 <p>$description</p>
                             </div>
                         </div>
-                        <div class='card-footer'>
-                            <a class='btn btn-success item' href='powerpoint-preview.php?name=$title'>
+                        <div class='card-footer text-center'>
+                            <a class='btn btn-danger float-left item' href='powerpoint-preview.php?name=$title'>
                                 <i class='fas fa-eye pr-1'></i>Details
                             </a>
-                            <a class='btn btn-success float-right item' data-toggle='modal' data-target='#download-modal'>
+                            <i class='text-center fa fa-book-open fa-2x icon-danger'></i>
+                            <a class='btn btn-danger float-right item' data-toggle='modal' data-target='#download-modal'>
                                 <i class='fas fa-download pr-1'></i>Download
                             </a>
                         </div>
@@ -83,9 +90,9 @@
     function display_web($result){
             $title = $result["title"];
             $download = $result["downloads"];
-            $path = "..".$result["path"]."/image/preview.jpg";
+            $path = "../image/preview".$result["path"]."/img1.jpg";
             $description = $result["description"];
-            echo("<div class='col-6 pt-4'>
+            echo("<div class='col-xl-6 col-lg-6 col-mb-6 col-sm-12 pt-4'>
                         <div class='card shadow'>
                             <div class='card-header'>
                                 <div class='row'>
@@ -93,7 +100,7 @@
                                         <h5 id='tp-name'>$title</h5>
                                     </div>
                                     <div class='col-6 w-haft justify-content-end'>
-                                        <small class='text-info'>Downloads: $download</small>
+                                        <small class='text-info'><i class='fa fa-download mr-2'></i>$download</small>
                                     </div>
                                 </div>
                         </div>  
@@ -103,10 +110,11 @@
                                 <p>$description</p>
                             </div>
                         </div>
-                        <div class='card-footer'>
-                            <a class='btn btn-success item' href='web-preview.php?name=$title'>
+                        <div class='card-footer text-center'>
+                            <a class='btn btn-success float-left item' href='web-preview.php?name=$title'>
                                 <i class='fas fa-eye pr-1'></i>Details
                             </a>
+                            <i class='text-center fa fa-globe fa-2x icon-success'></i>
                             <a class='btn btn-success float-right item' data-toggle='modal' data-target='#download-modal' id='download-btn'>
                                 <i class='fas fa-download pr-1'></i>Download
                             </a>

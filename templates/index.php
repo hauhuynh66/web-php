@@ -55,7 +55,7 @@
                                                 </div>
                                             </div>
                                             <div class="carousel-item">
-                                                <img class="d-block w-100" src="../image/bg-2.jpg" alt="Fourth slide" height="600">
+                                                <img class="d-block w-100" src="../image/cover/img.jpg" alt="Fourth slide" height="600">
                                                 <div class="carousel-caption d-none d-md-block">
                                                     <h4 class="text-warning carousel-text">Sign Up Now To Download And Upload</h4>
                                                 </div>
@@ -154,7 +154,7 @@
                             <div class="container">
                                 <h3 class="text-left">Powerpoint Templates that Will Definitely Wow Your Audience! </h3>
                                 <hr>
-                                <i class="fas fa-file-powerpoint fa-2x pl-3 icon-red"></i>
+                                <i class="fas fa-file-powerpoint fa-2x pl-3 icon-danger"></i>
                                 <p class="text-left">PowerPoint templates can make your presentation a way better. Discover how exactly.
                                     Get all the necessary information on the PowerPoint templates that you may want to know.
                                     Are you looking for stunning powerpoint templates that will make your powerpoint presentation stand out?

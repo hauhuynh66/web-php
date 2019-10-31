@@ -39,11 +39,18 @@
                     $downloads = $result["downloads"];
                     $des = $result["description"];
                     $path = $result["path"];
+                    $relative_path = "/assignment/image/preview".$path."/";
+                    $absolute_path = $_SERVER["DOCUMENT_ROOT"]."/assignment/image/preview".$path."/";
                     $uploader = $result["uploader"];
                     $title = $result["title"];
                     $upload_date = $result["upload_date"];
                     $reviews = get_all_review($conn,$_GET["name"]);
                     $n = mysqli_num_rows($reviews);
+                    $file = glob($absolute_path."*.jpg",GLOB_BRACE);
+                    $count = 0;
+                    if($file){
+                        $count = count($file);
+                    }
                 ?>
                 <?php
                     echo("<div class='container text-left'>
@@ -69,21 +76,33 @@
                         <div class="card shadow">
                             <div class="card-body">
                                 <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-                                    <ol class="carousel-indicators">
-                                        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                                        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                                        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-                                    </ol>
+                                    <?php
+                                        echo("<ol class=\"carousel-indicators\">");
+                                        for($i=0;$i<$count;$i++){
+                                            if($i==0){
+                                                echo("<li data-target='#carouselExampleIndicators' data-slide-to='$i' class='active'></li>");
+                                            }else{
+                                                echo("<li data-target='#carouselExampleIndicators' data-slide-to='$i'></li>");
+                                            }
+                                        }
+                                        echo("</ol>");
+                                    ?>
                                     <div class="carousel-inner">
-                                        <div class="carousel-item active">
-                                            <img class="d-block w-100" src="../image/bg-1.jpg" alt="First slide">
-                                        </div>
-                                        <div class="carousel-item">
-                                            <img class="d-block w-100" src="../image/bg-2.jpg" alt="Second slide">
-                                        </div>
-                                        <div class="carousel-item">
-                                            <img class="d-block w-100" src="../image/bg-3.jpg" alt="Third slide">
-                                        </div>
+                                        <?php
+                                            for($i=0;$i<$count;$i++){
+                                                $j = $i+1;
+                                                $img = $relative_path."img"."$j".".jpg";
+                                                if($i==0){
+                                                    echo("<div class=\"carousel-item active\">
+                                                    <img class=\"d-block w-100\" src='$img' alt='$j slide'>
+                                                    </div>");
+                                                }else{
+                                                    echo("<div class=\"carousel-item\">
+                                                    <img class=\"d-block w-100\" src='$img' alt='$j slide'>
+                                                    </div>");
+                                                }
+                                            }
+                                        ?>
                                     </div>
                                     <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
                                         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -119,7 +138,7 @@
                         <h5>Properties</h5>
                         <hr>
                         <?php
-                            echo("<p>Upload by: <a href='#'>$uploader</a></p>");
+                            echo("<p>Upload by: <a href='./list.php?uploader=$uploader'>$uploader</a></p>");
                             echo("<p>Upload date : ".$upload_date."</p>");
                             echo("<p>Downloads : $downloads</p>
                                         <div class='row'>

@@ -1,4 +1,3 @@
-const brand = "Templates<sup>TM</sup>";
 const item1 = "Dashboard";
 const item2 = "Powerpoint";
 const item3 = "Web";
@@ -15,21 +14,16 @@ function sidebarToggle(i) {
         if($(window).width()>=992){
             $("#sidebar").removeClass("col-mb-3 col-lg-3 col-xl-3").addClass("col-mb-2 col-lg-1 col-xl-1");
             $("#content").removeClass("col-mb-9 col-lg-9 col-xl-9").addClass("col-mb-10 col-lg-11 col-xl-11");
-            $("#side-brand").html("");
+            $(".sidebar-brand").children("span").css("display", "none");
         }else{
             $("#sidebar").hide();
         }
-        /*$("a.dashboard-brand").html("");
-        $("a.powerpoint-brand").html("");
-        $("a.web-brand").html("");
-        $("a.upload-brand").html("");
-        $("a.about-brand").html("");*/
         $(".sidebar-text").children("span").css("display", "none");
     }else{
         if($(window).width()>=992) {
             $("#sidebar").addClass("col-mb-3 col-lg-3 col-xl-3").removeClass("col-mb-2 col-lg-1 col-xl-1");
             $("#content").addClass("col-mb-9 col-lg-9 col-xl-9").removeClass("col-mb-10 col-lg-11 col-xl-11");
-            $("#side-brand").html(brand);
+            $(".sidebar-brand").children("span").css("display", "inline");
         }else{
             $("#sidebar").show();
         }
@@ -83,9 +77,9 @@ window.onscroll = function() {scrollFunction()};
 
 function scrollFunction() {
     if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-        $("#myBtn").style.display = "block";
+        $("#myBtn").css('display',"block");
     } else {
-        $("#myBtn").style.display = "none";
+        $("#myBtn").css('display',"none");
     }
 }
 

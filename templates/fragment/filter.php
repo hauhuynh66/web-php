@@ -9,7 +9,7 @@
 <hr>
 <div class="card shadow">
     <a href="#filter" class="d-block card-header py-2 normal-text" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="collapseCardExample">
-        <h4 class="font-weight-bold text-primary ml-2">Filter</h4>
+        <h5 class="font-weight-bold text-primary ml-2">Filter</h5>
     </a>
     <div class="collapse" id="filter" style="">
         <div class="card-body">

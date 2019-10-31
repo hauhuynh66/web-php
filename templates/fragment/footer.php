@@ -18,7 +18,7 @@
                     <i class="fab fa-facebook fa-2x"></i>
                 </a>
                 <a href="https://google.com.vn" class="ml-3">
-                    <i class="fab fa-google fa-2x icon-red"></i>
+                    <i class="fab fa-google fa-2x icon-danger"></i>
                 </a>
                 <a href="https://twitter.com" class="ml-3">
                     <i class="fab fa-twitter fa-2x icon-info"></i>
