@@ -29,7 +29,7 @@
             <?php
                 include("fragment/topbar.php");
             ?>
-            <div class="main-content m-4">
+            <div class="main-content my-4 ml-4">
                 <?php
                     $name = $_GET["name"];
                     $result = get_web_template($conn,$name);
@@ -60,7 +60,10 @@
                                 <small><i class='fas fa-clock mx-2'></i>$upload_date</small>
                             </div>
                             <div class='col-3'>
-                                <small><i class='fas fa-user mx-2'></i>$uploader</small>
+                                <small>
+                                    <i class='fas fa-user mx-2'></i>
+                                    <a class='text-dark' href='./list.php?uploader=$uploader'>$uploader</a>
+                                </small>
                             </div>
                             <div class='col-3'>
                                 <small><i class='fas fa-comments mx-2'></i>$n</small>
@@ -87,7 +90,7 @@
                                         }
                                         echo("</ol>");
                                     ?>
-                                    <div class="carousel-inner">
+                                    <div class="carousel-inner preview-image">
                                         <?php
                                             for($i=0;$i<$count;$i++){
                                                 $j = $i+1;

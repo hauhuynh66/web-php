@@ -1,8 +1,16 @@
 <?php
     include_once("../script/locale.php");
+    include_once("../script/user-query.php");
+    if(session_status()==PHP_SESSION_NONE){
+        session_start();
+    }
     $dashboard = $lang->{"sidebar.db"};
     $upload = $lang->{"sidebar.up"};
     $about = $lang->{"sidebar.ab"};
+    if(isset($_SESSION["username"])){
+        $user = get_user_role($conn,$_SESSION["username"]);
+        $role = $user->fetch_assoc()["role"];
+    }
 ?>
 <div class="mt-4">
     <a href="../index.php" class="sidebar-brand normal-text">
@@ -21,6 +29,15 @@
         </a>
     </div>
 </div>
+<?php
+    if(isset($role)&&$role=="ADMIN") {
+        echo("<div class=\"item-holder pb-0 border-bottom-0\">
+            <div class=\"sidebar-item\">
+            <a href=\"users.php\" class=\"sidebar-text normal-text py-2\">
+                <i class=\"fa fa-chalkboard-teacher large-text pr-2\"></i>");
+        echo("<span>User</span></a></div></div>");
+    }
+?>
 <div class="item-holder border-bottom-0">
     <div class="sidebar-item">
         <a href="powerpoint.php?page=1" class="sidebar-text normal-text pt-2">

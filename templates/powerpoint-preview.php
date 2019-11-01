@@ -28,7 +28,7 @@
             <?php
                 include("fragment/topbar.php");
             ?>
-            <div class="main-content m-4">
+            <div class="main-content  my-4 ml-4">
                 <?php
                     $name = $_GET["name"];
                     $result = get_powerpoint_template($conn,$name);
@@ -86,7 +86,7 @@
                                     }
                                     echo("</ol>");
                                     ?>
-                                    <div class="carousel-inner">
+                                    <div class="carousel-inner preview-image">
                                         <?php
                                         for($i=0;$i<$count;$i++){
                                             $j = $i+1;

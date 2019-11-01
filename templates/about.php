@@ -20,7 +20,7 @@
             <?php
                 include("fragment/topbar.php");
             ?>
-            <div class="main-content m-4">
+            <div class="main-content my-4 ml-4">
                 <div class="text-center">
                     <h1>About Us</h1>
                 </div>

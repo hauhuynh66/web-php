@@ -59,7 +59,10 @@
                     if(mysqli_num_rows($result)==0){
                         $success = insert_user($conn,$f_name,$l_name,$username,$email,$hash_password);
                         if($success){
-                            header("Location:./login.php?registered");
+                            $success = insert_role($conn,$username);
+                            if($success){
+                                header("Location:./login.php?registered");
+                            }
                         }
                     }
                 }

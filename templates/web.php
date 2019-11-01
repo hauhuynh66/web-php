@@ -32,8 +32,7 @@
             <?php
                 include("fragment/topbar.php");
             ?>
-            <div class="main-content m-4">
-
+            <div class="main-content my-4 ml-4">
                 <?php
                     include("fragment/filter.php");
                     $result = get_template_by_type_with_limit($conn,"web",$limit,$offset, $mode);

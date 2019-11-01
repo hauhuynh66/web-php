@@ -1,9 +1,11 @@
 <?php
+    include_once("user-query.php");
     session_start();
-    if($_SESSION['username']!=null){
+    if(isset($_SESSION["username"])){
+        $success = update_active_time($conn,$_SESSION["username"]);
         unset($_SESSION['username']);
     }
-    if($_COOKIE['username']!=null){
+    if(isset($_COOKIE["user"])){
         setcookie("user", "", time() - 3600);
     }
     header('Location:../templates/login.php');

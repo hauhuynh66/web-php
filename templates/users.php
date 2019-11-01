@@ -1,8 +1,24 @@
+<?php
+    include_once("../script/user-query.php");
+    if(session_status()==PHP_SESSION_NONE){
+        session_start();
+    }
+    if(!isset($_SESSION["username"])){
+        header("Location:../templates/login.php");
+    }else{
+        $username = $_SESSION["username"];
+        $user = get_user_role($conn,$username);
+        $role = $user->fetch_assoc()["role"];
+        if($role!="ADMIN"){
+            header("Location:../templates/403.php");
+        }
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Not Found</title>
+    <title>Users</title>
     <link rel="shortcut icon" href="#" />
     <link href="../vendor/bootstrap/bootstrap.css" rel="stylesheet" type="text/css"/>
     <link href="../vendor/font-awesome/css/all.css" rel="stylesheet" type="text/css"/>
@@ -13,21 +29,28 @@
     <div class="row">
         <div class="col-sm-12 col-mb-3 col-lg-3 col-xl-3 sidebar bg-info" id="sidebar">
             <?php
-            include("fragment/sidebar.php");
+                include("fragment/sidebar.php");
             ?>
         </div>
         <div class="col-sm-12 col-mb-9 col-lg-9 col-xl-9 content" id="content">
             <?php
                 include("fragment/topbar.php");
             ?>
-            <div class="main-content m-5">
+            <div class="main-content m-4">
                 <div class="container text-center">
-                    <i class="fas fa-sad-cry fa-8x icon-yellow"></i>
-                    <h3 class="mt-4">Page Not Found!</h3>
+                    <i class="fas fa-users fa-8x icon-info"></i>
+                </div>
+                <div class="container">
+                    <?php
+                        $users = get_all_users($conn);
+                        while($user = $users->fetch_assoc()){
+                            display_user($conn,$user);
+                        }
+                    ?>
                 </div>
             </div>
             <?php
-                include("fragment/footer.php");
+            include("fragment/footer.php");
             ?>
         </div>
     </div>

@@ -1,5 +1,6 @@
 <?php
     include_once("../script/locale.php");
+    include_once("../script/template-query.php");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -23,7 +24,7 @@
                 <?php
                     include("fragment/topbar.php");
                 ?>
-                <div class="main-content m-4">
+                <div class="main-content my-4 ml-4">
                     <div class="row">
                         <div class="col-12">
                             <div class="card shadow">
@@ -83,7 +84,6 @@
                                         <div class="col-9">
                                             <p class="text-dark">Templates</p>
                                             <?php
-                                                include("../script/template-query.php");
                                                 echo(mysqli_num_rows(get_all_templates($conn)));
                                             ?>
                                         </div>
@@ -118,7 +118,6 @@
                                         <div class="col-9">
                                             <p class="text-dark">Users</p>
                                             <?php
-                                                include("../script/user-query.php");
                                                 echo(mysqli_num_rows(get_all_users($conn)));
                                             ?>
                                         </div>

@@ -31,7 +31,7 @@
             <?php
                 include("fragment/topbar.php");
             ?>
-            <div class="main-content pr-2">
+            <div class="main-content my-4 ml-4">
                 <div class="row">
                     <div class="col-4 text-center">
                         <div class="container">

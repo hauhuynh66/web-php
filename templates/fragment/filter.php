@@ -1,9 +1,7 @@
-<div class="row pb-3">
-    <div class="col-12">
-        <div class="input-group">
-            <input class="form-control" placeholder="Search">
-            <button class="input-group-prepend btn btn-info"><i class="fa fa-search"></i></button>
-        </div>
+<div class="container px-0">
+    <div class="input-group">
+        <input class="form-control" placeholder="Search">
+        <button class="input-group-prepend btn btn-info"><i class="fa fa-search"></i></button>
     </div>
 </div>
 <hr>

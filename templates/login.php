@@ -20,6 +20,9 @@
                 if(isset($_GET["error"])){
                     echo("<div class='alert alert-danger'>Bad Credentials</div>");
                 }
+                if(isset($_GET["blocked"])){
+                    echo("<div class='alert alert-danger'>User Blocked</div>");
+                }
             ?>
         </div>
         <form class="form-group mt-3" action="../script/authenticate.php" method="post">

@@ -23,7 +23,7 @@
             <?php
                 include("fragment/topbar.php");
             ?>
-            <div class="main-content m-4">
+            <div class="main-content my-4 ml-4">
                 <?php
                     include("fragment/upload_form.php");
                 ?>

@@ -185,6 +185,15 @@ a.footer-link{
     opacity: 0.5;
 }
 
+.preview-image{
+    height: 500px;
+}
+
+img{
+    max-width: 100%;
+    max-height: 100%;
+}
+
 .description{
     margin-top: 20px;
     overflow-y: hidden;
