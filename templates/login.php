@@ -33,6 +33,7 @@
             <input type="checkbox" class="mt-3" name="remember-me" id="remember-me">
             <label for="remember-me">Remember me</label>
             <button class="btn btn-block btn-info mt-3" type="submit" id="login-btn">Sign In</button>
+            <a href="password-forget.php" class="d-block mt-3">Forget Password?</a>
             <a href="register.php" class="d-block mt-3">Register Account</a>
         </form>
     </div>

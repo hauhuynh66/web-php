@@ -1,8 +1,13 @@
 <?php
     include("../script/session.php");
-    include("../script/get_template.php");
+    include("../script/template-query.php");
     include("../script/review.php");
     if(!isset($_GET["name"])){
+        header("Location:../templates/404.php");
+    }
+    $name = $_GET["name"];
+    $result = get_web_template($conn,$name);
+    if($result==null){
         header("Location:../templates/404.php");
     }
 ?>
@@ -31,11 +36,6 @@
             ?>
             <div class="main-content my-4 ml-4">
                 <?php
-                    $name = $_GET["name"];
-                    $result = get_web_template($conn,$name);
-                    if($result==null){
-                        header("Location:../templates/404.php");
-                    }
                     $downloads = $result["downloads"];
                     $des = $result["description"];
                     $path = $result["path"];

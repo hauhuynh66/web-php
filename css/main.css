@@ -283,6 +283,10 @@ i.icon-success{
     color: #28a745 !important;
 }
 
+i.icon-white{
+    color: white !important;
+}
+
 a.card{
     display: block;
     height: 200px;
@@ -300,11 +304,10 @@ a.card{
 }
 
 .sidebar-text{
-    font-family: "Times New Roman", sans-serif;
+    font-family: "Times New Roman",sans-serif;
     font-size: 25px;
     margin-right: 10px;
     font-weight: 900;
-    font-style: italic;
 }
 
 .fixed-button{
@@ -349,7 +352,7 @@ a.card{
 }
 
 .text-font-1{
-    font-family: "VNI-Trung Kien",sans-serif;
+    font-family: "VNI-Book",sans-serif;
     font-weight: bolder;
 }
 
@@ -363,7 +366,7 @@ a.card{
 .rating > label:before {
     margin: 5px;
     font-size: 1.25em;
-    font-family: 'Font Awesome 5 Free';
+    font-family: 'Font Awesome 5 Free', sans-serif;
     display: inline-block;
     content: "\f005";
 }

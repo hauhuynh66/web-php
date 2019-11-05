@@ -45,6 +45,7 @@
                 ?>
             </div>
             <?php
+                include("fragment/modals.php");
                 include("fragment/footer.php");
             ?>
         </div>
@@ -55,4 +56,5 @@
 <script src="../vendor/bootstrap/bootstrap.js"></script>
 <script src="../vendor/font-awesome/js/fontawesome.js"></script>
 <script src="../js/main.js"></script>
+<script src="../js/download.js"></script>
 </html>

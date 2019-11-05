@@ -41,6 +41,20 @@
                     <i class="fas fa-users fa-8x icon-info"></i>
                 </div>
                 <div class="container">
+                    <div class="row mt-5">
+                        <div class="col-2 text-left">
+                            <p class="text-info">Role</p>
+                        </div>
+                        <div class="col-3 text-center">
+                            <p class="text-info">Username</p>
+                        </div>
+                        <div class="col-3 text-center">
+                            <p class="text-info">Status</p>
+                        </div>
+                        <div class="col-4 text-right">
+                            <p class="text-info">Lastest Logout</p>
+                        </div>
+                    </div>
                     <?php
                         $users = get_all_users($conn);
                         while($user = $users->fetch_assoc()){

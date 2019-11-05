@@ -168,7 +168,7 @@
                     <h4>Statistics</h4>
                     <hr>
                     <div class="row">
-                        <div class="col-sm-12 col-mb-6 col-lg-6 col-xl-6">
+                        <div class="col-sm-12 col-mb-6 col-lg-6 col-xl-6 mt-4">
                             <div class="card shadow">
                                 <div class="card-header">
                                     <h4>Stat 1</h4>
@@ -178,7 +178,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-sm-12 col-mb-6 col-lg-6 col-xl-6">
+                        <div class="col-sm-12 col-mb-6 col-lg-6 col-xl-6 mt-4">
                             <div class="card shadow">
                                 <div class="card-header">
                                     <h4>Stat 2</h4>

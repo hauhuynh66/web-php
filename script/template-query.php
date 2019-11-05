@@ -1,8 +1,17 @@
 <?php
     require_once("db.php");
-
+    function get_web_template($conn,$name){
+        $table_name = "templates";
+        $sql = "select * from $table_name where name = '$name' and type='web'";
+        return mysqli_query($conn,$sql)->fetch_assoc();
+    }
+    function get_powerpoint_template($conn,$name){
+        $table_name = "templates";
+        $sql = "select * from $table_name where name = '$name' and type='powerpoint'";
+        return mysqli_query($conn,$sql)->fetch_assoc();
+    }
     function get_template_by_name($conn,$name){
-        $sql = "select * from templates where title = '$name'";
+        $sql = "select * from templates where name = '$name'";
         return mysqli_query($conn,$sql);
     }
 
@@ -52,6 +61,7 @@
     }
 
     function display_ppt($result){
+        $name = $result["name"];
         $title = $result["title"];
         $download = $result["downloads"];
         $path = "../image/preview".$result["path"]."/img1.jpg";
@@ -75,7 +85,7 @@
                             </div>
                         </div>
                         <div class='card-footer text-center'>
-                            <a class='btn btn-danger float-left item' href='powerpoint-preview.php?name=$title'>
+                            <a class='btn btn-danger float-left item' href='powerpoint-preview.php?name=$name'>
                                 <i class='fas fa-eye pr-1'></i>Details
                             </a>
                             <i class='text-center fa fa-book-open fa-2x icon-danger'></i>
@@ -88,11 +98,12 @@
     }
 
     function display_web($result){
-            $title = $result["title"];
-            $download = $result["downloads"];
-            $path = "../image/preview".$result["path"]."/img1.jpg";
-            $description = $result["description"];
-            echo("<div class='col-xl-6 col-lg-6 col-mb-6 col-sm-12 pt-4'>
+        $name = $result["name"];
+        $title = $result["title"];
+        $download = $result["downloads"];
+        $path = "../image/preview".$result["path"]."/img1.jpg";
+        $description = $result["description"];
+        echo("<div class='col-xl-6 col-lg-6 col-mb-6 col-sm-12 pt-4'>
                         <div class='card shadow'>
                             <div class='card-header'>
                                 <div class='row'>
@@ -111,7 +122,7 @@
                             </div>
                         </div>
                         <div class='card-footer text-center'>
-                            <a class='btn btn-success float-left item' href='web-preview.php?name=$title'>
+                            <a class='btn btn-success float-left item' href='web-preview.php?name=$name'>
                                 <i class='fas fa-eye pr-1'></i>Details
                             </a>
                             <i class='text-center fa fa-globe fa-2x icon-success'></i>

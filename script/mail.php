@@ -1,0 +1,2 @@
+<?php
+    $mail = new PHPMailer();

@@ -34,8 +34,8 @@
         echo("<div class=\"item-holder pb-0 border-bottom-0\">
             <div class=\"sidebar-item\">
             <a href=\"users.php\" class=\"sidebar-text normal-text py-2\">
-                <i class=\"fa fa-chalkboard-teacher large-text pr-2\"></i>");
-        echo("<span>User</span></a></div></div>");
+                <i class=\"fa fa-users large-text pr-2\"></i>");
+        echo("<span>Users</span></a></div></div>");
     }
 ?>
 <div class="item-holder border-bottom-0">

@@ -12,7 +12,7 @@
     <div class="collapse" id="filter" style="">
         <div class="card-body">
             <form>
-                <div class="row form-group">
+                <div class="row">
                     <div class="col-4 mt-2">
                         <input type="radio" name='filter-type' id='dls-type'>
                         <label class="ml-2" for="dls-type">Most Download</label>
@@ -21,7 +21,7 @@
                         <input type="radio" name='filter-type' id='new-type'>
                         <label class="ml-2" for="new-type">New Upload</label>
                     </div>
-                    <div class="col-4 float-right">
+                    <div class="w-third justify-content-end">
                         <button type="button" class="btn btn-outline-info" id="filter-btn"><i class="fa fa-bars mr-2"></i>Filter</button>
                     </div>
                 </div>

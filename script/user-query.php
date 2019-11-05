@@ -77,7 +77,7 @@
 
     function display_user($conn,$user){
         $role = get_user_role($conn,$user["username"])->fetch_assoc();
-        echo("<div class='row my-5'><div class='col-2'>");
+        echo("<div class='row mb-5'><div class='col-2'>");
         if($role["role"]=="ADMIN"){
             echo("<i class='fa fa-user-cog fa-2x'></i></div>");
         }else{
