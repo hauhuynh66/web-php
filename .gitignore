@@ -1,4 +1,3 @@
-/vendor/
-
 *.zip
-!spec/*.zip
+
+/vendor/
