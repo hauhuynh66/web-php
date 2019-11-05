@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <title>Reset Password</title>
-    <link href="../vendor/bootstrap/bootstrap.css" rel="stylesheet" type="text/css"/>
-    <link href="../vendor/font-awesome/css/all.css" rel="stylesheet" type="text/css"/>
-    <link href="../css/main.css" rel="stylesheet" type="text/css">
+    <link href="../static/vendor/bootstrap/bootstrap.css" rel="stylesheet" type="text/css"/>
+    <link href="../static/vendor/font-awesome/css/all.css" rel="stylesheet" type="text/css"/>
+    <link href="../static/css/main.css" rel="stylesheet" type="text/css">
 </head>
 <body class="bg-primary">
 <div class="limiter bg-light shadow">

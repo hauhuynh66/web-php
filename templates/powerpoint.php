@@ -16,9 +16,9 @@
     <meta charset="UTF-8">
     <title>Powerpoint</title>
     <link rel="shortcut icon" href="#" />
-    <link href="../vendor/bootstrap/bootstrap.css" rel="stylesheet" type="text/css"/>
-    <link href="../vendor/font-awesome/css/all.css" rel="stylesheet" type="text/css"/>
-    <link href="../css/main.css" rel="stylesheet" type="text/css">
+    <link href="../static/vendor/bootstrap/bootstrap.css" rel="stylesheet" type="text/css"/>
+    <link href="../static/vendor/font-awesome/css/all.css" rel="stylesheet" type="text/css"/>
+    <link href="../static/css/main.css" rel="stylesheet" type="text/css">
 </head>
 <body>
 <div class="content shadow ml-2">
@@ -66,10 +66,9 @@
         </div>
     </div>
 </div>
-
-<script src="../vendor/jquery/jquery-3.4.1.js"></script>
-<script src="../vendor/bootstrap/bootstrap.js"></script>
-<script src="../vendor/font-awesome/js/fontawesome.js"></script>
-<script src="../js/main.js"></script>
+<script src="../static/vendor/jquery/jquery-3.4.1.js"></script>
+<script src="../static/vendor/bootstrap/bootstrap.js"></script>
+<script src="../static/vendor/font-awesome/js/fontawesome.js"></script>
+<script src="../static/js/main.js"></script>
 </body>
 </html>
