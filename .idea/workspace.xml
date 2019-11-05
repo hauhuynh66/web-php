@@ -2,19 +2,27 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="447a008c-2310-419f-b1c1-055fba425540" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/static/js/profile.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dictionaries/User.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/User.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/download.php" beforeDir="false" afterPath="$PROJECT_DIR$/download.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/file/web/sb-admin/src.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/file/web/template1/src.zip" beforeDir="false" afterPath="$PROJECT_DIR$/file/web/template1/src.zip" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/dashboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/dashboard.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/download.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/download.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/main.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/map.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/map.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/profile.js" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/profile.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/profile.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/script/mail.php" beforeDir="false" afterPath="$PROJECT_DIR$/script/mail.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/script/template-query.php" beforeDir="false" afterPath="$PROJECT_DIR$/script/template-query.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/403.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/403.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/404.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/404.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/about.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/about.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/fragment/modals.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/fragment/modals.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/fragment/topbar.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/fragment/topbar.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/list.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/list.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/login.php" afterDir="false" />
@@ -1949,19 +1957,46 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/list.php">
+        <entry file="file://$PROJECT_DIR$/static/js/download.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="236">
-              <caret line="53" column="7" selection-start-line="53" selection-start-column="7" selection-end-line="53" selection-end-column="7" />
+            <state relative-caret-position="119">
+              <caret line="7" column="48" selection-start-line="7" selection-start-column="48" selection-end-line="7" selection-end-column="48" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/fragment/modals.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="15" column="18" lean-forward="true" selection-start-line="15" selection-start-column="18" selection-end-line="15" selection-end-column="18" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/powerpoint-preview.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="955">
+              <caret line="207" column="71" selection-start-line="207" selection-start-column="71" selection-end-line="207" selection-end-column="71" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/script/template-query.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-629">
+              <caret line="62" column="37" selection-start-line="62" selection-start-column="37" selection-end-line="62" selection-end-column="37" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/templates/web-preview.php">
+        <entry file="file://$PROJECT_DIR$/download.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="205">
-              <caret line="208" column="71" selection-start-line="208" selection-start-column="71" selection-end-line="208" selection-end-column="71" />
+            <state relative-caret-position="255">
+              <caret line="20" column="8" selection-start-line="20" selection-start-column="8" selection-end-line="20" selection-end-column="8" />
             </state>
           </provider>
         </entry>
@@ -2017,20 +2052,15 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/script/api.php" />
-        <option value="$PROJECT_DIR$/js/download.js" />
         <option value="$PROJECT_DIR$/templates/fragment/footer.php" />
         <option value="$PROJECT_DIR$/script/review.php" />
         <option value="$PROJECT_DIR$/js/profile.js" />
         <option value="$PROJECT_DIR$/file/access.php" />
-        <option value="$PROJECT_DIR$/download.php" />
-        <option value="$PROJECT_DIR$/templates/fragment/modals.php" />
         <option value="$PROJECT_DIR$/script/locale.php" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/script/lang/vn.json" />
         <option value="$PROJECT_DIR$/script/lang/en.json" />
         <option value="$PROJECT_DIR$/script/lang/fr.json" />
-        <option value="$PROJECT_DIR$/file/.htaccess" />
         <option value="$PROJECT_DIR$/js/main.js" />
         <option value="$PROJECT_DIR$/templates/fragment/admin-sidebar.php" />
         <option value="$PROJECT_DIR$/templates/admin.php" />
@@ -2042,8 +2072,6 @@
         <option value="$PROJECT_DIR$/preview/.htaccess" />
         <option value="$PROJECT_DIR$/preview/template1/index.html" />
         <option value="$PROJECT_DIR$/script/get_template.php" />
-        <option value="$PROJECT_DIR$/script/template-query.php" />
-        <option value="$PROJECT_DIR$/templates/fragment/topbar.php" />
         <option value="$PROJECT_DIR$/preview/sb-admin/index.html" />
         <option value="$PROJECT_DIR$/templates/webview.php" />
         <option value="$PROJECT_DIR$/script/user-query.php" />
@@ -2066,8 +2094,15 @@
         <option value="$PROJECT_DIR$/templates/profile.php" />
         <option value="$PROJECT_DIR$/templates/upload.php" />
         <option value="$PROJECT_DIR$/templates/users.php" />
-        <option value="$PROJECT_DIR$/templates/web.php" />
         <option value="$PROJECT_DIR$/templates/web-preview.php" />
+        <option value="$PROJECT_DIR$/static/js/main.js" />
+        <option value="$PROJECT_DIR$/templates/fragment/topbar.php" />
+        <option value="$PROJECT_DIR$/templates/fragment/modals.php" />
+        <option value="$PROJECT_DIR$/templates/web.php" />
+        <option value="$PROJECT_DIR$/script/template-query.php" />
+        <option value="$PROJECT_DIR$/static/js/download.js" />
+        <option value="$PROJECT_DIR$/file/.htaccess" />
+        <option value="$PROJECT_DIR$/download.php" />
       </list>
     </option>
   </component>
@@ -2095,12 +2130,53 @@
             <path>
               <item name="assignment" type="b2602c69:ProjectViewProjectNode" />
               <item name="assignment" type="462c0819:PsiDirectoryNode" />
+              <item name="file" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="assignment" type="b2602c69:ProjectViewProjectNode" />
+              <item name="assignment" type="462c0819:PsiDirectoryNode" />
+              <item name="file" type="462c0819:PsiDirectoryNode" />
+              <item name="powerpoint" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="assignment" type="b2602c69:ProjectViewProjectNode" />
+              <item name="assignment" type="462c0819:PsiDirectoryNode" />
+              <item name="file" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="assignment" type="b2602c69:ProjectViewProjectNode" />
+              <item name="assignment" type="462c0819:PsiDirectoryNode" />
+              <item name="file" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="template1" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="assignment" type="b2602c69:ProjectViewProjectNode" />
+              <item name="assignment" type="462c0819:PsiDirectoryNode" />
+              <item name="script" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="assignment" type="b2602c69:ProjectViewProjectNode" />
+              <item name="assignment" type="462c0819:PsiDirectoryNode" />
               <item name="static" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="assignment" type="b2602c69:ProjectViewProjectNode" />
               <item name="assignment" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="assignment" type="b2602c69:ProjectViewProjectNode" />
+              <item name="assignment" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="assignment" type="b2602c69:ProjectViewProjectNode" />
+              <item name="assignment" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="fragment" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -2128,11 +2204,11 @@
       <recent name="H:\Projects\PHP\assignment\image\preview\web" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="H:\Projects\PHP\assignment\file\web\template1" />
       <recent name="H:\Projects\PHP\assignment\static" />
       <recent name="H:\Projects\PHP\assignment\static\vendor" />
       <recent name="H:\Projects\PHP\assignment\web-vendor" />
       <recent name="H:\Projects\PHP\assignment\preview\sb-admin\css" />
-      <recent name="H:\Projects\PHP\assignment\templates" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -2194,12 +2270,12 @@
       <workItem from="1572649853134" duration="2148000" />
       <workItem from="1572722788585" duration="175000" />
       <workItem from="1572743524882" duration="5445000" />
-      <workItem from="1572956989473" duration="3510000" />
+      <workItem from="1572956989473" duration="6171000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="328512000" />
+    <option name="totallyTimeSpent" value="331173000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
@@ -2210,7 +2286,7 @@
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32872504" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32872504" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32872504" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -2218,7 +2294,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" />
       <window_info anchor="bottom" id="Version Control" order="9" weight="0.32872504" />
-      <window_info anchor="bottom" id="Terminal" order="10" weight="0.2734255" />
+      <window_info anchor="bottom" id="Terminal" order="10" visible="true" weight="0.2734255" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -2277,50 +2353,6 @@
     </option>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/script/lang/en.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="31" selection-start-line="14" selection-start-column="31" selection-end-line="14" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/script/lang/vn.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="33" selection-start-line="14" selection-start-column="33" selection-end-line="14" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/script/lang/fr.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="39" selection-start-line="13" selection-start-column="39" selection-end-line="13" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/download.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="55" lean-forward="true" selection-start-line="16" selection-start-column="55" selection-end-line="16" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/vendor/bootstrap/bootstrap.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/js/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="46" selection-start-line="16" selection-start-column="46" selection-end-line="16" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/static/vendor/bootstrap/bootstrap.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
@@ -2330,24 +2362,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/fragment/admin-sidebar.php" />
     <entry file="file://$PROJECT_DIR$/templates/admin.php" />
-    <entry file="file://$PROJECT_DIR$/script/logout.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="67" selection-start-line="4" selection-start-column="67" selection-end-line="4" selection-end-column="67" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/file/web/sb-admin/preview/css/sb-admin-2.css" />
     <entry file="file://$PROJECT_DIR$/file/web/sb-admin/preview/test.html" />
     <entry file="file://$PROJECT_DIR$/file/web/sb-admin/preview/404.html" />
     <entry file="file://$PROJECT_DIR$/preview/sb-admin/js/demo/chart-bar-demo.js" />
-    <entry file="file://$PROJECT_DIR$/file/.htaccess">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="13" lean-forward="true" selection-end-line="1" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/preview/.htaccess" />
     <entry file="file://$PROJECT_DIR$/preview/template1/index.html" />
     <entry file="file://$PROJECT_DIR$/script/authenticate.php">
@@ -2363,20 +2381,6 @@
     <entry file="file://$PROJECT_DIR$/preview/sb-admin/css/sb-admin-2.min.css" />
     <entry file="file://$PROJECT_DIR$/preview/sb-admin/utilities-other.html" />
     <entry file="file://$PROJECT_DIR$/preview/sb-admin/index.html" />
-    <entry file="file://$PROJECT_DIR$/script/template-query.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="7" column="50" lean-forward="true" selection-start-line="7" selection-start-column="50" selection-end-line="7" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/fragment/topbar.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="30" column="43" lean-forward="true" selection-start-line="30" selection-start-column="43" selection-end-line="30" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/fragment/filter.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
@@ -2388,13 +2392,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="173">
           <caret line="79" column="34" selection-start-line="79" selection-start-column="34" selection-end-line="79" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/fragment/sidebar.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="629">
-          <caret line="37" column="25" selection-start-line="37" selection-start-column="25" selection-end-line="37" selection-end-column="25" />
         </state>
       </provider>
     </entry>
@@ -2488,13 +2485,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/powerpoint-preview.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="205">
-          <caret line="204" column="6" selection-start-line="204" selection-start-column="6" selection-end-line="204" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/profile.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="222">
@@ -2523,10 +2513,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/web.php">
+    <entry file="file://$PROJECT_DIR$/templates/web-preview.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="219">
-          <caret line="65" column="71" selection-start-line="65" selection-start-column="71" selection-end-line="65" selection-end-column="71" />
+        <state relative-caret-position="205">
+          <caret line="208" column="71" selection-start-line="208" selection-start-column="71" selection-end-line="208" selection-end-column="71" />
         </state>
       </provider>
     </entry>
@@ -2537,10 +2527,86 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/web-preview.php">
+    <entry file="file://$PROJECT_DIR$/templates/fragment/topbar.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="205">
-          <caret line="208" column="71" selection-start-line="208" selection-start-column="71" selection-end-line="208" selection-end-column="71" />
+        <state relative-caret-position="255">
+          <caret line="37" column="91" selection-start-line="37" selection-start-column="91" selection-end-line="37" selection-end-column="91" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/script/logout.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="37" lean-forward="true" selection-start-line="5" selection-start-column="37" selection-end-line="5" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/fragment/sidebar.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6">
+          <caret line="37" column="25" selection-start-line="37" selection-start-column="25" selection-end-line="37" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/js/profile.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/js/map.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/js/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-357">
+          <caret line="18" column="9" lean-forward="true" selection-start-line="18" selection-start-column="9" selection-end-line="18" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/web.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="278">
+          <caret line="41" column="45" lean-forward="true" selection-start-line="41" selection-start-column="45" selection-end-line="41" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/powerpoint-preview.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="955">
+          <caret line="207" column="71" selection-start-line="207" selection-start-column="71" selection-end-line="207" selection-end-column="71" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/fragment/modals.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="18" lean-forward="true" selection-start-line="15" selection-start-column="18" selection-end-line="15" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/script/template-query.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-629">
+          <caret line="62" column="37" selection-start-line="62" selection-start-column="37" selection-end-line="62" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/js/download.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="48" selection-start-line="7" selection-start-column="48" selection-end-line="7" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/file/.htaccess">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="13" lean-forward="true" selection-end-line="1" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/download.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="20" column="8" selection-start-line="20" selection-start-column="8" selection-end-line="20" selection-end-column="8" />
         </state>
       </provider>
     </entry>

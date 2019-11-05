@@ -33,9 +33,9 @@
                     $l
                 </button>
                 <div class='dropdown-menu' aria-labelledby=\"dropdownMenuButton\">
-                    <a class=\"dropdown-item\" href=\"#\" id='lang-en'><img src=\"../vendor/flag/svg/england.svg\" class='small-flag mr-3 mb-1'>$en</a>
-                    <a class=\"dropdown-item\" href=\"#\" id='lang-vn'><img src=\"../vendor/flag/svg/vietnam.svg\" class='small-flag mr-3 mb-1'>$vn</a>
-                    <a class=\"dropdown-item\" href=\"#\" id='lang-fr'><img src=\"../vendor/flag/svg/france.svg\" class='small-flag mr-3 mb-1'>$fr</a>
+                    <a class=\"dropdown-item\" href=\"#\" id='lang-en'><img src=\"../static/vendor/flag/svg/england.svg\" class='small-flag mr-3 mb-1'>$en</a>
+                    <a class=\"dropdown-item\" href=\"#\" id='lang-vn'><img src=\"../static/vendor/flag/svg/vietnam.svg\" class='small-flag mr-3 mb-1'>$vn</a>
+                    <a class=\"dropdown-item\" href=\"#\" id='lang-fr'><img src=\"../static/vendor/flag/svg/france.svg\" class='small-flag mr-3 mb-1'>$fr</a>
                 </div>
             </div>
         </div>");

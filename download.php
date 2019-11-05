@@ -8,16 +8,18 @@
         header("Location:../templates/404.php");
     }else{
         $template_name = $_GET["template_name"];
+        var_dump($template_name);
         $result = get_template_by_name($conn,$template_name);
         if($result==null){
             header("Location:../templates/404.php");
         }
-        $path = "{$_SERVER['DOCUMENT_ROOT']}/assignment".$result->fetch_assoc()["path"]."/src.zip";
+        $path = "{$_SERVER['DOCUMENT_ROOT']}/assignment/file".$result->fetch_assoc()["path"]."/src.zip";
         header( 'Cache-Control: public' );
         header( 'Content-Description: File Transfer' );
-        header( "Content-Disposition: attachment; filename=src.zip" );
+        header( "Content-Disposition: attachment;" );
         header( 'Content-Type: application/zip' );
         header( 'Content-Transfer-Encoding: binary' );
+        //var_dump($path);
         readfile($path);
         exit();
     }

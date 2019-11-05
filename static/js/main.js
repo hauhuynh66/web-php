@@ -47,11 +47,11 @@ $(window).resize(function () {
 });
 
 $("#logout-btn").on('click',function () {
-     window.location = "../../script/logout.php";
+     window.location = "/assignment/script/logout.php";
 });
 
 $("#profile-btn").on('click',function () {
-    window.location = "../../templates/profile.php";
+    window.location = "/assignment/templates/profile.php";
 });
 
 $("a[id^='lang']").on('click',function () {
@@ -62,7 +62,7 @@ $("a[id^='lang']").on('click',function () {
         data: {
             locale: locale
         },
-        url: "../script/locale.php",
+        url: "/assignment/script/locale.php",
         success: function (data) {
             window.location.reload();
             console.log(data);

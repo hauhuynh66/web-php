@@ -60,7 +60,7 @@
         }
     }
 
-    function display_ppt($result){
+    function display_ppt($result,$i){
         $name = $result["name"];
         $title = $result["title"];
         $download = $result["downloads"];
@@ -71,7 +71,8 @@
                             <div class='card-header'>
                                 <div class='row'>
                                     <div class='col-6 w-haft'>
-                                        <h5 id='tp-name'>$title</h5>
+                                        <h5 id='tp-title'>$title</h5>
+                                        <small id='tp-name-$i' hidden>$name</small>
                                     </div>
                                     <div class='col-6 w-haft justify-content-end'>
                                         <small class='text-info'><i class='fa fa-download mr-2'></i> $download</small>
@@ -97,7 +98,7 @@
                 </div>");
     }
 
-    function display_web($result){
+    function display_web($result,$i){
         $name = $result["name"];
         $title = $result["title"];
         $download = $result["downloads"];
@@ -108,7 +109,8 @@
                             <div class='card-header'>
                                 <div class='row'>
                                     <div class='col-6 w-haft'>
-                                        <h5 id='tp-name'>$title</h5>
+                                        <h5 id='tp-title'>$title</h5>
+                                        <small id='tp-name-$i' hidden>$name</small>
                                     </div>
                                     <div class='col-6 w-haft justify-content-end'>
                                         <small class='text-info'><i class='fa fa-download mr-2'></i>$download</small>
@@ -126,7 +128,7 @@
                                 <i class='fas fa-eye pr-1'></i>Details
                             </a>
                             <i class='text-center fa fa-globe fa-2x icon-success'></i>
-                            <a class='btn btn-success float-right item' data-toggle='modal' data-target='#download-modal' id='download-btn'>
+                            <a class='btn btn-success float-right item' data-toggle='modal' data-target='#download-modal' id='download-btn-$i'>
                                 <i class='fas fa-download pr-1'></i>Download
                             </a>
                         </div>

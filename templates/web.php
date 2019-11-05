@@ -35,10 +35,12 @@
             <div class="main-content my-4 ml-4">
                 <?php
                     include("fragment/filter.php");
+                    $i = 1;
                     $result = get_template_by_type_with_limit($conn,"web",$limit,$offset, $mode);
                     echo("<div class='row'>");
                     while($row = $result->fetch_assoc()){
-                        display_web($row);
+                        display_web($row,$i);
+                        $i++;
                     }
                     echo("</div>");
                     if(mysqli_num_rows($result)>15){

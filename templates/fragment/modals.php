@@ -5,7 +5,7 @@
                 <h5>Download</h5>
             </div>
             <div class="modal-body text-center">
-                <h4 id="template-name" hidden></h4>
+                <h4 id="template-name"></h4>
                 <i class="fa fa-download fa-8x icon-blue"></i>
                 <br>
                 <h5 class="text-info m-4">You sure you want to download this template?</h5>
