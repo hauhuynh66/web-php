@@ -1,3 +1,30 @@
+<?php
+    require_once("../script/mail.php");
+    require_once ("../script/user-query.php");
+    if(isset($_POST["send"])){
+        $email = $_POST["email"];
+        if(!filter_var($email,FILTER_VALIDATE_EMAIL)){
+            header("Location:../templates/password-forget.php?error");
+        }else{
+            $user = get_user_by_email($conn,$email)->fetch_assoc();
+            if($user==null){
+                header("Location:../templates/password-forget.php?badCredential");
+            }else{
+                $success = change_password($conn,$user);
+                if($success=="Failed"){
+                    header("Location:../templates/password-forget.php?err1");
+                }else{
+                    $success = sendMail($email,$success);
+                    if($success==1){
+                        header("Location:../templates/login.php?reset");
+                    }else{
+                        header("Location:../templates/password-forget.php?err2");
+                    }
+                }
+            }
+        }
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,10 +40,18 @@
         <h1 class="text-font-1">Reset Password</h1>
         <h5 class="mt-3 text-info">Please enter your email to receive new generated password</h5>
     </div>
-    <form class="form-group mt-3" action="" method="post">
+    <?php
+        if(isset($_GET["error"])){
+            echo("<div class='alert alert-danger text-center mt-3 errorMsg'>Wrong Email Format</div>");
+        }
+        if(isset($_GET["badCredential"])){
+            echo("<div class='alert alert-danger text-center mt-3 errorMsg'>Email have not yet been registered</div>");
+        }
+    ?>
+    <form class="form-group mt-3" action="./password-forget.php" method="post">
         <label for="email">Email</label>
         <input class="form-control" type="text" name="email" id="email">
-        <button class="btn btn-block btn-info mt-3" type="submit" id="login-btn">Send Email</button>
+        <button class="btn btn-block btn-info mt-3" type="submit" id="send-btn"name="send">Send Email</button>
         <a href="login.php" class="d-block mt-3">Login</a>
     </form>
 </div>

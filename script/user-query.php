@@ -1,5 +1,6 @@
 <?php
     require_once("db.php");
+    require_once("utils.php");
     function get_user_by_username($conn,$username){
         $table_name = "users";
         $sql = "select * from $table_name where username = '$username'";
@@ -69,6 +70,19 @@
         $date = date("Y-m-d H:i:s");
         $sql = "insert into role(username,role,status,lastest) values ('$username','USER','ACTIVE','$date')";
         return mysqli_query($conn,$sql);
+    }
+
+    function change_password($conn,$username){
+        $id = $username["id"];
+        $raw_password = generate_string(10);
+        $hash_password = password_hash($raw_password,PASSWORD_DEFAULT);
+        $sql = "update users set password = '$hash_password' where id = '$id'";
+        $success = mysqli_query($conn,$sql);
+        if($success){
+            return $raw_password;
+        }else{
+            return "Failed";
+        }
     }
 
     function block_user($conn,$user){
