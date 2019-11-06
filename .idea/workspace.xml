@@ -1,20 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="447a008c-2310-419f-b1c1-055fba425540" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/assignment.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/assignment.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/map.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/map.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/profile.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/profile.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/about.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/about.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/fragment/modals.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/fragment/modals.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/list.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/list.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/login.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/password-forget.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/password-forget.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/powerpoint.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/powerpoint.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/profile.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/profile.php" afterDir="false" />
-    </list>
+    <list default="true" id="447a008c-2310-419f-b1c1-055fba425540" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,10 +40,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/index.php">
+        <entry file="file://$PROJECT_DIR$/script/db.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="1" column="4" selection-start-line="1" selection-start-column="4" selection-end-line="1" selection-end-column="4" />
+            <state relative-caret-position="136">
+              <caret line="8" column="5" lean-forward="true" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -130,7 +117,6 @@
         <option value="$PROJECT_DIR$/templates/fragment/filter.php" />
         <option value="$PROJECT_DIR$/templates/fragment/sidebar.php" />
         <option value="$PROJECT_DIR$/css/main.css" />
-        <option value="$PROJECT_DIR$/composer.json" />
         <option value="$PROJECT_DIR$/templates/register.php" />
         <option value="$PROJECT_DIR$/templates/403.php" />
         <option value="$PROJECT_DIR$/templates/404.php" />
@@ -163,6 +149,7 @@
         <option value="$PROJECT_DIR$/static/js/profile.js" />
         <option value="$PROJECT_DIR$/script/template-query.php" />
         <option value="$PROJECT_DIR$/index.php" />
+        <option value="$PROJECT_DIR$/composer.json" />
       </list>
     </option>
   </component>
@@ -173,7 +160,7 @@
       <path value="$PROJECT_DIR$/vendor/phpmailer/phpmailer" />
     </include_path>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="-55" />
     <option name="y" value="47" />
     <option name="width" value="1346" />
@@ -195,6 +182,11 @@
               <item name="assignment" type="b2602c69:ProjectViewProjectNode" />
               <item name="assignment" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="assignment" type="b2602c69:ProjectViewProjectNode" />
+              <item name="assignment" type="462c0819:PsiDirectoryNode" />
+              <item name="script" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -205,7 +197,7 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../demo" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -288,12 +280,12 @@
       <workItem from="1572743524882" duration="5445000" />
       <workItem from="1572956989473" duration="23032000" />
       <workItem from="1573007086013" duration="290000" />
-      <workItem from="1573008021976" duration="83000" />
+      <workItem from="1573008021976" duration="1208000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="348407000" />
+    <option name="totallyTimeSpent" value="349532000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
@@ -312,7 +304,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" />
       <window_info anchor="bottom" id="Version Control" order="9" weight="0.32872504" />
-      <window_info anchor="bottom" id="Terminal" order="10" weight="0.2734255" />
+      <window_info anchor="bottom" id="Terminal" order="10" visible="true" weight="0.2734255" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -385,8 +377,6 @@
     </option>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/preview/.htaccess" />
-    <entry file="file://$PROJECT_DIR$/preview/template1/index.html" />
     <entry file="file://$PROJECT_DIR$/script/get_template.php" />
     <entry file="file://$PROJECT_DIR$/templates/fragment/preview-top.php" />
     <entry file="file://$PROJECT_DIR$/preview/sb-admin/css/sb-admin-2.css" />
@@ -401,13 +391,6 @@
       </provider>
     </entry>
     <entry file="file://$USER_HOME$/composer.json" />
-    <entry file="file://$PROJECT_DIR$/composer.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="15" selection-start-line="2" selection-start-column="15" selection-end-line="2" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/webview.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
@@ -564,13 +547,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/script/authenticate.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="18" lean-forward="true" selection-start-line="19" selection-start-column="18" selection-end-line="19" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/index.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
@@ -652,6 +628,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/script/authenticate.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="18" lean-forward="true" selection-start-line="19" selection-start-column="18" selection-end-line="19" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/script/api.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="4" selection-start-line="1" selection-start-column="4" selection-end-line="1" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/templates/403.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
@@ -659,10 +652,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.php">
+    <entry file="file://$PROJECT_DIR$/composer.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="4" selection-start-line="1" selection-start-column="4" selection-end-line="1" selection-end-column="4" />
+        <state relative-caret-position="68">
+          <caret line="4" column="5" lean-forward="true" selection-start-line="4" selection-start-column="5" selection-end-line="4" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/script/db.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="5" lean-forward="true" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="5" />
         </state>
       </provider>
     </entry>
