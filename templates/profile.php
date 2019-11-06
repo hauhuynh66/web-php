@@ -214,14 +214,15 @@
             <div class="modal-body">
                 <form>
                     <?php
-                    echo("<input class='form-control' id='old-password' placeholder='Old Password'>
+                    echo("<p id='user' hidden>$username</p>
+                           <input class='form-control' id='old-password' placeholder='Old Password'>
                            <input class='form-control my-3' id='new-password' placeholder='New Password'>
                            <input class='form-control my-3' id='pass-confirm' placeholder='Re-Password'>");
                     ?>
                 </form>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-primary">Confirm</button>
+                <button type="button" class="btn btn-primary" id="confirm-btn">Confirm</button>
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
             </div>
         </div>
@@ -231,4 +232,5 @@
 <script src="../static/vendor/bootstrap/bootstrap.js"></script>
 <script src="../static/vendor/font-awesome/js/fontawesome.js"></script>
 <script src="../static/js/main.js"></script>
+<script src="../static/js/profile.js"></script>
 </body>

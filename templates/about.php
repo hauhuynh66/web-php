@@ -77,6 +77,6 @@
 <script src="../static/vendor/font-awesome/js/fontawesome.js"></script>
 <script src="../static/js/main.js"></script>
 <script src="../static/js/map.js"></script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCODjgdh3eOnThpHBZzH_u44YPfonsYcIk&callback=initMap"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDcGmNtW702JhD9lMfnYWTVkQlX8GufT0Y&callback=initMap"></script>
 </body>
 </html>

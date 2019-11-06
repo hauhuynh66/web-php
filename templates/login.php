@@ -15,13 +15,16 @@
         <div class="text-center mt-3">
             <?php
                 if(isset($_GET["registered"])){
-                    echo("<div class='alert alert-success'>Successfully Register</div>");
+                    echo("<div class='alert alert-success errorMsg'>Successfully Register</div>");
                 }
                 if(isset($_GET["error"])){
-                    echo("<div class='alert alert-danger'>Bad Credentials</div>");
+                    echo("<div class='alert alert-danger errorMsg'>Bad Credentials</div>");
                 }
                 if(isset($_GET["blocked"])){
-                    echo("<div class='alert alert-danger'>User Blocked</div>");
+                    echo("<div class='alert alert-danger errorMsg'>User Blocked</div>");
+                }
+                if(isset($_GET["reset"])){
+                    echo("<div class='alert alert-danger errorMsg'>Successfully reset password</div>");
                 }
             ?>
         </div>

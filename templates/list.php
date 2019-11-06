@@ -31,15 +31,17 @@
             <div class="main-content m-4">
                 <?php
                     include("fragment/filter.php");
+                    $i = 0;
                     $templates = get_all_templates_by_uploader($conn,$uploader);
                     echo ("<h4 class=\"text-info\">Templates upload by $uploader</h4>");
                     echo("<div class='row'>");
                     while ($t = $templates->fetch_assoc()){
                         if($t["type"]=="powerpoint"){
-                            display_ppt($t);
+                            display_ppt($t,$i);
                         }else{
-                            display_web($t);
+                            display_web($t,$i);
                         }
+                        $i++;
                     }
                     echo("</div>");
                 ?>

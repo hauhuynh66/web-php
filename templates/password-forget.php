@@ -12,13 +12,13 @@
             }else{
                 $success = change_password($conn,$user);
                 if($success=="Failed"){
-                    header("Location:../templates/password-forget.php?err1");
+                    header("Location:../templates/password-forget.php?failed");
                 }else{
                     $success = sendMail($email,$success);
                     if($success==1){
                         header("Location:../templates/login.php?reset");
                     }else{
-                        header("Location:../templates/password-forget.php?err2");
+                        header("Location:../templates/password-forget.php?failed");
                     }
                 }
             }
@@ -46,6 +46,9 @@
         }
         if(isset($_GET["badCredential"])){
             echo("<div class='alert alert-danger text-center mt-3 errorMsg'>Email have not yet been registered</div>");
+        }
+        if(isset($_GET["failed"])){
+            echo("<div class='alert alert-danger text-center mt-3 errorMsg'>Unexpected error. Please try a gain</div>");
         }
     ?>
     <form class="form-group mt-3" action="./password-forget.php" method="post">
