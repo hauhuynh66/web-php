@@ -3,12 +3,12 @@
     include("../script/template-query.php");
     include("../script/review.php");
     if(!isset($_GET["name"])){
-        header("Location:../templates/404.php");
+        header("Location:../template/404.php");
     }
     $name = $_GET["name"];
     $result = get_powerpoint_template($conn,$name);
     if($result==null){
-        header("Location:../templates/404.php");
+        header("Location:../template/404.php");
     }
 ?>
 <!DOCTYPE html>
@@ -38,7 +38,7 @@
                     $name = $_GET["name"];
                     $result = get_powerpoint_template($conn,$name);
                     if($result==null){
-                        header("Location:../templates/404.php");
+                        header("Location:../template/404.php");
                     }
                     $downloads = $result["downloads"];
                     $des = $result["description"];

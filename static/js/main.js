@@ -51,7 +51,7 @@ $("#logout-btn").on('click',function () {
 });
 
 $("#profile-btn").on('click',function () {
-    window.location = "/assignment/templates/profile.php";
+    window.location = "/assignment/template/profile.php";
 });
 
 $("a[id^='lang']").on('click',function () {

@@ -4,13 +4,13 @@
         session_start();
     }
     if(!isset($_SESSION["username"])){
-        header("Location:../templates/login.php");
+        header("Location:../template/login.php");
     }else{
         $username = $_SESSION["username"];
         $user = get_user_role($conn,$username);
         $role = $user->fetch_assoc()["role"];
         if($role!="ADMIN"){
-            header("Location:../templates/403.php");
+            header("Location:../template/403.php");
         }
     }
 ?>

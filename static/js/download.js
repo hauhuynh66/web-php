@@ -13,8 +13,8 @@ $("#filter-btn").on('click',function () {
     const v = $("#new-type");
     const page = $("#page").html();
     if(v.is(":checked")){
-        window.location = "/assignment/templates/web.php?page="+page+"&filter=new";
+        window.location = "/assignment/template/web.php?page="+page+"&filter=new";
     }else{
-        window.location = "/assignment/templates/web.php?page="+page+"&filter=dls";
+        window.location = "/assignment/template/web.php?page="+page+"&filter=dls";
     }
 });

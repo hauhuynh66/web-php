@@ -43,8 +43,8 @@
         $content = $_POST["comment"];
         $success = insert_review($conn,$template_name,$username,$star,$content);
         if($_POST["type"]=="Web"){
-            header("Location:../templates/web-preview.php?name=".$_POST["template"]);
+            header("Location:../template/web-preview.php?name=".$_POST["template"]);
         }else{
-            header("Location:../templates/powerpoint-preview.php?name=".$_POST["template"]);
+            header("Location:../template/powerpoint-preview.php?name=".$_POST["template"]);
         }
     }

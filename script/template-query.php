@@ -11,17 +11,17 @@
         return mysqli_query($conn,$sql)->fetch_assoc();
     }
     function get_template_by_name($conn,$name){
-        $sql = "select * from templates where name = '$name'";
+        $sql = "select * from template where name = '$name'";
         return mysqli_query($conn,$sql);
     }
 
     function get_template_by_download($conn, $type){
-        $sql = "select * from templates where type = '$type' order by downloads desc limit 4";
+        $sql = "select * from template where type = '$type' order by downloads desc limit 4";
         return mysqli_query($conn,$sql);
     }
 
     function get_all_template_by_type($conn, $type){
-        $sql = "select * from templates where type = '$type'";
+        $sql = "select * from template where type = '$type'";
         return mysqli_query($conn,$sql);
     }
 

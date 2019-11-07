@@ -4,21 +4,21 @@
     if(isset($_POST["send"])){
         $email = $_POST["email"];
         if(!filter_var($email,FILTER_VALIDATE_EMAIL)){
-            header("Location:../templates/password-forget.php?error");
+            header("Location:../template/password-forget.php?error");
         }else{
             $user = get_user_by_email($conn,$email)->fetch_assoc();
             if($user==null){
-                header("Location:../templates/password-forget.php?badCredential");
+                header("Location:../template/password-forget.php?badCredential");
             }else{
                 $success = change_password($conn,$user);
                 if($success=="Failed"){
-                    header("Location:../templates/password-forget.php?failed");
+                    header("Location:../template/password-forget.php?failed");
                 }else{
                     $success = sendMail($email,$success);
                     if($success==1){
-                        header("Location:../templates/login.php?reset");
+                        header("Location:../template/login.php?reset");
                     }else{
-                        header("Location:../templates/password-forget.php?failed");
+                        header("Location:../template/password-forget.php?failed");
                     }
                 }
             }

@@ -8,4 +8,4 @@
     if(isset($_COOKIE["user"])){
         setcookie("user", "", time() - 3600);
     }
-    header('Location:../templates/login.php');
+    header('Location:../template/login.php');

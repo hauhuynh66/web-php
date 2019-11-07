@@ -47,7 +47,7 @@
         if(mysqli_num_rows($user)==0){
             return 0;
         }else{
-            $sql = "select * from templates where uploader = '$username'";
+            $sql = "select * from template where uploader = '$username'";
             return mysqli_query($conn,$sql);
         }
     }
