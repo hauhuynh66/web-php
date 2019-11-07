@@ -22,6 +22,7 @@
     <link rel="shortcut icon" href="#" />
     <link href="../static/vendor/bootstrap/bootstrap.css" rel="stylesheet" type="text/css"/>
     <link href="../static/vendor/font-awesome/css/all.css" rel="stylesheet" type="text/css"/>
+    <link href="../static/vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet" type="text/css">
     <link href="../static/css/main.css" rel="stylesheet" type="text/css">
 </head>
 <body>
@@ -40,7 +41,7 @@
                 <div class="container text-center">
                     <i class="fas fa-users fa-8x icon-info"></i>
                 </div>
-                <div class="container">
+                <!--<div class="container">
                     <div class="row mt-5">
                         <div class="col-2 text-left">
                             <p class="text-info">Role</p>
@@ -56,11 +57,45 @@
                         </div>
                     </div>
                     <?php
-                        $users = get_all_users($conn);
+/*                        $users = get_all_users($conn);
                         while($user = $users->fetch_assoc()){
                             display_user($conn,$user);
                         }
-                    ?>
+                    */?>
+                </div>-->
+                <div class="card shadow mt-3 mb-5">
+                    <div class="card-header text-center">
+                        <p class="text-info">Users</p>
+                    </div>
+                    <div class="card-body">
+                        <div class="dataTables_wrapper">
+                            <table class="table table-bordered dataTable" id="userTable" width="100%" cellspacing="0" role="grid" aria-describedby="dataTable_info" style="width: 100%;">
+                                <thead>
+                                <tr role="row">
+                                    <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Office: activate to sort column ascending" style="width: 10%;">
+                                        <span>Role</span>
+                                    </th>
+                                    <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Age: activate to sort column ascending" style="width: 20%;">
+                                        <span>Username</span>
+                                    </th>
+                                    <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Office: activate to sort column ascending" style="width: 10%;">
+                                        <span>Uploads</span>
+                                    </th>
+
+                                    <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Age: activate to sort column ascending" style="width: 20%;">
+                                        <span>Status</span>
+                                    </th>
+                                    <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Start date: activate to sort column ascending" style="width: 30%;">
+                                        <span>Last Active</span>
+                                    </th>
+                                </tr>
+                                </thead>
+                                <tbody>
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
                 </div>
             </div>
             <?php
@@ -73,5 +108,8 @@
 <script src="../static/vendor/jquery/jquery-3.4.1.js"></script>
 <script src="../static/vendor/bootstrap/bootstrap.js"></script>
 <script src="../static/vendor/font-awesome/js/fontawesome.js"></script>
+<script src="../static/vendor/datatables/jquery.dataTables.js"></script>
+<script src="../static/vendor/datatables/dataTables.bootstrap4.js"></script>
 <script src="../static/js/main.js"></script>
+<script src="../static/js/users.js"></script>
 </html>
