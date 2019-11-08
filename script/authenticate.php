@@ -1,14 +1,15 @@
 <?php
     require("db.php");
-    include_once("user-query.php");
+    include_once("user.php");
     session_start();
+    $user = new user($conn);
     $email = $_POST["email"];
     $password = $_POST["password"];
     $remember_me = $_POST["remember-me"];
-    $result = get_user_by_email($conn,$email)->fetch_assoc();
+    $result = $user->get_by_email($email)->fetch_assoc();
     if($result!=null){
-        $role = get_user_role($conn,$result["username"])->fetch_assoc();
-        if($role["status"]!="ACTIVE"){
+        $status = $user->get_role($username,"status");
+        if($status!="ACTIVE"){
             header("Location:../template/login.php?blocked");
         }else{
             if(password_verify($password,$result["password"])){

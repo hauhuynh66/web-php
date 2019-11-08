@@ -1,13 +1,26 @@
 <?php
-    include("../script/session.php");
-    include("../script/user-query.php");
+    require_once("../script/session.php");
+    require_once("../script/user.php");
     include_once("../script/locale.php");
+    include_once("../script/utils.php");
     $fn = $lang->{"fn"};
     $ln = $lang->{"ln"};
     $un = $lang->{"un"};
     $t_up = $lang->{"t_up"};
     $change_i = $lang->{"change_i"};
     $change_p = $lang->{"change_p"};
+    $user = new user($conn);
+    $username = $_SESSION["username"];
+    $result = $user->get_by_username($username)->fetch_assoc();
+    $role = $user->get_role($username,"role");
+    $firstname = $result["firstname"];
+    $lastname = $result["lastname"];
+    $username = $result["username"];
+    $email = $result["email"];
+    $github = $result["github"];
+    $facebook = $result["facebook"];
+    $twitter = $result["twitter"];
+    $uploads = mysqli_num_rows($user->get_uploaded_templates($result["username"]));
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -39,52 +52,44 @@
                                 <div class="card-header">
                                     <h5 class="text-dark">
                                         <?php
-                                            $result = get_user_role($conn,$_SESSION["username"])->fetch_assoc();
-                                            echo($result["role"]);
+                                            echo($role);
                                         ?>
                                     </h5>
                                 </div>
                                 <div class="card-body">
                                     <i class="fa fa-user-circle fa-8x"></i>
                                 </div>
+                                <div class="card-footer">
+                                    <button class="btn btn-block btn-success" data-toggle="modal" data-target="#change-image-modal">Change Image</button>
+                                </div>
                             </div>
                         </div>
                     </div>
                     <div class="col-8">
-                        <?php
-                            $result = get_user_by_username($conn,$_SESSION['username'])->fetch_assoc();
-                            $firstname = $result["firstname"];
-                            $lastname = $result["lastname"];
-                            $username = $result["username"];
-                            $email = $result["email"];
-                            $github = $result["github"];
-                            $facebook = $result["facebook"];
-                            $twitter = $result["twitter"];
-                        ?>
                         <div class="row">
                             <?php
-                                echo("<div class=\"col-4\">
+                                echo("<div class='col-4'>
                                         <label>$fn :</label>
                                     </div>
-                                    <div class=\"col-8\">");
+                                    <div class='col-8'>");
                                 echo($firstname."</div>");
                             ?>
                         </div>
                         <div class="row">
                             <?php
-                            echo("<div class=\"col-4\">
+                            echo("<div class='col-4'>
                                         <label>$ln :</label>
                                     </div>
-                                    <div class=\"col-8\">");
+                                    <div class='col-8'>");
                             echo($lastname."</div>");
                             ?>
                         </div>
                         <div class="row">
                             <?php
-                            echo("<div class=\"col-4\">
+                            echo("<div class='col-4'>
                                         <label>$un :</label>
                                     </div>
-                                    <div class=\"col-8\">");
+                                    <div class='col-8'>");
                             echo($username."</div>");
                             ?>
                         </div>
@@ -130,15 +135,14 @@
                         </div>
                         <div class="row">
                             <?php
-                            echo("<div class=\"col-4\">
+                            echo("<div class='col-4'>
                                             <label>$t_up :</label>
                                         </div>
-                                    <div class=\"col-8\">");
-                            $uploads = get_user_uploaded_templates($conn,$result["username"]);
+                                    <div class='col-8'>");
                             if(!$uploads){
                                 echo("<a>0</a>");
                             }else{
-                                echo("<a href='./list.php?uploader=$username'>".mysqli_num_rows($uploads)."</a></div>");
+                                echo("<a href='./list.php?uploader=$username'>".$uploads."</a></div>");
                             }
                             ?>
                         </div>
@@ -167,7 +171,6 @@
                 include("fragment/footer.php");
             ?>
         </div>
-
     </div>
 </div>
 <!--Change info-->
@@ -195,7 +198,7 @@
                 </form>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-primary">Confirm</button>
+                <button type="button" class="btn btn-primary" id="change-info-btn">Confirm</button>
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
             </div>
         </div>
@@ -222,7 +225,37 @@
                 </form>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-primary" id="confirm-btn">Confirm</button>
+                <button type="button" class="btn btn-primary" id="change-password-btn">Confirm</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--Image Modal-->
+<div class="modal fade" tabindex="-1" role="dialog" id="change-image-modal">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header text-center">
+                <p class="text-info">Change Image</p>
+            </div>
+            <div class="modal-body overflow-y h-400">
+                <?php
+                    $path = $_SERVER['DOCUMENT_ROOT']."/assignment/static/vendor/icon/animal/";
+                    $relative_path = "../static/vendor/icon/animal/";
+                    $count = count_file($path,"*.svg");
+                    echo("<div class='row'>");
+                    for($i=0;$i<$count;$i++){
+                        $fi = sprintf("%02d", $i+1);
+                        $src = $relative_path.'0'.$fi.'.svg';
+                        echo("<div class='col-3 mt-4'>");
+                        echo("<img class='image-button' src='$src' alt='$fi'>");
+                        echo("</div>");
+                    }
+                    echo("</div>");
+                ?>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" id="change-img-btn">Confirm</button>
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
             </div>
         </div>

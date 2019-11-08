@@ -1,6 +1,6 @@
 <?php
     include("../script/session.php");
-    include_once("../script/template-query.php");
+    include_once("../script/template.php");
     if(!isset($_GET["uploader"])){
         header("Location:404.php");
     }
@@ -32,14 +32,15 @@
                 <?php
                     include("fragment/filter.php");
                     $i = 0;
-                    $templates = get_all_templates_by_uploader($conn,$uploader);
+                    $teplate = new template($conn);
+                    $templates = $teplate->get_by_uploader($uploader);
                     echo ("<h4 class=\"text-info\">Templates upload by $uploader</h4>");
                     echo("<div class='row'>");
                     while ($t = $templates->fetch_assoc()){
                         if($t["type"]=="powerpoint"){
-                            display_ppt($t,$i);
+                            $teplate->display_ppt($t,$i);
                         }else{
-                            display_web($t,$i);
+                            $teplate->display_web($t,$i);
                         }
                         $i++;
                     }

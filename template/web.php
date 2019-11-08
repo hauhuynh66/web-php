@@ -1,6 +1,6 @@
 <?php
     include("../script/session.php");
-    include("../script/template-query.php");
+    include("../script/template.php");
     $page = $_GET["page"];
     $limit = $page*15;
     $offset = ($page-1)*15;
@@ -36,10 +36,11 @@
                 <?php
                     include("fragment/filter.php");
                     $i = 1;
-                    $result = get_template_by_type_with_limit($conn,"web",$limit,$offset, $mode);
+                    $template = new template($conn);
+                    $result = $template->get_by_type("web",$limit,$offset, $mode);
                     echo("<div class='row'>");
                     while($row = $result->fetch_assoc()){
-                        display_web($row,$i);
+                        $template->display_web($row,$i);
                         $i++;
                     }
                     echo("</div>");

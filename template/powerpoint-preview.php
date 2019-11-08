@@ -1,15 +1,28 @@
 <?php
-    include("../script/session.php");
-    include("../script/template-query.php");
-    include("../script/review.php");
+    require_once("../script/session.php");
+    require_once("../script/template.php");
+    require_once("../script/review.php");
+    require_once("../script/utils.php");
     if(!isset($_GET["name"])){
         header("Location:../template/404.php");
     }
     $name = $_GET["name"];
-    $result = get_powerpoint_template($conn,$name);
+    $template = new template($conn);
+    $result = $template->get_by_name($name,"powerpoint")->fetch_assoc();
     if($result==null){
         header("Location:../template/404.php");
     }
+    $downloads = $result["downloads"];
+    $des = $result["description"];
+    $path = $result["path"];
+    $relative_path = "/assignment/image/preview".$path."/";
+    $absolute_path = $_SERVER["DOCUMENT_ROOT"]."/assignment/image/preview".$path."/";
+    $uploader = $result["uploader"];
+    $title = $result["title"];
+    $upload_date = $result["upload_date"];
+    $reviews = get_all_review($conn,$_GET["name"]);
+    $n = mysqli_num_rows($reviews);
+    $count = count_file($absolute_path);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -35,28 +48,6 @@
             ?>
             <div class="main-content  my-4 ml-4">
                 <?php
-                    $name = $_GET["name"];
-                    $result = get_powerpoint_template($conn,$name);
-                    if($result==null){
-                        header("Location:../template/404.php");
-                    }
-                    $downloads = $result["downloads"];
-                    $des = $result["description"];
-                    $path = $result["path"];
-                    $relative_path = "/assignment/image/preview".$path."/";
-                    $absolute_path = $_SERVER["DOCUMENT_ROOT"]."/assignment/image/preview".$path."/";
-                    $uploader = $result["uploader"];
-                    $title = $result["title"];
-                    $upload_date = $result["upload_date"];
-                    $reviews = get_all_review($conn,$_GET["name"]);
-                    $n = mysqli_num_rows($reviews);
-                    $file = glob($absolute_path."*.jpg",GLOB_BRACE);
-                    $count = 0;
-                    if($file){
-                        $count = count($file);
-                    }
-                ?>
-                <?php
                 echo("<div class='container text-left'>
                         <h4 class='text-info' id='tp-name'>$title</h4>
                         <div class='row mb-3'>
@@ -64,7 +55,10 @@
                                 <small><i class='fas fa-clock mx-2'></i>$upload_date</small>
                             </div>
                             <div class='col-3'>
-                                <small><i class='fas fa-user mx-2'></i>$uploader</small>
+                                <small>
+                                    <i class='fas fa-user mx-2'></i>
+                                    <a class='text-dark' href='./list.php?uploader=$uploader'>$uploader</a>
+                                </small>
                             </div>
                             <div class='col-3'>
                                 <small><i class='fas fa-comments mx-2'></i>$n</small>

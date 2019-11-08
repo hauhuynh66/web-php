@@ -1,15 +1,16 @@
 <?php
     include_once("../script/locale.php");
-    include_once("../script/user-query.php");
+    include_once("../script/User.php");
     if(session_status()==PHP_SESSION_NONE){
         session_start();
     }
+    $user = new user($conn);
     $dashboard = $lang->{"sidebar.db"};
     $upload = $lang->{"sidebar.up"};
     $about = $lang->{"sidebar.ab"};
     if(isset($_SESSION["username"])){
-        $user = get_user_role($conn,$_SESSION["username"]);
-        $role = $user->fetch_assoc()["role"];
+        $username = $_SESSION["username"];
+        $role = $user->get_role($username,"role");
     }
 ?>
 <div class="mt-4">

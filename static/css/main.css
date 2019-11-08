@@ -394,6 +394,62 @@ a.card{
     color: #FFED85;
 }
 
+.overflow-y{
+    overflow-y: scroll !important;
+}
+
+.h-400{
+    height: 400px !important;
+}
+
+.font-size-10{
+    font-size: 10px !important;
+}
+
+.font-size-15{
+    font-size: 15px !important;
+}
+
+.font-size-20{
+    font-size: 20px !important;
+}
+
+.height-40{
+    min-height: 40px !important;
+    max-height: 60px !important;
+    overflow-y: hidden !important;
+}
+
+.height-80{
+    min-height: 80px !important;
+    max-height: 120px !important;
+    overflow-y: hidden !important;
+}
+
+.word-break{
+    word-break: break-all !important;
+}
+
+.width-50{
+    min-width: 100px !important;
+    overflow-x: hidden !important;
+}
+
+.width-100{
+    min-width: 200px !important;
+    overflow-x: hidden !important;
+}
+
+.width-75{
+    min-width: 150px !important;
+    overflow-x: hidden !important;
+}
+
+.abs-text{
+    position: absolute;
+    bottom: 2px;
+    right: 2px;
+}
 
 .errorMsg{
     -webkit-animation: disappear 0s ease-in 4s forwards;

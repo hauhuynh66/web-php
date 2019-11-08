@@ -1,72 +1,52 @@
 <?php
     require_once("db.php");
-    function get_web_template($conn,$name){
-        $table_name = "templates";
-        $sql = "select * from $table_name where name = '$name' and type='web'";
-        return mysqli_query($conn,$sql)->fetch_assoc();
-    }
-    function get_powerpoint_template($conn,$name){
-        $table_name = "templates";
-        $sql = "select * from $table_name where name = '$name' and type='powerpoint'";
-        return mysqli_query($conn,$sql)->fetch_assoc();
-    }
-    function get_template_by_name($conn,$name){
-        $sql = "select * from template where name = '$name'";
-        return mysqli_query($conn,$sql);
-    }
+    class template{
+        private $template_table;
+        private $conn;
 
-    function get_template_by_download($conn, $type){
-        $sql = "select * from template where type = '$type' order by downloads desc limit 4";
-        return mysqli_query($conn,$sql);
-    }
-
-    function get_all_template_by_type($conn, $type){
-        $sql = "select * from template where type = '$type'";
-        return mysqli_query($conn,$sql);
-    }
-
-    function get_template_by_type_with_limit($conn, $type, $limit, $offset, $mode){
-        $table_name = "templates";
-        if($mode=="dls"){
-            $sql = "select * from $table_name where type = '$type' order by downloads desc limit $limit offset $offset";
-        }else{
-            $sql = "select * from $table_name where type = '$type' order by upload_date desc  limit $limit offset $offset";
+        /**
+         * Template constructor.
+         * @param $template_table
+         * @param $conn
+         */
+        public function __construct($conn, $template_table = "templates")
+        {
+            $this->template_table = $template_table;
+            $this->conn = $conn;
         }
-        return mysqli_query($conn,$sql);
-    }
 
-    function get_all_templates_by_uploader($conn,$uploader){
-        $table_name = "templates";
-        $sql = "select * from $table_name where uploader='$uploader'";
-        return mysqli_query($conn,$sql);
-    }
+        function get_by_name($name,$type){
+            $sql = "select * from $this->template_table where name = '$name' and type ='$type'";
+            return mysqli_query($this->conn,$sql);
+        }
 
-    function get_all_templates($conn){
-        $table_name = "templates";
-        $sql = "select * from $table_name";
-        return mysqli_query($conn,$sql);
-    }
-
-    function get_total_downloads($result){
-        $n_rows = mysqli_num_rows($result);
-        if($n_rows==0){
-            return 0;
-        }else{
-            $n_downloads = 0;
-            while($row=$result->fetch_assoc()){
-                $n_downloads += $row["downloads"];
+        function get_by_type($type, $limit, $offset, $mode){
+            $table_name = "templates";
+            if($mode=="dls"){
+                $sql = "select * from $table_name where type = '$type' order by downloads desc limit $limit offset $offset";
+            }else{
+                $sql = "select * from $table_name where type = '$type' order by upload_date desc  limit $limit offset $offset";
             }
-            return $n_downloads;
+            return mysqli_query($this->conn,$sql);
         }
-    }
 
-    function display_ppt($result,$i){
-        $name = $result["name"];
-        $title = $result["title"];
-        $download = $result["downloads"];
-        $path = "../image/preview".$result["path"]."/img1.jpg";
-        $description = $result["description"];
-        echo("<div class='col-xl-6 col-lg-6 col-mb-6 col-sm-12 col-pt-4'>
+        function get_by_uploader($uploader){
+            $sql = "select * from $this->template_table where uploader='$uploader'";
+            return mysqli_query($this->conn,$sql);
+        }
+
+        function get_all($conn){
+            $sql = "select * from $this->template_table";
+            return mysqli_query($conn,$sql);
+        }
+
+        function display_ppt($result,$i){
+            $name = $result["name"];
+            $title = $result["title"];
+            $download = $result["downloads"];
+            $path = "../image/preview".$result["path"]."/img1.jpg";
+            $description = $result["description"];
+            echo("<div class='col-xl-6 col-lg-6 col-mb-6 col-sm-12 col-pt-4'>
                         <div class='card shadow'>
                             <div class='card-header'>
                                 <div class='row'>
@@ -96,15 +76,15 @@
                         </div>
                     </div>
                 </div>");
-    }
+        }
 
-    function display_web($result,$i){
-        $name = $result["name"];
-        $title = $result["title"];
-        $download = $result["downloads"];
-        $path = "../image/preview".$result["path"]."/img1.jpg";
-        $description = $result["description"];
-        echo("<div class='col-xl-6 col-lg-6 col-mb-6 col-sm-12 pt-4'>
+        function display_web($result,$i){
+            $name = $result["name"];
+            $title = $result["title"];
+            $download = $result["downloads"];
+            $path = "../image/preview".$result["path"]."/img1.jpg";
+            $description = $result["description"];
+            echo("<div class='col-xl-6 col-lg-6 col-mb-6 col-sm-12 pt-4'>
                         <div class='card shadow'>
                             <div class='card-header'>
                                 <div class='row'>
@@ -134,4 +114,5 @@
                         </div>
                     </div>
                 </div>");
+        }
     }

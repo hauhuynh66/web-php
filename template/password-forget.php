@@ -1,6 +1,7 @@
 <?php
     require_once("../script/mail.php");
-    require_once ("../script/user-query.php");
+    require_once("../script/user.php");
+    require_once ("../script/utils.php");
     if(isset($_POST["send"])){
         $email = $_POST["email"];
         if(!filter_var($email,FILTER_VALIDATE_EMAIL)){
@@ -10,7 +11,7 @@
             if($user==null){
                 header("Location:../template/password-forget.php?badCredential");
             }else{
-                $success = change_password($conn,$user);
+                $success = change_password($conn,$user,generate_string(10));
                 if($success=="Failed"){
                     header("Location:../template/password-forget.php?failed");
                 }else{

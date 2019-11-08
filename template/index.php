@@ -1,6 +1,16 @@
 <?php
     include_once("../script/locale.php");
-    include_once("../script/template-query.php");
+    include_once("../script/template.php");
+    require_once("../script/user.php");
+    $user = new user($conn);
+    $template = new template($conn);
+    $templates = $template->get_all($conn);
+    $n_templates = mysqli_num_rows($templates);
+    $download = 0;
+    while ($t = $templates->fetch_assoc()){
+        $download+=$t["downloads"];
+    }
+    $users = mysqli_num_rows($user->get_all());
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -84,7 +94,7 @@
                                         <div class="col-9">
                                             <p class="text-dark">Templates</p>
                                             <?php
-                                                echo(mysqli_num_rows(get_all_templates($conn)));
+                                                echo $n_templates;
                                             ?>
                                         </div>
                                         <div class="col-3 justify-content-end pt-3">
@@ -101,7 +111,7 @@
                                         <div class="col-9">
                                             <p class="text-dark">Downloads</p>
                                             <?php
-                                                echo(get_total_downloads(get_all_templates($conn)));
+                                                echo $download;
                                             ?>
                                         </div>
                                         <div class="col-3 justify-content-end pt-3">
@@ -118,7 +128,7 @@
                                         <div class="col-9">
                                             <p class="text-dark">Users</p>
                                             <?php
-                                                echo(mysqli_num_rows(get_all_users($conn)));
+                                                echo($users);
                                             ?>
                                         </div>
                                         <div class="col-3 justify-content-end pt-3">

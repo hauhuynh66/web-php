@@ -1,5 +1,5 @@
 <?php
-    include_once("../script/user-query.php");
+    include_once("../script/user.php");
     if(session_status()==PHP_SESSION_NONE){
         session_start();
     }
@@ -7,8 +7,8 @@
         header("Location:../template/login.php");
     }else{
         $username = $_SESSION["username"];
-        $user = get_user_role($conn,$username);
-        $role = $user->fetch_assoc()["role"];
+        $user = new user($conn);
+        $role = $user->get_role($username,"role");
         if($role!="ADMIN"){
             header("Location:../template/403.php");
         }
@@ -41,28 +41,6 @@
                 <div class="container text-center">
                     <i class="fas fa-users fa-8x icon-info"></i>
                 </div>
-                <!--<div class="container">
-                    <div class="row mt-5">
-                        <div class="col-2 text-left">
-                            <p class="text-info">Role</p>
-                        </div>
-                        <div class="col-3 text-center">
-                            <p class="text-info">Username</p>
-                        </div>
-                        <div class="col-3 text-center">
-                            <p class="text-info">Status</p>
-                        </div>
-                        <div class="col-4 text-right">
-                            <p class="text-info">Lastest Logout</p>
-                        </div>
-                    </div>
-                    <?php
-/*                        $users = get_all_users($conn);
-                        while($user = $users->fetch_assoc()){
-                            display_user($conn,$user);
-                        }
-                    */?>
-                </div>-->
                 <div class="card shadow mt-3 mb-5">
                     <div class="card-header text-center">
                         <p class="text-info">Users</p>
@@ -70,7 +48,7 @@
                     <div class="card-body">
                         <div class="dataTables_wrapper">
                             <table class="table table-bordered dataTable" id="userTable" width="100%" cellspacing="0" role="grid" aria-describedby="dataTable_info" style="width: 100%;">
-                                <thead>
+                                <thead class="text-center">
                                 <tr role="row">
                                     <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Office: activate to sort column ascending" style="width: 10%;">
                                         <span>Role</span>
@@ -90,8 +68,24 @@
                                     </th>
                                 </tr>
                                 </thead>
-                                <tbody>
-
+                                <tbody class="text-center">
+                                    <?php
+                                        $user = new user($conn);
+                                        $users = $user->get_all();
+                                        while ($u = $users->fetch_assoc()){
+                                            $role = $user->get_role($u["username"],"role");
+                                            $upload = mysqli_num_rows($user->get_uploaded_templates($u["username"]));
+                                            $status = $user->get_role($u["username"],"status");
+                                            $lastest = $user->get_role($u["username"],"lastest");
+                                            echo("<tr>
+                                                <td>$role</td>
+                                                <td>".$u["username"]."</td>
+                                                <td>$upload</td>
+                                                <td>$status</td>
+                                                <td>$lastest</td>
+                                                </tr>");
+                                        }
+                                    ?>
                                 </tbody>
                             </table>
                         </div>

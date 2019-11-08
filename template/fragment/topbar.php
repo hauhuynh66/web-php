@@ -11,14 +11,24 @@
         </button>
         <?php
             if(isset($_SESSION["username"])){
-                echo("<div class=\"vr\"></div>
-                <button class=\"btn btn-success round\" id=\"profile-btn\">
-                    <i class=\"fa fa-user-alt icon-black\"></i>
+                echo("<div class='vr'></div>
+                <button class='btn round' id='profile-btn'>
+                    <i class='fa fa-user-alt icon-black'></i>
                 </button>
-                <div class=\"vr\"></div>
-                <button class=\"btn btn-danger round\" data-toggle=\"modal\" data-target=\"#logout-modal\">
-                    <i class=\"fa fa-sign-out-alt icon-black\"></i>
-                </button>");
+                <div class='vr'></div>
+                <button class='btn round' data-toggle='modal' data-target='#logout-modal'>
+                    <i class='fa fa-sign-out-alt icon-black'></i>
+                </button>
+                <div class='vr'></div>
+                <div class='dropdown'>
+                <button class='btn' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
+                    <i class='fa fa-bell icon-black font-size-15 mr-1'></i>
+                    <small class='font-weight-bold text-danger abs-text'>2</small>
+                </button>
+                <div class='dropdown-menu' aria-labelledby='note-dropdown'>
+                    
+                </div>
+                </div>");
             }
         ?>
     </div>
@@ -27,15 +37,15 @@
         $en = $lang->{"en"};
         $vn = $lang->{"vn"};
         $fr = $lang->{"fr"};
-        echo("<div class=\"input-group w-haft justify-content-end\">
+        echo("<div class='input-group w-haft justify-content-end'>
             <div class='dropdown dropleft'>
-                <button class=\"btn dropdown-toggle\" type=\"button\" id=\"dropdownMenuButton\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">
+                <button class='btn dropdown-toggle' type='button' id='languageBtn' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
                     $l
                 </button>
-                <div class='dropdown-menu' aria-labelledby=\"dropdownMenuButton\">
-                    <a class=\"dropdown-item\" href=\"#\" id='lang-en'><img src=\"../static/vendor/flag/svg/england.svg\" class='small-flag mr-3 mb-1'>$en</a>
-                    <a class=\"dropdown-item\" href=\"#\" id='lang-vn'><img src=\"../static/vendor/flag/svg/vietnam.svg\" class='small-flag mr-3 mb-1'>$vn</a>
-                    <a class=\"dropdown-item\" href=\"#\" id='lang-fr'><img src=\"../static/vendor/flag/svg/france.svg\" class='small-flag mr-3 mb-1'>$fr</a>
+                <div class='dropdown-menu' aria-labelledby='language-dropdown'>
+                    <a class='dropdown-item' href='#' id='lang-en'><img src='../static/vendor/icon/flag/england.svg' class='small-flag mr-3 mb-1' alt='en'>$en</a>
+                    <a class='dropdown-item' href='#' id='lang-vn'><img src='../static/vendor/icon/flag/vietnam.svg' class='small-flag mr-3 mb-1' alt='vn'>$vn</a>
+                    <a class='dropdown-item' href='#' id='lang-fr'><img src='../static/vendor/icon/flag/france.svg' class='small-flag mr-3 mb-1' alt='fr'>$fr</a>
                 </div>
             </div>
         </div>");

@@ -1,5 +1,5 @@
 <?php
-    include("script/template-query.php");
+    include("script/template.php");
     session_start();
     if(!isset($_SESSION["username"])){
         header("Location:../template/login.php");
