@@ -47,7 +47,7 @@ $(window).resize(function () {
 });
 
 $("#logout-btn").on('click',function () {
-     window.location = "/assignment/script/logout.php";
+     window.location = "../../controller/logout.php";
 });
 
 $("#profile-btn").on('click',function () {
@@ -62,7 +62,7 @@ $("a[id^='lang']").on('click',function () {
         data: {
             locale: locale
         },
-        url: "/assignment/script/locale.php",
+        url: "/assignment/config/locale.php",
         success: function (data) {
             window.location.reload();
             console.log(data);

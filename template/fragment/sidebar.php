@@ -1,6 +1,6 @@
 <?php
-    include_once("../script/locale.php");
-    include_once("../script/User.php");
+    include_once("../config/locale.php");
+    include_once("../model/user.php");
     if(session_status()==PHP_SESSION_NONE){
         session_start();
     }

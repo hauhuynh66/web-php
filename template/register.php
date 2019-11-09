@@ -25,7 +25,8 @@
     </div>
     <div class="text-center mt-4">
         <?php
-            require("../script/db.php");
+            require_once("../model/user.php");
+            $user = new user($conn);
             function validate($f_name,$l_name,$username,$email,$password)
             {
                 if (empty($f_name)) {
@@ -65,7 +66,7 @@
                     echo("<div class='alert alert-danger'>".$validate."</div>");
                 }else{
                     $hash_password = password_hash($password,PASSWORD_DEFAULT);
-                    $result = get_user_by_username_and_email($conn,$username,$email);
+                    $result = $user->get_by_username_and_email($username,$email);
                     if(mysqli_num_rows($result)==0){
                         $success = insert_user($conn,$f_name,$l_name,$username,$email,$hash_password);
                         if($success){

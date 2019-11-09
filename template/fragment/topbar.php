@@ -1,5 +1,5 @@
 <?php
-    include_once("../script/locale.php");
+    include_once("../config/locale.php");
     if(session_status()==PHP_SESSION_NONE){
         session_start();
     }
@@ -18,6 +18,10 @@
                 <div class='vr'></div>
                 <button class='btn round' data-toggle='modal' data-target='#logout-modal'>
                     <i class='fa fa-sign-out-alt icon-black'></i>
+                </button>
+                <div class='vr'></div>
+                <button class='btn'>
+                    <i class='fa fa-envelope'></i>
                 </button>
                 <div class='vr'></div>
                 <div class='dropdown'>

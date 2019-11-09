@@ -1,6 +1,6 @@
 <?php
-    include("../script/session.php");
-    include("../script/template.php");
+    include("../controller/session.php");
+    include("../model/template.php");
     $page = $_GET["page"];
     $limit = $page*15;
     $offset = ($page-1)*15;

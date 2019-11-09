@@ -1,6 +1,6 @@
 <?php
-    include("../script/session.php");
-    include_once("../script/template.php");
+    require_once("../controller/session.php");
+    //include_once("../controller/template.php");
     if(!isset($_GET["uploader"])){
         header("Location:404.php");
     }

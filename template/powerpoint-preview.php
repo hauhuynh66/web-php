@@ -1,8 +1,8 @@
 <?php
-    require_once("../script/session.php");
-    require_once("../script/template.php");
-    require_once("../script/review.php");
-    require_once("../script/utils.php");
+    require_once("../controller/session.php");
+    require_once("../model/template.php");
+    require_once("../controller/review.php");
+    require_once("../controller/utils.php");
     if(!isset($_GET["name"])){
         header("Location:../template/404.php");
     }
@@ -156,7 +156,7 @@
                         ?>
                     </div>
                 </div>
-                <form method="post" action="../script/review.php">
+                <form method="post" action="../controller/review.php">
                     <div class="row">
                         <div class="col-9">
                             <textarea class="form-control" rows="5" name="comment" placeholder="Comment" id="comment"></textarea>

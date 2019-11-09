@@ -1,7 +1,7 @@
 <?php
-    include_once("../script/locale.php");
-    include_once("../script/template.php");
-    require_once("../script/user.php");
+    include_once("../config/locale.php");
+    require_once("../model/template.php");
+    require_once("../model/user.php");
     $user = new user($conn);
     $template = new template($conn);
     $templates = $template->get_all($conn);

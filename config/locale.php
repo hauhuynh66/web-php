@@ -11,13 +11,13 @@
     }
     switch ($locale){
         case "en":
-            $string = file_get_contents($_SERVER["DOCUMENT_ROOT"]."/assignment/script/lang/en.json");
+            $string = file_get_contents($_SERVER["DOCUMENT_ROOT"]."/assignment/config/lang/en.json");
             break;
         case "vn":
-            $string = file_get_contents($_SERVER["DOCUMENT_ROOT"]."/assignment/script/lang/vn.json");
+            $string = file_get_contents($_SERVER["DOCUMENT_ROOT"]."/assignment/config/lang/vn.json");
             break;
         case "fr":
-            $string = file_get_contents($_SERVER["DOCUMENT_ROOT"]."/assignment/script/lang/fr.json");
+            $string = file_get_contents($_SERVER["DOCUMENT_ROOT"]."/assignment/config/lang/fr.json");
             break;
         default:
             break;

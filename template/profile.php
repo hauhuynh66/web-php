@@ -1,8 +1,8 @@
 <?php
-    require_once("../script/session.php");
-    require_once("../script/user.php");
-    include_once("../script/locale.php");
-    include_once("../script/utils.php");
+    require_once("../controller/session.php");
+    require_once("../model/user.php");
+    include_once("../config/locale.php");
+    include_once("../controller/utils.php");
     $fn = $lang->{"fn"};
     $ln = $lang->{"ln"};
     $un = $lang->{"un"};

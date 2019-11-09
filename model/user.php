@@ -1,6 +1,6 @@
 <?php
-    require_once("db.php");
-    require_once("utils.php");
+    require_once("../config/database.php");
+    require_once("../controller/utils.php");
     class user{
         private $user_table;
         private $role_table;
@@ -84,19 +84,19 @@
             }
         }
 
-        function insert_role($conn,$username){
+        function insert_role($username){
             date_default_timezone_set('Asia/Ho_Chi_Minh');
             $date = date("Y-m-d H:i:s");
             $sql = "insert into role(username,role,status,lastest) values ('$username','USER','ACTIVE','$date')";
-            return mysqli_query($conn,$sql);
+            return mysqli_query($this->conn,$sql);
         }
 
-        function change_password($conn,$username,$password){
+        function change_password($username,$password){
             $id = $username["id"];
             $raw_password = $password;
             $hash_password = password_hash($raw_password,PASSWORD_DEFAULT);
             $sql = "update users set password = '$hash_password' where id = '$id'";
-            $success = mysqli_query($conn,$sql);
+            $success = mysqli_query($this->conn,$sql);
             if($success){
                 return $raw_password;
             }else{

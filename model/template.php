@@ -1,5 +1,5 @@
 <?php
-    require_once("db.php");
+    require_once("../config/database.php");
     class template{
         private $template_table;
         private $conn;

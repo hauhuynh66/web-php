@@ -1,13 +1,15 @@
 <?php
-    require_once("../script/session.php");
-    require_once("../script/template.php");
-    require_once("../script/review.php");
-    require_once("../script/utils.php");
+    require_once("../controller/session.php");
+    require_once("../controller/review.php");
+    require_once("../controller/utils.php");
+    require_once("../model/template.php");
+    require_once("../model/review.php");
     if(!isset($_GET["name"])){
         header("Location:../template/404.php");
     }
     $name = $_GET["name"];
     $template = new template($conn);
+    $reviews = new review($conn);
     $result = $template->get_by_name($name,"web")->fetch_assoc();
     if($result==null){
         header("Location:../template/404.php");
@@ -20,7 +22,7 @@
     $uploader = $result["uploader"];
     $title = $result["title"];
     $upload_date = $result["upload_date"];
-    $reviews = get_all_review($conn,$_GET["name"]);
+    $reviews = $reviews->get_all($_GET["name"]);
     $n = mysqli_num_rows($reviews);
     $count = count_file($absolute_path);
 ?>
@@ -157,7 +159,7 @@
                         ?>
                     </div>
                 </div>
-                <form method="post" action="../script/review.php">
+                <form method="post" action="../controller/review.php">
                     <div class="row">
                         <div class="col-9">
                             <textarea class="form-control" rows="5" name="comment" placeholder="Comment" id="comment"></textarea>
@@ -188,7 +190,7 @@
                     ?>
                     <?php
                     while ($row = $reviews->fetch_assoc()){
-                        display_review($row);
+                        $review->render($row);
                     }
                     ?>
                 </form>

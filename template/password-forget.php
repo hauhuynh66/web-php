@@ -1,17 +1,18 @@
 <?php
-    require_once("../script/mail.php");
-    require_once("../script/user.php");
-    require_once ("../script/utils.php");
+    require_once("../controller/mail.php");
+    require_once("../controller/utils.php");
+    require_once("../model/user.php");
+    $user = new user($conn);
     if(isset($_POST["send"])){
         $email = $_POST["email"];
         if(!filter_var($email,FILTER_VALIDATE_EMAIL)){
             header("Location:../template/password-forget.php?error");
         }else{
-            $user = get_user_by_email($conn,$email)->fetch_assoc();
+            $u = $user->get_by_email($email)->fetch_assoc();
             if($user==null){
                 header("Location:../template/password-forget.php?badCredential");
             }else{
-                $success = change_password($conn,$user,generate_string(10));
+                $success = $user->change_password($u["username"],generate_string(10));
                 if($success=="Failed"){
                     header("Location:../template/password-forget.php?failed");
                 }else{

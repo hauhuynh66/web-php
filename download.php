@@ -1,5 +1,5 @@
 <?php
-    include("script/template.php");
+    include("controller/template.php");
     session_start();
     if(!isset($_SESSION["username"])){
         header("Location:../template/login.php");

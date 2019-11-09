@@ -28,7 +28,7 @@
                 }
             ?>
         </div>
-        <form class="form-group mt-3" action="../script/authenticate.php" method="post">
+        <form class="form-group mt-3" action="../controller/authenticate.php" method="post">
             <label for="email">Email</label>
             <input class="form-control" type="text" name="email" id="email">
             <label for="password" class="mt-3">Password</label>

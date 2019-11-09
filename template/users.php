@@ -1,5 +1,5 @@
 <?php
-    include_once("../script/user.php");
+    include_once("../model/user.php");
     if(session_status()==PHP_SESSION_NONE){
         session_start();
     }
