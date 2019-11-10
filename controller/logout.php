@@ -1,5 +1,5 @@
 <?php
-    include_once("user.php");
+    include_once("../model/user.php");
     session_start();
     $user = new user($conn);
     if(isset($_SESSION["username"])){
@@ -9,4 +9,4 @@
     if(isset($_COOKIE["user"])){
         setcookie("user", "", time() - 3600);
     }
-    header('Location:../template/login.php');
+    header('Location:/assignment/template/login.php');

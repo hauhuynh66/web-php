@@ -2,7 +2,7 @@
 <hr>
 <div class="row">
     <div class="col-xl-9 col-lg-9 col-mb-9 col-sm-12">
-        <form class="form-group">
+        <form class="form-group" method="post" action="../controller/upload.php" enctype="multipart/form-data">
             <div class="row mt-3">
                 <div class="col-2">
                     <label for="file" class="pt-2">File</label>
@@ -13,10 +13,10 @@
             </div>
             <div class="row mt-3">
                 <div class="col-2">
-                    <label for="file" class="pt-2">Images</label>
+                    <label for="image" class="pt-2">Images</label>
                 </div>
                 <div class="col-10">
-                    <input id="file" type="file" name="image[]" class="form-control" multiple="multiple" accept="image/jpeg">
+                    <input id="image" type="file" name="image[]" class="form-control" multiple="multiple" accept="image/jpeg">
                 </div>
             </div>
             <div class="row mt-3">
@@ -38,7 +38,7 @@
                     </select>
                 </div>
             </div>
-            <button class="btn btn-info mt-4" type="submit"><i class="fa fa-upload mr-2"></i>Upload</button>
+            <button class="btn btn-info mt-4" type="submit" name="post"><i class="fa fa-upload mr-2"></i>Upload</button>
         </form>
     </div>
 </div>

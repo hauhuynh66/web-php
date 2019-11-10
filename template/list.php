@@ -38,9 +38,9 @@
                     echo("<div class='row'>");
                     while ($t = $templates->fetch_assoc()){
                         if($t["type"]=="powerpoint"){
-                            $teplate->display_ppt($t,$i);
+                            $teplate->render_ppt($t,$i);
                         }else{
-                            $teplate->display_web($t,$i);
+                            $teplate->render_web($t,$i);
                         }
                         $i++;
                     }

@@ -40,7 +40,7 @@
                     $result = $template->get_by_type("powerpoint",$limit,$offset,$mode);
                     echo("<div class='row'>");
                     while($row = $result->fetch_assoc()){
-                        $template->display_ppt($row,$i);
+                        $template->render_ppt($row,$i);
                         $i++;
                     }
                     echo("</div>");

@@ -40,7 +40,7 @@
                     $result = $template->get_by_type("web",$limit,$offset, $mode);
                     echo("<div class='row'>");
                     while($row = $result->fetch_assoc()){
-                        $template->display_web($row,$i);
+                        $template->render_web($row,$i);
                         $i++;
                     }
                     echo("</div>");

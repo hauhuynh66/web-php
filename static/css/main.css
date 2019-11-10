@@ -179,6 +179,15 @@ a.footer-link{
     transition: 1s;
 }
 
+.profile-image{
+    padding : 10px;
+    height: 200px;
+}
+
+.image-button{
+    padding : 10px;
+    max-height: 150px;
+}
 
 .image-holder:hover{
     transform: scale(1.08);

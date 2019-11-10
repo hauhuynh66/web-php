@@ -91,6 +91,17 @@
             return mysqli_query($this->conn,$sql);
         }
 
+        function update_image($username,$i){
+            $existed = $this->get_by_username($username);
+            if($existed){
+                $id = $existed->fetch_assoc()["id"];
+                $sql ="update $this->user_table set picture='$i' where id='$id'";
+                return mysqli_query($this->conn,$sql);
+            }else{
+                return false;
+            }
+        }
+
         function change_password($username,$password){
             $id = $username["id"];
             $raw_password = $password;

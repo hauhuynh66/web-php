@@ -60,12 +60,19 @@
                                         <span>Uploads</span>
                                     </th>
 
-                                    <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Age: activate to sort column ascending" style="width: 20%;">
+                                    <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Age: activate to sort column ascending" style="width: 10%;">
                                         <span>Status</span>
                                     </th>
-                                    <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Start date: activate to sort column ascending" style="width: 30%;">
+                                    <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Start date: activate to sort column ascending" style="width: 20%;">
                                         <span>Last Active</span>
                                     </th>
+                                    <?php
+                                        if($role=="ADMIN"){
+                                            echo ("<th class='sorting' tabindex='0' aria-controls='dataTable' rowspan='1' colspan='1' aria-label='Start date: activate to sort column ascending' style='width: 20%;'>
+                                                        <span>Actions</span></th>");
+                                        }
+                                    ?>
+
                                 </tr>
                                 </thead>
                                 <tbody class="text-center">
@@ -77,13 +84,23 @@
                                             $upload = mysqli_num_rows($user->get_uploaded_templates($u["username"]));
                                             $status = $user->get_role($u["username"],"status");
                                             $lastest = $user->get_role($u["username"],"lastest");
+                                            if($role=="ADMIN"){
+                                                $icon = "<i class='fa fa-user-shield'></i>";
+                                            }else{
+                                                $icon = "<i class='fa fa-user-tie'></i>";
+                                            }
                                             echo("<tr>
-                                                <td>$role</td>
+                                                <td>$icon</td>
                                                 <td>".$u["username"]."</td>
                                                 <td>$upload</td>
                                                 <td>$status</td>
-                                                <td>$lastest</td>
-                                                </tr>");
+                                                <td>$lastest</td>");
+                                            if($u["username"]==$_SESSION["username"]){
+                                                echo("<td><button class='btn btn-success' disabled><i class='fa fa-check'></i></button>");
+                                            }else{
+                                                echo("<td><button class='btn btn-danger'><i class='fa fa-ban'></i></button>");
+                                            }
+                                            echo ("<button class='btn btn-info ml-3'><i class='fa fa-search'></i></button></td></tr>");
                                         }
                                     ?>
                                 </tbody>

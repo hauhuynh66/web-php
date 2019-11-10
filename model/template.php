@@ -40,7 +40,7 @@
             return mysqli_query($conn,$sql);
         }
 
-        function display_ppt($result,$i){
+        static function render_ppt($result, $i){
             $name = $result["name"];
             $title = $result["title"];
             $download = $result["downloads"];
@@ -78,7 +78,7 @@
                 </div>");
         }
 
-        function display_web($result,$i){
+        static function render_web($result, $i){
             $name = $result["name"];
             $title = $result["title"];
             $download = $result["downloads"];
@@ -114,5 +114,9 @@
                         </div>
                     </div>
                 </div>");
+        }
+
+        function upload($file_name,$file_typem,$uploader){
+
         }
     }

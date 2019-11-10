@@ -21,6 +21,7 @@
     $facebook = $result["facebook"];
     $twitter = $result["twitter"];
     $uploads = mysqli_num_rows($user->get_uploaded_templates($result["username"]));
+    $img = "/assignment/static/vendor/icon/animal/".$result["picture"].".svg";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -57,7 +58,9 @@
                                     </h5>
                                 </div>
                                 <div class="card-body">
-                                    <i class="fa fa-user-circle fa-8x"></i>
+                                    <?php
+                                        echo("<img src='$img' class='profile-image'>");
+                                    ?>
                                 </div>
                                 <div class="card-footer">
                                     <button class="btn btn-block btn-success" data-toggle="modal" data-target="#change-image-modal">Change Image</button>
@@ -90,7 +93,7 @@
                                         <label>$un :</label>
                                     </div>
                                     <div class='col-8'>");
-                            echo($username."</div>");
+                            echo("<span id='username'>".$username."</span></div>");
                             ?>
                         </div>
                         <div class="row">
@@ -244,11 +247,11 @@
                     $relative_path = "../static/vendor/icon/animal/";
                     $count = count_file($path,"*.svg");
                     echo("<div class='row'>");
-                    for($i=0;$i<$count;$i++){
-                        $fi = sprintf("%02d", $i+1);
+                    for($i=1;$i<=$count;$i++){
+                        $fi = sprintf("%02d", $i);
                         $src = $relative_path.'0'.$fi.'.svg';
                         echo("<div class='col-3 mt-4'>");
-                        echo("<img class='image-button' src='$src' alt='$fi'>");
+                        echo("<img class='image-button' src='$src' alt='$fi' id='profile-image-$i'>");
                         echo("</div>");
                     }
                     echo("</div>");

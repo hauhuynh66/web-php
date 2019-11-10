@@ -1,6 +1,6 @@
 <?php
-    require("db.php");
-    include_once("user.php");
+    require_once("../config/database.php");
+    require_once("../model/user.php");
     session_start();
     $user = new user($conn);
     $email = $_POST["email"];

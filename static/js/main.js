@@ -1,8 +1,3 @@
-const item1 = "Dashboard";
-const item2 = "Powerpoint";
-const item3 = "Web";
-const item4 = "Upload";
-const item5 = "About";
 var toggle = 0;
 $("#menu-collapse").on('click',function () {
     toggle++;
@@ -37,17 +32,11 @@ $(window).resize(function () {
         sidebarToggle(0);
         toggle++;
     }else{
-        $("#sidebar").show();
-        $("a.dashboard-brand").html(item1);
-        $("a.powerpoint-brand").html(item2);
-        $("a.web-brand").html(item3);
-        $("a.upload-brand").html(item4);
-        $("a.about-brand").html(item5);
     }
 });
 
 $("#logout-btn").on('click',function () {
-     window.location = "../../controller/logout.php";
+     window.location = "/assignment/controller/logout.php";
 });
 
 $("#profile-btn").on('click',function () {
