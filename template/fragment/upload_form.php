@@ -24,7 +24,7 @@
                     <label class="pt-2">Name</label>
                 </div>
                 <div class="col-10">
-                    <input class="form-control" type="text" id="name">
+                    <input class="form-control" type="text" id="name" name="name">
                 </div>
             </div>
             <div class="row mt-3">
