@@ -87,7 +87,7 @@
         function insert_role($username){
             date_default_timezone_set('Asia/Ho_Chi_Minh');
             $date = date("Y-m-d H:i:s");
-            $sql = "insert into role(username,role,status,lastest) values ('$username','USER','ACTIVE','$date')";
+            $sql = "insert into role( username, role, status, lastest) values ('$username','USER','ACTIVE','$date')";
             return mysqli_query($this->conn,$sql);
         }
 

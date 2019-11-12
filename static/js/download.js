@@ -6,7 +6,10 @@ $("body").on('click',"[id^=download-btn-]",function () {
 
 $("#download").on('click',function () {
     const template = $("#template-name").html();
-    window.location = "/assignment/download.php?template_name="+template;
+    window.location = "/assignment/controller/download.php?template="+template;
+    setInterval(function () {
+        window.location.reload();
+    },500);
 });
 
 $("#filter-btn").on('click',function () {

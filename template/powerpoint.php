@@ -73,5 +73,6 @@
 <script src="../static/vendor/bootstrap/bootstrap.js"></script>
 <script src="../static/vendor/font-awesome/js/fontawesome.js"></script>
 <script src="../static/js/main.js"></script>
+<script src="../static/js/download.js"></script>
 </body>
 </html>

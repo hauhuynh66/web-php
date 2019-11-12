@@ -8,21 +8,21 @@
     }
     $name = $_GET["name"];
     $template = new template($conn);
+    $review = new review($conn);
     $result = $template->get_by_name($name,"powerpoint")->fetch_assoc();
     if($result==null){
         header("Location:../template/404.php");
     }
+    $name = $result["name"];
     $downloads = $result["downloads"];
     $des = $result["description"];
-    $path = $result["path"];
-    $relative_path = "/assignment/image/preview".$path."/";
-    $absolute_path = $_SERVER["DOCUMENT_ROOT"]."/assignment/image/preview".$path."/";
+    $relative_path = "/assignment/image/preview/".$result["type"]."/".$result["name"]."/";
+    $absolute_path = $_SERVER["DOCUMENT_ROOT"]."/assignment/image/preview/".$result["type"]."/".$result["name"]."/";
     $uploader = $result["uploader"];
-    $title = $result["title"];
     $upload_date = $result["upload_date"];
-    $reviews = get_all_review($conn,$_GET["name"]);
+    $reviews = $review->get_all($_GET["name"]);
     $n = mysqli_num_rows($reviews);
-    $count = count_file($absolute_path);
+    $count = count_file($absolute_path,["*.jpg"]);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -49,7 +49,7 @@
             <div class="main-content  my-4 ml-4">
                 <?php
                 echo("<div class='container text-left'>
-                        <h4 class='text-info' id='tp-name'>$title</h4>
+                        <h4 class='text-info' id='tp-name'>$name</h4>
                         <div class='row mb-3'>
                             <div class='col-3'>
                                 <small><i class='fas fa-clock mx-2'></i>$upload_date</small>
@@ -185,7 +185,7 @@
                         ?>
                         <?php
                         while ($row = $reviews->fetch_assoc()){
-                            display_review($row);
+                            $review->render($row);
                         }
                     ?>
                 </form>

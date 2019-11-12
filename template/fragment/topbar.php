@@ -12,11 +12,11 @@
         <?php
             if(isset($_SESSION["username"])){
                 echo("<div class='vr'></div>
-                <button class='btn round' id='profile-btn'>
+                <button class='btn' id='profile-btn'>
                     <i class='fa fa-user-alt icon-black'></i>
                 </button>
                 <div class='vr'></div>
-                <button class='btn round' data-toggle='modal' data-target='#logout-modal'>
+                <button class='btn' data-toggle='modal' data-target='#logout-modal'>
                     <i class='fa fa-sign-out-alt icon-black'></i>
                 </button>
                 <div class='vr'></div>
@@ -33,6 +33,11 @@
                     
                 </div>
                 </div>");
+            }else{
+                echo "<div class='vr'></div>
+                <button class='btn' id='login-btn'>
+                    <i class='fa fa-sign-in-alt icon-black'></i>
+                </button>";
             }
         ?>
     </div>

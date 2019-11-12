@@ -21,7 +21,7 @@
             </div>
             <div class="row mt-3">
                 <div class="col-2">
-                    <label class="pt-2">Name</label>
+                    <label class="pt-2" for="name">Name</label>
                 </div>
                 <div class="col-10">
                     <input class="form-control" type="text" id="name" name="name">
@@ -29,7 +29,15 @@
             </div>
             <div class="row mt-3">
                 <div class="col-2">
-                    <label class="pt-2">Type</label>
+                    <label class="pt-2" for="description">Description</label>
+                </div>
+                <div class="col-10">
+                    <textarea class="form-control" cols="5" id="description" name="description"></textarea>
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col-2">
+                    <label class="pt-2" for="type">Type</label>
                 </div>
                 <div class="col-10">
                     <select class="form-control" name="type" id="type">

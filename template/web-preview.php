@@ -15,16 +15,15 @@
         header("Location:../template/404.php");
     }
     $downloads = $result["downloads"];
+    $name = $result["name"];
     $des = $result["description"];
-    $path = $result["path"];
-    $relative_path = "/assignment/image/preview".$path."/";
-    $absolute_path = $_SERVER["DOCUMENT_ROOT"]."/assignment/image/preview".$path."/";
+    $relative_path = "/assignment/image/preview/".$result["type"]."/".$result["name"]."/";
+    $absolute_path = $_SERVER["DOCUMENT_ROOT"]."/assignment/image/preview/".$result["type"]."/".$result["name"]."/";
     $uploader = $result["uploader"];
-    $title = $result["title"];
     $upload_date = $result["upload_date"];
     $reviews = $reviews->get_all($_GET["name"]);
     $n = mysqli_num_rows($reviews);
-    $count = count_file($absolute_path);
+    $count = count_file($absolute_path,["*.jpg"]);
 ?>
 
 <!DOCTYPE html>
@@ -52,7 +51,7 @@
             <div class="main-content my-4 ml-4">
                 <?php
                     echo("<div class='container text-left'>
-                        <h4 class='text-info' id='tp-name'>$title</h4>
+                        <h4 class='text-info' id='tp-name'>$name</h4>
                         <div class='row mb-3'>
                             <div class='col-3'>
                                 <small><i class='fas fa-clock mx-2'></i>$upload_date</small>

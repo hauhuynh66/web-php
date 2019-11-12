@@ -43,6 +43,10 @@ $("#profile-btn").on('click',function () {
     window.location = "/assignment/template/profile.php";
 });
 
+$("#login-btn").on('click',function () {
+    window.location = "/assignment/template/login.php";
+});
+
 $("a[id^='lang']").on('click',function () {
     var locale = $(this).attr('id').split("-")[1];
     console.log(locale);

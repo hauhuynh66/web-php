@@ -15,8 +15,8 @@
             $this->conn = $conn;
         }
 
-        function get_by_name($name,$type){
-            $sql = "select * from $this->template_table where name = '$name' and type ='$type'";
+        function get_by_name($name){
+            $sql = "select * from $this->template_table where name = '$name'";
             return mysqli_query($this->conn,$sql);
         }
 
@@ -42,17 +42,15 @@
 
         static function render_ppt($result, $i){
             $name = $result["name"];
-            $title = $result["title"];
             $download = $result["downloads"];
-            $path = "../image/preview".$result["path"]."/img1.jpg";
+            $path = "../image/preview/".$result["type"]."/".$name."/img1.jpg";
             $description = $result["description"];
             echo("<div class='col-xl-6 col-lg-6 col-mb-6 col-sm-12 col-pt-4'>
                         <div class='card shadow'>
                             <div class='card-header'>
                                 <div class='row'>
                                     <div class='col-6 w-haft'>
-                                        <h5 id='tp-title'>$title</h5>
-                                        <small id='tp-name-$i' hidden>$name</small>
+                                        <h5 id='tp-name-$i'>$name</h5>
                                     </div>
                                     <div class='col-6 w-haft justify-content-end'>
                                         <small class='text-info'><i class='fa fa-download mr-2'></i> $download</small>
@@ -70,7 +68,7 @@
                                 <i class='fas fa-eye pr-1'></i>Details
                             </a>
                             <i class='text-center fa fa-book-open fa-2x icon-danger'></i>
-                            <a class='btn btn-danger float-right item' data-toggle='modal' data-target='#download-modal'>
+                            <a class='btn btn-danger float-right item' data-toggle='modal' data-target='#download-modal' id='download-btn-$i'>
                                 <i class='fas fa-download pr-1'></i>Download
                             </a>
                         </div>
@@ -80,17 +78,15 @@
 
         static function render_web($result, $i){
             $name = $result["name"];
-            $title = $result["title"];
             $download = $result["downloads"];
-            $path = "../image/preview".$result["path"]."/img1.jpg";
+            $path = "../image/preview/".$result["type"]."/".$name."/img1.jpg";
             $description = $result["description"];
             echo("<div class='col-xl-6 col-lg-6 col-mb-6 col-sm-12 pt-4'>
                         <div class='card shadow'>
                             <div class='card-header'>
                                 <div class='row'>
                                     <div class='col-6 w-haft'>
-                                        <h5 id='tp-title'>$title</h5>
-                                        <small id='tp-name-$i' hidden>$name</small>
+                                        <h5 id='tp-name-$i'>$name</h5>
                                     </div>
                                     <div class='col-6 w-haft justify-content-end'>
                                         <small class='text-info'><i class='fa fa-download mr-2'></i>$download</small>
@@ -116,7 +112,27 @@
                 </div>");
         }
 
-        function upload($file_name,$file_typem,$uploader){
+        function upload($name,$type,$uploader,$des){
+            date_default_timezone_set("Asia/Ho_Chi_Minh");
+            $date = date("Y-m-d");
+            $exist = $this->get_by_name($name);
+            if($exist->fetch_assoc()!=null){
+                return false;
+            }else{
+                $sql = "insert into $this->template_table ( name, type, uploader ,upload_date, description) values ('$name','$type','$uploader','$date','$des')";
+                return mysqli_query($this->conn,$sql);
+            }
+        }
 
+        function download($name){
+            $exist = $this->get_by_name($name)->fetch_assoc();
+            if($exist==null){
+                return false;
+            }else{
+                $dl = $exist["downloads"];
+                $dl++;
+                $sql = "update $this->template_table set downloads='$dl' where name='$name'";
+                return mysqli_query($this->conn,$sql);
+            }
         }
     }
