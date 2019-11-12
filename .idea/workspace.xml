@@ -2,24 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="447a008c-2310-419f-b1c1-055fba425540" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/controller/api_call.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/controller/callback.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/controller/facebook.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controller/upload.php" beforeDir="false" afterPath="$PROJECT_DIR$/controller/upload.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controller/utils.php" beforeDir="false" afterPath="$PROJECT_DIR$/controller/utils.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/download.php" beforeDir="false" afterPath="$PROJECT_DIR$/controller/download.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/template.php" beforeDir="false" afterPath="$PROJECT_DIR$/model/template.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/user.php" beforeDir="false" afterPath="$PROJECT_DIR$/model/user.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/download.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/download.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/template/fragment/topbar.php" beforeDir="false" afterPath="$PROJECT_DIR$/template/fragment/topbar.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/template/fragment/upload_form.php" beforeDir="false" afterPath="$PROJECT_DIR$/template/fragment/upload_form.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/template/list.php" beforeDir="false" afterPath="$PROJECT_DIR$/template/list.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/template/powerpoint-preview.php" beforeDir="false" afterPath="$PROJECT_DIR$/template/powerpoint-preview.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/template/powerpoint.php" beforeDir="false" afterPath="$PROJECT_DIR$/template/powerpoint.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/template/web-preview.php" beforeDir="false" afterPath="$PROJECT_DIR$/template/web-preview.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/template/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/template/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/cover/bg-1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/cover/bg-2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/cover/bg-3.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/cover/img.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/cover/ppt.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/cover/web.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/cover/welcome.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/preview/powerpoint/template3/img1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/preview/powerpoint/template6/img1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/preview/powerpoint/template6/img2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/preview/powerpoint/template6/img3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/preview/web/template1/img1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/preview/web/template1/img2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/preview/web/template2/img1.jpg" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -58,11 +55,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/controller/api_call.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="17">
               <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="102">
+              <caret line="6" column="7" selection-start-line="6" selection-start-column="7" selection-end-line="6" selection-end-column="7" />
             </state>
           </provider>
         </entry>
@@ -158,7 +164,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/class/IRequest.php" />
         <option value="$PROJECT_DIR$/class/Router.php" />
         <option value="$PROJECT_DIR$/class/Request.php" />
         <option value="$PROJECT_DIR$/composer.json" />
@@ -209,6 +214,7 @@
         <option value="$PROJECT_DIR$/model/template.php" />
         <option value="$PROJECT_DIR$/controller/download.php" />
         <option value="$PROJECT_DIR$/static/js/download.js" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -438,12 +444,12 @@
       <workItem from="1573206644901" duration="56678000" />
       <workItem from="1573366263041" duration="15053000" />
       <workItem from="1573460780861" duration="1076000" />
-      <workItem from="1573516628298" duration="17892000" />
+      <workItem from="1573516628298" duration="17998000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="466722000" />
+    <option name="totallyTimeSpent" value="466828000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
@@ -535,9 +541,6 @@
     </option>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/image/preview/web/template1/img2.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/image/preview/web/template2/img1.jpg">
       <provider selected="true" editor-type-id="images" />
     </entry>
@@ -838,6 +841,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
           <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="7" selection-start-line="6" selection-start-column="7" selection-end-line="6" selection-end-column="7" />
         </state>
       </provider>
     </entry>
