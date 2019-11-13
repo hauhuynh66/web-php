@@ -7,8 +7,6 @@
         header("Location:../template/404.php");
     }
     $name = $_GET["name"];
-    $template = new template($conn);
-    $review = new review($conn);
     $result = $template->get_by_name($name,"powerpoint")->fetch_assoc();
     if($result==null){
         header("Location:../template/404.php");

@@ -8,8 +8,6 @@
         header("Location:../template/404.php");
     }
     $name = $_GET["name"];
-    $template = new template($conn);
-    $reviews = new review($conn);
     $result = $template->get_by_name($name,"web")->fetch_assoc();
     if($result==null){
         header("Location:../template/404.php");
@@ -21,7 +19,7 @@
     $absolute_path = $_SERVER["DOCUMENT_ROOT"]."/assignment/image/preview/".$result["type"]."/".$result["name"]."/";
     $uploader = $result["uploader"];
     $upload_date = $result["upload_date"];
-    $reviews = $reviews->get_all($_GET["name"]);
+    $reviews = $review->get_all($_GET["name"]);
     $n = mysqli_num_rows($reviews);
     $count = count_file($absolute_path,["*.jpg"]);
 ?>

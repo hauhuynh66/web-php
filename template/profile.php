@@ -3,7 +3,6 @@
     require_once("../model/user.php");
     include_once("../config/lang.php");
     include_once("../controller/utils.php");
-    $user = new user($conn);
     $username = $_SESSION["username"];
     $result = $user->get_by_username($username)->fetch_assoc();
     $role = $user->get_role($username,"role");

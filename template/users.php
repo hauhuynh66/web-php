@@ -7,7 +7,6 @@
         header("Location:../template/login.php");
     }else{
         $username = $_SESSION["username"];
-        $user = new user($conn);
         $role = $user->get_role($username,"role");
         if($role!="ADMIN"){
             header("Location:../template/403.php");

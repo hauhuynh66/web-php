@@ -49,3 +49,4 @@ class review{
         echo("</div></div>");
     }
 }
+$review = new review($conn);

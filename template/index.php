@@ -2,8 +2,6 @@
     include_once("../config/lang.php");
     require_once("../model/template.php");
     require_once("../model/user.php");
-    $user = new user($conn);
-    $template = new template($conn);
     $templates = $template->get_all($conn);
     $n_templates = mysqli_num_rows($templates);
     $download = $template->get_total_download();

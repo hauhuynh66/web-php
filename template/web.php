@@ -37,7 +37,6 @@
                     include_once("fragment/filter.php");
                     filter("web");
                     $i = 1;
-                    $template = new template($conn);
                     $result = $template->get_by_type("web",$limit,$offset, $mode);
                     echo("<div class='row'>");
                     while($row = $result->fetch_assoc()){

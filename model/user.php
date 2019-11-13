@@ -115,3 +115,4 @@
             }
         }
     }
+    $user = new user($conn);

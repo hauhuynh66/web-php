@@ -32,7 +32,6 @@
                 <?php
                     include("fragment/filter.php");
                     $i = 0;
-                    $teplate = new template($conn);
                     $templates = $teplate->get_by_uploader($uploader);
                     echo ("<h4 class=\"text-info\">Templates upload by $uploader</h4>");
                     echo("<div class='row'>");

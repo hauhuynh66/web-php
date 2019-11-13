@@ -2,7 +2,6 @@
     require_once("../controller/mail.php");
     require_once("../controller/utils.php");
     require_once("../model/user.php");
-    $user = new user($conn);
     if(isset($_POST["send"])){
         $email = $_POST["email"];
         if(!filter_var($email,FILTER_VALIDATE_EMAIL)){

@@ -26,7 +26,6 @@
     <div class="text-center mt-4">
         <?php
             require_once("../model/user.php");
-            $user = new user($conn);
             function validate($f_name,$l_name,$username,$email,$password)
             {
                 if (empty($f_name)) {

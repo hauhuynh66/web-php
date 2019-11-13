@@ -37,7 +37,6 @@
                     include_once("fragment/filter.php");
                     filter("ppt");
                     $i = 0;
-                    $template = new template($conn);
                     $result = $template->get_by_type("powerpoint",$limit,$offset,$mode);
                     echo("<div class='row'>");
                     while($row = $result->fetch_assoc()){

@@ -144,4 +144,9 @@
             }
             return $count;
         }
+
+        function get_by_date($date){
+            
+        }
     }
+    $template = new template($conn);
