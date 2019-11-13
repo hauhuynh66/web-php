@@ -1,14 +1,8 @@
 <?php
     require_once("../controller/session.php");
     require_once("../model/user.php");
-    include_once("../config/locale.php");
+    include_once("../config/lang.php");
     include_once("../controller/utils.php");
-    $fn = $lang->{"fn"};
-    $ln = $lang->{"ln"};
-    $un = $lang->{"un"};
-    $t_up = $lang->{"t_up"};
-    $change_i = $lang->{"change_i"};
-    $change_p = $lang->{"change_p"};
     $user = new user($conn);
     $username = $_SESSION["username"];
     $result = $user->get_by_username($username)->fetch_assoc();
@@ -59,12 +53,13 @@
                                 </div>
                                 <div class="card-body">
                                     <?php
-                                        echo("<img src='$img' class='profile-image'>");
+                                        echo("<img src='$img' class='profile-image'></div>");
+                                        if($_SESSION["username"]==$username){
+                                            echo("<div class='card-footer'>
+                                                    <button class='btn btn-block btn-success' data-toggle='modal' data-target='#change-image-modal'>Change Image</button>
+                                                </div>");
+                                        }
                                     ?>
-                                </div>
-                                <div class="card-footer">
-                                    <button class="btn btn-block btn-success" data-toggle="modal" data-target="#change-image-modal">Change Image</button>
-                                </div>
                             </div>
                         </div>
                     </div>
@@ -72,7 +67,7 @@
                         <div class="row">
                             <?php
                                 echo("<div class='col-4'>
-                                        <label>$fn :</label>
+                                        <label>".$lang->{"fn"}." :</label>
                                     </div>
                                     <div class='col-8'>");
                                 echo($firstname."</div>");
@@ -81,7 +76,7 @@
                         <div class="row">
                             <?php
                             echo("<div class='col-4'>
-                                        <label>$ln :</label>
+                                        <label>".$lang->{"ln"}." :</label>
                                     </div>
                                     <div class='col-8'>");
                             echo($lastname."</div>");
@@ -90,7 +85,7 @@
                         <div class="row">
                             <?php
                             echo("<div class='col-4'>
-                                        <label>$un :</label>
+                                        <label>".$lang->{"un"}." :</label>
                                     </div>
                                     <div class='col-8'>");
                             echo("<span id='username'>".$username."</span></div>");
@@ -139,7 +134,7 @@
                         <div class="row">
                             <?php
                             echo("<div class='col-4'>
-                                            <label>$t_up :</label>
+                                            <label>".$lang->{"temp_upload"}." :</label>
                                         </div>
                                     <div class='col-8'>");
                             if(!$uploads){
@@ -154,7 +149,7 @@
                                 <button class="btn btn-info btn-block mt-3" id="change-info-btn" data-toggle="modal" data-target="#change-info-modal">
                                     <i class="fa fa-user-secret mr-4"></i>
                                     <?php
-                                        echo($change_i);
+                                        echo($lang->{"change_i"});
                                     ?>
                                 </button>
                             </div>
@@ -162,7 +157,7 @@
                                 <button class="btn btn-info btn-block mt-3" id="change-password-btn" data-toggle="modal" data-target="#change-password-modal">
                                     <i class="fa fa-key mr-4"></i>
                                     <?php
-                                        echo($change_p);
+                                        echo($lang->{"change_p"});
                                     ?>
                                 </button>
                             </div>
@@ -245,7 +240,7 @@
                 <?php
                     $path = $_SERVER['DOCUMENT_ROOT']."/assignment/static/vendor/icon/animal/";
                     $relative_path = "../static/vendor/icon/animal/";
-                    $count = count_file($path,"*.svg");
+                    $count = count_file($path,["*.svg"]);
                     echo("<div class='row'>");
                     for($i=1;$i<=$count;$i++){
                         $fi = sprintf("%02d", $i);

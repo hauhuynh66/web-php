@@ -45,7 +45,7 @@
             $download = $result["downloads"];
             $path = "../image/preview/".$result["type"]."/".$name."/img1.jpg";
             $description = $result["description"];
-            echo("<div class='col-xl-6 col-lg-6 col-mb-6 col-sm-12 col-pt-4'>
+            echo("<div class='col-xl-6 col-lg-6 col-mb-6 col-sm-12 pt-5'>
                         <div class='card shadow'>
                             <div class='card-header'>
                                 <div class='row'>
@@ -59,7 +59,7 @@
                         </div>
                         <div class='card-body card-body-fixed'>
                             <img src=$path alt='?' class='image-holder'>
-                            <div class='description'>
+                            <div class='description text-center'>
                                 <p>$description</p>
                             </div>
                         </div>
@@ -81,7 +81,7 @@
             $download = $result["downloads"];
             $path = "../image/preview/".$result["type"]."/".$name."/img1.jpg";
             $description = $result["description"];
-            echo("<div class='col-xl-6 col-lg-6 col-mb-6 col-sm-12 pt-4'>
+            echo("<div class='col-xl-6 col-lg-6 col-mb-6 col-sm-12 pt-5'>
                         <div class='card shadow'>
                             <div class='card-header'>
                                 <div class='row'>
@@ -95,7 +95,7 @@
                         </div>  
                         <div class='card-body card-body-fixed'>
                             <img src=$path alt='?' class='image-holder'>
-                            <div class='description'>
+                            <div class='description text-center'>
                                 <p>$description</p>
                             </div>
                         </div>
@@ -134,5 +134,14 @@
                 $sql = "update $this->template_table set downloads='$dl' where name='$name'";
                 return mysqli_query($this->conn,$sql);
             }
+        }
+
+        function get_total_download(){
+            $templates = $this->get_all($this->conn);
+            $count = 0;
+            while ($template = $templates->fetch_assoc()){
+                $count+=$template["downloads"];
+            }
+            return $count;
         }
     }

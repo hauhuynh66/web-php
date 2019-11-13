@@ -34,7 +34,8 @@
             ?>
             <div class="main-content my-4 ml-4">
                 <?php
-                    include("fragment/filter.php");
+                    include_once("fragment/filter.php");
+                    filter("web");
                     $i = 1;
                     $template = new template($conn);
                     $result = $template->get_by_type("web",$limit,$offset, $mode);

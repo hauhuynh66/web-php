@@ -114,8 +114,4 @@
                 return "Failed";
             }
         }
-
-        function block_user($conn,$user){
-
-        }
     }

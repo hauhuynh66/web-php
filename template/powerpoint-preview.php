@@ -139,12 +139,10 @@
                             echo("<p>Upload by : <a href='./list.php?uploader=$uploader'>$uploader</a></p>");
                             echo("<p>Upload date : ".$upload_date."</p>");
                             echo("<p>Downloads : $downloads</p>
-                                    <div class='row'>
-                                        <div class='col-12'>
+                                    <div class='container text-center pt-3'>
                                             <button class='btn btn-block btn-info' data-toggle='modal' data-target='#download-modal' id='download-btn'>
                                                 <i class='fas fa-download mr-2'></i>Download
                                             </button>
-                                        </div>
                                     </div>");
                         ?>
                     </div>

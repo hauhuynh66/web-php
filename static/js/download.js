@@ -7,17 +7,29 @@ $("body").on('click',"[id^=download-btn-]",function () {
 $("#download").on('click',function () {
     const template = $("#template-name").html();
     window.location = "/assignment/controller/download.php?template="+template;
-    setInterval(function () {
+    setTimeout(function () {
         window.location.reload();
-    },500);
+    },1000);
 });
 
-$("#filter-btn").on('click',function () {
+$("body").on('click',"[id^=filter-]",function () {
+    const id = $(this).attr("id");
+    const type = id.split("-")[1];
     const v = $("#new-type");
     const page = $("#page").html();
-    if(v.is(":checked")){
-        window.location = "/assignment/template/web.php?page="+page+"&filter=new";
+    console.log(type);
+    if(type==="ppt"){
+        if(v.is(":checked")){
+            window.location = "/assignment/template/powerpoint.php?page="+page+"&filter=new";
+        }else{
+            window.location = "/assignment/template/powerpoint.php?page="+page;
+        }
     }else{
-        window.location = "/assignment/template/web.php?page="+page+"&filter=dls";
+        if(v.is(":checked")){
+            window.location = "/assignment/template/web.php?page="+page+"&filter=new";
+        }else{
+            window.location = "/assignment/template/web.php?page="+page;
+        }
     }
+
 });

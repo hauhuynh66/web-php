@@ -1,13 +1,10 @@
 <?php
-    include_once("../config/locale.php");
+    include_once("../config/lang.php");
     include_once("../model/user.php");
     if(session_status()==PHP_SESSION_NONE){
         session_start();
     }
     $user = new user($conn);
-    $dashboard = $lang->{"sidebar.db"};
-    $upload = $lang->{"sidebar.up"};
-    $about = $lang->{"sidebar.ab"};
     if(isset($_SESSION["username"])){
         $username = $_SESSION["username"];
         $role = $user->get_role($username,"role");
@@ -25,17 +22,17 @@
         <a href="index.php" class="sidebar-text normal-text py-2">
             <i class="fa fa-chalkboard-teacher large-text pr-2"></i>
             <?php
-                echo("<span>".$dashboard."</span>")
+                echo("<span>".$lang->{"home"}."</span>")
             ?>
         </a>
     </div>
 </div>
 <?php
     if(isset($role)&&$role=="ADMIN") {
-        echo("<div class=\"item-holder pb-0 border-bottom-0\">
-            <div class=\"sidebar-item\">
-            <a href=\"users.php\" class=\"sidebar-text normal-text py-2\">
-                <i class=\"fa fa-users large-text pr-2\"></i>");
+        echo("<div class='item-holder pb-0 border-bottom-0'>
+            <div class='sidebar-item'>
+            <a href='users.php' class='sidebar-text normal-text py-2'>
+                <i class='fa fa-users large-text pr-2'></i>");
         echo("<span>Users</span></a></div></div>");
     }
 ?>
@@ -60,7 +57,7 @@
         <a href="upload.php" class="sidebar-text normal-text pt-2">
             <i class="fa fa-upload large-text pr-2"></i>
             <?php
-                echo("<span>".$upload."</span>")
+                echo("<span>".$lang->{"upload"}."</span>")
             ?>
         </a>
     </div>
@@ -70,7 +67,7 @@
         <a href="about.php" class="sidebar-text normal-text pt-2">
             <i class="fa fa-info-circle large-text pr-2"></i>
             <?php
-                echo("<span>".$about."</span>")
+                echo("<span>".$lang->{"about"}."</span>")
             ?>
         </a>
     </div>

@@ -55,10 +55,9 @@ $("a[id^='lang']").on('click',function () {
         data: {
             locale: locale
         },
-        url: "/assignment/config/locale.php",
-        success: function (data) {
+        url: "/assignment/config/lang.php",
+        success: function () {
             window.location.reload();
-            console.log(data);
         },
         error: function (e) {
             console.log(e);

@@ -100,7 +100,7 @@
                                             }else{
                                                 echo("<td><button class='btn btn-danger'><i class='fa fa-ban'></i></button>");
                                             }
-                                            echo ("<button class='btn btn-info ml-3'><i class='fa fa-search'></i></button></td></tr>");
+                                            echo ("<button class='btn btn-info ml-3' id='profile-btn'><i class='fa fa-search'></i></button></td></tr>");
                                         }
                                     ?>
                                 </tbody>

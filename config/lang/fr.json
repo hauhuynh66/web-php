@@ -3,13 +3,14 @@
   "en": "Anglais",
   "vn": "Vietnamien",
   "fr": "Français",
-  "sidebar.db": "Domicile",
-  "sidebar.up": "Télécharger",
-  "sidebar.ab": "À propos",
+  "home": "Domicile",
+  "upload": "Télécharger",
+  "about": "À propos",
   "fn": "Prénom",
   "ln": "Nom de famille",
   "un": "Nom d'utilisateur",
-  "t_up": "Modèles téléchargés",
+  "template_up": "Modèles téléchargés",
+  "template": "Téléchargés",
   "change_i": "Changer les informations",
   "change_p": "Changer le mot de passe"
 }

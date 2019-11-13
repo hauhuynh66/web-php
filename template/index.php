@@ -1,15 +1,12 @@
 <?php
-    include_once("../config/locale.php");
+    include_once("../config/lang.php");
     require_once("../model/template.php");
     require_once("../model/user.php");
     $user = new user($conn);
     $template = new template($conn);
     $templates = $template->get_all($conn);
     $n_templates = mysqli_num_rows($templates);
-    $download = 0;
-    while ($t = $templates->fetch_assoc()){
-        $download+=$t["downloads"];
-    }
+    $download = $template->get_total_download();
     $users = mysqli_num_rows($user->get_all());
 ?>
 <!DOCTYPE html>
