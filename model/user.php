@@ -49,14 +49,16 @@
         }
 
         function get_role($username,$col){
-            $existed = mysqli_num_rows($this->get_by_username($username));
-            if($existed==0){
-                return 0;
+            $existed = $this->get_by_username($username);
+            if($existed->num_rows==0){
+                return null;
             }else{
                 $sql = "select * from $this->role_table where username='$username'";
                 $success = mysqli_query($this->conn,$sql);
                 if($success){
                     return $success->fetch_assoc()[$col];
+                }else{
+                    return null;
                 }
             }
         }
@@ -80,7 +82,7 @@
                 date_default_timezone_set('Asia/Ho_Chi_Minh');
                 $date = date("Y-m-d H:i:s");
                 $sql = "update role set lastest='$date' where id='$role_id'";
-                return mysqli_query($sql);
+                return mysqli_query($this->conn,$sql);
             }
         }
 
@@ -116,7 +118,7 @@
                 return false;
             }else{
                 $id = $exist->fetch_assoc()["id"];
-                $sql = "update $this->user_table set status = 'BANNED' where id='$id'";
+                $sql = "update $this->role_table set status = 'BANNED' where id='$id'";
                 return mysqli_query($this->conn,$sql);
             }
         }
@@ -127,7 +129,7 @@
                 return false;
             }else{
                 $id = $exist->fetch_assoc()["id"];
-                $sql = "update $this->user_table set status = 'ACTIVE' where id='$id'";
+                $sql = "update $this->role_table set status = 'ACTIVE' where id='$id'";
                 return mysqli_query($this->conn,$sql);
             }
         }
