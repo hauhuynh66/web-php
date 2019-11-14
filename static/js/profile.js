@@ -34,6 +34,7 @@ $("#change-img-btn").on('click',function () {
             type: 'POST',
             url: '/assignment/controller/controller.php',
             data: {
+                function: "image_update",
                 un: username,
                 i: id
             },

@@ -175,8 +175,8 @@
                     <div class="row">
                         <div class="col-sm-12 col-mb-6 col-lg-6 col-xl-6 mt-4">
                             <div class="card shadow">
-                                <div class="card-header">
-                                    <h4>Stat 1</h4>
+                                <div class="card-header text-center">
+                                    <h4>New User</h4>
                                 </div>
                                 <div class="card-body">
                                     <canvas id="chart1" height="200px"></canvas>
@@ -185,8 +185,8 @@
                         </div>
                         <div class="col-sm-12 col-mb-6 col-lg-6 col-xl-6 mt-4">
                             <div class="card shadow">
-                                <div class="card-header">
-                                    <h4>Stat 2</h4>
+                                <div class="card-header text-center">
+                                    <h4>Templates Stat</h4>
                                 </div>
                                 <div class="card-body">
                                     <canvas id="chart2" height="200px"></canvas>

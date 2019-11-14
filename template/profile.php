@@ -137,7 +137,7 @@
                                         </div>
                                     <div class='col-8'>");
                             if(!$uploads){
-                                echo("<a>0</a>");
+                                echo("<a>0</a></div>");
                             }else{
                                 echo("<a href='./list.php?uploader=$username'>".$uploads."</a></div>");
                             }

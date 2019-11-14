@@ -43,7 +43,7 @@
             return mysqli_query($this->conn,$sql);
         }
 
-        function new_user($f_name,$l_name,$username,$email,$hash_password){
+        function insert($f_name, $l_name, $username, $email, $hash_password){
             $sql = "insert into $this->user_table(firstname,lastname,username,email,password) values ('$f_name','$l_name','$username','$email','$hash_password')";
             return mysqli_query($this->conn,$sql);
         }
@@ -106,13 +106,39 @@
             $id = $username["id"];
             $raw_password = $password;
             $hash_password = password_hash($raw_password,PASSWORD_DEFAULT);
-            $sql = "update users set password = '$hash_password' where id = '$id'";
-            $success = mysqli_query($this->conn,$sql);
-            if($success){
-                return $raw_password;
+            $sql = "update $this->user_table set password = '$hash_password' where id = '$id'";
+            return mysqli_query($this->conn,$sql);
+        }
+
+        function block($username){
+            $exist = $this->get_by_username($username);
+            if($exist->num_rows==0){
+                return false;
             }else{
-                return "Failed";
+                $id = $exist->fetch_assoc()["id"];
+                $sql = "update $this->user_table set status = 'BANNED' where id='$id'";
+                return mysqli_query($this->conn,$sql);
             }
+        }
+
+        function unblock($username){
+            $exist = $this->get_by_username($username);
+            if($exist->num_rows==0){
+                return false;
+            }else{
+                $id = $exist->fetch_assoc()["id"];
+                $sql = "update $this->user_table set status = 'ACTIVE' where id='$id'";
+                return mysqli_query($this->conn,$sql);
+            }
+        }
+
+        function upgrade($username){
+
+        }
+
+        function get_by_date($date){
+            $sql = "select * from $this->user_table where join_date = '$date'";
+            return mysqli_query($this->conn,$sql);
         }
     }
     $user = new user($conn);

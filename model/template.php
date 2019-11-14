@@ -1,7 +1,7 @@
 <?php
     require_once("../config/database.php");
     class template{
-        private $template_table;
+        private $table_name;
         private $conn;
 
         /**
@@ -11,32 +11,36 @@
          */
         public function __construct($conn, $template_table = "templates")
         {
-            $this->template_table = $template_table;
+            $this->table_name = $template_table;
             $this->conn = $conn;
         }
 
         function get_by_name($name){
-            $sql = "select * from $this->template_table where name = '$name'";
+            $sql = "select * from $this->table_name where name = '$name'";
             return mysqli_query($this->conn,$sql);
         }
 
-        function get_by_type($type, $limit, $offset, $mode){
-            $table_name = "templates";
+        function get($type, $limit, $offset, $mode){
             if($mode=="dls"){
-                $sql = "select * from $table_name where type = '$type' order by downloads desc limit $limit offset $offset";
+                $sql = "select * from $this->table_name where type = '$type' order by downloads desc limit $limit offset $offset";
             }else{
-                $sql = "select * from $table_name where type = '$type' order by upload_date desc  limit $limit offset $offset";
+                $sql = "select * from $this->table_name where type = '$type' order by upload_date desc  limit $limit offset $offset";
             }
             return mysqli_query($this->conn,$sql);
         }
 
+        function get_by_type($type){
+            $sql = "select * from $this->table_name where type ='$type'";
+            return mysqli_query($this->conn,$sql);
+        }
+
         function get_by_uploader($uploader){
-            $sql = "select * from $this->template_table where uploader='$uploader'";
+            $sql = "select * from $this->table_name where uploader='$uploader'";
             return mysqli_query($this->conn,$sql);
         }
 
         function get_all($conn){
-            $sql = "select * from $this->template_table";
+            $sql = "select * from $this->table_name";
             return mysqli_query($conn,$sql);
         }
 
@@ -119,7 +123,7 @@
             if($exist->fetch_assoc()!=null){
                 return false;
             }else{
-                $sql = "insert into $this->template_table ( name, type, uploader ,upload_date, description) values ('$name','$type','$uploader','$date','$des')";
+                $sql = "insert into $this->table_name ( name, type, uploader ,upload_date, description) values ('$name','$type','$uploader','$date','$des')";
                 return mysqli_query($this->conn,$sql);
             }
         }
@@ -131,7 +135,7 @@
             }else{
                 $dl = $exist["downloads"];
                 $dl++;
-                $sql = "update $this->template_table set downloads='$dl' where name='$name'";
+                $sql = "update $this->table_name set downloads='$dl' where name='$name'";
                 return mysqli_query($this->conn,$sql);
             }
         }
@@ -146,7 +150,8 @@
         }
 
         function get_by_date($date){
-            
+            $sql = "select * from $this->table_name where upload_date = '$date'";
+            return mysqli_query($this->conn, $sql);
         }
     }
     $template = new template($conn);

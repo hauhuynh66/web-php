@@ -12,7 +12,7 @@
                 header("Location:../template/password-forget.php?badCredential");
             }else{
                 $success = $user->change_password($u["username"],generate_string(10));
-                if($success=="Failed"){
+                if(!$success){
                     header("Location:../template/password-forget.php?failed");
                 }else{
                     $success = sendMail($email,$success);

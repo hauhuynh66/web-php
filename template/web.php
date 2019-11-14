@@ -37,7 +37,7 @@
                     include_once("fragment/filter.php");
                     filter("web");
                     $i = 1;
-                    $result = $template->get_by_type("web",$limit,$offset, $mode);
+                    $result = $template->get("web",$limit,$offset, $mode);
                     echo("<div class='row'>");
                     while($row = $result->fetch_assoc()){
                         $template->render_web($row,$i);

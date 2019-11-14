@@ -78,7 +78,9 @@
                                     <?php
                                         $user = new user($conn);
                                         $users = $user->get_all();
+                                        $i = 0;
                                         while ($u = $users->fetch_assoc()){
+                                            $i++;
                                             $role = $user->get_role($u["username"],"role");
                                             $upload = mysqli_num_rows($user->get_uploaded_templates($u["username"]));
                                             $status = $user->get_role($u["username"],"status");
@@ -90,14 +92,14 @@
                                             }
                                             echo("<tr>
                                                 <td>$icon</td>
-                                                <td>".$u["username"]."</td>
+                                                <td id='username-$i'>".$u["username"]."</td>
                                                 <td>$upload</td>
                                                 <td>$status</td>
                                                 <td>$lastest</td>");
                                             if($u["username"]==$_SESSION["username"]){
                                                 echo("<td><button class='btn btn-success' disabled><i class='fa fa-check'></i></button>");
                                             }else{
-                                                echo("<td><button class='btn btn-danger'><i class='fa fa-ban'></i></button>");
+                                                echo("<td><button class='btn btn-danger' id='ban-btn-$i'><i class='fa fa-ban'></i></button>");
                                             }
                                             echo ("<button class='btn btn-info ml-3' id='profile-btn'><i class='fa fa-search'></i></button></td></tr>");
                                         }

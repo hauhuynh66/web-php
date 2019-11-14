@@ -66,10 +66,10 @@
                 }else{
                     $hash_password = password_hash($password,PASSWORD_DEFAULT);
                     $result = $user->get_by_username_and_email($username,$email);
-                    if(mysqli_num_rows($result)==0){
-                        $success = insert_user($conn,$f_name,$l_name,$username,$email,$hash_password);
+                    if($result->num_rows==0){
+                        $success = $user->insert($f_name,$l_name,$username,$email,$hash_password);
                         if($success){
-                            $success = insert_role($conn,$username);
+                            $success = $user->insert_role($username);
                             if($success){
                                 header("Location:./login.php?registered");
                             }
