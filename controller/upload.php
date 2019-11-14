@@ -10,26 +10,22 @@
         $n = sizeof($_FILES["image"]["name"]);
         if(isset($_POST["name"])&&$_POST["name"]){
             $name = $_POST["name"];
+            if(strlen($name)<6||strlen($name)>200){
+                header("Location:/assignment/template/upload.php?error=name");
+            }
         }else{
-            echo "name required";
-            die();
-        }
-        if(strlen($name)<6||strlen($name)>200){
-            echo "name error";
-            die();
+            header("Location:/assignment/template/upload.php?error=name");
         }
         $type = strtolower($_POST["type"]);
-        $exist = $template->get_by_name($name,$type);
+        $exist = $template->get_by_name($name);
         if($exist->fetch_assoc()!=null){
-            echo "existed";
-            die();
+            header("Location:/assignment/template/upload.php?error=existed");
         }
         $des = $_POST["description"];
         $uploader = $_SESSION["username"];
         $success = $template->upload($name,$type,$uploader,$des);
         if(!$success){
-            echo "failed";
-            die();
+            header("Location:/assignment/template/upload.php?failed");
         }
         $src_path = $_SERVER["DOCUMENT_ROOT"]."/assignment/file/".$type."/".$name;
         $img_path = $_SERVER["DOCUMENT_ROOT"]."/assignment/image/preview/".$type."/".$name;
@@ -48,4 +44,5 @@
         }
         $src_des = $src_path."/src.zip";
         move_uploaded_file($f,$src_des);
+        header("Location:/assignment/template/upload.php?success");
     }

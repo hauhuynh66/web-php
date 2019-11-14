@@ -96,10 +96,14 @@
                                                 <td>$upload</td>
                                                 <td>$status</td>
                                                 <td>$lastest</td>");
-                                            if($u["username"]==$_SESSION["username"]){
-                                                echo("<td><button class='btn btn-success' disabled><i class='fa fa-check'></i></button>");
+                                            if($role=="ADMIN"){
+                                                echo("<td>");
                                             }else{
-                                                echo("<td><button class='btn btn-danger' id='ban-btn-$i'><i class='fa fa-ban'></i></button>");
+                                                if($status=="ACTIVE"){
+                                                    echo("<td><button class='btn btn-danger' id='ban-btn-$i'><i class='fa fa-ban'></i></button>");
+                                                }else{
+                                                    echo("<td><button class='btn btn-success' id='unban-btn-$i'><i class='fa fa-check'></i></button>");
+                                                }
                                             }
                                             echo ("<button class='btn btn-info ml-3' id='profile-btn'><i class='fa fa-search'></i></button></td></tr>");
                                         }
@@ -113,6 +117,24 @@
             <?php
             include("fragment/footer.php");
             ?>
+        </div>
+    </div>
+</div>
+<div class="modal fade" tabindex="-1" role="dialog" id="confirm-modal">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5>Proceed</h5>
+            </div>
+            <div class="modal-body text-center">
+                <i class="fa fa-info fa-8x icon-red"></i>
+                <br>
+                <h5 class="text-info m-4">You sure you want proceed ?</h5>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-info fixed-button" id="proceed-btn">Yes</button>
+                <button class="btn btn-outline-danger fixed-button" data-dismiss="modal">Cancel</button>
+            </div>
         </div>
     </div>
 </div>

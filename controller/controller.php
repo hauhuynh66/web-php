@@ -6,16 +6,24 @@
         $username = $_POST["un"];
         $success = $user->update_image($username,$id);
         if($success){
-            echo "Ok";
+            echo "OK";
         }else{
-            echo "Fail";
+            echo "FAIL";
         }
-    }else if($call=="block"){
+    }else if($call=="ban"){
         $username = $_POST["username"];
-        $success = $user->block($username);
+        $success = $user->ban($username);
         if($success){
-            echo "Ok";
+            echo "OK";
         }else{
-            echo "Fail";
+            echo "FAIL";
+        }
+    }else if($call=="unban"){
+        $username = $_POST["username"];
+        $success = $user->unban($username);
+        if($success){
+            echo "OK";
+        }else{
+            echo "FAIL";
         }
     }

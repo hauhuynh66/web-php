@@ -4,13 +4,14 @@
     session_start();
     $email = $_POST["email"];
     $password = $_POST["password"];
-    $remember_me = $_POST["remember-me"];
     $n = $user->get_by_email($email)->num_rows;
     if($n==0){
         header('Location:../template/login.php?error');
     }else{
-        $result = $result = $user->get_by_email($email)->fetch_assoc();
+        $result = $user->get_by_email($email)->fetch_assoc();
+        $username = $result["username"];
         $status = $user->get_role($username,"status");
+        echo $status;
         if($status!="ACTIVE"){
             header("Location:../template/login.php?blocked");
         }else{

@@ -51,7 +51,7 @@
         function get_role($username,$col){
             $existed = $this->get_by_username($username);
             if($existed->num_rows==0){
-                return null;
+                return 0;
             }else{
                 $sql = "select * from $this->role_table where username='$username'";
                 $success = mysqli_query($this->conn,$sql);
@@ -81,7 +81,7 @@
                 $role_id = $this->get_role($username,"id");
                 date_default_timezone_set('Asia/Ho_Chi_Minh');
                 $date = date("Y-m-d H:i:s");
-                $sql = "update role set lastest='$date' where id='$role_id'";
+                $sql = "update $this->role_table set lastest='$date' where id='$role_id'";
                 return mysqli_query($this->conn,$sql);
             }
         }
@@ -112,25 +112,39 @@
             return mysqli_query($this->conn,$sql);
         }
 
-        function block($username){
+        function ban($username){
             $exist = $this->get_by_username($username);
             if($exist->num_rows==0){
                 return false;
             }else{
-                $id = $exist->fetch_assoc()["id"];
-                $sql = "update $this->role_table set status = 'BANNED' where id='$id'";
-                return mysqli_query($this->conn,$sql);
+                $id = $this->get_role($username,"id");
+                $role = $this->get_role($username,"role");
+                if($role=="USER"){
+                    if($id){
+                        $sql = "update $this->role_table set status = 'BANNED' where id='$id'";
+                        return mysqli_query($this->conn,$sql);
+                    }else{
+                        return false;
+                    }
+                }else{
+                    return false;
+                }
             }
         }
 
-        function unblock($username){
+        function unban($username){
             $exist = $this->get_by_username($username);
             if($exist->num_rows==0){
                 return false;
             }else{
-                $id = $exist->fetch_assoc()["id"];
-                $sql = "update $this->role_table set status = 'ACTIVE' where id='$id'";
-                return mysqli_query($this->conn,$sql);
+                $id = $this->get_role($username,"id");
+                if($id){
+                    $sql = "update $this->role_table set status = 'ACTIVE' where id='$id'";
+                    return mysqli_query($this->conn,$sql);
+                }else{
+                    return false;
+                }
+
             }
         }
 
