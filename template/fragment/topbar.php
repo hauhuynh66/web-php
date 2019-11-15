@@ -19,10 +19,10 @@
                 <button class='btn' data-toggle='modal' data-target='#logout-modal'>
                     <i class='fa fa-sign-out-alt icon-black'></i>
                 </button>
-                <div class='vr'></div>
+                <!--<div class='vr'></div>
                 <button class='btn'>
                     <i class='fa fa-envelope'></i>
-                </button>
+                </button>-->
                 <div class='vr'></div>
                 <div class='dropdown'>
                 <button class='btn' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
