@@ -15,7 +15,7 @@
             if(isset($_COOKIE["locale"])){
                 $locale = $_COOKIE["locale"];
             }else{
-                $locale = "fr";
+                $locale = "en";
             }
             switch ($locale){
                 case "en":

@@ -71,7 +71,6 @@
                                                         <span>Actions</span></th>");
                                         }
                                     ?>
-
                                 </tr>
                                 </thead>
                                 <tbody class="text-center">
