@@ -2,8 +2,13 @@
     include("../controller/session.php");
     include("../model/template.php");
     $page = $_GET["page"];
-    $limit = $page*15;
-    $offset = ($page-1)*15;
+    $n = 10;
+    $r = mysqli_num_rows($template->get_by_type("web"));
+    $limit = $page*$n;
+    $offset = ($page-1)*$n;
+    if($offset>$r){
+        header("Location:/assignment/template/404.php");
+    }
     if(!isset($_GET["filter"])){
         $mode = "dls";
     }else{
@@ -35,25 +40,32 @@
             <div class="main-content my-4 ml-4">
                 <?php
                     include_once("fragment/filter.php");
-                    filter("web");
+                    filter("web",$mode);
                     $i = 1;
-                    $result = $template->get("web",$limit,$offset, $mode);
+                    $result = $template->get("web",$limit,$offset,$mode);
                     echo("<div class='row'>");
                     while($row = $result->fetch_assoc()){
                         $template->render_web($row,$i);
                         $i++;
                     }
                     echo("</div>");
-                    if(mysqli_num_rows($result)>15){
-                        echo "<div class='row pt-3'>
-                                    <div class='col-11'></div>
-                                    <div class='col-1'>
-                                        <button class='btn btn-info btn-block'>
-                                            <i class='fa fa-arrow-right'></i>
-                                        </button>
-                                    </div>
-                                </div>";
+                    echo "<div class='row pt-3'>";
+                    if($page>1){
+                        $prev = $page-1;
+                        echo "<div class='col-1'><a class='btn btn-info' href='web.php?page=$prev&filter=$mode'><i class='fa fa-arrow-left icon-white'></i></a></div>";
+                    }else{
+                        echo "<div class='col-1'><a></a></div>";
                     }
+                    if($r-($limit+$offset)>0){
+                        $next = $page+1;
+                        echo "<div class='col-10'></div>";
+                        echo "<div class='col-1'>
+                                <a class='btn btn-info' href='web.php?page=$next&filter=$mode'>
+                                    <i class='fa fa-arrow-right icon-white'></i>
+                                </a>
+                        </div>";
+                    }
+                    echo "</div>";
                     if(mysqli_num_rows($result)==0){
                         echo "<div class='row pt-5'>
                                 <div class='col-12 text-center'><h5>Nothing here</div>

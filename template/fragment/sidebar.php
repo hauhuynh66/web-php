@@ -38,7 +38,7 @@
 ?>
 <div class="item-holder border-bottom-0">
     <div class="sidebar-item">
-        <a href="powerpoint.php?page=1" class="sidebar-text normal-text pt-2">
+        <a href="powerpoint.php?page=1&filter=dls" class="sidebar-text normal-text pt-2">
             <i class="fa fa-file-powerpoint large-text pr-2"></i>
             <span>PowerPoint</span>
         </a>
@@ -46,7 +46,7 @@
 </div>
 <div class="item-holder">
     <div class="sidebar-item">
-        <a href="web.php?page=1" class="sidebar-text normal-text pt-2">
+        <a href="web.php?page=1&filter=dls" class="sidebar-text normal-text pt-2">
             <i class="fa fa-globe large-text pr-2"></i>
             <span>Web</span>
         </a>

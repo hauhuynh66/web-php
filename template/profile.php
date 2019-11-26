@@ -233,7 +233,7 @@
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
             <div class="modal-header text-center">
-                <p class="text-info">Change Image</p>
+                <h5 class="text-info">Change Image</h5>
             </div>
             <div class="modal-body overflow-y h-400">
                 <?php

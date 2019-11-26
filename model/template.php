@@ -39,9 +39,9 @@
             return mysqli_query($this->conn,$sql);
         }
 
-        function get_all($conn){
+        function get_all(){
             $sql = "select * from $this->table_name";
-            return mysqli_query($conn,$sql);
+            return mysqli_query($this->conn,$sql);
         }
 
         static function render_ppt($result, $i){
@@ -49,7 +49,7 @@
             $download = $result["downloads"];
             $path = "../image/preview/".$result["type"]."/".$name."/img1.jpg";
             $description = $result["description"];
-            echo("<div class='col-xl-6 col-lg-6 col-mb-6 col-sm-12 pt-5'>
+            echo("<div class='col-xl-6 col-lg-6 col-mb-6 col-sm-12 pt-3'>
                         <div class='card shadow'>
                             <div class='card-header'>
                                 <div class='row'>
@@ -85,7 +85,7 @@
             $download = $result["downloads"];
             $path = "../image/preview/".$result["type"]."/".$name."/img1.jpg";
             $description = $result["description"];
-            echo("<div class='col-xl-6 col-lg-6 col-mb-6 col-sm-12 pt-5'>
+            echo("<div class='col-xl-6 col-lg-6 col-mb-6 col-sm-12 pt-3'>
                         <div class='card shadow'>
                             <div class='card-header'>
                                 <div class='row'>

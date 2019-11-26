@@ -32,14 +32,14 @@
                 <?php
                     include("fragment/filter.php");
                     $i = 0;
-                    $templates = $teplate->get_by_uploader($uploader);
-                    echo ("<h4 class=\"text-info\">Templates upload by $uploader</h4>");
+                    $templates = $template->get_by_uploader($uploader);
+                    echo ("<h5 class='text-info'>Templates upload by $uploader</h5>");
                     echo("<div class='row'>");
                     while ($t = $templates->fetch_assoc()){
                         if($t["type"]=="powerpoint"){
-                            $teplate->render_ppt($t,$i);
+                            $template->render_ppt($t,$i);
                         }else{
-                            $teplate->render_web($t,$i);
+                            $template->render_web($t,$i);
                         }
                         $i++;
                     }
