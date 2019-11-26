@@ -20,7 +20,7 @@
 <div class="item-holder pb-0 border-bottom-0">
     <div class="sidebar-item">
         <a href="index.php" class="sidebar-text normal-text py-2">
-            <i class="fa fa-chalkboard-teacher large-text pr-2"></i>
+            <i class="fa fa-home large-text pr-2"></i>
             <?php
                 echo("<span>".$lang->{"home"}."</span>")
             ?>

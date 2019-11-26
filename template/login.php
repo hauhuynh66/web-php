@@ -12,7 +12,18 @@
         <div class="container text-center">
             <h1 class="text-font-1">Login</h1>
         </div>
-        <div class="text-center mt-3">
+        <div class="row mt-4">
+            <div class="col-4 pr-0">
+                <a class="btn btn-info round"><i class="fab fa-facebook icon-white"></i></a>
+            </div>
+            <div class="col-4 text-center pr-0">
+                <a class="btn btn-danger round"><i class="fab fa-google icon-white"></i></a>
+            </div>
+            <div class="col-4 text-right pr-0">
+                <a class="btn btn-info round"><i class="fab fa-twitter icon-white"></i></a>
+            </div>
+        </div>
+        <div class="text-center mt-4">
             <?php
                 if(isset($_GET["registered"])){
                     echo("<div class='alert alert-success errorMsg'>Successfully Register</div>");

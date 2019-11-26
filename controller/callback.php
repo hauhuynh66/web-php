@@ -42,7 +42,7 @@
     $tokenMetadata = $oAuth2Client->debugToken($accessToken);
     echo '<h3>Metadata</h3>';
     var_dump($tokenMetadata);
-    $tokenMetadata->validateAppId('{app-id}');
+    $tokenMetadata->validateAppId('3195907820451281');
     $tokenMetadata->validateExpiration();
 
     if (! $accessToken->isLongLived()) {

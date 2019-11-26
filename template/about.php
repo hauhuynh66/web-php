@@ -36,22 +36,22 @@
                 <h3>Contacts</h3>
                 <hr>
                 <div class="row my-4">
-                    <div class="col-xl-3 col-lg-4 col-mb-4 col-sm-6 my-2">
+                    <div class="col-xl-4 col-lg-4 col-mb-4 col-sm-6 my-2">
                         <button class="btn btn-block btn-primary"><i class="fab fa-facebook mr-4"></i>FaceBook</button>
                     </div>
-                    <div class="col-xl-3 col-lg-4 col-mb-4 col-sm-6 my-2">
+                    <div class="col-xl-4 col-lg-4 col-mb-4 col-sm-6 my-2">
                         <button class="btn btn-block btn-danger"><i class="fab fa-google mr-4"></i>GMail</button>
                     </div>
-                    <div class="col-xl-3 col-lg-4 col-mb-4 col-sm-6 my-2">
+                    <div class="col-xl-4 col-lg-4 col-mb-4 col-sm-6 my-2">
                         <button class="btn btn-block btn-info"><i class="fab fa-twitter mr-4"></i>Twitter</button>
                     </div>
-                    <div class="col-xl-3 col-lg-4 col-mb-4 col-sm-6 my-2">
+                    <div class="col-xl-4 col-lg-4 col-mb-4 col-sm-6 my-2">
                         <button class="btn btn-block btn-primary"><i class="fab fa-linkedin mr-4"></i>Linkedin</button>
                     </div>
-                    <div class="col-xl-3 col-lg-4 col-mb-4 col-sm-6 my-2">
+                    <div class="col-xl-4 col-lg-4 col-mb-4 col-sm-6 my-2">
                         <button class="btn btn-block btn-secondary"><i class="fab fa-github mr-4"></i>Github</button>
                     </div>
-                    <div class="col-xl-3 col-lg-4 col-mb-4 col-sm-6 my-2 text-center pt-2">
+                    <div class="col-xl-4 col-lg-4 col-mb-4 col-sm-6 my-2 text-center pt-2">
                         <i class="fa fa-phone-alt mr-2"></i><span class="text-info"> +84827112xx (Mr.Hau)</span>
                     </div>
                 </div>
