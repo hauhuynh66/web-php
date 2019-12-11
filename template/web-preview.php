@@ -4,13 +4,14 @@
     require_once("../controller/utils.php");
     require_once("../model/template.php");
     require_once("../model/review.php");
+    $name = pathinfo("filename");
     if(!isset($_GET["name"])){
-        header("Location:../template/404.php");
+        header("Location:../404.php");
     }
     $name = $_GET["name"];
-    $result = $template->get_by_name($name,"web")->fetch_assoc();
+    $result = $template->getByNameAndType($name,"web")->fetch_assoc();
     if($result==null){
-        header("Location:../template/404.php");
+        header("Location:../404.php");
     }
     $downloads = $result["downloads"];
     $name = $result["name"];
@@ -19,7 +20,7 @@
     $absolute_path = $_SERVER["DOCUMENT_ROOT"]."/assignment/image/preview/".$result["type"]."/".$result["name"]."/";
     $uploader = $result["uploader"];
     $upload_date = $result["upload_date"];
-    $reviews = $review->get_all($_GET["name"]);
+    $reviews = $review->get_all($result["id"]);
     $n = mysqli_num_rows($reviews);
     $count = count_file($absolute_path,["*.jpg"]);
 ?>

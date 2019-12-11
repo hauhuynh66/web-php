@@ -2,7 +2,7 @@
     include_once("../config/lang.php");
     require_once("../model/template.php");
     require_once("../model/user.php");
-    $templates = $template->get_all($conn);
+    $templates = $template->get_all();
     $n_templates = mysqli_num_rows($templates);
     $download = $template->get_total_download();
     $users = mysqli_num_rows($user->get_all());

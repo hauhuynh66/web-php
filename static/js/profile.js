@@ -1,13 +1,5 @@
 var ic = false;
 var sel = 0;
-$("#change-password-btn").on('click',function () {
-    var op = $("#old-password").val();
-    var np = $("#new-password").val();
-    var npc = $("#pass-confirm").val();
-    var username = $("#username").html();
-    console.log("a");
-    console.log(username);
-});
 
 $("body").on('click',".image-button[id^=profile-image]",function () {
     ic = true;
@@ -39,7 +31,7 @@ $("#change-img-btn").on('click',function () {
                 i: id
             },
             success: function (data) {
-                if(data==="Ok"){
+                if(data==="OK"){
                     window.location.reload();
                 }else{
                     $("#change-image-modal").modal('toggle');
@@ -50,6 +42,64 @@ $("#change-img-btn").on('click',function () {
             }
         });
     }
+});
+
+$("#change-password-confirm").on('click',function () {
+    var op = $("#old-password").val();
+    var np = $("#new-password").val();
+    var npc = $("#pass-confirm").val();
+    if(np.length<8){
+        $("#p-error").empty();
+        $("#p-error").append("<p class='alert alert-danger'>Password must have at least 8 character</p>");
+    }else if(npc!==np){
+        $("#p-error").empty();
+        $("#p-error").append("<p class='alert alert-danger'>Re-Password does not match </p>");
+    }else{
+        $.ajax({
+            type: "POST",
+            url: "/assignment/controller/controller.php",
+            data: {
+                function: "update_password",
+                op: op,
+                np: np
+            },
+            success: function (data) {
+                $("#p-error").empty();
+                if(data==="SUCCESS"){
+                    $("#p-error").append("<p class='alert alert-success'>"+data+"</p>");
+                }else{
+                    $("#p-error").append("<p class='alert alert-danger'>"+data+"</p>");
+                }
+            },
+            error: function (e) {
+                console.log(e);
+            }
+        });
+    }
+});
+
+$("#change-info-confirm").on('click',function () {
+    var fname = $("#edit-firstname").val();
+    var lname = $("#edit-lastname").val();
+    var username = $("#edit-username").val();
+    var email = $("#edit-email").val();
+    $.ajax({
+        type: "POST",
+        url: "/assignment/controller/controller.php",
+        data: {
+            function: "update_info",
+            fname: fname,
+            lname: lname,
+            username: username,
+            email: email
+        },
+        success: function (data) {
+            console.log(data);
+        },
+        error: function (e) {
+            console.log(e);
+        }
+    });
 });
 
 function format(i) {

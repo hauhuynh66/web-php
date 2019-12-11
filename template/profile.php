@@ -172,30 +172,34 @@
 </div>
 <!--Change info-->
 <div class="modal fade" tabindex="-1" role="dialog" id="change-info-modal">
-    <div class="modal-dialog" role="document">
+    <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">Change Info</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
+            <div class="modal-header text-center d-block mt-1">
+                <h5 class="text-info">Change Info</h5>
             </div>
             <div class="modal-body">
                 <form>
                     <?php
-                        echo("<input class='form-control' placeholder='First name' id='first-name' value='$firstname'>
-                        <input class='form-control mt-3' placeholder='Last name' id='last-name' value='$lastname'>
-                        <input class='form-control mt-3' placeholder='Username' id='username' value='$username'>
-                        <input class='form-control mt-3' placeholder='Email' id='email' value='$email'>
-                        <input class='form-control mt-3' placeholder='Github' id='github' value='$github'>
-                        <input class='form-control mt-3' placeholder='Facebook' id='twitter' value='$facebook'>
-                        <input class='form-control mt-3' placeholder='Twitter' id='twitter' value='$twitter'>");
+                        echo("<label for='edit-firstname'>First name</label>
+                        <input class='form-control' placeholder='First name' id='edit-firstname' value='$firstname'>
+                        <label for='edit-lastname' class='my-2'>Last name</label>
+                        <input class='form-control' placeholder='Last name' id='edit-lastname' value='$lastname'>
+                        <label for='edit-username' class='my-2'>Username</label>
+                        <input class='form-control' placeholder='Username' id='edit-username' value='$username'>
+                        <label for='edit-email' class='my-2'>Email</label>
+                        <input class='form-control' placeholder='Email' id='edit-email' value='$email'>
+                        <label for='edit-github' class='my-2'>Github</label>
+                        <input class='form-control' placeholder='Github' id='edit-github' value='$github'>
+                        <label for='edit-firstname' class='my-2'>Facebook</label>
+                        <input class='form-control' placeholder='Facebook' id='edit-facebook' value='$facebook'>
+                        <label for='edit-firstname' class='my-2'>Twitter</label>
+                        <input class='form-control' placeholder='Twitter' id='edit-twitter' value='$twitter'>");
 
                     ?>
                 </form>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-primary" id="change-info-btn">Confirm</button>
+                <button type="button" class="btn btn-primary" id="change-info-confirm">Confirm</button>
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
             </div>
         </div>
@@ -205,24 +209,24 @@
 <div class="modal fade" tabindex="-1" role="dialog" id="change-password-modal">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
-            <div class="modal-header">
+            <div class="modal-header text-center d-block mt-1">
                 <h5 class="modal-title">Change Password</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
             </div>
             <div class="modal-body">
                 <form>
                     <?php
-                    echo("<p id='user' hidden>$username</p>
-                           <input class='form-control' id='old-password' placeholder='Old Password'>
-                           <input class='form-control my-3' id='new-password' placeholder='New Password'>
-                           <input class='form-control my-3' id='pass-confirm' placeholder='Re-Password'>");
+                    echo("<div id='p-error' class='text-center'></div>
+                           <label for='old-password'>Old Password</label>
+                           <input class='form-control' type='password' id='old-password'>
+                           <label for='new-password' class='my-2'>New Password</label>
+                           <input class='form-control' type='password' id='new-password'>
+                           <label for='pass-confirm' class='my-2'>Repeat Password</label>
+                           <input class='form-control' type='password' id='pass-confirm'>");
                     ?>
                 </form>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-primary" id="change-password-btn">Confirm</button>
+                <button type="button" class="btn btn-primary" id="change-password-confirm">Confirm</button>
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
             </div>
         </div>

@@ -9,7 +9,7 @@
         header("Location:../template/404.php");
     }else{
         $template_name = $_GET["template"];
-        $result = $template->get_by_name($template_name)->fetch_assoc();
+        $result = $template->getByName($template_name)->fetch_assoc();
         if($result==null){
             header("Location:../template/404.php");
         }

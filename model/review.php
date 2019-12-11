@@ -20,9 +20,17 @@ class review{
         return mysqli_query($this->conn,$sql);
     }
 
-    function insert($template_name,$username,$star,$content){
-        $sql = "insert into review (template,username,star,content) values ('$template_name','$username', $star,'$content')";
-        return mysqli_query($this->conn,$sql);
+    function insert($template,$username,$star,$content){
+        $s = "select * from templates where name = '$template'";
+        $exist = mysqli_query($this->conn,$s)->fetch_assoc();
+        if($exist!=null){
+            $id = $exist["id"];
+            $sql = "insert into review (template,username,star,content) values ('$id','$username', $star,'$content')";
+            return mysqli_query($this->conn,$sql);
+        }else{
+            return false;
+        }
+
     }
 
     static function render($review)

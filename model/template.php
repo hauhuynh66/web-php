@@ -15,8 +15,13 @@
             $this->conn = $conn;
         }
 
-        function get_by_name($name){
+        function getByName($name){
             $sql = "select * from $this->table_name where name = '$name'";
+            return mysqli_query($this->conn,$sql);
+        }
+
+        function getByNameAndType($name,$type){
+            $sql = "select * from $this->table_name where name = '$name' and type= '$type'";
             return mysqli_query($this->conn,$sql);
         }
 
@@ -119,7 +124,7 @@
         function upload($name,$type,$uploader,$des){
             date_default_timezone_set("Asia/Ho_Chi_Minh");
             $date = date("Y-m-d");
-            $exist = $this->get_by_name($name);
+            $exist = $this->getByName($name);
             if($exist->fetch_assoc()!=null){
                 return false;
             }else{
@@ -129,7 +134,7 @@
         }
 
         function download($name){
-            $exist = $this->get_by_name($name)->fetch_assoc();
+            $exist = $this->getByName($name)->fetch_assoc();
             if($exist==null){
                 return false;
             }else{
@@ -141,7 +146,7 @@
         }
 
         function get_total_download(){
-            $templates = $this->get_all($this->conn);
+            $templates = $this->get_all();
             $count = 0;
             while ($template = $templates->fetch_assoc()){
                 $count+=$template["downloads"];

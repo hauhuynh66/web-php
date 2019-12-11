@@ -1,7 +1,7 @@
 $("body").on('click',"[id^=download-btn-]",function () {
     var i = $(this).attr("id").split("-")[2];
     var name = $("#tp-name-"+i).html();
-    $("#template-name").html(name);
+    $("#template-name").text(name);
 });
 
 $("#download").on('click',function () {

@@ -69,10 +69,9 @@
                     if($result->num_rows==0){
                         $success = $user->insert($f_name,$l_name,$username,$email,$hash_password);
                         if($success){
-                            $success = $user->insert_role($username);
-                            if($success){
-                                header("Location:./login.php?registered");
-                            }
+                            header("Location:./login.php?registered");
+                        }else{
+                            header("Location:./register.php?failed");
                         }
                     }
                 }

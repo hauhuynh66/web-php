@@ -34,18 +34,25 @@
             return mysqli_query($this->conn,$sql);
         }
 
-        function get_by_username_and_password($username,$password){
-
-        }
-
         function get_by_username_and_email($username,$email){
             $sql = "select * from $this->user_table where username='$username' and email = '$email' limit 1";
             return mysqli_query($this->conn,$sql);
         }
 
         function insert($f_name, $l_name, $username, $email, $hash_password){
-            $sql = "insert into $this->user_table(firstname,lastname,username,email,password) values ('$f_name','$l_name','$username','$email','$hash_password')";
-            return mysqli_query($this->conn,$sql);
+            $sql = "insert into $this->user_table(firstname,lastname,username,email,password,picture) values ('$f_name','$l_name','$username','$email','$hash_password','001')";
+            $success = mysqli_query($this->conn,$sql);
+            if($success){
+                $sql = "insert into $this->role_table (username,status,role) values ('$username','ACTIVE','USER')";
+                $success = mysqli_query($this->conn,$sql);
+                if($success){
+                    return true;
+                }else{
+                    return false;
+                }
+            }else{
+                return false;
+            }
         }
 
         function get_role($username,$col){
@@ -105,10 +112,9 @@
         }
 
         function change_password($username,$password){
-            $id = $username["id"];
             $raw_password = $password;
             $hash_password = password_hash($raw_password,PASSWORD_DEFAULT);
-            $sql = "update $this->user_table set password = '$hash_password' where id = '$id'";
+            $sql = "update $this->user_table set password = '$hash_password' where username = '$username'";
             return mysqli_query($this->conn,$sql);
         }
 
@@ -148,8 +154,9 @@
             }
         }
 
-        function upgrade($username){
-
+        function update_information($id,$fname,$lname,$username,$email){
+            $sql = "update $this->user_table set username = '$username', email = '$email' where id = '$id'";
+            return mysqli_query($this->conn,$sql);
         }
 
         function get_by_date($date){
