@@ -4,6 +4,11 @@ $("body").on('click',"[id^=download-btn-]",function () {
     $("#template-name").text(name);
 });
 
+$("#download-btn").on('click',function () {
+    var name = $("#tp-name").html();
+    $("#template-name").text(name);
+});
+
 $("#download").on('click',function () {
     const template = $("#template-name").html();
     window.location = "/assignment/controller/download.php?template="+template;

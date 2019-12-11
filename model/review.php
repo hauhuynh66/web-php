@@ -16,21 +16,22 @@ class review{
     }
 
     function get_all($template){
-        $sql = "select * from $this->table_name where template='$template'";
+        $sql = "select * from $this->table_name inner join users on $this->table_name.user = users.id
+                    inner join template on template.id = review.template where template.name ='$template'";
         return mysqli_query($this->conn,$sql);
     }
 
     function insert($template,$username,$star,$content){
-        $s = "select * from templates where name = '$template'";
-        $exist = mysqli_query($this->conn,$s)->fetch_assoc();
-        if($exist!=null){
-            $id = $exist["id"];
-            $sql = "insert into review (template,username,star,content) values ('$id','$username', $star,'$content')";
-            return mysqli_query($this->conn,$sql);
-        }else{
+        $uid = mysqli_query($this->conn,"select id from users where username = '$username'");
+        $tid = mysqli_query( $this->conn,"select id from template where name = '$template'");
+        if($uid->num_rows==0||$tid->num_rows==0){
             return false;
+        }else{
+            $uid = $uid->fetch_assoc()["id"];
+            $tid = $tid->fetch_assoc()["id"];
+            $sql = "insert into $this->table_name(user,template,star,content) values ('$uid','$tid','$star','$content')";
+            return mysqli_query($this->conn,$sql);
         }
-
     }
 
     static function render($review)

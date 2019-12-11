@@ -24,15 +24,13 @@
                     <i class='fa fa-envelope'></i>
                 </button>-->
                 <div class='vr'></div>
-                <div class='dropdown'>
+                <!--<div class='dropdown'>
                 <button class='btn' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
                     <i class='fa fa-bell icon-black font-size-15 mr-1'></i>
                     <small class='font-weight-bold text-danger abs-text'>2</small>
                 </button>
-                <div class='dropdown-menu' aria-labelledby='note-dropdown'>
-                    
-                </div>
-                </div>");
+                <div class='dropdown-menu' aria-labelledby='note-dropdown'></div>
+                </div>-->");
             }else{
                 echo "<div class='vr'></div>
                 <button class='btn' id='login-btn'>
@@ -42,7 +40,7 @@
         ?>
     </div>
     <?php
-        echo("<div class='input-group w-haft justify-content-end'>
+        echo("<div class='w-haft justify-content-end'>
             <div class='dropdown dropleft'>
                 <button class='btn dropdown-toggle' type='button' id='languageBtn' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
                     ".$lang->{"lang"}."

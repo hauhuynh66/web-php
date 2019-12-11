@@ -12,7 +12,7 @@
         $arr = array();
         for ($i=6;$i>=0;$i--){
             $v = date("Y:m:d",time()-$i*24*3600);
-            $n = $user->get_by_date($v)->num_rows;
+            $n = $user->getByDate($v)->num_rows;
             $arr[$v] = $n;
         }
         echo json_encode($arr);

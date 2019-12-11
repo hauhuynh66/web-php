@@ -5,7 +5,7 @@
     $templates = $template->get_all();
     $n_templates = mysqli_num_rows($templates);
     $download = $template->get_total_download();
-    $users = mysqli_num_rows($user->get_all());
+    $users = mysqli_num_rows($user->getAll());
 ?>
 <!DOCTYPE html>
 <html lang="en">

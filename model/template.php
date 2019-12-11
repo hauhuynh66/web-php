@@ -9,7 +9,7 @@
          * @param $template_table
          * @param $conn
          */
-        public function __construct($conn, $template_table = "templates")
+        public function __construct($conn, $template_table = "template")
         {
             $this->table_name = $template_table;
             $this->conn = $conn;
@@ -39,8 +39,9 @@
             return mysqli_query($this->conn,$sql);
         }
 
-        function get_by_uploader($uploader){
-            $sql = "select * from $this->table_name where uploader='$uploader'";
+        function getByUploader($uploader){
+            $sql = "select * from users inner join template 
+                            on users.id = template.uploader where users.username = '$uploader'";
             return mysqli_query($this->conn,$sql);
         }
 
@@ -121,14 +122,14 @@
                 </div>");
         }
 
-        function upload($name,$type,$uploader,$des){
+        function upload($name, $type, $uploader, $des){
             date_default_timezone_set("Asia/Ho_Chi_Minh");
-            $date = date("Y-m-d");
             $exist = $this->getByName($name);
-            if($exist->fetch_assoc()!=null){
-                return false;
+            if($exist->num_rows>0){
+                return 0;
             }else{
-                $sql = "insert into $this->table_name ( name, type, uploader ,upload_date, description) values ('$name','$type','$uploader','$date','$des')";
+                $uploader = mysqli_query($this->conn,"select id from users where username = '$uploader'")->fetch_assoc()["id"];
+                $sql = "insert into $this->table_name ( name, type, uploader , description) values ('$name','$type','$uploader','$des')";
                 return mysqli_query($this->conn,$sql);
             }
         }

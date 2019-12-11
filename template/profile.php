@@ -4,8 +4,8 @@
     include_once("../config/lang.php");
     include_once("../controller/utils.php");
     $username = $_SESSION["username"];
-    $result = $user->get_by_username($username)->fetch_assoc();
-    $role = $user->get_role($username,"role");
+    $result = $user->getByUsername($username)->fetch_assoc();
+    $role = $user->getRole($username);
     $firstname = $result["firstname"];
     $lastname = $result["lastname"];
     $username = $result["username"];
@@ -13,7 +13,7 @@
     $github = $result["github"];
     $facebook = $result["facebook"];
     $twitter = $result["twitter"];
-    $uploads = mysqli_num_rows($user->get_uploaded_templates($result["username"]));
+    $uploads = mysqli_num_rows($user->getUploadedTemplates($result["username"]));
     $img = "/assignment/static/vendor/icon/animal/".$result["picture"].".svg";
 ?>
 <!DOCTYPE html>

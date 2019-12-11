@@ -2,7 +2,7 @@
     include("../controller/session.php");
     include("../model/template.php");
     $page = $_GET["page"];
-    $n = 10;
+    $n = 2;
     $limit = $page*$n;
     $offset = ($page-1)*$n;
     if(!isset($_GET["filter"])){

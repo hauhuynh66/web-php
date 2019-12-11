@@ -65,7 +65,7 @@
                     echo("<div class='alert alert-danger'>".$validate."</div>");
                 }else{
                     $hash_password = password_hash($password,PASSWORD_DEFAULT);
-                    $result = $user->get_by_username_and_email($username,$email);
+                    $result = $user->getByUsernameAndEmail($username,$email);
                     if($result->num_rows==0){
                         $success = $user->insert($f_name,$l_name,$username,$email,$hash_password);
                         if($success){

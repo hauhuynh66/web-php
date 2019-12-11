@@ -7,11 +7,11 @@
         if(!filter_var($email,FILTER_VALIDATE_EMAIL)){
             header("Location:../template/password-forget.php?error");
         }else{
-            $u = $user->get_by_email($email)->fetch_assoc();
+            $u = $user->getByEmail($email)->fetch_assoc();
             if($user==null){
                 header("Location:../template/password-forget.php?badCredential");
             }else{
-                $success = $user->change_password($u["username"],generate_string(10));
+                $success = $user->updatePassword($u["username"],generate_string(10));
                 if(!$success){
                     header("Location:../template/password-forget.php?failed");
                 }else{

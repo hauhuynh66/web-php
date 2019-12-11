@@ -19,22 +19,27 @@
             $this->conn = $conn;
         }
 
-        function get_by_username($username){
+        function getByUsername($username){
             $sql = "select * from $this->user_table where username = '$username'";
             return mysqli_query($this->conn,$sql);
         }
 
-        function get_all(){
+        function getById($id){
+            $sql = "select * from $this->user_table where id = '$id'";
+            return mysqli_query($this->conn,$sql);
+        }
+
+        function getAll(){
             $sql = "select * from $this->user_table";
             return mysqli_query($this->conn,$sql);
         }
 
-        function get_by_email($email){
+        function getByEmail($email){
             $sql = "select * from $this->user_table where email='$email'";
             return mysqli_query($this->conn,$sql);
         }
 
-        function get_by_username_and_email($username,$email){
+        function getByUsernameAndEmail($username, $email){
             $sql = "select * from $this->user_table where username='$username' and email = '$email' limit 1";
             return mysqli_query($this->conn,$sql);
         }
@@ -43,7 +48,8 @@
             $sql = "insert into $this->user_table(firstname,lastname,username,email,password,picture) values ('$f_name','$l_name','$username','$email','$hash_password','001')";
             $success = mysqli_query($this->conn,$sql);
             if($success){
-                $sql = "insert into $this->role_table (username,status,role) values ('$username','ACTIVE','USER')";
+                $id = $this->getByUsername($username)->fetch_assoc()["id"];
+                $sql = "insert into $this->role_table(user,status,role) values ('$id','ACTIVE','USER')";
                 $success = mysqli_query($this->conn,$sql);
                 if($success){
                     return true;
@@ -55,40 +61,41 @@
             }
         }
 
-        function get_role($username,$col){
-            $existed = $this->get_by_username($username);
-            if($existed->num_rows==0){
-                return 0;
-            }else{
-                $sql = "select * from $this->role_table where username='$username'";
-                $success = mysqli_query($this->conn,$sql);
-                if($success){
-                    return $success->fetch_assoc()[$col];
-                }else{
-                    return null;
-                }
-            }
+        function getRole($username){
+            $sql = "select role.role from users inner join role on users.id = role.user where username = '$username'";
+            return mysqli_query($this->conn,$sql)->fetch_assoc()["role"];
         }
 
-        function get_uploaded_templates($username){
-            $existed = mysqli_num_rows($this->get_by_username($username));
+        function getStatus($username){
+            $sql = "select role.status from users inner join role on users.id = role.user where username = '$username'";
+            return mysqli_query($this->conn,$sql)->fetch_assoc()["status"];
+        }
+
+        function getLastest($username){
+            $sql = "select role.lastest from users inner join role on users.id = role.user where username = '$username'";
+            return mysqli_query($this->conn,$sql)->fetch_assoc()["lastest"];
+        }
+
+        function getUploadedTemplates($username){
+            $existed = mysqli_num_rows($this->getByUsername($username));
             if($existed==0){
                 return 0;
             }else{
-                $sql = "select * from templates where uploader = '$username'";
+                $sql = "select * from users inner join template 
+                            on users.id = template.uploader where users.username = '$username'";
                 return mysqli_query($this->conn,$sql);
             }
         }
 
-        function update_active_time($username){
-            $user = $this->get_by_username($username);
+        function updateTime($username){
+            $user = $this->getByUsername($username);
             if($user==null){
                 die();
             }else{
-                $role_id = $this->get_role($username,"id");
+                $id = $this->getByUsername($username)->fetch_assoc()["id"];
                 date_default_timezone_set('Asia/Ho_Chi_Minh');
                 $date = date("Y-m-d H:i:s");
-                $sql = "update $this->role_table set lastest='$date' where id='$role_id'";
+                $sql = "update $this->role_table set lastest='$date' where user ='$id'";
                 return mysqli_query($this->conn,$sql);
             }
         }
@@ -100,18 +107,17 @@
             return mysqli_query($this->conn,$sql);
         }
 
-        function update_image($username,$i){
-            $existed = $this->get_by_username($username);
+        function updateImage($username, $i){
+            $existed = $this->getByUsername($username);
             if($existed){
-                $id = $existed->fetch_assoc()["id"];
-                $sql ="update $this->user_table set picture='$i' where id='$id'";
+                $sql ="update $this->user_table set picture='$i' where username='$username'";
                 return mysqli_query($this->conn,$sql);
             }else{
                 return false;
             }
         }
 
-        function change_password($username,$password){
+        function updatePassword($username, $password){
             $raw_password = $password;
             $hash_password = password_hash($raw_password,PASSWORD_DEFAULT);
             $sql = "update $this->user_table set password = '$hash_password' where username = '$username'";
@@ -119,15 +125,14 @@
         }
 
         function ban($username){
-            $exist = $this->get_by_username($username);
+            $exist = $this->getByUsername($username);
             if($exist->num_rows==0){
                 return false;
             }else{
-                $id = $this->get_role($username,"id");
-                $role = $this->get_role($username,"role");
+                $role = $this->getRole($username);
                 if($role=="USER"){
                     if($id){
-                        $sql = "update $this->role_table set status = 'BANNED' where id='$id'";
+                        $sql = "update $this->role_table set status = 'BANNED' where username='$username'";
                         return mysqli_query($this->conn,$sql);
                     }else{
                         return false;
@@ -139,27 +144,26 @@
         }
 
         function unban($username){
-            $exist = $this->get_by_username($username);
+            $exist = $this->getByUsername($username);
             if($exist->num_rows==0){
                 return false;
             }else{
-                $id = $this->get_role($username,"id");
                 if($id){
-                    $sql = "update $this->role_table set status = 'ACTIVE' where id='$id'";
+                    $sql = "update $this->role_table set status = 'ACTIVE' where username='$username'";
                     return mysqli_query($this->conn,$sql);
                 }else{
                     return false;
                 }
-
             }
         }
 
-        function update_information($id,$fname,$lname,$username,$email){
-            $sql = "update $this->user_table set username = '$username', email = '$email' where id = '$id'";
+        function updateInformation($id, $fname, $lname, $username, $email,$github,$facebook,$twitter){
+            $sql = "update $this->user_table set firstname = '$fname', lastname = '$lname',username = '$username', 
+                    email = '$email', github='$github', facebook = '$facebook', twitter = '$twitter' where id = '$id'";
             return mysqli_query($this->conn,$sql);
         }
 
-        function get_by_date($date){
+        function getByDate($date){
             $sql = "select * from $this->user_table where join_date = '$date'";
             return mysqli_query($this->conn,$sql);
         }

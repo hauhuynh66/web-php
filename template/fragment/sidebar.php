@@ -7,7 +7,7 @@
     $user = new user($conn);
     if(isset($_SESSION["username"])){
         $username = $_SESSION["username"];
-        $role = $user->get_role($username,"role");
+        $role = $user->getRole($username);
     }
 ?>
 <div class="mt-4">

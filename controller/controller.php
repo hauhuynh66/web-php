@@ -20,7 +20,7 @@
     if($call=="image_update"){
         $id = $_POST["i"];
         $username = $_POST["un"];
-        $success = $user->update_image($username,$id);
+        $success = $user->updateImage($username,$id);
         if($success){
             echo "OK";
         }else{
@@ -46,14 +46,14 @@
         $username = $_SESSION["username"];
         $op = $_POST["op"];
         $np = $_POST["np"];
-        $exist = $user->get_by_username($username);
+        $exist = $user->getByUsername($username);
         $u = $exist->fetch_assoc();
         if($u!=null){
             if(password_verify($op,$u["password"])){
                 if(strlen($np)<8){
                     echo "FAILED";
                 }else{
-                    $success = $user->change_password($username,$np);
+                    $success = $user->updatePassword($username,$np);
                     if($success){
                         echo "SUCCESS";
                     }else{
@@ -67,16 +67,19 @@
             echo "NOT FOUND";
         }
     }else if($call="update_info"){
-        $exist = $user->get_by_username($_SESSION["username"])->fetch_assoc();
+        $exist = $user->getByUsername($_SESSION["username"])->fetch_assoc();
         $fname = $_POST["fname"];
         $lname = $_POST["lname"];
         $username = $_POST["username"];
         $email = $_POST["email"];
+        $github = $_POST["github"];
+        $facebook = $_POST["facebook"];
+        $twitter = $_POST["twitter"];
         if($exist!=null){
             $id = $exist["id"];
             $error = validate_info($fname,$lname,$username,$email);
             if($error=="NONE"){
-                $success = $user->update_information($id,$fname,$lname,$username,$email);
+                $success = $user->updateInformation($id,$fname,$lname,$username,$email,$github,$facebook,$twitter);
                 if($success){
                     $_SESSION["username"] = $username;
                     echo "SUCCESS";

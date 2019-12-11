@@ -1,5 +1,6 @@
 <?php
     require_once("../controller/session.php");
+    require_once("../model/user.php");
     require_once("../model/template.php");
     require_once("../controller/review.php");
     require_once("../controller/utils.php");
@@ -7,7 +8,7 @@
         header("Location:../template/404.php");
     }
     $name = $_GET["name"];
-    $result = $template->get_by_name($name,"powerpoint")->fetch_assoc();
+    $result = $template->getByNameAndType($name,"powerpoint")->fetch_assoc();
     if($result==null){
         header("Location:../template/404.php");
     }
@@ -16,7 +17,7 @@
     $des = $result["description"];
     $relative_path = "/assignment/image/preview/".$result["type"]."/".$result["name"]."/";
     $absolute_path = $_SERVER["DOCUMENT_ROOT"]."/assignment/image/preview/".$result["type"]."/".$result["name"]."/";
-    $uploader = $result["uploader"];
+    $uploader = $user->getById($result["uploader"])->fetch_assoc()["username"];
     $upload_date = $result["upload_date"];
     $reviews = $review->get_all($_GET["name"]);
     $n = mysqli_num_rows($reviews);

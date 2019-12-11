@@ -2,7 +2,7 @@
     include("../controller/session.php");
     include("../model/template.php");
     $page = $_GET["page"];
-    $n = 10;
+    $n = 2;
     $r = mysqli_num_rows($template->get_by_type("web"));
     $limit = $page*$n;
     $offset = ($page-1)*$n;

@@ -83,6 +83,9 @@ $("#change-info-confirm").on('click',function () {
     var lname = $("#edit-lastname").val();
     var username = $("#edit-username").val();
     var email = $("#edit-email").val();
+    var github = $("#edit-github").val();
+    var facebook = $("#edit-facebook").val();
+    var twitter = $("#edit-twitter").val();
     $.ajax({
         type: "POST",
         url: "/assignment/controller/controller.php",
@@ -91,10 +94,17 @@ $("#change-info-confirm").on('click',function () {
             fname: fname,
             lname: lname,
             username: username,
-            email: email
+            email: email,
+            github: github,
+            facebook: facebook,
+            twitter: twitter
         },
         success: function (data) {
-            console.log(data);
+            if(data==="SUCCESS"){
+                window.location.reload();
+            }else{
+                alert(data);
+            }
         },
         error: function (e) {
             console.log(e);

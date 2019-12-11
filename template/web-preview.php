@@ -2,6 +2,7 @@
     require_once("../controller/session.php");
     require_once("../controller/review.php");
     require_once("../controller/utils.php");
+    require_once("../model/user.php");
     require_once("../model/template.php");
     require_once("../model/review.php");
     $name = pathinfo("filename");
@@ -18,7 +19,7 @@
     $des = $result["description"];
     $relative_path = "/assignment/image/preview/".$result["type"]."/".$result["name"]."/";
     $absolute_path = $_SERVER["DOCUMENT_ROOT"]."/assignment/image/preview/".$result["type"]."/".$result["name"]."/";
-    $uploader = $result["uploader"];
+    $uploader = $user->getById($result["uploader"])->fetch_assoc()["username"];
     $upload_date = $result["upload_date"];
     $reviews = $review->get_all($result["id"]);
     $n = mysqli_num_rows($reviews);

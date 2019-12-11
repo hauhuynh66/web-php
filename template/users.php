@@ -7,7 +7,7 @@
         header("Location:../template/login.php");
     }else{
         $username = $_SESSION["username"];
-        $role = $user->get_role($username,"role");
+        $role = $user->getRole($username);
         if($role!="ADMIN"){
             header("Location:../template/403.php");
         }
@@ -76,14 +76,14 @@
                                 <tbody class="text-center">
                                     <?php
                                         $user = new user($conn);
-                                        $users = $user->get_all();
+                                        $users = $user->getAll();
                                         $i = 0;
                                         while ($u = $users->fetch_assoc()){
                                             $i++;
-                                            $role = $user->get_role($u["username"],"role");
-                                            $upload = mysqli_num_rows($user->get_uploaded_templates($u["username"]));
-                                            $status = $user->get_role($u["username"],"status");
-                                            $lastest = $user->get_role($u["username"],"lastest");
+                                            $role = $user->getRole($u["username"]);
+                                            $upload = mysqli_num_rows($user->getUploadedTemplates($u["username"]));
+                                            $status = $user->getStatus($u["username"]);
+                                            $lastest = $user->getLastest($u["username"]);
                                             if($role=="ADMIN"){
                                                 $icon = "<i class='fa fa-user-shield'></i>";
                                             }else{

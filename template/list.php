@@ -32,7 +32,7 @@
                 <?php
                     include("fragment/filter.php");
                     $i = 0;
-                    $templates = $template->get_by_uploader($uploader);
+                    $templates = $template->getByUploader($uploader);
                     echo ("<h5 class='text-info'>Templates upload by $uploader</h5>");
                     echo("<div class='row'>");
                     while ($t = $templates->fetch_assoc()){
