@@ -112,9 +112,14 @@ class Controller
     public function editTemplate($tname){
         $nname = $_POST["name"];
         $description = $_POST["description"];
+        $type = $this->template->getByName($tname)->fetch_assoc()["type"];
         $success = $this->template->updateInfo($tname,$nname,$description);
         if($success){
-            echo "OK";
+            $src_path = $_SERVER["DOCUMENT_ROOT"]."/assignment/file/".$type."/";
+            $img_path = $_SERVER["DOCUMENT_ROOT"]."/assignment/image/preview/".$type."/";
+            rename($src_path.$tname,$src_path.$nname);
+            rename($img_path.$tname,$img_path.$nname);
+            echo "SUCCESS-".$type;
         }else{
             echo "FAILED";
         }
