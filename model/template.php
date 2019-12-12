@@ -153,5 +153,10 @@
             $sql = "select * from $this->table_name where upload_date = '$date'";
             return mysqli_query($this->conn, $sql);
         }
+
+        function updateInfo($name,$newname,$newdes){
+            $sql = "update $this->table_name set name='$newname', description = '$newdes' where name = '$name'";
+            return mysqli_query($this->conn,$sql);
+        }
     }
     $template = new template($conn);

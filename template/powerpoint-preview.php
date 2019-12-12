@@ -49,7 +49,7 @@
                             <div class="card-body">
                                 <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
                                     <?php
-                                    echo("<ol class=\"carousel-indicators\">");
+                                    echo("<ol class='carousel-indicators'>");
                                     for($i=0;$i<$count;$i++){
                                         if($i==0){
                                             echo("<li data-target='#carouselExampleIndicators' data-slide-to='$i' class='active'></li>");
@@ -65,12 +65,12 @@
                                             $j = $i+1;
                                             $img = $relative_path."img"."$j".".jpg";
                                             if($i==0){
-                                                echo("<div class=\"carousel-item active\">
-                                                    <img class=\"d-block w-100\" src='$img' alt='$j slide'>
+                                                echo("<div class='carousel-item active'>
+                                                    <img class='d-block w-100' src='$img' alt='$j slide'>
                                                     </div>");
                                             }else{
-                                                echo("<div class=\"carousel-item\">
-                                                    <img class=\"d-block w-100\" src='$img' alt='$j slide'>
+                                                echo("<div class='carousel-item'>
+                                                    <img class='d-block w-100' src='$img' alt='$j slide'>
                                                     </div>");
                                             }
                                         }
@@ -124,8 +124,8 @@
                         <h5 class="d-inline">Description</h5>
                         <?php
                             if($editable){
-                                echo ("<button class=\"btn btn-info d-inline float-right\">
-                                    <i class=\"fa fa-edit\"></i>
+                                echo ("<button class='btn btn-info d-inline float-right' id='get-template-info' data-toggle='modal' data-target='#edit-template-modal'>
+                                    <i class='fa fa-edit'></i>
                                 </button>");
                             }
                         ?>
@@ -171,11 +171,31 @@
         </div>
     </div>
 </div>
+<div class="modal fade" tabindex="-1" role="dialog" id="edit-template-modal">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header text-center p-2 d-block mt-1">
+                <h5>Edit</h5>
+            </div>
+            <div class="modal-body">
+                <label for="edit-template-name">Name</label>
+                <input id="edit-template-name" class="form-control">
+                <label for="edit-template-description" class="my-2">Description</label>
+                <textarea id="edit-template-description" class="form-control" cols="5"></textarea>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-info fixed-button" id="edit-template-btn">Confirm</button>
+                <button class="btn btn-outline-danger fixed-button" data-dismiss="modal">Cancel</button>
+            </div>
+        </div>
+    </div>
+</div>
 <script src="/assignment/static/vendor/jquery/jquery-3.4.1.js"></script>
 <script src="/assignment/static/vendor/bootstrap/bootstrap.js"></script>
 <script src="/assignment/static/vendor/font-awesome/js/fontawesome.js"></script>
 <script src="/assignment/static/js/main.js"></script>
 <script src="/assignment/static/js/download.js"></script>
 <script src="/assignment/static/js/review.js"></script>
+<script src="/assignment/static/js/template.js"></script>
 </body>
 </html>

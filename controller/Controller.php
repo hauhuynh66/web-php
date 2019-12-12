@@ -77,7 +77,7 @@ class Controller
         if($this->url=="404"){
             $this->notFound();
         }
-        if($this->url=="403"){
+        if($this->url=="403"&&$_SERVER["REQUEST_METHOD"]=="GET"){
             $this->forbidden();
         }
         if($this->url=="web-preview"){
@@ -95,7 +95,29 @@ class Controller
         if($this->url=="list"){
             $this->getList($this->param);
         }
+        if($this->url[0]=="template"&&$this->url[1]=="edit"&&$_SERVER["REQUEST_METHOD"]=="POST"){
+            $this->editTemplate($this->param);
+        }
+        if($this->url[0]=="template"&&$this->url[1]=="info"){
+            $this->templateInfo($this->param);
+        }
+    }
 
+    public function templateInfo($name){
+        $this->guard();
+        $t = $this->template->getByName($name);
+        echo json_encode($t->fetch_assoc());
+    }
+
+    public function editTemplate($tname){
+        $nname = $_POST["name"];
+        $description = $_POST["description"];
+        $success = $this->template->updateInfo($tname,$nname,$description);
+        if($success){
+            echo "OK";
+        }else{
+            echo "FAILED";
+        }
     }
 
     public function getProfile($username){

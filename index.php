@@ -82,3 +82,9 @@
     if($url[0]=="list"){
         $controller->get($url[0],$url[1]);
     }
+    if($url[0]=="template"&&$url[1]=="edit"){
+        $controller->post($url,$url[2]);
+    }
+    if($url[0]=="template"&&$url[1]=="info"){
+        $controller->get($url,$url[2]);
+    }

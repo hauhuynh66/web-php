@@ -16,8 +16,8 @@
                 <!--<div class='vr'></div>
                 <button class='btn'>
                     <i class='fa fa-envelope'></i>
-                </button>-->
-                <div class='vr'></div>
+                </button>
+                <div class='vr'></div>-->
                 <!--<div class='dropdown'>
                 <button class='btn' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
                     <i class='fa fa-bell icon-black font-size-15 mr-1'></i>
