@@ -50,14 +50,20 @@ class Controller
         if($this->url=="web"&&$this->method=="GET"){
             $this->web($this->param);
         }
-        if($this->url=="upload"&&$this->method=="GET"){
+        if($this->url=="upload"&&$this->param=="index"){
             $this->uploadForm();
         }
         if($this->url=="about"&&$this->method=="GET"){
             $this->about();
         }
-        if($this->url=="profile"&&$this->method=="GET"){
+        if($this->url=="profile"&&$this->param=="index"){
             $this->profile();
+        }
+        if($this->url=="profile"&&$this->param=="update"){
+            $this->updateProfile();
+        }
+        if($this->url[0]=="profile"&&$this->url[1]="get"){
+            $this->getProfile($this->param);
         }
         if($this->url=="lang"&&$this->method=="POST"){
             $this->changeLanguage($this->param);
@@ -89,17 +95,138 @@ class Controller
         if($this->url=="list"){
             $this->getList($this->param);
         }
+
+    }
+
+    public function getProfile($username){
+        $this->guard();
+        $exist = $this->user->getByUsername($username);
+        if($exist->num_rows>0){
+            $user = $exist->fetch_assoc();
+            $role = $this->user->getRole($username);
+            $n = $this->template->getByUploader($username)->num_rows;
+            $u = array("username"=>$user["username"],"firstname"=>$user["firstname"],"lastname"=>$user["lastname"],"email"=>$user["email"],
+                    "facebook"=>$user["facebook"],"twitter"=>$user["twitter"],"github"=>$user["github"],
+                    "date"=>$user["join_date"],"picture"=>$user["picture"],"role"=>$role,"uploaded"=>$n);
+            echo json_encode($u);
+        }else{
+            echo "NOT FOUND";
+        }
+    }
+
+
+    private function redirect($url){
+        header("Location:/assignment".$url);
+    }
+
+    private function validate_info($fname,$lname,$username,$email){
+        $error = "NONE";
+        if(strlen($fname)<3){
+            $error = "First name must have more than 4 character";
+        }else if(strlen($lname)<3){
+            $error = "Last name must have more than 4 character";
+        }else if(strlen($username)<6){
+            $error = "Username must have more than 6 character";
+        }else if(!filter_var($email,FILTER_VALIDATE_EMAIL)){
+            $error = "Email not valid";
+        }
+        return $error;
+    }
+
+    public function updateProfile(){
+        $type = $_POST["function"];
+        if($type=="image_update"){
+            $id = $_POST["i"];
+            $username = $_POST["un"];
+            $success = $this->user->updateImage($username,$id);
+            if($success){
+                echo "OK";
+            }else{
+                echo "FAIL";
+            }
+        }else if ($type=="password_update"){
+            $username = $_SESSION["username"];
+            $op = $_POST["op"];
+            $np = $_POST["np"];
+            $exist = $this->user->getByUsername($username);
+            $u = $exist->fetch_assoc();
+            if($u!=null){
+                if(password_verify($op,$u["password"])){
+                    if(strlen($np)<8){
+                        echo "FAILED";
+                    }else{
+                        $success = $this->user->updatePassword($username,$np);
+                        if($success){
+                            echo "SUCCESS";
+                        }else{
+                            echo "FAILED";
+                        }
+                    }
+                }else{
+                    echo "WRONG PASSWORD";
+                }
+            }else{
+                echo "NOT FOUND";
+            }
+        }else if($type=="update_info"){
+            $exist = $this->user->getByUsername($_SESSION["username"])->fetch_assoc();
+            $fname = $_POST["fname"];
+            $lname = $_POST["lname"];
+            $username = $_POST["username"];
+            $email = $_POST["email"];
+            $github = $_POST["github"];
+            $facebook = $_POST["facebook"];
+            $twitter = $_POST["twitter"];
+            if($exist!=null){
+                $id = $exist["id"];
+                $error = $this->validate_info($fname,$lname,$username,$email);
+                if($error=="NONE"){
+                    $success = $this->user->updateInformation($id,$fname,$lname,$username,$email,$github,$facebook,$twitter);
+                    if($success){
+                        $_SESSION["username"] = $username;
+                        echo "SUCCESS";
+                    }else{
+                        echo "FAILED";
+                    }
+                }else{
+                    echo $error;
+                }
+            }else{
+                echo "NOT FOUND";
+            }
+        }else if($type=="ban"){
+            $username = $_POST["username"];
+            $success = $this->user->ban($username);
+            if($success){
+                echo "OK";
+            }else{
+                echo "FAIL";
+            }
+        }else if($type=="unban"){
+            $username = $_POST["username"];
+            $success = $this->user->unban($username);
+            if($success){
+                echo "OK";
+            }else{
+                echo "FAIL";
+            }
+        }
     }
 
     public function getList($user){
-        $this->guard();
+        $role = $this->guard();
         $l = $this->lang();
-        $result = $this->template->getByUploader($user);
-        $template_list = array();
-        while ($t = $result->fetch_assoc()){
-            array_push($template_list,$t);
+        $exist = $this->user->getByUsername($user);
+        if($exist->num_rows==0){
+            $this->redirect("/404");
+        }else{
+            $result = $this->template->getByUploader($user);
+            $template_list = array();
+            while ($t = $result->fetch_assoc()){
+                array_push($template_list,$t);
+            }
+            require_once("template/list.php");
         }
-        require_once("template/list.php");
     }
 
     public function upload(){
@@ -117,7 +244,7 @@ class Controller
         $type = strtolower($_POST["type"]);
         $exist = $this->template->getByNameAndType($name,$type);
         if($exist->num_rows>0){
-            header("Location:/assignment/upload?existed");
+            header("Location:/assignment/upload?error=existed");
         }
         $des = $_POST["description"];
         $uploader = $_SESSION["username"];
@@ -155,11 +282,13 @@ class Controller
         $success = $this->review->insert($t,$username,$star,$content);
         if($success){
             echo "OK";
+        }else{
+            echo "FAILED";
         }
     }
 
     public function webPreview($name){
-        $this->guard();
+        $role = $this->guard();
         $l = $this->lang();
         $result = $this->template->getByNameAndType($name,"web")->fetch_assoc();
         if($result==null){
@@ -183,7 +312,7 @@ class Controller
     }
 
     public function pptPreview($name){
-        $this->guard();
+        $role = $this->guard();
         $l = $this->lang();
         $result = $this->template->getByNameAndType($name,"powerpoint")->fetch_assoc();
         if($result==null){
@@ -207,11 +336,13 @@ class Controller
     }
 
     public function forbidden(){
+        $role = $this->guard();
         $l = $this->lang();
         require_once("template/403.php");
     }
 
     public function notFound(){
+        $role = $this->guard();
         $l = $this->lang();
         require_once("template/404.php");
     }
@@ -222,8 +353,8 @@ class Controller
     }
 
     public function index(){
+        $role = $this->guard();
         $l = $this->lang();
-        $role = $this->user->getRole($_SESSION["username"]);
         $templates = $this->template->get_all();
         $n_templates = mysqli_num_rows($templates);
         $download = $this->template->get_total_download();
@@ -236,6 +367,7 @@ class Controller
     }
 
     public function authenticate(){
+        $role = $this->guard();
         $email = $_POST["email"];
         $password = $_POST["password"];
         $n = $this->user->getByEmail($email)->num_rows;
@@ -270,7 +402,7 @@ class Controller
     }
 
     public function getUsers(){
-        $this->guard();
+        $role = $this->guard();
         $l = $this->lang();
         if(isset($_SESSION["username"])){
             $role = $this->user->getRole($_SESSION["username"]);
@@ -295,9 +427,8 @@ class Controller
     }
 
     public function powerpoint($p){
-        $this->guard();
+        $role = $this->guard();
         $l = $this->lang();
-        $role = $this->user->getRole($_SESSION["username"]);
         $page = substr($p,4,1);
         $mode = substr($p,6,3);
         $n = 2;
@@ -315,9 +446,8 @@ class Controller
     }
 
     public function web($p){
-        $this->guard();
+        $role = $this->guard();
         $l = $this->lang();
-        $role = $this->user->getRole($_SESSION["username"]);
         $page = substr($p,4,1);
         $mode = substr($p,6,3);
         $n = 2;
@@ -335,19 +465,19 @@ class Controller
     }
 
     public function uploadForm(){
-        $this->guard();
+        $role = $this->guard();
         $l = $this->lang();
         require_once("template/upload.php");
     }
 
     public function about(){
-        $this->guard();
+        $role = $this->guard();
         $l = $this->lang();
         require_once("template/about.php");
     }
 
     public function profile(){
-        $this->guard();
+        $role = $this->guard();
         $l = $this->lang();
         $username = $_SESSION["username"];
         $result = $this->user->getByUsername($username)->fetch_assoc();
@@ -411,5 +541,6 @@ class Controller
         if(!isset($_SESSION["username"])){
             header("Location:/assignment/login");
         }
+        return $role = $this->user->getRole($_SESSION["username"]);
     }
 }

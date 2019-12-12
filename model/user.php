@@ -131,12 +131,9 @@
             }else{
                 $role = $this->getRole($username);
                 if($role=="USER"){
-                    if($id){
-                        $sql = "update $this->role_table set status = 'BANNED' where username='$username'";
-                        return mysqli_query($this->conn,$sql);
-                    }else{
-                        return false;
-                    }
+                    $id = $exist->fetch_assoc()["id"];
+                    $sql = "update $this->role_table set status = 'BANNED' where user = '$id'";
+                    return mysqli_query($this->conn,$sql);
                 }else{
                     return false;
                 }
@@ -148,8 +145,10 @@
             if($exist->num_rows==0){
                 return false;
             }else{
-                if($id){
-                    $sql = "update $this->role_table set status = 'ACTIVE' where username='$username'";
+                $role = $this->getRole($username);
+                if($role=="USER"){
+                    $id = $exist->fetch_assoc()["id"];
+                    $sql = "update $this->role_table set status = 'ACTIVE' where user='$id'";
                     return mysqli_query($this->conn,$sql);
                 }else{
                     return false;

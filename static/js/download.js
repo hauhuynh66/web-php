@@ -12,9 +12,9 @@ $("#download-btn").on('click',function () {
 $("#download").on('click',function () {
     var template = $("#template-name").html();
     window.location = "/assignment/download/"+template;
-    /*setTimeout(function () {
+    setTimeout(function () {
         window.location.reload();
-    },1000);*/
+    },1000);
 });
 
 $("body").on('click',"[id^=filter-]",function () {

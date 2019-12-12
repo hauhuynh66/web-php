@@ -7,9 +7,10 @@
     require_once("model/user.php");
     require_once("model/template.php");
     require_once("model/review.php");
-    require_once("controller/IndexController.php");
+    require_once("controller/Controller.php");
     session_start();
     $url = isset($_SERVER['PATH_INFO'])? explode('/', ltrim($_SERVER['PATH_INFO'],'/')) : '/';
+    $uri = $_SERVER["REQUEST_URI"];
     $controller = new Controller($user,$template,$review);
     if($url[0]=="/"){
         if(!isset($_SESSION["username"])){
@@ -37,13 +38,19 @@
         $controller->get($url[0],$url[1]);
     }
     if($url[0]=="upload"&&!isset($url[1])){
-        $controller->get($url[0]);
+        $controller->get($url[0],"index");
     }
     if($url[0]=="about"){
         $controller->get($url[0]);
     }
-    if($url[0]=="profile"){
-        $controller->get($url[0]);
+    if($url[0]=="profile"&&!isset($url[1])){
+        $controller->get($url[0],"index");
+    }
+    if($url[0]=="profile"&&$url[1]=="update"){
+        $controller->post($url[0],$url[1]);
+    }
+    if($url[0]=="profile"&&$url[1]=="get"&&isset($url[2])){
+        $controller->get($url,$url[2]);
     }
     if($url[0]=="404"){
         $controller->get($url[0]);

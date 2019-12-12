@@ -104,23 +104,103 @@
     </div>
 </div>
 <div class="modal fade" tabindex="-1" role="dialog" id="profile-modal">
-    <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-dialog modal-xl" role="document">
         <div class="modal-content">
-            <div class="modal-header text-center">
+            <div class="modal-header text-center d-block mt-1">
                 <h5 class="text-info">Profile</h5>
             </div>
             <div class="modal-body">
                 <div class="row">
                     <div class="col-4 text-center">
+                        <div class="card shadow">
+                            <div class="card-header text-center">
+                                <p id="user-role"></p>
 
+                            </div>
+                            <div class="card-body">
+                                <?php
+                                    echo("<img src='#' class='profile-image' id='profile-image' alt='image'>");
+                                ?>
+                            </div>
+                        </div>
                     </div>
-                    <div class="col-8 text-center">
-
+                    <div class="col-8">
+                        <div class="row">
+                            <div class="w-50 text-center">
+                                <p class="text-info">Username</p>
+                            </div>
+                            <div class="w-50 text-center">
+                                <p id="profile-username"></p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="w-50 text-center">
+                                <p class="text-info">Firstname</p>
+                            </div>
+                            <div class="w-50 text-center">
+                                <p id="profile-firstname"></p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="w-50 text-center">
+                                <p class="text-info">Lastname</p>
+                            </div>
+                            <div class="w-50 text-center">
+                                <p id="profile-lastname"></p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="w-50 text-center">
+                                <p class="text-info">Email</p>
+                            </div>
+                            <div class="w-50 text-center">
+                                <p id="profile-email"></p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="w-50 text-center">
+                                <p class="text-info">Facebook</p>
+                            </div>
+                            <div class="w-50 text-center">
+                                <p id="profile-facebook"></p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="w-50 text-center">
+                                <p class="text-info">Twitter</p>
+                            </div>
+                            <div class="w-50 text-center">
+                                <p id="profile-twitter"></p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="w-50 text-center">
+                                <p class="text-info">Github</p>
+                            </div>
+                            <div class="w-50 text-center">
+                                <p id="profile-github"></p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="w-50 text-center">
+                                <p class="text-info">Uploaded</p>
+                            </div>
+                            <div class="w-50 text-center">
+                                <p id="profile-uploaded"></p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="w-50 text-center">
+                                <p class="text-info">Join Date</p>
+                            </div>
+                            <div class="w-50 text-center">
+                                <p id="profile-join"></p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-primary" id="change-img-btn">Confirm</button>
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
             </div>
         </div>

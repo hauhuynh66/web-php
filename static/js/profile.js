@@ -17,14 +17,14 @@ $("body").on('click',".image-button[id^=profile-image]",function () {
 });
 
 $("#change-img-btn").on('click',function () {
-    if(sel==="0"){
+    if(sel===0){
         alert("Please select a image");
     }else{
         var id = format(sel);
         var username = $("#username").html();
         $.ajax({
             type: 'POST',
-            url: '/assignment/controller/controller.php',
+            url: '/assignment/profile/update',
             data: {
                 function: "image_update",
                 un: username,
@@ -36,6 +36,7 @@ $("#change-img-btn").on('click',function () {
                 }else{
                     $("#change-image-modal").modal('toggle');
                 }
+                console.log(data);
             },
             error: function (e) {
                 console.log(e);
@@ -57,9 +58,9 @@ $("#change-password-confirm").on('click',function () {
     }else{
         $.ajax({
             type: "POST",
-            url: "/assignment/controller/controller.php",
+            url: "/assignment/profile/update",
             data: {
-                function: "update_password",
+                function: "password_update",
                 op: op,
                 np: np
             },
@@ -88,7 +89,7 @@ $("#change-info-confirm").on('click',function () {
     var twitter = $("#edit-twitter").val();
     $.ajax({
         type: "POST",
-        url: "/assignment/controller/controller.php",
+        url: "/assignment/profile/update",
         data: {
             function: "update_info",
             fname: fname,

@@ -29,10 +29,39 @@ $("#proceed-btn").on('click',function () {
     }
 });
 
+$("body").on('click',"[id^=profile-btn]",function () {
+    var id = $(this).attr('id').split("-")[2];
+    var username = $("#username-"+id).html();
+    console.log(username);
+    $.ajax({
+        type: "GET",
+        url: "/assignment/profile/get/"+username,
+        success: function (data) {
+            var res = JSON.parse(data);
+            console.log(res);
+            $("#user-role").text(res.role);
+            var path = "/assignment/static/vendor/icon/animal/"+res.picture+".svg";
+            $("#profile-image").attr('src',path);
+            $("#profile-username").text(res.username);
+            $("#profile-firstname").text(res.firstname);
+            $("#profile-lastname").text(res.lastname);
+            $("#profile-email").text(res.email);
+            $("#profile-facebook").text(res.facebook);
+            $("#profile-twitter").text(res.twitter);
+            $("#profile-github").text(res.github);
+            $("#profile-uploaded").text(res.uploaded);
+            $("#profile-join").text(res.date);
+        },
+        error: function (e) {
+            console.log(e);
+        }
+    })
+});
+
 function ban(username) {
     $.ajax({
         type: "POST",
-        url: '/assignment/controller/controller.php',
+        url: '/assignment/profile/update',
         data: {
             function: "ban",
             username: username
@@ -51,7 +80,7 @@ function ban(username) {
 function unban(username) {
     $.ajax({
         type: "POST",
-        url: '/assignment/controller/controller.php',
+        url: '/assignment/profile/update',
         data: {
             function: "unban",
             username: username

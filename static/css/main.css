@@ -72,9 +72,15 @@ html{
     flex-direction: row;
 }
 
-.w-third{
+.w-33{
     display: inline-flex;
     width: 33% !important;
+    flex-direction: row;
+}
+
+.w-66{
+    display: inline-flex;
+    width: 66% !important;
     flex-direction: row;
 }
 

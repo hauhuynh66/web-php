@@ -39,11 +39,9 @@
                                 <div class="card-body">
                                     <?php
                                         echo("<img src='$img' class='profile-image' alt='image'></div>");
-                                        if($_SESSION["username"]==$username){
-                                            echo("<div class='card-footer'>
-                                                    <button class='btn btn-block btn-success' data-toggle='modal' data-target='#change-image-modal'>Change Image</button>
-                                                </div>");
-                                        }
+                                        echo("<div class='card-footer'>
+                                        <button class='btn btn-block btn-success' data-toggle='modal' data-target='#change-image-modal'>Change Image</button>
+                                        </div>");
                                     ?>
                             </div>
                         </div>
@@ -222,7 +220,7 @@
 <div class="modal fade" tabindex="-1" role="dialog" id="change-image-modal">
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
-            <div class="modal-header text-center">
+            <div class="modal-header text-center d-block mt-1">
                 <h5 class="text-info">Change Image</h5>
             </div>
             <div class="modal-body overflow-y h-400">
