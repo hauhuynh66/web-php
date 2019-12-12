@@ -155,7 +155,7 @@
         }
 
         function updateInfo($name,$newname,$newdes){
-            $sql = "update $this->table_name set name='$newname', description = '$newdes' where name = '$name'";
+            $sql = "update $this->table_name set name = '$newname', description = '$newdes' where name = '$name'";
             return mysqli_query($this->conn,$sql);
         }
     }
