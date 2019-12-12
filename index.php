@@ -31,10 +31,10 @@
     if($url[0]=="users"){
         $controller->get($url[0]);
     }
-    if($url[0]=="powerpoint"){
+    if($url[0]=="powerpoint"&&isset($url[1])){
         $controller->get($url[0],$url[1]);
     }
-    if($url[0]=="web"){
+    if($url[0]=="web"&&isset($url[1])){
         $controller->get($url[0],$url[1]);
     }
     if($url[0]=="upload"&&!isset($url[1])){
@@ -87,4 +87,7 @@
     }
     if($url[0]=="template"&&$url[1]=="info"){
         $controller->get($url,$url[2]);
+    }
+    if($url[0]=="search"){
+        $controller->get($url,$url[1]);
     }

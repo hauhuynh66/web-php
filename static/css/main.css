@@ -177,8 +177,12 @@ a.footer-link{
     cursor: pointer;
 }
 
+textarea{
+    min-height: 200px;
+}
+
 .image-holder{
-    height: 300px;
+    height: 250px;
     max-width: 100%;
     width: max-content;
     max-height: 100%;

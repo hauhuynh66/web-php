@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <title>Preview</title>
     <link rel="shortcut icon" href="#" />
-    <link href="../static/vendor/bootstrap/bootstrap.css" rel="stylesheet" type="text/css"/>
-    <link href="../static/vendor/font-awesome/css/all.css" rel="stylesheet" type="text/css"/>
-    <link href="../static/css/main.css" rel="stylesheet" type="text/css">
+    <link href="/assignment/static/vendor/bootstrap/bootstrap.css" rel="stylesheet" type="text/css"/>
+    <link href="/assignment/static/vendor/font-awesome/css/all.css" rel="stylesheet" type="text/css"/>
+    <link href="/assignment/static/css/main.css" rel="stylesheet" type="text/css">
 </head>
 <body>
 <div class="content shadow ml-2">
@@ -172,15 +172,15 @@
     </div>
 </div>
 <div class="modal fade" tabindex="-1" role="dialog" id="edit-template-modal">
-    <div class="modal-dialog" role="document">
+    <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
             <div class="modal-header text-center p-2 d-block mt-1">
-                <h5>Edit</h5>
+                <h5 class="text-info">Edit</h5>
             </div>
             <div class="modal-body">
-                <label for="edit-template-name">Name</label>
+                <label for="edit-template-name" class="text-info">Name</label>
                 <input id="edit-template-name" class="form-control">
-                <label for="edit-template-description" class="my-2">Description</label>
+                <label for="edit-template-description" class="my-2 text-info">Description</label>
                 <textarea id="edit-template-description" class="form-control" cols="5"></textarea>
             </div>
             <div class="modal-footer">

@@ -35,11 +35,18 @@ $("#edit-template-btn").on('click',function () {
                 }
 
             }else{
-                alert("Existed Name");
+                alert(data);
             }
         },
         error: function (e) {
             console.log(e);
         }
     })
-})
+});
+
+$("#search-btn").on('click',function () {
+    var type = $("#filter-type").text();
+    var str = $("#search-param").val();
+    window.location = '/assignment/search/'+type+"&"+str;
+});
+

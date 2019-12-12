@@ -101,10 +101,28 @@ class Controller
         if($this->url[0]=="template"&&$this->url[1]=="info"){
             $this->templateInfo($this->param);
         }
+        if($this->url[0]=="search"){
+            $type = explode("&",$this->param,3);
+            $this->searchTemplate($type[0],$type[1]);
+        }
+    }
+
+    public function searchTemplate($type,$str){
+        $role = $this->guard();
+        $l = $this->lang();
+        if($type=="ppt"){
+            $type="powerpoint";
+        }
+        $result = $this->template->searchByNameAndType($type,$str);
+        $template_list = array();
+        while ($r = $result->fetch_assoc()){
+            array_push($template_list,$r);
+        }
+        require_once ("template/list.php");
     }
 
     public function templateInfo($name){
-        $this->guard();
+        $role = $this->guard();
         $t = $this->template->getByName($name);
         echo json_encode($t->fetch_assoc());
     }
@@ -115,10 +133,12 @@ class Controller
         $type = $this->template->getByName($tname)->fetch_assoc()["type"];
         $success = $this->template->updateInfo($tname,$nname,$description);
         if($success){
-            $src_path = $_SERVER["DOCUMENT_ROOT"]."/assignment/file/".$type."/";
-            $img_path = $_SERVER["DOCUMENT_ROOT"]."/assignment/image/preview/".$type."/";
-            rename($src_path.$tname,$src_path.$nname);
-            rename($img_path.$tname,$img_path.$nname);
+            if($nname!=$tname){
+                $src_path = $_SERVER["DOCUMENT_ROOT"]."/assignment/file/".$type."/";
+                $img_path = $_SERVER["DOCUMENT_ROOT"]."/assignment/image/preview/".$type."/";
+                rename($src_path.$tname,$src_path.$nname);
+                rename($img_path.$tname,$img_path.$nname);
+            }
             echo "SUCCESS-".$type;
         }else{
             echo "FAILED";
@@ -126,7 +146,7 @@ class Controller
     }
 
     public function getProfile($username){
-        $this->guard();
+        $role = $this->guard();
         $exist = $this->user->getByUsername($username);
         if($exist->num_rows>0){
             $user = $exist->fetch_assoc();
@@ -240,14 +260,14 @@ class Controller
         }
     }
 
-    public function getList($user){
+    public function getList($str){
         $role = $this->guard();
         $l = $this->lang();
-        $exist = $this->user->getByUsername($user);
+        $exist = $this->user->getByUsername($str);
         if($exist->num_rows==0){
             $this->redirect("/404");
         }else{
-            $result = $this->template->getByUploader($user);
+            $result = $this->template->getByUploader($str);
             $template_list = array();
             while ($t = $result->fetch_assoc()){
                 array_push($template_list,$t);
@@ -327,6 +347,11 @@ class Controller
         $relative_path = "/assignment/image/preview/".$result["type"]."/".$result["name"]."/";
         $absolute_path = $_SERVER["DOCUMENT_ROOT"]."/assignment/image/preview/".$result["type"]."/".$result["name"]."/";
         $uploader = $this->user->getById($result["uploader"])->fetch_assoc()["username"];
+        if($uploader==$_SESSION["username"]){
+            $editable = true;
+        }else{
+            $editable = false;
+        }
         $upload_date = $result["upload_date"];
         $reviews = $this->review->getAll($result["name"]);
         $review_list = array();
@@ -463,7 +488,7 @@ class Controller
         $l = $this->lang();
         $page = substr($p,4,1);
         $mode = substr($p,6,3);
-        $n = 2;
+        $n = 4;
         $r = $this->template->getByType("powerpoint")->num_rows;
         $limit = $page*$n;
         $offset = ($page-1)*$n;
@@ -482,7 +507,7 @@ class Controller
         $l = $this->lang();
         $page = substr($p,4,1);
         $mode = substr($p,6,3);
-        $n = 2;
+        $n = 4;
         $r = $this->template->getByType("web")->num_rows;
         $limit = $page*$n;
         $offset = ($page-1)*$n;

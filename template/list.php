@@ -23,7 +23,7 @@
             <div class="main-content m-4">
                 <?php
                     include("fragment/filter.php");
-                    echo ("<h5 class='text-info'>Templates upload by $user</h5>");
+                    echo ("<h5 class='text-info'>Templates related to $str</h5>");
                     echo("<div class='row'>");
                     for($i=0;$i<sizeof($template_list);$i++){
                         if($template_list[$i]["type"]=="web"){

@@ -13,6 +13,8 @@ $("#review-post").on('click',function () {
         success: function (data) {
             if(data==="OK"){
                 window.location.reload();
+            }else{
+                alert("Can't add multiple review on the same template");
             }
         },
         error: function (e) {

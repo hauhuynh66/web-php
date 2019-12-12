@@ -123,7 +123,14 @@
                             ?>
                     </div>
                     <div class="col-xl-8 col-lg-8 col-mb-8 col-sm-12">
-                        <h5>Description</h5>
+                        <h5 class="d-inline">Description</h5>
+                        <?php
+                        if($editable){
+                            echo ("<button class='btn btn-info d-inline float-right' id='get-template-info' data-toggle='modal' data-target='#edit-template-modal'>
+                                    <i class='fa fa-edit'></i>
+                                </button>");
+                        }
+                        ?>
                         <hr>
                         <?php
                             echo("<p>$des</p>");
@@ -134,15 +141,10 @@
                     <div class="row">
                         <div class="col-9">
                             <textarea class="form-control" rows="5" name="comment" placeholder="Comment" id="comment"></textarea>
-                            <?php
-/*                            $name = $_GET["name"];
-                            echo("<input class='form-control' name='template' value='$name' hidden>");
-                            echo("<input class='form-control' name='type' value='Web' hidden>")
-                            */?>
                         </div>
                         <div class="col-3">
                             <div class="container text-center">
-                                <fieldset class="rating">
+                                <fieldset class="rating" id="star">
                                     <input type="radio" id="star5" name="rating" value="5"/><label class = "full" for="star5"></label>
                                     <input type="radio" id="star4" name="rating" value="4"/><label class = "full" for="star4"></label>
                                     <input type="radio" id="star3" name="rating" value="3"/><label class = "full" for="star3"></label>
@@ -150,9 +152,7 @@
                                     <input type="radio" id="star1" name="rating" value="1"/><label class = "full" for="star1"></label>
                                 </fieldset>
                             </div>
-                            <button class="btn btn-block btn-success" name="post" type="button" id="review-post">
-                                <i class="fas fa-save mr-2 icon-blue"></i>Post
-                            </button>
+                            <button class="btn btn-block btn-success" name="post" type="button" id="review-post"><i class="fas fa-save mr-2 icon-blue"></i>Post</button>
                         </div>
                     </div>
                     <hr>
@@ -173,10 +173,31 @@
         </div>
     </div>
 </div>
-<script src="../static/vendor/jquery/jquery-3.4.1.js"></script>
-<script src="../static/vendor/bootstrap/bootstrap.js"></script>
-<script src="../static/vendor/font-awesome/js/fontawesome.js"></script>
-<script src="../static/js/main.js"></script>
-<script src="../static/js/download.js"></script>
+<div class="modal fade" tabindex="-1" role="dialog" id="edit-template-modal">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header text-center p-2 d-block mt-1">
+                <h5 class="text-info">Edit</h5>
+            </div>
+            <div class="modal-body">
+                <label for="edit-template-name" class="text-info">Name</label>
+                <input id="edit-template-name" class="form-control">
+                <label for="edit-template-description" class="my-2 text-info">Description</label>
+                <textarea id="edit-template-description" class="form-control" cols="10" maxlength="1000"></textarea>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-info fixed-button" id="edit-template-btn">Confirm</button>
+                <button class="btn btn-outline-danger fixed-button" data-dismiss="modal">Cancel</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="/assignment/static/vendor/jquery/jquery-3.4.1.js"></script>
+<script src="/assignment/static/vendor/bootstrap/bootstrap.js"></script>
+<script src="/assignment/static/vendor/font-awesome/js/fontawesome.js"></script>
+<script src="/assignment/static/js/main.js"></script>
+<script src="/assignment/static/js/download.js"></script>
+<script src="/assignment/static/js/review.js"></script>
+<script src="/assignment/static/js/template.js"></script>
 </body>
 </html>

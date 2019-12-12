@@ -53,7 +53,7 @@
         static function render_ppt($result, $i){
             $name = $result["name"];
             $download = $result["downloads"];
-            $path = "../image/preview/".$result["type"]."/".$name."/img1.jpg";
+            $path = "/assignment/image/preview/".$result["type"]."/".$name."/img1.jpg";
             $description = $result["description"];
             echo("<div class='col-xl-6 col-lg-6 col-mb-6 col-sm-12 pt-3'>
                         <div class='card shadow'>
@@ -89,7 +89,7 @@
         static function render_web($result, $i){
             $name = $result["name"];
             $download = $result["downloads"];
-            $path = "../image/preview/".$result["type"]."/".$name."/img1.jpg";
+            $path = "/assignment/image/preview/".$result["type"]."/".$name."/img1.jpg";
             $description = $result["description"];
             echo("<div class='col-xl-6 col-lg-6 col-mb-6 col-sm-12 pt-3'>
                         <div class='card shadow'>
@@ -156,6 +156,11 @@
 
         function updateInfo($name,$newname,$newdes){
             $sql = "update $this->table_name set name = '$newname', description = '$newdes' where name = '$name'";
+            return mysqli_query($this->conn,$sql);
+        }
+
+        function searchByNameAndType($type,$str){
+            $sql = "select * from $this->table_name where name like '%$str%' and type = '$type'";
             return mysqli_query($this->conn,$sql);
         }
     }

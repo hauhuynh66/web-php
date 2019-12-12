@@ -1,9 +1,10 @@
 <?php
     function filter($type,$mode){
         echo ("<div class='container px-0'>
+            <h5 id='filter-type' hidden>$type</h5>
             <div class='input-group'>
-                <input class='form-control' placeholder='Search'>
-                <button class='input-group-prepend btn btn-info'><i class='fa fa-search'></i></button>
+                <input class='form-control' placeholder='Search' id='search-param'>
+                <button class='input-group-prepend btn btn-info' id='search-btn'><i class='fa fa-search'></i></button>
             </div>
         </div>
         <hr>
