@@ -36,5 +36,5 @@ $("body").on('click',"[id^=filter-]",function () {
             window.location = "/assignment/web/page1&dls";
         }
     }
-
 });
+

@@ -115,7 +115,6 @@
                         <div class="card shadow">
                             <div class="card-header text-center">
                                 <p id="user-role"></p>
-
                             </div>
                             <div class="card-body">
                                 <?php

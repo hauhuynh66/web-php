@@ -324,6 +324,11 @@ class Controller
         $relative_path = "/assignment/image/preview/".$result["type"]."/".$result["name"]."/";
         $absolute_path = $_SERVER["DOCUMENT_ROOT"]."/assignment/image/preview/".$result["type"]."/".$result["name"]."/";
         $uploader = $this->user->getById($result["uploader"])->fetch_assoc()["username"];
+        if($uploader==$_SESSION["username"]){
+            $editable = true;
+        }else{
+            $editable = false;
+        }
         $upload_date = $result["upload_date"];
         $reviews = $this->review->getAll($result["name"]);
         $review_list = array();

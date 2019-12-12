@@ -107,7 +107,7 @@
                 </div>
                 <div class="row my-5">
                     <div class="col-xl-4 col-lg-4 col-mb-4 col-sm-12">
-                        <h5>Properties</h5>
+                        <h5 class="d-inline">Properties</h5>
                         <hr>
                         <?php
                             echo("<p>Upload by : <a href='./list.php?uploader=$uploader'>$uploader</a></p>");
@@ -121,7 +121,14 @@
                         ?>
                     </div>
                     <div class="col-xl-8 col-lg-8 col-mb-8 col-sm-12">
-                        <h5>Description</h5>
+                        <h5 class="d-inline">Description</h5>
+                        <?php
+                            if($editable){
+                                echo ("<button class=\"btn btn-info d-inline float-right\">
+                                    <i class=\"fa fa-edit\"></i>
+                                </button>");
+                            }
+                        ?>
                         <hr>
                         <?php
                             echo("<p>$des</p>");
