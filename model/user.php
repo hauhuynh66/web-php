@@ -1,6 +1,6 @@
 <?php
-    require_once("../config/database.php");
-    require_once("../controller/utils.php");
+    require_once("config/database.php");
+    require_once("controller/utils.php");
     class user{
         private $user_table;
         private $role_table;

@@ -1,5 +1,4 @@
 <?php
-require_once("../config/database.php");
 class review{
     private $conn;
     private $table_name;
@@ -15,15 +14,15 @@ class review{
         $this->table_name = $table_name;
     }
 
-    function get_all($template){
-        $sql = "select * from $this->table_name inner join users on $this->table_name.user = users.id
+    function getAll($template){
+        $sql = "select review.star, users.username, review.content from $this->table_name inner join users on $this->table_name.user = users.id
                     inner join template on template.id = review.template where template.name ='$template'";
         return mysqli_query($this->conn,$sql);
     }
 
     function insert($template,$username,$star,$content){
         $uid = mysqli_query($this->conn,"select id from users where username = '$username'");
-        $tid = mysqli_query( $this->conn,"select id from template where name = '$template'");
+        $tid = mysqli_query($this->conn,"select id from template where name = '$template'");
         if($uid->num_rows==0||$tid->num_rows==0){
             return false;
         }else{

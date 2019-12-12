@@ -37,8 +37,3 @@
             setcookie("locale",$name,time()+(3600*24),"/");
         }
     }
-    $locale = new lang();
-    $lang = $locale->load();
-    if(isset($_POST["locale"])){
-        $locale->set($_POST["locale"]);
-    }

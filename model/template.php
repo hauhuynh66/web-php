@@ -1,5 +1,5 @@
 <?php
-    require_once("../config/database.php");
+    require_once("config/database.php");
     class template{
         private $table_name;
         private $conn;
@@ -34,13 +34,13 @@
             return mysqli_query($this->conn,$sql);
         }
 
-        function get_by_type($type){
+        function getByType($type){
             $sql = "select * from $this->table_name where type ='$type'";
             return mysqli_query($this->conn,$sql);
         }
 
         function getByUploader($uploader){
-            $sql = "select * from users inner join template 
+            $sql = "select template.name, template.downloads,template.type,template.description from users inner join template 
                             on users.id = template.uploader where users.username = '$uploader'";
             return mysqli_query($this->conn,$sql);
         }
@@ -74,7 +74,7 @@
                             </div>
                         </div>
                         <div class='card-footer text-center'>
-                            <a class='btn btn-danger float-left item' href='powerpoint-preview.php?name=$name'>
+                            <a class='btn btn-danger float-left item' href='/assignment/ppt-preview/$name'>
                                 <i class='fas fa-eye pr-1'></i>Details
                             </a>
                             <i class='text-center fa fa-book-open fa-2x icon-danger'></i>
@@ -110,7 +110,7 @@
                             </div>
                         </div>
                         <div class='card-footer text-center'>
-                            <a class='btn btn-success float-left item' href='web-preview.php?name=$name'>
+                            <a class='btn btn-success float-left item' href='/assignment/web-preview/$name'>
                                 <i class='fas fa-eye pr-1'></i>Details
                             </a>
                             <i class='text-center fa fa-globe fa-2x icon-success'></i>
@@ -123,15 +123,9 @@
         }
 
         function upload($name, $type, $uploader, $des){
-            date_default_timezone_set("Asia/Ho_Chi_Minh");
-            $exist = $this->getByName($name);
-            if($exist->num_rows>0){
-                return 0;
-            }else{
-                $uploader = mysqli_query($this->conn,"select id from users where username = '$uploader'")->fetch_assoc()["id"];
-                $sql = "insert into $this->table_name ( name, type, uploader , description) values ('$name','$type','$uploader','$des')";
-                return mysqli_query($this->conn,$sql);
-            }
+            $uploader = mysqli_query($this->conn,"select id from users where username = '$uploader'")->fetch_assoc()["id"];
+            $sql = "insert into $this->table_name( name, type, uploader , description) values ('$name','$type','$uploader','$des')";
+            return mysqli_query($this->conn,$sql);
         }
 
         function download($name){
@@ -141,7 +135,7 @@
             }else{
                 $dl = $exist["downloads"];
                 $dl++;
-                $sql = "update $this->table_name set downloads='$dl' where name='$name'";
+                $sql = "update $this->table_name set downloads = '$dl' where name='$name'";
                 return mysqli_query($this->conn,$sql);
             }
         }

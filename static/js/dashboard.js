@@ -31,10 +31,7 @@ const stat2 = new Chart(chart2,{
 $(document).ready(function () {
     $.ajax({
         type: "POST",
-        url: "/assignment/controller/api_call.php",
-        data: {
-            call: "1"
-        },
+        url: "/assignment/api_call/1",
         success: function (data) {
             var res = JSON.parse(data);
             jQuery.each(res,function (i,val) {
@@ -49,10 +46,7 @@ $(document).ready(function () {
     });
     $.ajax({
         type: "POST",
-        url: "/assignment/controller/api_call.php",
-        data: {
-            call: "2"
-        },
+        url: "/assignment/api_call/2",
         success: function (data) {
             var res = JSON.parse(data);
             jQuery.each(res,function (key,value) {

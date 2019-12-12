@@ -9,8 +9,8 @@
   "fn": "Họ",
   "ln": "Tên",
   "un": "Tên tài khoản",
-  "t_up": "Số mẫu đã tải lên",
-  "t": "Biểu mẫu",
+  "template_up": "Số mẫu đã tải lên",
+  "template": "Biểu mẫu",
   "change_i": "Thay đổi thông tin",
   "change_p": "Thay đổi mật khẩu"
 }

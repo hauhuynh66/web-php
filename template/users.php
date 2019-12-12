@@ -1,28 +1,13 @@
-<?php
-    include_once("../model/user.php");
-    if(session_status()==PHP_SESSION_NONE){
-        session_start();
-    }
-    if(!isset($_SESSION["username"])){
-        header("Location:../template/login.php");
-    }else{
-        $username = $_SESSION["username"];
-        $role = $user->getRole($username);
-        if($role!="ADMIN"){
-            header("Location:../template/403.php");
-        }
-    }
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Users</title>
     <link rel="shortcut icon" href="#" />
-    <link href="../static/vendor/bootstrap/bootstrap.css" rel="stylesheet" type="text/css"/>
-    <link href="../static/vendor/font-awesome/css/all.css" rel="stylesheet" type="text/css"/>
-    <link href="../static/vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet" type="text/css">
-    <link href="../static/css/main.css" rel="stylesheet" type="text/css">
+    <link href="/assignment/static/vendor/bootstrap/bootstrap.css" rel="stylesheet" type="text/css"/>
+    <link href="/assignment/static/vendor/font-awesome/css/all.css" rel="stylesheet" type="text/css"/>
+    <link href="/assignment/static/vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet" type="text/css">
+    <link href="/assignment/static/css/main.css" rel="stylesheet" type="text/css">
 </head>
 <body>
 <div class="content shadow ml-2">
@@ -75,15 +60,14 @@
                                 </thead>
                                 <tbody class="text-center">
                                     <?php
-                                        $user = new user($conn);
-                                        $users = $user->getAll();
-                                        $i = 0;
-                                        while ($u = $users->fetch_assoc()){
-                                            $i++;
-                                            $role = $user->getRole($u["username"]);
-                                            $upload = mysqli_num_rows($user->getUploadedTemplates($u["username"]));
-                                            $status = $user->getStatus($u["username"]);
-                                            $lastest = $user->getLastest($u["username"]);
+                                        for($j=0;$j<sizeof($list);$j++){
+                                            $us = $list[$j];
+                                            $l = $us["i"];
+                                            $username = $us["username"];
+                                            $role = $us["role"];
+                                            $upload = $us["upload"];
+                                            $status = $us["status"];
+                                            $lastest = $us["lastest"];
                                             if($role=="ADMIN"){
                                                 $icon = "<i class='fa fa-user-shield'></i>";
                                             }else{
@@ -91,7 +75,7 @@
                                             }
                                             echo("<tr>
                                                 <td>$icon</td>
-                                                <td id='username-$i'>".$u["username"]."</td>
+                                                <td id='username-$l'>".$username."</td>
                                                 <td>$upload</td>
                                                 <td>$status</td>
                                                 <td>$lastest</td>");
@@ -99,12 +83,12 @@
                                                 echo("<td>");
                                             }else{
                                                 if($status=="ACTIVE"){
-                                                    echo("<td><button class='btn btn-danger' id='ban-btn-$i'><i class='fa fa-ban'></i></button>");
+                                                    echo("<td><button class='btn btn-danger' id='ban-btn-$l'><i class='fa fa-ban'></i></button>");
                                                 }else{
-                                                    echo("<td><button class='btn btn-success' id='unban-btn-$i'><i class='fa fa-check'></i></button>");
+                                                    echo("<td><button class='btn btn-success' id='unban-btn-$l'><i class='fa fa-check'></i></button>");
                                                 }
                                             }
-                                            echo ("<button class='btn btn-info ml-3' id='profile-btn'><i class='fa fa-search'></i></button></td></tr>");
+                                            echo ("<button class='btn btn-info ml-3' id='profile-btn-$l' data-toggle='modal' data-target='#profile-modal'><i class='fa fa-search'></i></button></td></tr>");
                                         }
                                     ?>
                                 </tbody>
@@ -116,6 +100,29 @@
             <?php
             include("fragment/footer.php");
             ?>
+        </div>
+    </div>
+</div>
+<div class="modal fade" tabindex="-1" role="dialog" id="profile-modal">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header text-center">
+                <h5 class="text-info">Profile</h5>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-4 text-center">
+
+                    </div>
+                    <div class="col-8 text-center">
+
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" id="change-img-btn">Confirm</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
         </div>
     </div>
 </div>
@@ -138,11 +145,11 @@
     </div>
 </div>
 </body>
-<script src="../static/vendor/jquery/jquery-3.4.1.js"></script>
-<script src="../static/vendor/bootstrap/bootstrap.js"></script>
-<script src="../static/vendor/font-awesome/js/fontawesome.js"></script>
-<script src="../static/vendor/datatables/jquery.dataTables.js"></script>
-<script src="../static/vendor/datatables/dataTables.bootstrap4.js"></script>
-<script src="../static/js/main.js"></script>
-<script src="../static/js/users.js"></script>
+<script src="/assignment/static/vendor/jquery/jquery-3.4.1.js"></script>
+<script src="/assignment/static/vendor/bootstrap/bootstrap.js"></script>
+<script src="/assignment/static/vendor/font-awesome/js/fontawesome.js"></script>
+<script src="/assignment/static/vendor/datatables/jquery.dataTables.js"></script>
+<script src="/assignment/static/vendor/datatables/dataTables.bootstrap4.js"></script>
+<script src="/assignment/static/js/main.js"></script>
+<script src="/assignment/static/js/users.js"></script>
 </html>

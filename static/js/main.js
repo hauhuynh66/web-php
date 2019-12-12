@@ -36,28 +36,28 @@ $(window).resize(function () {
 });
 
 $("#logout-btn").on('click',function () {
-     window.location = "/assignment/controller/logout.php";
+     window.location = "/assignment/logout";
 });
 
 $("#profile-btn").on('click',function () {
-    window.location = "/assignment/template/profile.php";
+    window.location = "/assignment/profile";
 });
 
 $("#login-btn").on('click',function () {
-    window.location = "/assignment/template/login.php";
+    window.location = "/assignment/login";
 });
 
 $("a[id^='lang']").on('click',function () {
     var locale = $(this).attr('id').split("-")[1];
-    console.log(locale);
     $.ajax({
         type: "POST",
         data: {
             locale: locale
         },
-        url: "/assignment/config/lang.php",
-        success: function () {
+        url: "/assignment/lang/"+locale,
+        success: function (data) {
             window.location.reload();
+            //console.log(data);
         },
         error: function (e) {
             console.log(e);

@@ -1,20 +1,12 @@
-<?php
-    require_once("../controller/session.php");
-    require_once("../model/template.php");
-    if(!isset($_GET["uploader"])){
-        header("Location:404.php");
-    }
-    $uploader = $_GET["uploader"];
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>List</title>
     <link rel="shortcut icon" href="#" />
-    <link href="../static/vendor/bootstrap/bootstrap.css" rel="stylesheet" type="text/css"/>
-    <link href="../static/vendor/font-awesome/css/all.css" rel="stylesheet" type="text/css"/>
-    <link href="../static/css/main.css" rel="stylesheet" type="text/css">
+    <link href="/assignment/static/vendor/bootstrap/bootstrap.css" rel="stylesheet" type="text/css"/>
+    <link href="/assignment/static/vendor/font-awesome/css/all.css" rel="stylesheet" type="text/css"/>
+    <link href="/assignment/static/css/main.css" rel="stylesheet" type="text/css">
 </head>
 <body>
 <div class="content shadow ml-2">
@@ -31,17 +23,14 @@
             <div class="main-content m-4">
                 <?php
                     include("fragment/filter.php");
-                    $i = 0;
-                    $templates = $template->getByUploader($uploader);
-                    echo ("<h5 class='text-info'>Templates upload by $uploader</h5>");
+                    echo ("<h5 class='text-info'>Templates upload by $user</h5>");
                     echo("<div class='row'>");
-                    while ($t = $templates->fetch_assoc()){
-                        if($t["type"]=="powerpoint"){
-                            $template->render_ppt($t,$i);
+                    for($i=0;$i<sizeof($template_list);$i++){
+                        if($template_list[$i]["type"]=="web"){
+                            template::render_web($template_list[$i],$i);
                         }else{
-                            $template->render_web($t,$i);
+                            template::render_ppt($template_list[$i],$i);
                         }
-                        $i++;
                     }
                     echo("</div>");
                 ?>
@@ -54,9 +43,9 @@
     </div>
 </div>
 </body>
-<script src="../static/vendor/jquery/jquery-3.4.1.js"></script>
-<script src="../static/vendor/bootstrap/bootstrap.js"></script>
-<script src="../static/vendor/font-awesome/js/fontawesome.js"></script>
-<script src="../static/js/main.js"></script>
-<script src="../static/js/download.js"></script>
+<script src="/assignment/static/vendor/jquery/jquery-3.4.1.js"></script>
+<script src="/assignment/static/vendor/bootstrap/bootstrap.js"></script>
+<script src="/assignment/static/vendor/font-awesome/js/fontawesome.js"></script>
+<script src="/assignment/static/js/main.js"></script>
+<script src="/assignment/static/js/download.js"></script>
 </html>

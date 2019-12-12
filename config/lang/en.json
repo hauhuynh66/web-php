@@ -9,8 +9,8 @@
   "fn": "First name",
   "ln": "Last name",
   "un": "Username",
-  "temp_upload": "Templates uploaded",
-  "temp": "Templates",
+  "template_up": "Templates uploaded",
+  "template": "Templates",
   "change_i": "Change Infomations",
   "change_p": "Change Password"
 }

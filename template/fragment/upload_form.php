@@ -2,7 +2,7 @@
 <hr>
 <div class="row">
     <div class="col-xl-9 col-lg-9 col-mb-9 col-sm-12">
-        <form class="form-group" method="post" action="../controller/upload.php" enctype="multipart/form-data">
+        <form class="form-group" method="post" action="/assignment/template/upload" enctype="multipart/form-data">
             <div class="row mt-3">
                 <div class="col-2">
                     <label for="file" class="pt-2">File</label>

@@ -10,11 +10,11 @@ $("#download-btn").on('click',function () {
 });
 
 $("#download").on('click',function () {
-    const template = $("#template-name").html();
-    window.location = "/assignment/controller/download.php?template="+template;
-    setTimeout(function () {
+    var template = $("#template-name").html();
+    window.location = "/assignment/download/"+template;
+    /*setTimeout(function () {
         window.location.reload();
-    },1000);
+    },1000);*/
 });
 
 $("body").on('click',"[id^=filter-]",function () {
@@ -25,15 +25,15 @@ $("body").on('click',"[id^=filter-]",function () {
     console.log(type);
     if(type==="ppt"){
         if(v.is(":checked")){
-            window.location = "/assignment/template/powerpoint.php?page="+page+"&filter=new";
+            window.location = "/assignment/powerpoint/page1&new";
         }else{
-            window.location = "/assignment/template/powerpoint.php?page="+page;
+            window.location = "/assignment/powerpoint/page1&dls";
         }
     }else{
         if(v.is(":checked")){
-            window.location = "/assignment/template/web.php?page="+page+"&filter=new";
+            window.location = "/assignment/web/page1&new";
         }else{
-            window.location = "/assignment/template/web.php?page="+page;
+            window.location = "/assignment/web/page1&dls";
         }
     }
 

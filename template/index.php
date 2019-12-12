@@ -1,21 +1,12 @@
-<?php
-    include_once("../config/lang.php");
-    require_once("../model/template.php");
-    require_once("../model/user.php");
-    $templates = $template->get_all();
-    $n_templates = mysqli_num_rows($templates);
-    $download = $template->get_total_download();
-    $users = mysqli_num_rows($user->getAll());
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Dashboard</title>
     <link rel="shortcut icon" href="#" />
-    <link href="../static/vendor/bootstrap/bootstrap.css" rel="stylesheet" type="text/css"/>
-    <link href="../static/vendor/font-awesome/css/all.css" rel="stylesheet" type="text/css"/>
-    <link href="../static/css/main.css" rel="stylesheet" type="text/css">
+    <link href="/assignment/static/vendor/bootstrap/bootstrap.css" rel="stylesheet" type="text/css"/>
+    <link href="/assignment/static/vendor/font-awesome/css/all.css" rel="stylesheet" type="text/css"/>
+    <link href="/assignment/static/css/main.css" rel="stylesheet" type="text/css">
 </head>
 <body>
     <div class="content shadow ml-2">
@@ -43,25 +34,25 @@
                                         </ol>
                                         <div class="carousel-inner">
                                             <div class="carousel-item active">
-                                                <img class="d-block w-100" src="../image/cover/welcome.jpg" alt="First slide" height="600">
+                                                <img class="d-block w-100" src="/assignment/image/cover/welcome.jpg" alt="First slide" height="600">
                                                 <div class="carousel-caption d-none d-md-block">
                                                     <h4 class="text-info carousel-text">Welcome To Templates<sup>TM</sup></h4>
                                                 </div>
                                             </div>
                                             <div class="carousel-item">
-                                                <img class="d-block w-100" src="../image/cover/ppt.jpg" alt="Second slide" height="600">
+                                                <img class="d-block w-100" src="/assignment/image/cover/ppt.jpg" alt="Second slide" height="600">
                                                 <div class="carousel-caption d-none d-md-block">
                                                     <h4 class="text-dark carousel-text">We Provide Powerpoint Templates</h4>
                                                 </div>
                                             </div>
                                             <div class="carousel-item">
-                                                <img class="d-block w-100" src="../image/cover/web.jpg" alt="Third slide" height="600">
+                                                <img class="d-block w-100" src="/assignment/image/cover/web.jpg" alt="Third slide" height="600">
                                                 <div class="carousel-caption d-none d-md-block">
                                                     <h4 class="text-dark carousel-text">And Web Templates For Free</h4>
                                                 </div>
                                             </div>
                                             <div class="carousel-item">
-                                                <img class="d-block w-100" src="../image/cover/img.jpg" alt="Fourth slide" height="600">
+                                                <img class="d-block w-100" src="/assignment/image/cover/img.jpg" alt="Fourth slide" height="600">
                                                 <div class="carousel-caption d-none d-md-block">
                                                     <h4 class="text-warning carousel-text">Sign Up Now To Download And Upload</h4>
                                                 </div>
@@ -201,11 +192,11 @@
             </div>
         </div>
     </div>
-<script src="../static/vendor/jquery/jquery-3.4.1.js"></script>
-<script src="../static/vendor/bootstrap/bootstrap.js"></script>
-<script src="../static/vendor/chartjs/chart.js"></script>
-<script src="../static/vendor/font-awesome/js/fontawesome.js"></script>
-<script src="../static/js/main.js"></script>
-<script src="../static/js/dashboard.js"></script>
+<script src="/assignment/static/vendor/jquery/jquery-3.4.1.js"></script>
+<script src="/assignment/static/vendor/bootstrap/bootstrap.js"></script>
+<script src="/assignment/static/vendor/chartjs/chart.js"></script>
+<script src="/assignment/static/vendor/font-awesome/js/fontawesome.js"></script>
+<script src="/assignment/static/js/main.js"></script>
+<script src="/assignment/static/js/dashboard.js"></script>
 </body>
 </html>

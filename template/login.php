@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <title>Login</title>
-    <link href="../static/vendor/bootstrap/bootstrap.css" rel="stylesheet" type="text/css"/>
-    <link href="../static/vendor/font-awesome/css/all.css" rel="stylesheet" type="text/css"/>
-    <link href="../static/css/main.css" rel="stylesheet" type="text/css">
+    <link href="/assignment/static/vendor/bootstrap/bootstrap.css" rel="stylesheet" type="text/css"/>
+    <link href="/assignment/static/vendor/font-awesome/css/all.css" rel="stylesheet" type="text/css"/>
+    <link href="/assignment/static/css/main.css" rel="stylesheet" type="text/css">
 </head>
 <body class="bg-primary">
     <div class="limiter bg-light shadow">
@@ -39,7 +39,7 @@
                 }
             ?>
         </div>
-        <form class="form-group mt-3" action="../controller/authenticate.php" method="post">
+        <form class="form-group mt-3" action="/assignment/authenticate" method="post">
             <label for="email">Email</label>
             <input class="form-control" type="text" name="email" id="email">
             <label for="password" class="mt-3">Password</label>

@@ -1,9 +1,3 @@
-<?php
-    include_once("../config/lang.php");
-    if(session_status()==PHP_SESSION_NONE){
-        session_start();
-    }
-?>
 <div class="navbar navbar-expand navbar-dark shadow bg-white test">
     <div class="w-haft">
         <button class="btn" id="menu-collapse">
@@ -43,12 +37,12 @@
         echo("<div class='w-haft justify-content-end'>
             <div class='dropdown dropleft'>
                 <button class='btn dropdown-toggle' type='button' id='languageBtn' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
-                    ".$lang->{"lang"}."
+                    ".$l->{"lang"}."
                 </button>
                 <div class='dropdown-menu' aria-labelledby='language-dropdown'>
-                    <a class='dropdown-item' href='#' id='lang-en'><img src='../static/vendor/icon/flag/england.svg' class='small-flag mr-3 mb-1' alt='en'>".$lang->{"en"}."</a>
-                    <a class='dropdown-item' href='#' id='lang-vn'><img src='../static/vendor/icon/flag/vietnam.svg' class='small-flag mr-3 mb-1' alt='vn'>".$lang->{"vn"}."</a>
-                    <a class='dropdown-item' href='#' id='lang-fr'><img src='../static/vendor/icon/flag/france.svg' class='small-flag mr-3 mb-1' alt='fr'>".$lang->{"fr"}."</a>
+                    <a class='dropdown-item' href='#' id='lang-en'><img src='/assignment/static/vendor/icon/flag/england.svg' class='small-flag mr-3 mb-1' alt='en'>".$l->{"en"}."</a>
+                    <a class='dropdown-item' href='#' id='lang-vn'><img src='/assignment/static/vendor/icon/flag/vietnam.svg' class='small-flag mr-3 mb-1' alt='vn'>".$l->{"vn"}."</a>
+                    <a class='dropdown-item' href='#' id='lang-fr'><img src='/assignment/static/vendor/icon/flag/france.svg' class='small-flag mr-3 mb-1' alt='fr'>".$l->{"fr"}."</a>
                 </div>
             </div>
         </div>");

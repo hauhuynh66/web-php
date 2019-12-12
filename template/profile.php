@@ -1,20 +1,6 @@
 <?php
-    require_once("../controller/session.php");
-    require_once("../model/user.php");
-    include_once("../config/lang.php");
-    include_once("../controller/utils.php");
-    $username = $_SESSION["username"];
-    $result = $user->getByUsername($username)->fetch_assoc();
-    $role = $user->getRole($username);
-    $firstname = $result["firstname"];
-    $lastname = $result["lastname"];
-    $username = $result["username"];
-    $email = $result["email"];
-    $github = $result["github"];
-    $facebook = $result["facebook"];
-    $twitter = $result["twitter"];
-    $uploads = mysqli_num_rows($user->getUploadedTemplates($result["username"]));
-    $img = "/assignment/static/vendor/icon/animal/".$result["picture"].".svg";
+    //include_once("../controller/utils.php");
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -22,9 +8,9 @@
     <meta charset="UTF-8">
     <title>Profile</title>
     <link rel="shortcut icon" href="#" />
-    <link href="../static/vendor/bootstrap/bootstrap.css" rel="stylesheet" type="text/css"/>
-    <link href="../static/vendor/font-awesome/css/all.css" rel="stylesheet" type="text/css"/>
-    <link href="../static/css/main.css" rel="stylesheet" type="text/css">
+    <link href="/assignment/static/vendor/bootstrap/bootstrap.css" rel="stylesheet" type="text/css"/>
+    <link href="/assignment/static/vendor/font-awesome/css/all.css" rel="stylesheet" type="text/css"/>
+    <link href="/assignment/static/css/main.css" rel="stylesheet" type="text/css">
 </head>
 <body>
 <div class="content shadow ml-2">
@@ -52,7 +38,7 @@
                                 </div>
                                 <div class="card-body">
                                     <?php
-                                        echo("<img src='$img' class='profile-image'></div>");
+                                        echo("<img src='$img' class='profile-image' alt='image'></div>");
                                         if($_SESSION["username"]==$username){
                                             echo("<div class='card-footer'>
                                                     <button class='btn btn-block btn-success' data-toggle='modal' data-target='#change-image-modal'>Change Image</button>
@@ -66,7 +52,7 @@
                         <div class="row">
                             <?php
                                 echo("<div class='col-4'>
-                                        <label>".$lang->{"fn"}." :</label>
+                                        <label>".$l->{"fn"}." :</label>
                                     </div>
                                     <div class='col-8'>");
                                 echo($firstname."</div>");
@@ -75,7 +61,7 @@
                         <div class="row">
                             <?php
                             echo("<div class='col-4'>
-                                        <label>".$lang->{"ln"}." :</label>
+                                        <label>".$l->{"ln"}." :</label>
                                     </div>
                                     <div class='col-8'>");
                             echo($lastname."</div>");
@@ -84,7 +70,7 @@
                         <div class="row">
                             <?php
                             echo("<div class='col-4'>
-                                        <label>".$lang->{"un"}." :</label>
+                                        <label>".$l->{"un"}." :</label>
                                     </div>
                                     <div class='col-8'>");
                             echo("<span id='username'>".$username."</span></div>");
@@ -133,13 +119,13 @@
                         <div class="row">
                             <?php
                             echo("<div class='col-4'>
-                                            <label>".$lang->{"temp_upload"}." :</label>
+                                            <label>".$l->{"template_up"}." :</label>
                                         </div>
                                     <div class='col-8'>");
                             if(!$uploads){
                                 echo("<a>0</a></div>");
                             }else{
-                                echo("<a href='./list.php?uploader=$username'>".$uploads."</a></div>");
+                                echo("<a href='/assignment/list/$username'>".$uploads."</a></div>");
                             }
                             ?>
                         </div>
@@ -148,7 +134,7 @@
                                 <button class="btn btn-info btn-block mt-3" id="change-info-btn" data-toggle="modal" data-target="#change-info-modal">
                                     <i class="fa fa-user-secret mr-4"></i>
                                     <?php
-                                        echo($lang->{"change_i"});
+                                        echo($l->{"change_i"});
                                     ?>
                                 </button>
                             </div>
@@ -156,7 +142,7 @@
                                 <button class="btn btn-info btn-block mt-3" id="change-password-btn" data-toggle="modal" data-target="#change-password-modal">
                                     <i class="fa fa-key mr-4"></i>
                                     <?php
-                                        echo($lang->{"change_p"});
+                                        echo($l->{"change_p"});
                                     ?>
                                 </button>
                             </div>
@@ -242,7 +228,7 @@
             <div class="modal-body overflow-y h-400">
                 <?php
                     $path = $_SERVER['DOCUMENT_ROOT']."/assignment/static/vendor/icon/animal/";
-                    $relative_path = "../static/vendor/icon/animal/";
+                    $relative_path = "/assignment/static/vendor/icon/animal/";
                     $count = count_file($path,["*.svg"]);
                     echo("<div class='row'>");
                     for($i=1;$i<=$count;$i++){
@@ -262,9 +248,10 @@
         </div>
     </div>
 </div>
-<script src="../static/vendor/jquery/jquery-3.4.1.js"></script>
-<script src="../static/vendor/bootstrap/bootstrap.js"></script>
-<script src="../static/vendor/font-awesome/js/fontawesome.js"></script>
-<script src="../static/js/main.js"></script>
-<script src="../static/js/profile.js"></script>
+
+<script src="/assignment/static/vendor/jquery/jquery-3.4.1.js"></script>
+<script src="/assignment/static/vendor/bootstrap/bootstrap.js"></script>
+<script src="/assignment/static/vendor/font-awesome/js/fontawesome.js"></script>
+<script src="/assignment/static/js/main.js"></script>
+<script src="/assignment/static/js/profile.js"></script>
 </body>

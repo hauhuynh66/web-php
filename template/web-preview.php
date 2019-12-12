@@ -1,31 +1,3 @@
-<?php
-    require_once("../controller/session.php");
-    require_once("../controller/review.php");
-    require_once("../controller/utils.php");
-    require_once("../model/user.php");
-    require_once("../model/template.php");
-    require_once("../model/review.php");
-    $name = pathinfo("filename");
-    if(!isset($_GET["name"])){
-        header("Location:../404.php");
-    }
-    $name = $_GET["name"];
-    $result = $template->getByNameAndType($name,"web")->fetch_assoc();
-    if($result==null){
-        header("Location:../404.php");
-    }
-    $downloads = $result["downloads"];
-    $name = $result["name"];
-    $des = $result["description"];
-    $relative_path = "/assignment/image/preview/".$result["type"]."/".$result["name"]."/";
-    $absolute_path = $_SERVER["DOCUMENT_ROOT"]."/assignment/image/preview/".$result["type"]."/".$result["name"]."/";
-    $uploader = $user->getById($result["uploader"])->fetch_assoc()["username"];
-    $upload_date = $result["upload_date"];
-    $reviews = $review->get_all($result["id"]);
-    $n = mysqli_num_rows($reviews);
-    $count = count_file($absolute_path,["*.jpg"]);
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -77,7 +49,7 @@
                             <div class="card-body">
                                 <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
                                     <?php
-                                        echo("<ol class=\"carousel-indicators\">");
+                                        echo("<ol class='carousel-indicators'>");
                                         for($i=0;$i<$count;$i++){
                                             if($i==0){
                                                 echo("<li data-target='#carouselExampleIndicators' data-slide-to='$i' class='active'></li>");
@@ -93,12 +65,12 @@
                                                 $j = $i+1;
                                                 $img = $relative_path."img"."$j".".jpg";
                                                 if($i==0){
-                                                    echo("<div class=\"carousel-item active\">
-                                                    <img class=\"d-block w-100\" src='$img' alt='$j slide'>
+                                                    echo("<div class='carousel-item active'>
+                                                    <img class='d-block w-100' src='$img' alt='$j slide'>
                                                     </div>");
                                                 }else{
-                                                    echo("<div class=\"carousel-item\">
-                                                    <img class=\"d-block w-100\" src='$img' alt='$j slide'>
+                                                    echo("<div class='carousel-item'>
+                                                    <img class='d-block w-100' src='$img' alt='$j slide'>
                                                     </div>");
                                                 }
                                             }
@@ -158,15 +130,15 @@
                         ?>
                     </div>
                 </div>
-                <form method="post" action="../controller/review.php">
+                <form>
                     <div class="row">
                         <div class="col-9">
                             <textarea class="form-control" rows="5" name="comment" placeholder="Comment" id="comment"></textarea>
                             <?php
-                            $name = $_GET["name"];
+/*                            $name = $_GET["name"];
                             echo("<input class='form-control' name='template' value='$name' hidden>");
                             echo("<input class='form-control' name='type' value='Web' hidden>")
-                            ?>
+                            */?>
                         </div>
                         <div class="col-3">
                             <div class="container text-center">
@@ -178,7 +150,7 @@
                                     <input type="radio" id="star1" name="rating" value="1"/><label class = "full" for="star1"></label>
                                 </fieldset>
                             </div>
-                            <button class="btn btn-block btn-success" name="post" type="submit">
+                            <button class="btn btn-block btn-success" name="post" type="button" id="review-post">
                                 <i class="fas fa-save mr-2 icon-blue"></i>Post
                             </button>
                         </div>
@@ -188,9 +160,9 @@
                         echo("<h5 class='mb-4'>".$n." Comments</h5>");
                     ?>
                     <?php
-                    while ($row = $reviews->fetch_assoc()){
-                        $review->render($row);
-                    }
+                        for($i=0;$i<sizeof($review_list);$i++){
+                            review::render($review_list[$i]);
+                        }
                     ?>
                 </form>
             </div>

@@ -1,28 +1,3 @@
-<?php
-    require_once("../controller/session.php");
-    require_once("../model/user.php");
-    require_once("../model/template.php");
-    require_once("../controller/review.php");
-    require_once("../controller/utils.php");
-    if(!isset($_GET["name"])){
-        header("Location:../template/404.php");
-    }
-    $name = $_GET["name"];
-    $result = $template->getByNameAndType($name,"powerpoint")->fetch_assoc();
-    if($result==null){
-        header("Location:../template/404.php");
-    }
-    $name = $result["name"];
-    $downloads = $result["downloads"];
-    $des = $result["description"];
-    $relative_path = "/assignment/image/preview/".$result["type"]."/".$result["name"]."/";
-    $absolute_path = $_SERVER["DOCUMENT_ROOT"]."/assignment/image/preview/".$result["type"]."/".$result["name"]."/";
-    $uploader = $user->getById($result["uploader"])->fetch_assoc()["username"];
-    $upload_date = $result["upload_date"];
-    $reviews = $review->get_all($_GET["name"]);
-    $n = mysqli_num_rows($reviews);
-    $count = count_file($absolute_path,["*.jpg"]);
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -138,7 +113,7 @@
                             echo("<p>Upload by : <a href='./list.php?uploader=$uploader'>$uploader</a></p>");
                             echo("<p>Upload date : ".$upload_date."</p>");
                             echo("<p>Downloads : $downloads</p>
-                                    <div class='container text-center pt-3'>
+                                    <div class='text-center pt-3'>
                                             <button class='btn btn-block btn-info' data-toggle='modal' data-target='#download-modal' id='download-btn'>
                                                 <i class='fas fa-download mr-2'></i>Download
                                             </button>
@@ -153,19 +128,14 @@
                         ?>
                     </div>
                 </div>
-                <form method="post" action="../controller/review.php">
+                <form>
                     <div class="row">
                         <div class="col-9">
                             <textarea class="form-control" rows="5" name="comment" placeholder="Comment" id="comment"></textarea>
-                            <?php
-                            $name = $_GET["name"];
-                            echo("<input class='form-control' name='template' value='$name' hidden>");
-                            echo("<input class='form-control' name='type' value='Powerpoint' hidden>")
-                            ?>
                         </div>
                         <div class="col-3">
                             <div class="container text-center">
-                                <fieldset class="rating">
+                                <fieldset class="rating" id="star">
                                     <input type="radio" id="star5" name="rating" value="5"/><label class = "full" for="star5"></label>
                                     <input type="radio" id="star4" name="rating" value="4"/><label class = "full" for="star4"></label>
                                     <input type="radio" id="star3" name="rating" value="3"/><label class = "full" for="star3"></label>
@@ -173,7 +143,7 @@
                                     <input type="radio" id="star1" name="rating" value="1"/><label class = "full" for="star1"></label>
                                 </fieldset>
                             </div>
-                            <button class="btn btn-block btn-success" name="post" type="submit"><i class="fas fa-save mr-2 icon-blue"></i>Post</button>
+                            <button class="btn btn-block btn-success" name="post" type="button" id="review-post"><i class="fas fa-save mr-2 icon-blue"></i>Post</button>
                         </div>
                     </div>
                     <hr>
@@ -181,8 +151,8 @@
                         echo("<h5 class='mb-4'>".$n." Comments</h5>")
                         ?>
                         <?php
-                        while ($row = $reviews->fetch_assoc()){
-                            $review->render($row);
+                        for($i=0;$i<sizeof($review_list);$i++){
+                            review::render($review_list[$i]);
                         }
                     ?>
                 </form>
@@ -194,10 +164,11 @@
         </div>
     </div>
 </div>
-<script src="../static/vendor/jquery/jquery-3.4.1.js"></script>
-<script src="../static/vendor/bootstrap/bootstrap.js"></script>
-<script src="../static/vendor/font-awesome/js/fontawesome.js"></script>
-<script src="../static/js/main.js"></script>
-<script src="../static/js/download.js"></script>
+<script src="/assignment/static/vendor/jquery/jquery-3.4.1.js"></script>
+<script src="/assignment/static/vendor/bootstrap/bootstrap.js"></script>
+<script src="/assignment/static/vendor/font-awesome/js/fontawesome.js"></script>
+<script src="/assignment/static/js/main.js"></script>
+<script src="/assignment/static/js/download.js"></script>
+<script src="/assignment/static/js/review.js"></script>
 </body>
 </html>
