@@ -22,6 +22,11 @@
             <a href='/assignment/users' class='sidebar-text normal-text py-2'>
                 <i class='fa fa-users large-text'></i>");
         echo("<span class='ml-2'>Users</span></a></div></div>");
+        echo("<div class='item-holder pb-0 border-bottom-0'>
+            <div class='sidebar-item'>
+            <a href='/assignment/templates' class='sidebar-text normal-text py-2'>
+                <i class='fa fa-file-alt large-text'></i>");
+        echo("<span class='ml-2'>List</span></a></div></div>");
     }
 ?>
 <div class="item-holder border-bottom-0">

@@ -35,7 +35,10 @@
                     echo("<div class='alert alert-danger errorMsg'>User Blocked</div>");
                 }
                 if(isset($_GET["reset"])){
-                    echo("<div class='alert alert-danger errorMsg'>Successfully reset password</div>");
+                    echo("<div class='alert alert-success errorMsg'>Successfully Reset Password</div>");
+                }
+                if(isset($_GET["logout"])){
+                    echo("<div class='alert alert-success errorMsg'>Successfully Logout</div>");
                 }
             ?>
         </div>
@@ -45,8 +48,8 @@
             <label for="password" class="mt-3">Password</label>
             <input class="form-control" type="password" name="password" id="password">
             <button class="btn btn-block btn-info mt-5" type="submit" id="login-btn">Sign In</button>
-            <a href="password-forget.php" class="d-block mt-3">Forget Password?</a>
-            <a href="register.php" class="d-block mt-3">Register Account</a>
+            <a href="/assignment/password" class="d-block mt-3">Forget Password?</a>
+            <a href="/assignment/register" class="d-block mt-3">Register Account</a>
         </form>
     </div>
 </body>

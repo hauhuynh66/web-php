@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <title>Register</title>
-    <link href="../static/vendor/bootstrap/bootstrap.css" rel="stylesheet" type="text/css"/>
-    <link href="../static/vendor/font-awesome/css/all.css" rel="stylesheet" type="text/css"/>
-    <link href="../static/css/main.css" rel="stylesheet" type="text/css">
+    <link href="/assignment/static/vendor/bootstrap/bootstrap.css" rel="stylesheet" type="text/css"/>
+    <link href="/assignment/static/vendor/font-awesome/css/all.css" rel="stylesheet" type="text/css"/>
+    <link href="/assignment/static/css/main.css" rel="stylesheet" type="text/css">
 </head>
 <body class="bg-primary">
 <div class="limiter bg-light shadow">
@@ -25,60 +25,12 @@
     </div>
     <div class="text-center mt-4">
         <?php
-            require_once("../model/user.php");
-            function validate($f_name,$l_name,$username,$email,$password)
-            {
-                if (empty($f_name)) {
-                    $message = "First name is required";
-                } else if (strlen($f_name) < 2 || strlen($f_name) > 40) {
-                    $message = "First name must have 2-40 characters";
-                } else if (empty($l_name)) {
-                    $message = "Last name is required";
-                } else if (strlen($l_name) < 2 || strlen($l_name) > 40) {
-                    $message = "Last name must have 2-40 characters";
-                } else if (empty($username)) {
-                    $message = "Username is required";
-                } else if (strlen($username) < 6 || strlen($username) > 40) {
-                    $message = "Username must have 6-40 characters";
-                } else if(empty($email)){
-                    $message = "Email is required";
-                } else if(!filter_var($email,FILTER_VALIDATE_EMAIL)){
-                    $message = "Email is not valid";
-                } else if(empty($password)){
-                    $message = "Password is required";
-                } else if(strlen($password)<6||strlen($password)>100){
-                    $message = "Password must have 6-100 character";
-                } else{
-                    $message = "OK";
-                }
-                return $message;
-            }
-            if(isset($_POST["submit"])){
-                $table_name = "users";
-                $f_name = $_POST["first-name"];
-                $l_name = $_POST["last-name"];
-                $username = $_POST["username"];
-                $email = $_POST["email"];
-                $password = $_POST["password"];
-                $validate = validate($f_name,$l_name,$username,$email,$password);
-                if($validate!="OK"){
-                    echo("<div class='alert alert-danger'>".$validate."</div>");
-                }else{
-                    $hash_password = password_hash($password,PASSWORD_DEFAULT);
-                    $result = $user->getByUsernameAndEmail($username,$email);
-                    if($result->num_rows==0){
-                        $success = $user->insert($f_name,$l_name,$username,$email,$hash_password);
-                        if($success){
-                            header("Location:./login.php?registered");
-                        }else{
-                            header("Location:./register.php?failed");
-                        }
-                    }
-                }
+            if(isset($_GET["error"])){
+                echo ("<div class='alert alert-danger'>".$_GET["error"]."</div>");
             }
         ?>
     </div>
-    <form class="form-group mt-3" action="./register.php" method="post">
+    <form class="form-group mt-3" action="/assignment/register/add" method="post">
         <div class="row">
             <div class="col-6 pr-0">
                 <label for="first-name">First name</label>
@@ -95,9 +47,9 @@
         <input class="form-control" name="email" type="email" id="email">
         <label for="password" class="mt-3">Password</label>
         <input class="form-control" name="password" type="password" id="password">
-        <button name="submit" class="btn btn-block btn-info mt-3" type="submit" id="login-btn">Register</button>
-        <a href="login.php" class="d-block mt-3">Already have account? Login</a>
-        <a href="password-forget.php" class="d-block mt-3">Forget Password?</a>
+        <button name="register" class="btn btn-block btn-info mt-3" type="submit" id="register">Register</button>
+        <a href="/assignment/login" class="d-block mt-3">Already have account? Login</a>
+        <a href="/assignment/password" class="d-block mt-3">Forget Password?</a>
     </form>
 </div>
 </body>

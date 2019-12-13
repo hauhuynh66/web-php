@@ -22,6 +22,7 @@ $("#edit-template-btn").on('click',function () {
         type: "POST",
         url: "/assignment/template/edit/"+name,
         data:{
+            function: "edit_info",
             name: nname,
             description: description
         },
@@ -48,5 +49,29 @@ $("#search-btn").on('click',function () {
     var type = $("#filter-type").text();
     var str = $("#search-param").val();
     window.location = '/assignment/search/'+type+"&"+str;
+});
+
+$("#add-image-btn").on('click',function () {
+    var formData = new FormData();
+    var image = $("#new-image").prop('files');
+    formData.append('file',image[0]);
+    formData.append('tpname',$("#tp-name").text());
+    formData.append('function',"add_image");
+    $.ajax({
+        type: "POST",
+        url: "/assignment/template/edit/"+name,
+        enctype: 'multipart/form-data',
+        data: formData,
+        processData: false,
+        contentType: false,
+        success: function (data) {
+            if(data=="OK"){
+                window.location.reload();
+            }
+        },
+        error: function (e) {
+            console.log(e);
+        }
+    })
 });
 

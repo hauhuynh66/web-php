@@ -26,7 +26,7 @@
                     filter("web",$mode);
                     echo("<div class='row'>");
                     for($j=0;$j<$i;$j++){
-                        template::render_web($templates["$j"],$j);
+                        template::render_web($templates[$j],$j);
                     }
                     echo("</div>");
                     echo "<div class='row pt-3'>";

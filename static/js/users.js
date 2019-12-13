@@ -4,6 +4,7 @@ var action = "";
 $(document).ready(function () {
     $("#userTable").DataTable();
 });
+$("#userTable").DataTable({"lengthMenu":[[20,40,100,250],[20,40,100,250]],"scrollX": true,"order":[[1,"asc"]],});
 
 $("body").on('click','[id^=ban-btn]',function () {
     const id = $(this).attr('id');

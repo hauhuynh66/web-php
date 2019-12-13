@@ -181,6 +181,10 @@ textarea{
     min-height: 200px;
 }
 
+#add-image{
+    margin-bottom: 10px !important;
+}
+
 .image-holder{
     height: 250px;
     max-width: 100%;

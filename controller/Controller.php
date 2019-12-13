@@ -1,4 +1,5 @@
 <?php
+require_once("utils.php");
 class Controller
 {
     private $user;
@@ -71,7 +72,7 @@ class Controller
         if($this->url=="api_call"&&$this->method=="POST"){
             $this->apiCall($this->param);
         }
-        if($this->url=="download"&&$this->method=="POST"){
+        if($this->url=="download"&&$this->method=="GET"){
             $this->download($this->param);
         }
         if($this->url=="404"){
@@ -105,6 +106,161 @@ class Controller
             $type = explode("&",$this->param,3);
             $this->searchTemplate($type[0],$type[1]);
         }
+        if($this->url=="templates"){
+            $this->getTemplateList();
+        }
+        if($this->url=="register"){
+            require_once("template/register.php");
+        }
+        if($this->url[0]=="register"&&$this->url[1]=="add"){
+            $this->register();
+        }
+        if($this->url[0]=="delete"&&$this->url[1]=="template"){
+            $this->deleteTemplate($this->param);
+        }
+        if($this->url=="password"){
+            require_once("template/password.php");
+        }else if($this->url[0]=="password"&&$this->url[1]=="change"){
+            require_once ("controller/mail.php");
+            require_once ("controller/utils.php");
+            require_once ("model/user.php");
+            if (isset($_POST["send"]))
+            {
+                $email = $_POST["email"];
+                if (!filter_var($email, FILTER_VALIDATE_EMAIL))
+                {
+                    header("Location:../template/password-forget.php?error");
+                }
+
+                else{
+                    $u = $user->getByEmail($email)->fetch_assoc();
+                    if ($user == null) {
+                        header("Location:../template/password-forget.php?badCredential");
+                    } else {
+                        $success = $user->updatePassword($u["username"], generate_string(10));
+                        if (!$success) {
+                            header("Location:../template/password-forget.php?failed");
+                        } else {
+                            $success = sendMail($email, $success);
+                            if ($success == 1) {
+                                header("Location:../template/login.php?reset");
+                            } else {
+                                header("Location:../template/password-forget.php?failed");
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+public static function deleteDir($dirPath) {
+        if (! is_dir($dirPath)) {
+            throw new InvalidArgumentException("$dirPath must be a directory");
+        }
+        if (substr($dirPath, strlen($dirPath) - 1, 1) != '/') {
+            $dirPath .= '/';
+        }
+        $files = glob($dirPath . '*', GLOB_MARK);
+        foreach ($files as $file) {
+            if (is_dir($file)) {
+                self::deleteDir($file);
+            } else {
+                unlink($file);
+            }
+        }
+        rmdir($dirPath);
+    }
+
+    public function deleteTemplate($name){
+        $t = $this->template->getByName($name);
+        if($t->num_rows>0){
+            $type=$t->fetch_assoc()["type"];
+            $success = $this->template->delete($name);
+            if($success){
+                $src_path = $_SERVER["DOCUMENT_ROOT"]."/assignment/file/".$type."/".$name."/";
+                $img_path = $_SERVER["DOCUMENT_ROOT"]."/assignment/image/preview/".$type."/".$name."/";
+                self::deleteDir($img_path);
+                self::deleteDir($src_path);
+                echo "OK";
+            }else{
+                echo "FALSE";
+            }
+        }else{
+            return "FALSE";
+        }
+    }
+
+    public function register(){
+        if (isset($_POST["register"])) {
+            $f_name = $_POST["first-name"];
+            $l_name = $_POST["last-name"];
+            $username = $_POST["username"];
+            $email = $_POST["email"];
+            $password = $_POST["password"];
+            $validate = $this->validate($f_name, $l_name, $username, $email, $password);
+            if ($validate!="OK")
+            {
+                $this->redirect("/register?error=$validate");
+            }
+
+            else{
+                $hash_password = password_hash($password, PASSWORD_DEFAULT);
+                $result = $this->user->getByUsernameAndEmail($username, $email);
+                if ($result->num_rows == 0) {
+                    $success = $this->user->insert($f_name, $l_name, $username, $email, $hash_password);
+                    if ($success) {
+                        $this->redirect("/login?success");
+                    } else {
+                        $err = "Unexpected Error";
+                        $this->redirect("/register?error=$err");
+                    }
+                }
+            }
+        }
+    }
+
+
+    private function validate($f_name, $l_name, $username, $email, $password)
+    {
+        if (empty($f_name)) {
+            $message = "First name is required";
+        } else if (strlen($f_name) < 2 || strlen($f_name) > 40) {
+            $message = "First name must have 2-40 characters";
+        } else if (empty($l_name)) {
+            $message = "Last name is required";
+        } else if (strlen($l_name) < 2 || strlen($l_name) > 40) {
+            $message = "Last name must have 2-40 characters";
+        } else if (empty($username)) {
+            $message = "Username is required";
+        } else if (strlen($username) < 6 || strlen($username) > 40) {
+            $message = "Username must have 6-40 characters";
+        } else if (empty($email)) {
+            $message = "Email is required";
+        } else if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+            $message = "Email is not valid";
+        } else if (empty($password)) {
+            $message = "Password is required";
+        } else if (strlen($password) < 6 || strlen($password) > 100) {
+            $message = "Password must have 6-100 character";
+        } else {
+            $message = "OK";
+        }
+        return $message;
+    }
+
+
+
+    public function getTemplateList(){
+        $role = $this->guard();
+        $l = $this->lang();
+        $result = $this->template->getAll();
+        $template_list = array();
+        while($r = $result->fetch_assoc()){
+            $r["uploader"] = $this->user->getById($r["uploader"])->fetch_assoc()["username"];
+            array_push($template_list,$r);
+        }
+        require_once("template/template.php");
     }
 
     public function searchTemplate($type,$str){
@@ -124,24 +280,46 @@ class Controller
     public function templateInfo($name){
         $role = $this->guard();
         $t = $this->template->getByName($name);
-        echo json_encode($t->fetch_assoc());
+        $result = $t->fetch_assoc();
+        $result["uploader"] = $this->user->getById($result["uploader"])->fetch_assoc()["username"];
+        echo json_encode($result);
     }
 
     public function editTemplate($tname){
-        $nname = $_POST["name"];
-        $description = $_POST["description"];
-        $type = $this->template->getByName($tname)->fetch_assoc()["type"];
-        $success = $this->template->updateInfo($tname,$nname,$description);
-        if($success){
-            if($nname!=$tname){
-                $src_path = $_SERVER["DOCUMENT_ROOT"]."/assignment/file/".$type."/";
-                $img_path = $_SERVER["DOCUMENT_ROOT"]."/assignment/image/preview/".$type."/";
-                rename($src_path.$tname,$src_path.$nname);
-                rename($img_path.$tname,$img_path.$nname);
+        $function = $_POST["function"];
+        if($function=="edit_info"){
+            $nname = $_POST["name"];
+            $description = $_POST["description"];
+            $type = $this->template->getByName($tname)->fetch_assoc()["type"];
+            $success = $this->template->updateInfo($tname,$nname,$description);
+            if($success){
+                if($nname!=$tname){
+                    $src_path = $_SERVER["DOCUMENT_ROOT"]."/assignment/file/".$type."/";
+                    $img_path = $_SERVER["DOCUMENT_ROOT"]."/assignment/image/preview/".$type."/";
+                    rename($src_path.$tname,$src_path.$nname);
+                    rename($img_path.$tname,$img_path.$nname);
+                }
+                echo "SUCCESS-".$type;
+            }else{
+                echo "FAILED";
             }
-            echo "SUCCESS-".$type;
-        }else{
-            echo "FAILED";
+        }elseif ($function=="add_image"){
+            $name = $_POST["tpname"];
+            $type = $this->template->getByName($name)->fetch_assoc()["type"];
+            $img_path = $_SERVER["DOCUMENT_ROOT"]."/assignment/image/preview/".$type."/".$name."/";
+            if(!is_dir($img_path)){
+                echo "FALSE";
+            }else{
+                $ext = pathinfo($_FILES["file"]["name"],PATHINFO_EXTENSION);
+                $img = $_FILES["file"]["tmp_name"];
+                $files = count_file($img_path,array("*.jpg"));
+                $j = $files+1;
+                $ext = pathinfo($_FILES["file"]["name"],PATHINFO_EXTENSION);
+                $img = $_FILES["file"]["tmp_name"];
+                $img_des = $img_path."/img".$j.".".$ext;
+                move_uploaded_file($img,$img_des);
+                echo "OK";
+            }
         }
     }
 
@@ -412,7 +590,7 @@ class Controller
     public function index(){
         $role = $this->guard();
         $l = $this->lang();
-        $templates = $this->template->get_all();
+        $templates = $this->template->getAll();
         $n_templates = mysqli_num_rows($templates);
         $download = $this->template->get_total_download();
         $users = mysqli_num_rows($this->user->getAll());
@@ -488,7 +666,7 @@ class Controller
         $l = $this->lang();
         $page = substr($p,4,1);
         $mode = substr($p,6,3);
-        $n = 4;
+        $n = 2;
         $r = $this->template->getByType("powerpoint")->num_rows;
         $limit = $page*$n;
         $offset = ($page-1)*$n;
@@ -507,7 +685,7 @@ class Controller
         $l = $this->lang();
         $page = substr($p,4,1);
         $mode = substr($p,6,3);
-        $n = 4;
+        $n = 2;
         $r = $this->template->getByType("web")->num_rows;
         $limit = $page*$n;
         $offset = ($page-1)*$n;

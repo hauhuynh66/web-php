@@ -46,6 +46,20 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="card shadow">
+                            <div class="card-header d-flex pt-0">
+                                <div class="w-haft">
+                                    <h5 class="text-info">Image</h5>
+                                </div>
+                                <?php
+                                if($editable){
+                                    echo("<div class='w-haft justify-content-end'>
+                                        <button class='btn btn-info round' id='add-image' data-toggle='modal' data-target='#add-image-modal'>
+                                            <i class='fa fa-plus'></i>
+                                        </button>
+                                    </div>");
+                                }
+                                ?>
+                            </div>
                             <div class="card-body">
                                 <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
                                     <?php
@@ -187,6 +201,25 @@
             </div>
             <div class="modal-footer">
                 <button class="btn btn-info fixed-button" id="edit-template-btn">Confirm</button>
+                <button class="btn btn-outline-danger fixed-button" data-dismiss="modal">Cancel</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" tabindex="-1" role="dialog" id="add-image-modal">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header text-center p-2 d-block mt-1">
+                <h5 class="text-info">Add Image</h5>
+            </div>
+            <div class="modal-body">
+                <form id="new-image-form">
+                    <label for="new-image">New Image</label>
+                    <input type="file" accept="image/jpeg" id="new-image" name="new-image" placeholder="Image" class="form-control">
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-info fixed-button" id="add-image-btn">Confirm</button>
                 <button class="btn btn-outline-danger fixed-button" data-dismiss="modal">Cancel</button>
             </div>
         </div>

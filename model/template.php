@@ -45,9 +45,23 @@
             return mysqli_query($this->conn,$sql);
         }
 
-        function get_all(){
+        function getAll(){
             $sql = "select * from $this->table_name";
             return mysqli_query($this->conn,$sql);
+        }
+
+        function delete($name){
+            $sql = "select id from template where name='$name'";
+            $id = mysqli_query($this->conn,$sql)->fetch_assoc()["id"];
+            $sql = "delete from review where template = $id";
+            $success = mysqli_query($this->conn,$sql);
+            if($success){
+                $sql = "delete from $this->table_name where name = '$name'";
+                return mysqli_query($this->conn,$sql);
+            }else{
+                return false;
+            }
+
         }
 
         static function render_ppt($result, $i){
@@ -68,7 +82,7 @@
                                 </div>
                         </div>
                         <div class='card-body card-body-fixed'>
-                            <img src=$path alt='?' class='image-holder'>
+                            <img src='$path' alt='?' class='image-holder'>
                             <div class='description text-center'>
                                 <p>$description</p>
                             </div>
@@ -85,7 +99,6 @@
                     </div>
                 </div>");
         }
-
         static function render_web($result, $i){
             $name = $result["name"];
             $download = $result["downloads"];
@@ -104,7 +117,7 @@
                                 </div>
                         </div>  
                         <div class='card-body card-body-fixed'>
-                            <img src=$path alt='?' class='image-holder'>
+                            <img src='$path' alt='?' class='image-holder'>
                             <div class='description text-center'>
                                 <p>$description</p>
                             </div>
@@ -141,7 +154,7 @@
         }
 
         function get_total_download(){
-            $templates = $this->get_all();
+            $templates = $this->getAll();
             $count = 0;
             while ($template = $templates->fetch_assoc()){
                 $count+=$template["downloads"];
