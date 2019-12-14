@@ -123,29 +123,30 @@ class Controller
         }else if($this->url[0]=="password"&&$this->url[1]=="change"){
             require_once ("controller/mail.php");
             require_once ("controller/utils.php");
-            require_once ("model/user.php");
             if (isset($_POST["send"]))
             {
                 $email = $_POST["email"];
                 if (!filter_var($email, FILTER_VALIDATE_EMAIL))
                 {
-                    header("Location:../template/password-forget.php?error");
+                    $this->redirect("/assignment/password?error");
                 }
 
                 else{
-                    $u = $user->getByEmail($email)->fetch_assoc();
-                    if ($user == null) {
-                        header("Location:../template/password-forget.php?badCredential");
+                    $u = $this->user->getByEmail($email);
+                    if ($u->num_rows==0) {
+                        $this->redirect("/password?badcredential");
                     } else {
-                        $success = $user->updatePassword($u["username"], generate_string(10));
+                        $s = generate_string(10);
+                        $success = sendMail($email, $s);
                         if (!$success) {
-                            header("Location:../template/password-forget.php?failed");
+                            $this->redirect("/password?failed");
                         } else {
-                            $success = sendMail($email, $success);
+                            $username = $u->fetch_assoc()["username"];
+                            $success = $this->user->updatePassword($username, $s);
                             if ($success == 1) {
-                                header("Location:../template/login.php?reset");
+                                $this->redirect("/login?reset");
                             } else {
-                                header("Location:../template/password-forget.php?failed");
+                                $this->redirect("/password?failed");
                             }
                         }
                     }

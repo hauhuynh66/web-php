@@ -1,8 +1,8 @@
 <?php
-    require("../vendor/autoload.php");
+    require("vendor/autoload.php");
     use PHPMailer\PHPMailer\PHPMailer;
     function sendMail($to,$content){
-        $name = $to["username"];
+        $name = $to;
         $mail = new PHPMailer();
         $mail->SMTPDebug = 3;
         $mail->isSMTP();
