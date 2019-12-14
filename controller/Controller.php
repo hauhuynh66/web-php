@@ -187,7 +187,7 @@ public static function deleteDir($dirPath) {
                 echo "FALSE";
             }
         }else{
-            return "FALSE";
+            echo "FALSE";
         }
     }
 
@@ -338,7 +338,6 @@ public static function deleteDir($dirPath) {
             echo "NOT FOUND";
         }
     }
-
 
     private function redirect($url){
         header("Location:/assignment".$url);

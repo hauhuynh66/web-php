@@ -47,11 +47,9 @@
     }
     if($url[0]=="profile"&&!isset($url[1])&&$reqtype=="GET"){
         $controller->get($url[0],"index");
-    }
-    if($url[0]=="profile"&&$url[1]=="update"&&$reqtype=="POST"){
+    }else if($url[0]=="profile"&&$url[1]=="update"&&$reqtype=="POST"){
         $controller->post($url[0],$url[1]);
-    }
-    if($url[0]=="profile"&&$url[1]=="get"&&isset($url[2])&&$reqtype=="GET"){
+    }else if($url[0]=="profile"&&$url[1]=="get"&&isset($url[2])&&$reqtype=="GET"){
         $controller->get($url,$url[2]);
     }
     if($url[0]=="404"&&$reqtype=="GET"){

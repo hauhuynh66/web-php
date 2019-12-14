@@ -14,7 +14,7 @@
             </a>
             <div class='collapse show' id='filter'>
                     <div class='card-body'>
-                        <div class='row'>");
+                        <div class='row d-flex'>");
         if($mode=="dls"){
             echo ("<div class='col-4 mt-2'>
                                 <input type='radio' name='filter-type' id='dls-type' checked>
@@ -34,7 +34,7 @@
                                 <label class='ml-2' for='new-type'>New Upload</label>
                             </div>");
         }
-        echo("<div class='w-third justify-content-end'>
+        echo("<div class='w-33 justify-content-end'>
              <button type='submit' class='btn btn-outline-info' id='filter-$type'><i class='fa fa-bars mr-2'></i>Filter</button>
              </div></div></div></div></div>
         <hr>");

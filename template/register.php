@@ -12,7 +12,7 @@
     <div class="container text-center">
         <h1 class="text-font-1">Register</h1>
     </div>
-    <div class="row mt-4">
+    <!--<div class="row mt-4">
         <div class="col-4 pr-0">
             <a class="btn btn-info round"><i class="fab fa-facebook icon-white"></i></a>
         </div>
@@ -22,7 +22,7 @@
         <div class="col-4 text-right pr-0">
             <a class="btn btn-info round"><i class="fab fa-twitter icon-white"></i></a>
         </div>
-    </div>
+    </div>-->
     <div class="text-center mt-4">
         <?php
             if(isset($_GET["error"])){
